@@ -18,8 +18,8 @@ class DeA6Faces: UIViewController {
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
         var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
         if !erreur {
-            label.text = "Erreur"
-        }        
+            label.text = NSLocalizedString("Erreur",comment: "Message d'erreur")
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

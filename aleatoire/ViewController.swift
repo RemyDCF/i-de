@@ -39,7 +39,7 @@ class ViewController: UIViewController {
             if erreur {
             }
         }
-        btChoixFace.setTitle("Tirage d'un nombre entre 1 et " + String(nombreFace), forState: UIControlState.Normal)
+        btChoixFace.setTitle(NSLocalizedString("Tirage",comment: "Message de tirage") + String(nombreFace), forState: UIControlState.Normal)
         if (pref.boolForKey("secouer") == false) {
             btChoisir.hidden = false
             texteSecouer.hidden = true

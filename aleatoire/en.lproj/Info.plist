@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Aleatoire</string>
+	<string>Aleatory</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>fr</string>
+	<string>fr_FR</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
