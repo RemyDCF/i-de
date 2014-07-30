@@ -21,7 +21,7 @@
 "ZOH-xI-IjN.text" = "Make change";
 
 /* Class = "IBUIButton"; normalTitle = "Tirage d'un nombre entre 1 et 6"; ObjectID = "enn-BI-mJz"; */
-"enn-BI-mJz.normalTitle" = "Draw for a number between 1 and 6";
+"enn-BI-mJz.normalTitle" = "Drawing of a number between 1 and 6";
 
 /* Class = "IBUILabel"; text = "6 side"; ObjectID = "kF9-2w-fy2"; */
 "kF9-2w-fy2.text" = "6 side";
@@ -36,7 +36,7 @@
 "siu-md-adl.text" = "Make change";
 
 /* Class = "IBUIButton"; normalTitle = "Choisir"; ObjectID = "tuK-Yj-9va"; */
-"tuK-Yj-9va.normalTitle" = "choice";
+"tuK-Yj-9va.normalTitle" = "Choice";
 
 /* Class = "IBUIButton"; normalTitle = "Retour"; ObjectID = "uOx-pd-fVF"; */
 "uOx-pd-fVF.normalTitle" = "Return";
