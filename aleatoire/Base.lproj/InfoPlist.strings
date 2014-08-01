@@ -6,5 +6,4 @@
   Copyright (c) 2014 Da Costa Faro Rémy. All rights reserved.
 */
 
-"Erreur" = "Erreur";
-"Tirage" = "Tirage d'un nombre entre 1 et ";
+"CFBundleDisplayName" = "Aléatoire";

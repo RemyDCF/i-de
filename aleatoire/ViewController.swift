@@ -38,6 +38,48 @@ class ViewController: UIViewController {
             var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
             if erreur {
             }
+            donnee.laChaine = "0"
+            var path = dir[0] . stringByAppendingPathComponent("1")
+            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            if erreur {
+            }
+            path = dir[0] . stringByAppendingPathComponent("2")
+            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            if erreur {
+            }
+            path = dir[0] . stringByAppendingPathComponent("3")
+            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            if erreur {
+            }
+            path = dir[0] . stringByAppendingPathComponent("4")
+            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            if erreur {
+            }
+            path = dir[0] . stringByAppendingPathComponent("5")
+            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            if erreur {
+            }
+            path = dir[0] . stringByAppendingPathComponent("6")
+            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            if erreur {
+            }
+            path = dir[0] . stringByAppendingPathComponent("7")
+            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            if erreur {
+            }
+            path = dir[0] . stringByAppendingPathComponent("8")
+            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            if erreur {
+            }
+            path = dir[0] . stringByAppendingPathComponent("9")
+            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            if erreur {
+            }
+            path = dir[0] . stringByAppendingPathComponent("10")
+            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            if erreur {
+            }
+            
         }
         btChoixFace.setTitle(NSLocalizedString("Tirage",comment: "Message de tirage") + String(nombreFace), forState: UIControlState.Normal)
         if (pref.boolForKey("secouer") == false) {

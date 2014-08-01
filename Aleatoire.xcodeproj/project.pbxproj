@@ -21,6 +21,15 @@
 		36A0FA4E197FB8FD00C5D783 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A0FA4C197FB8FD00C5D783 /* Main.storyboard */; };
 		36A0FA50197FB8FD00C5D783 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A0FA4F197FB8FD00C5D783 /* Images.xcassets */; };
 		36A0FA5C197FB8FD00C5D783 /* AleatoireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A0FA5B197FB8FD00C5D783 /* AleatoireTests.swift */; };
+		36C06FA2198C1971000043B4 /* PNChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06F9F198C1971000043B4 /* PNChartConfig.swift */; };
+		36C06FA3198C1971000043B4 /* PNChartDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06FA0198C1971000043B4 /* PNChartDelegate.swift */; };
+		36C06FA4198C1971000043B4 /* PNValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06FA1198C1971000043B4 /* PNValue.swift */; };
+		36C06FA7198C1985000043B4 /* PNBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06FA5198C1985000043B4 /* PNBar.swift */; };
+		36C06FA8198C1985000043B4 /* PNBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06FA6198C1985000043B4 /* PNBarChart.swift */; };
+		36C06FAC198C198D000043B4 /* PNChartLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06FA9198C198D000043B4 /* PNChartLabel.swift */; };
+		36C06FAD198C198D000043B4 /* PNLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06FAA198C198D000043B4 /* PNLineChart.swift */; };
+		36C06FAE198C198D000043B4 /* PNLineChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C06FAB198C198D000043B4 /* PNLineChartData.swift */; };
+		36FEDDC8198BDAE0009E3E6D /* ResultatDesTirages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEDDC7198BDAE0009E3E6D /* ResultatDesTirages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +66,15 @@
 		36A0FA55197FB8FD00C5D783 /* AleatoireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AleatoireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A0FA5A197FB8FD00C5D783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36A0FA5B197FB8FD00C5D783 /* AleatoireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AleatoireTests.swift; sourceTree = "<group>"; };
+		36C06F9F198C1971000043B4 /* PNChartConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PNChartConfig.swift; path = PNChart/PNChartConfig.swift; sourceTree = "<group>"; };
+		36C06FA0198C1971000043B4 /* PNChartDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PNChartDelegate.swift; path = PNChart/PNChartDelegate.swift; sourceTree = "<group>"; };
+		36C06FA1198C1971000043B4 /* PNValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PNValue.swift; path = PNChart/PNValue.swift; sourceTree = "<group>"; };
+		36C06FA5198C1985000043B4 /* PNBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PNBar.swift; path = PNChart/PNBarChart/PNBar.swift; sourceTree = "<group>"; };
+		36C06FA6198C1985000043B4 /* PNBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PNBarChart.swift; path = PNChart/PNBarChart/PNBarChart.swift; sourceTree = "<group>"; };
+		36C06FA9198C198D000043B4 /* PNChartLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PNChartLabel.swift; path = PNChart/PNLineChart/PNChartLabel.swift; sourceTree = "<group>"; };
+		36C06FAA198C198D000043B4 /* PNLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PNLineChart.swift; path = PNChart/PNLineChart/PNLineChart.swift; sourceTree = "<group>"; };
+		36C06FAB198C198D000043B4 /* PNLineChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PNLineChartData.swift; path = PNChart/PNLineChart/PNLineChartData.swift; sourceTree = "<group>"; };
+		36FEDDC7198BDAE0009E3E6D /* ResultatDesTirages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultatDesTirages.swift; path = aleatoire/ResultatDesTirages.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +98,14 @@
 		36A0FA3A197FB8FB00C5D783 = {
 			isa = PBXGroup;
 			children = (
+				36C06FA9198C198D000043B4 /* PNChartLabel.swift */,
+				36C06FAA198C198D000043B4 /* PNLineChart.swift */,
+				36C06FAB198C198D000043B4 /* PNLineChartData.swift */,
+				36C06FA5198C1985000043B4 /* PNBar.swift */,
+				36C06FA6198C1985000043B4 /* PNBarChart.swift */,
+				36C06F9F198C1971000043B4 /* PNChartConfig.swift */,
+				36C06FA0198C1971000043B4 /* PNChartDelegate.swift */,
+				36C06FA1198C1971000043B4 /* PNValue.swift */,
 				36A0FA45197FB8FD00C5D783 /* Aleatoire */,
 				36A0FA58197FB8FD00C5D783 /* AleatoireTests */,
 				36A0FA44197FB8FD00C5D783 /* Products */,
@@ -101,6 +127,7 @@
 			children = (
 				36976BE81983E214003AD536 /* Test.playground */,
 				36A0FA48197FB8FD00C5D783 /* AppDelegate.swift */,
+				36FEDDC7198BDAE0009E3E6D /* ResultatDesTirages.swift */,
 				36A0FA4A197FB8FD00C5D783 /* ViewController.swift */,
 				36124DEB19892593000389DE /* Localizable.strings */,
 				362264C119852C4900E6B983 /* MesDonnes.h */,
@@ -249,11 +276,20 @@
 			files = (
 				362264C719852FE700E6B983 /* DeA6Faces.swift in Sources */,
 				36A0FA4B197FB8FD00C5D783 /* ViewController.swift in Sources */,
+				36FEDDC8198BDAE0009E3E6D /* ResultatDesTirages.swift in Sources */,
 				3605522319853B5A00D057B2 /* ChoixFace.swift in Sources */,
+				36C06FAC198C198D000043B4 /* PNChartLabel.swift in Sources */,
+				36C06FAD198C198D000043B4 /* PNLineChart.swift in Sources */,
+				36C06FAE198C198D000043B4 /* PNLineChartData.swift in Sources */,
 				362264CB1985304600E6B983 /* DeA10Faces.swift in Sources */,
 				362264C319852C4900E6B983 /* MesDonnes.m in Sources */,
+				36C06FA7198C1985000043B4 /* PNBar.swift in Sources */,
+				36C06FA8198C1985000043B4 /* PNBarChart.swift in Sources */,
 				36A0FA49197FB8FD00C5D783 /* AppDelegate.swift in Sources */,
 				362264C91985300B00E6B983 /* DeA8Faces.swift in Sources */,
+				36C06FA2198C1971000043B4 /* PNChartConfig.swift in Sources */,
+				36C06FA3198C1971000043B4 /* PNChartDelegate.swift in Sources */,
+				36C06FA4198C1971000043B4 /* PNValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

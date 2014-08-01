@@ -98,7 +98,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Choix du dé" id="Z6J-kP-0dP">
+                                <navigationItem title="Paramètre" id="Z6J-kP-0dP">
                                     <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="k9Z-vD-eCc">
                                         <connections>
                                             <segue destination="vXZ-lx-hvc" kind="presentation" id="WCn-uR-gl6"/>
@@ -159,6 +159,33 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="ocQ-SI-B9l" kind="presentation" id="rtf-y9-RM1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Resultat" id="Vnm-Ae-LQ1">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="x3h-V0-uvy" detailTextLabel="vAq-tg-wGZ" style="IBUITableViewCellStyleSubtitle" id="Oxe-Jc-jYb">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oxe-Jc-jYb" id="fKU-Q1-x7j">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Statistique" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x3h-V0-uvy">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="🔥Bug" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vAq-tg-wGZ">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="hPY-s5-yRo" kind="show" id="atC-gb-55Y"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -309,8 +336,26 @@
             </objects>
             <point key="canvasLocation" x="2583.75" y="571.47887323943655"/>
         </scene>
+        <!--Resultat Des Tirages-->
+        <scene sceneID="YKn-4d-E6J">
+            <objects>
+                <viewController id="hPY-s5-yRo" customClass="ResultatDesTirages" customModule="Aleatoire" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kck-ao-E8p"/>
+                        <viewControllerLayoutGuide type="bottom" id="4cE-XS-ENJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mr0-iy-cCN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kaK-c9-U1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2583" y="1225"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="m57-uw-pPq"/>
+        <segue reference="WCn-uR-gl6"/>
     </inferredMetricsTieBreakers>
 </document>
