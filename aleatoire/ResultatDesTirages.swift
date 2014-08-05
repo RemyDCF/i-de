@@ -14,7 +14,7 @@ class ResultatDesTirages: UIViewController, PNChartDelegate {
         super.viewDidLoad()
         var donnee = MesDonnes()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var barChart = PNBarChart(frame: CGRectMake(0, 135.0, 320.0, 200.0))
+        let barChart = PNBarChart(frame: CGRectMake(0, 135.0, 320.0, 200.0))
         barChart.backgroundColor = UIColor.clearColor()
         barChart.yLabelFormatter = ({(yValue: CGFloat) -> NSString in
             var yValueParsed:CGFloat = yValue
@@ -27,6 +27,17 @@ class ResultatDesTirages: UIViewController, PNChartDelegate {
         barChart.strokeChart()
         
         barChart.delegate = self
+        
+        self.view.addSubview(barChart)
+        let navBar = UINavigationBar(frame: CGRectMake(0, 00, UIScreen.mainScreen().bounds.size.width, 64))
+        navBar.barStyle = UIBarStyle.Default
+        let titre = UINavigationItem(title: "Résultat")
+        navBar.pushNavigationItem(titre, animated: true)
+
+        self.view.addSubview(navBar)
+    }
+    
+    func afficherParametre() -> Void {
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,17 +47,14 @@ class ResultatDesTirages: UIViewController, PNChartDelegate {
     
     func userClickedOnLineKeyPoint(point: CGPoint, lineIndex: Int, keyPointIndex: Int)
     {
-        println("Click Key on line \(point.x), \(point.y) line index is \(lineIndex) and point index is \(keyPointIndex)")
     }
     
     func userClickedOnLinePoint(point: CGPoint, lineIndex: Int)
     {
-        println("Click Key on line \(point.x), \(point.y) line index is \(lineIndex)")
     }
     
     func userClickedOnBarCharIndex(barIndex: Int)
     {
-        println("Click  on bar \(barIndex)")
     }
 
 
@@ -59,5 +67,12 @@ class ResultatDesTirages: UIViewController, PNChartDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    override func disablesAutomaticKeyboardDismissal() -> Bool {
+        return false
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
 }
