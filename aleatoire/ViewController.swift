@@ -39,47 +39,15 @@ class ViewController: UIViewController {
             if erreur {
             }
             donnee.laChaine = "0"
-            var path = dir[0] . stringByAppendingPathComponent("1")
-            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if erreur {
+            var i = 1
+            while i < 10 {
+                println("écriture du nombre de tirage du nombre " + String(i))
+                var path = dir[0] . stringByAppendingPathComponent(String(i))
+                erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+                if erreur {
+                    println("Erreur lors de l'écriture de nombre de tirage du nombre " + String(i))
+                }
             }
-            path = dir[0] . stringByAppendingPathComponent("2")
-            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if erreur {
-            }
-            path = dir[0] . stringByAppendingPathComponent("3")
-            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if erreur {
-            }
-            path = dir[0] . stringByAppendingPathComponent("4")
-            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if erreur {
-            }
-            path = dir[0] . stringByAppendingPathComponent("5")
-            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if erreur {
-            }
-            path = dir[0] . stringByAppendingPathComponent("6")
-            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if erreur {
-            }
-            path = dir[0] . stringByAppendingPathComponent("7")
-            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if erreur {
-            }
-            path = dir[0] . stringByAppendingPathComponent("8")
-            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if erreur {
-            }
-            path = dir[0] . stringByAppendingPathComponent("9")
-            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if erreur {
-            }
-            path = dir[0] . stringByAppendingPathComponent("10")
-            erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if erreur {
-            }
-            
         }
         btChoixFace.setTitle(NSLocalizedString("Tirage",comment: "Message de tirage") + String(nombreFace), forState: UIControlState.Normal)
         if (pref.boolForKey("secouer") == false) {

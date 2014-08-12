@@ -8,27 +8,20 @@
 
 import UIKit
 
-class ResultatDesTirages: UIViewController, PNChartDelegate {
+class ResultatDesTirages: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         var donnee = MesDonnes()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        let barChart = PNBarChart(frame: CGRectMake(0, 135.0, 320.0, 200.0))
-        barChart.backgroundColor = UIColor.clearColor()
-        barChart.yLabelFormatter = ({(yValue: CGFloat) -> NSString in
-            var yValueParsed:CGFloat = yValue
-            var labelText:NSString = NSString(format:"%1.f",yValueParsed)
-            return labelText;
-            })
-        barChart.labelMarginTop = 5.0
-        barChart.xLabels = ["1","2","3","4","5","6","7","8","9","10"]
-        barChart.yValues = [1,24,12,18,30,10,21, 32,34,75]
-        barChart.strokeChart()
-        
-        barChart.delegate = self
-        
-        self.view.addSubview(barChart)
+        var i = 1
+        var resultat = [String]()
+        while i < 10 {
+            var path = dir[0] . stringByAppendingPathComponent(String(i))
+            donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
+            resultat[i - 1] = donnee.laChaine
+            i++
+        }
         let navBar = UINavigationBar(frame: CGRectMake(0, 00, UIScreen.mainScreen().bounds.size.width, 64))
         navBar.barStyle = UIBarStyle.Default
         let titre = UINavigationItem(title: "Résultat")
