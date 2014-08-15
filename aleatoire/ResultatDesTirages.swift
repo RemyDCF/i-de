@@ -8,26 +8,45 @@
 
 import UIKit
 
-class ResultatDesTirages: UIViewController {
-
+class ResultatDesTirages: UIViewController, CPTPieChartDataSource, CPTPieChartDelegate {
+    // MARK: - Définition des variables de la classe
+    var dataForChart = [NSNumber]();
+    let graphView = CPTGraphHostingView(frame: CGRectMake(0, 64, UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height - 64))
+    // MARK: - Fonctions principales
     override func viewDidLoad() {
         super.viewDidLoad()
-        var donnee = MesDonnes()
+        /*var donnee = MesDonnes()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var i = 1
-        var resultat = [String]()
+        var resultat = [String?]()
         while i < 10 {
             var path = dir[0] . stringByAppendingPathComponent(String(i))
             donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
             resultat[i - 1] = donnee.laChaine
             i++
         }
+*/
         let navBar = UINavigationBar(frame: CGRectMake(0, 00, UIScreen.mainScreen().bounds.size.width, 64))
         navBar.barStyle = UIBarStyle.Default
         let titre = UINavigationItem(title: "Résultat")
         navBar.pushNavigationItem(titre, animated: true)
-
         self.view.addSubview(navBar)
+        var graph = CPTXYGraph(frame:graphView.bounds);
+        self.graphView.hostedGraph = graph;
+        
+        graph.title = "Graph Title";
+        graph.axisSet = nil;
+        
+        var pieChart = CPTPieChart();
+        pieChart.pieRadius = 100.0;
+        
+        pieChart.dataSource = self;
+        pieChart.delegate = self;
+        
+        graph.addPlot(pieChart);
+        
+        self.dataForChart = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+        self.view.addSubview(self.graphView);
     }
     
     func afficherParametre() -> Void {
@@ -38,29 +57,6 @@ class ResultatDesTirages: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func userClickedOnLineKeyPoint(point: CGPoint, lineIndex: Int, keyPointIndex: Int)
-    {
-    }
-    
-    func userClickedOnLinePoint(point: CGPoint, lineIndex: Int)
-    {
-    }
-    
-    func userClickedOnBarCharIndex(barIndex: Int)
-    {
-    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     override func disablesAutomaticKeyboardDismissal() -> Bool {
         return false
     }
@@ -68,4 +64,12 @@ class ResultatDesTirages: UIViewController {
     override func shouldAutorotate() -> Bool {
         return true
     }
+    // MARK: - Fonction de comformité au délégué CPTPlotDataSource
+    func numberOfRecordsForPlot(plot:CPTPlot)-> UInt {
+        return UInt(self.dataForChart.count)
+    }
+    func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex idx: UInt) -> NSNumber! {
+        return self.dataForChart[Int(idx)] as NSNumber
+    }
+
 }

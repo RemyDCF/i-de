@@ -21,7 +21,7 @@
 		36A0FA4E197FB8FD00C5D783 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A0FA4C197FB8FD00C5D783 /* Main.storyboard */; };
 		36A0FA50197FB8FD00C5D783 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A0FA4F197FB8FD00C5D783 /* Images.xcassets */; };
 		36A0FA5C197FB8FD00C5D783 /* AleatoireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A0FA5B197FB8FD00C5D783 /* AleatoireTests.swift */; };
-		36FEDDC8198BDAE0009E3E6D /* ResultatDesTirages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEDDC7198BDAE0009E3E6D /* ResultatDesTirages.swift */; };
+		36D88910199B990000CF8359 /* ResultatDesTirages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D8890F199B990000CF8359 /* ResultatDesTirages.swift */; };
 		36FF624D199A4A9B0030D584 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FF624C199A4A9B0030D584 /* libCorePlot-CocoaTouch.a */; };
 		36FF624F199A4AC60030D584 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FF624E199A4AC60030D584 /* QuartzCore.framework */; };
 		36FF6251199A4AD20030D584 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FF6250199A4AD20030D584 /* Accelerate.framework */; };
@@ -61,7 +61,7 @@
 		36A0FA55197FB8FD00C5D783 /* AleatoireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AleatoireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A0FA5A197FB8FD00C5D783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36A0FA5B197FB8FD00C5D783 /* AleatoireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AleatoireTests.swift; sourceTree = "<group>"; };
-		36FEDDC7198BDAE0009E3E6D /* ResultatDesTirages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultatDesTirages.swift; path = aleatoire/ResultatDesTirages.swift; sourceTree = SOURCE_ROOT; };
+		36D8890F199B990000CF8359 /* ResultatDesTirages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultatDesTirages.swift; path = aleatoire/ResultatDesTirages.swift; sourceTree = SOURCE_ROOT; };
 		36FF624C199A4A9B0030D584 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = SOURCE_ROOT; };
 		36FF624E199A4AC60030D584 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		36FF6250199A4AD20030D584 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -114,8 +114,8 @@
 			children = (
 				36976BE81983E214003AD536 /* Test.playground */,
 				36A0FA48197FB8FD00C5D783 /* AppDelegate.swift */,
-				36FEDDC7198BDAE0009E3E6D /* ResultatDesTirages.swift */,
 				36A0FA4A197FB8FD00C5D783 /* ViewController.swift */,
+				36D8890F199B990000CF8359 /* ResultatDesTirages.swift */,
 				36124DEB19892593000389DE /* Localizable.strings */,
 				362264C119852C4900E6B983 /* MesDonnes.h */,
 				362264C219852C4900E6B983 /* MesDonnes.m */,
@@ -264,7 +264,7 @@
 			files = (
 				362264C719852FE700E6B983 /* DeA6Faces.swift in Sources */,
 				36A0FA4B197FB8FD00C5D783 /* ViewController.swift in Sources */,
-				36FEDDC8198BDAE0009E3E6D /* ResultatDesTirages.swift in Sources */,
+				36D88910199B990000CF8359 /* ResultatDesTirages.swift in Sources */,
 				3605522319853B5A00D057B2 /* ChoixFace.swift in Sources */,
 				362264CB1985304600E6B983 /* DeA10Faces.swift in Sources */,
 				362264C319852C4900E6B983 /* MesDonnes.m in Sources */,
@@ -409,6 +409,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode6-Beta5.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					/Users/Laetitia/Aleatoire/CorePlotHeaders/,
+				);
 				INFOPLIST_FILE = Aleatoire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -432,6 +437,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode6-Beta5.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					/Users/Laetitia/Aleatoire/CorePlotHeaders/,
+				);
 				INFOPLIST_FILE = Aleatoire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
