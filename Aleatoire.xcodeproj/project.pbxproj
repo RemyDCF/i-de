@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3605522319853B5A00D057B2 /* ChoixFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3605522219853B5A00D057B2 /* ChoixFace.swift */; };
+		3605522319853B5A00D057B2 /* Parametre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3605522219853B5A00D057B2 /* Parametre.swift */; };
 		36124DE919892593000389DE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36124DEB19892593000389DE /* Localizable.strings */; };
 		361339511982675D00A11BF9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 361339501982675D00A11BF9 /* Settings.bundle */; };
 		362264C319852C4900E6B983 /* MesDonnes.m in Sources */ = {isa = PBXBuildFile; fileRef = 362264C219852C4900E6B983 /* MesDonnes.m */; };
@@ -21,10 +21,6 @@
 		36A0FA4E197FB8FD00C5D783 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A0FA4C197FB8FD00C5D783 /* Main.storyboard */; };
 		36A0FA50197FB8FD00C5D783 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A0FA4F197FB8FD00C5D783 /* Images.xcassets */; };
 		36A0FA5C197FB8FD00C5D783 /* AleatoireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A0FA5B197FB8FD00C5D783 /* AleatoireTests.swift */; };
-		36D88910199B990000CF8359 /* ResultatDesTirages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D8890F199B990000CF8359 /* ResultatDesTirages.swift */; };
-		36FF624D199A4A9B0030D584 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FF624C199A4A9B0030D584 /* libCorePlot-CocoaTouch.a */; };
-		36FF624F199A4AC60030D584 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FF624E199A4AC60030D584 /* QuartzCore.framework */; };
-		36FF6251199A4AD20030D584 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FF6250199A4AD20030D584 /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3605522219853B5A00D057B2 /* ChoixFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoixFace.swift; sourceTree = "<group>"; };
+		3605522219853B5A00D057B2 /* Parametre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametre.swift; sourceTree = "<group>"; };
 		36124DE619891F83000389DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		36124DEA19892593000389DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		36124DEC19892596000389DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -61,10 +57,6 @@
 		36A0FA55197FB8FD00C5D783 /* AleatoireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AleatoireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A0FA5A197FB8FD00C5D783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36A0FA5B197FB8FD00C5D783 /* AleatoireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AleatoireTests.swift; sourceTree = "<group>"; };
-		36D8890F199B990000CF8359 /* ResultatDesTirages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultatDesTirages.swift; path = aleatoire/ResultatDesTirages.swift; sourceTree = SOURCE_ROOT; };
-		36FF624C199A4A9B0030D584 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = SOURCE_ROOT; };
-		36FF624E199A4AC60030D584 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		36FF6250199A4AD20030D584 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36FF6251199A4AD20030D584 /* Accelerate.framework in Frameworks */,
-				36FF624F199A4AC60030D584 /* QuartzCore.framework in Frameworks */,
-				36FF624D199A4A9B0030D584 /* libCorePlot-CocoaTouch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,8 +80,6 @@
 		36A0FA3A197FB8FB00C5D783 = {
 			isa = PBXGroup;
 			children = (
-				36FF6250199A4AD20030D584 /* Accelerate.framework */,
-				36FF624E199A4AC60030D584 /* QuartzCore.framework */,
 				36A0FA45197FB8FD00C5D783 /* Aleatoire */,
 				36A0FA58197FB8FD00C5D783 /* AleatoireTests */,
 				36A0FA44197FB8FD00C5D783 /* Products */,
@@ -115,12 +102,11 @@
 				36976BE81983E214003AD536 /* Test.playground */,
 				36A0FA48197FB8FD00C5D783 /* AppDelegate.swift */,
 				36A0FA4A197FB8FD00C5D783 /* ViewController.swift */,
-				36D8890F199B990000CF8359 /* ResultatDesTirages.swift */,
+				3605522219853B5A00D057B2 /* Parametre.swift */,
 				36124DEB19892593000389DE /* Localizable.strings */,
 				362264C119852C4900E6B983 /* MesDonnes.h */,
 				362264C219852C4900E6B983 /* MesDonnes.m */,
 				36A0FA4C197FB8FD00C5D783 /* Main.storyboard */,
-				3605522219853B5A00D057B2 /* ChoixFace.swift */,
 				362264C619852FE700E6B983 /* DeA6Faces.swift */,
 				362264C81985300B00E6B983 /* DeA8Faces.swift */,
 				362264CA1985304600E6B983 /* DeA10Faces.swift */,
@@ -134,7 +120,6 @@
 		36A0FA46197FB8FD00C5D783 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				36FF624C199A4A9B0030D584 /* libCorePlot-CocoaTouch.a */,
 				364BCF65198928D00024853D /* Info.plist */,
 				364BCF63198928810024853D /* InfoPlist.strings */,
 			);
@@ -264,8 +249,7 @@
 			files = (
 				362264C719852FE700E6B983 /* DeA6Faces.swift in Sources */,
 				36A0FA4B197FB8FD00C5D783 /* ViewController.swift in Sources */,
-				36D88910199B990000CF8359 /* ResultatDesTirages.swift in Sources */,
-				3605522319853B5A00D057B2 /* ChoixFace.swift in Sources */,
+				3605522319853B5A00D057B2 /* Parametre.swift in Sources */,
 				362264CB1985304600E6B983 /* DeA10Faces.swift in Sources */,
 				362264C319852C4900E6B983 /* MesDonnes.m in Sources */,
 				36A0FA49197FB8FD00C5D783 /* AppDelegate.swift in Sources */,
