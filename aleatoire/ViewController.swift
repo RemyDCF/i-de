@@ -36,17 +36,8 @@ class ViewController: UIViewController {
         else {
             donnee.laChaine = "6"
             var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if erreur {
-            }
-            donnee.laChaine = "0"
-            var i = 1
-            while i < 10 {
-                println("écriture du nombre de tirage du nombre " + String(i))
-                var path = dir[0] . stringByAppendingPathComponent(String(i))
-                erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-                if erreur {
-                    println("Erreur lors de l'écriture de nombre de tirage du nombre " + String(i))
-                }
+            if !erreur {
+                println("L'écriture de la valeur par défault de la face du dé à échoué")
             }
         }
         labelFace.text = "Tirage d'un nombre entre 1 et " + String(UInt8(nombreFace!))
