@@ -27,8 +27,16 @@ class Parametre: UITableViewController {
         return true
     }
     @IBAction func choixTypeLanceDeChange(sender: AnyObject) {
-        let appDefault = NSDictionary(object: "secouer", forKey: true)
-        pref.registerDefaults(appDefault)
+        println("coucou")
+        var appDefault:NSDictionary?
+        if (segmentChoixDe.selectedSegmentIndex == 0) {
+            appDefault = NSDictionary(object: true, forKey: "secouer")
+        }
+        else {
+            appDefault = NSDictionary(object: false, forKey: "secouer")
+        }
+        println(appDefault)
+        pref.registerDefaults(appDefault!)
         pref.synchronize()
     }
 }
