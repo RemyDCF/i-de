@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
-                                <rect key="frame" x="20" y="87" width="560" height="493"/>
+                                <rect key="frame" x="20" y="87" width="560" height="463"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -31,19 +32,6 @@
                                     <action selector="appuiChoisir:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4ud-OC-vsB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enn-BI-mJz">
-                                <rect key="frame" x="20" y="20" width="560" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="wLM-5p-aIa"/>
-                                </constraints>
-                                <state key="normal" title="Tirage d'un nombre entre 1 et 6">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="zmJ-ZM-V30" kind="presentation" id="5i5-T2-YPE"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secouez pour choisir" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWC-Bl-t2e">
                                 <rect key="frame" x="20" y="49" width="560" height="21"/>
                                 <constraints>
@@ -53,31 +41,58 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tirage d'un nombre entre 1 et 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QD6-s7-DVY">
+                                <rect key="frame" x="16" y="20" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDv-l9-pHP">
+                                <rect key="frame" x="562" y="558" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="LnB-di-8rU"/>
+                                    <constraint firstAttribute="height" constant="22" id="bVV-Ob-AlU"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="zmJ-ZM-V30" kind="show" id="y5S-dT-byJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="enn-BI-mJz" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="1n4-xk-ycW"/>
                             <constraint firstItem="tuK-Yj-9va" firstAttribute="top" secondItem="UWC-Bl-t2e" secondAttribute="top" id="6LW-I2-PBv"/>
+                            <constraint firstItem="QD6-s7-DVY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="6lH-Jl-XgL"/>
+                            <constraint firstItem="UWC-Bl-t2e" firstAttribute="trailing" secondItem="tuK-Yj-9va" secondAttribute="trailing" id="7dv-2b-HDt"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="9Tz-nx-RSf"/>
-                            <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="E7o-0w-nyq" secondAttribute="bottom" constant="20" id="BjJ-Lk-SRZ"/>
-                            <constraint firstItem="enn-BI-mJz" firstAttribute="leading" secondItem="tuK-Yj-9va" secondAttribute="leading" id="N94-8U-2Ma"/>
+                            <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="E7o-0w-nyq" secondAttribute="bottom" constant="50" id="BjJ-Lk-SRZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mDv-l9-pHP" secondAttribute="trailing" constant="4" id="JMK-Rj-ox5"/>
                             <constraint firstAttribute="trailing" secondItem="E7o-0w-nyq" secondAttribute="trailing" constant="20" id="PxJ-IS-qed"/>
-                            <constraint firstItem="enn-BI-mJz" firstAttribute="leading" secondItem="E7o-0w-nyq" secondAttribute="leading" id="QrP-hI-xKv"/>
+                            <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="mDv-l9-pHP" secondAttribute="bottom" constant="8" id="YNp-2e-yh0"/>
+                            <constraint firstItem="mDv-l9-pHP" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Zce-Yt-0it"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="tuK-Yj-9va" secondAttribute="bottom" constant="8" symbolic="YES" id="b1h-7f-6rb"/>
-                            <constraint firstItem="enn-BI-mJz" firstAttribute="leading" secondItem="UWC-Bl-t2e" secondAttribute="leading" id="cNJ-vy-Due"/>
-                            <constraint firstItem="enn-BI-mJz" firstAttribute="trailing" secondItem="E7o-0w-nyq" secondAttribute="trailing" id="cdl-zq-fQR"/>
-                            <constraint firstItem="enn-BI-mJz" firstAttribute="trailing" secondItem="UWC-Bl-t2e" secondAttribute="trailing" id="hcN-Mc-RjX"/>
-                            <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="enn-BI-mJz" secondAttribute="bottom" constant="37" id="iaW-Nb-Brw"/>
-                            <constraint firstItem="enn-BI-mJz" firstAttribute="trailing" secondItem="tuK-Yj-9va" secondAttribute="trailing" id="oVU-Dz-jfj"/>
-                            <constraint firstItem="enn-BI-mJz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="oZw-D3-Gec"/>
-                            <constraint firstAttribute="trailing" secondItem="enn-BI-mJz" secondAttribute="trailing" constant="20" symbolic="YES" id="y3p-lK-UFK"/>
+                            <constraint firstItem="mDv-l9-pHP" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="m8i-d8-eXF"/>
+                            <constraint firstItem="UWC-Bl-t2e" firstAttribute="leading" secondItem="tuK-Yj-9va" secondAttribute="leading" id="q0O-gO-3hI"/>
+                            <constraint firstItem="UWC-Bl-t2e" firstAttribute="trailing" secondItem="E7o-0w-nyq" secondAttribute="trailing" id="rGy-hR-weF"/>
+                            <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="mDv-l9-pHP" secondAttribute="bottom" constant="20" id="tbF-eF-WVi"/>
+                            <constraint firstItem="QD6-s7-DVY" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="vA8-MC-Gr9"/>
+                            <constraint firstItem="QD6-s7-DVY" firstAttribute="top" secondItem="LGv-U3-cP9" secondAttribute="bottom" constant="20" id="xVV-Ep-TjA"/>
+                            <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="mDv-l9-pHP" secondAttribute="bottom" constant="20" id="y05-Io-J76"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="LGv-U3-cP9" secondAttribute="bottom" constant="87" id="zgJ-TY-SHu"/>
+                            <constraint firstItem="UWC-Bl-t2e" firstAttribute="leading" secondItem="E7o-0w-nyq" secondAttribute="leading" id="zpI-xk-KYW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="YNp-2e-yh0"/>
+                                <exclude reference="tbF-eF-WVi"/>
+                                <exclude reference="JMK-Rj-ox5"/>
+                                <exclude reference="m8i-d8-eXF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="DxT-jV-ozc"/>
                     <connections>
                         <outlet property="btChoisir" destination="tuK-Yj-9va" id="5ra-kJ-Zuh"/>
-                        <outlet property="btChoixFace" destination="enn-BI-mJz" id="XJd-W8-Lse"/>
+                        <outlet property="labelFace" destination="QD6-s7-DVY" id="sUJ-uG-fUy"/>
                         <outlet property="nombre" destination="E7o-0w-nyq" id="0bu-cI-5jc"/>
                         <outlet property="texteSecouer" destination="UWC-Bl-t2e" id="jHO-YS-pA9"/>
                     </connections>
@@ -89,7 +104,7 @@
         <!--Parametre-->
         <scene sceneID="o0f-VD-yIl">
             <objects>
-                <tableViewController id="zmJ-ZM-V30" customClass="Parametre" sceneMemberID="viewController">
+                <tableViewController id="zmJ-ZM-V30" customClass="Parametre" customModule="Aleatoire" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PGI-pj-s7O">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,14 +185,26 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1fz-y8-H3b" id="jgo-k2-5qc">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0cT-Bs-NFY">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0cT-Bs-NFY">
                                                     <rect key="frame" x="8" y="9" width="584" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="qve-h7-qWA"/>
+                                                    </constraints>
                                                     <segments>
                                                         <segment title="Secouer"/>
                                                         <segment title="Appuyer sur un bouton"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="choixTypeLanceDeChange:" destination="zmJ-ZM-V30" eventType="valueChanged" id="j8F-9v-lY1"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0cT-Bs-NFY" firstAttribute="trailing" secondItem="jgo-k2-5qc" secondAttribute="trailingMargin" id="74k-4l-Wvv"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0cT-Bs-NFY" secondAttribute="bottom" constant="-2" id="Hka-JD-pP8"/>
+                                                <constraint firstItem="0cT-Bs-NFY" firstAttribute="top" secondItem="jgo-k2-5qc" secondAttribute="topMargin" constant="1" id="JAG-80-FOO"/>
+                                                <constraint firstItem="0cT-Bs-NFY" firstAttribute="leading" secondItem="jgo-k2-5qc" secondAttribute="leadingMargin" id="e6N-Rs-BgA"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -188,9 +215,11 @@
                             <outlet property="delegate" destination="zmJ-ZM-V30" id="bth-Ul-aS4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cSg-LE-OyT"/>
                     <keyCommands/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="segmentChoixDe" destination="0cT-Bs-NFY" id="mp1-PB-JgF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCm-uC-N9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

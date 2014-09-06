@@ -11,11 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var nombre: UILabel!
     @IBOutlet weak var btChoisir: UIButton!
-    @IBOutlet weak var btChoixFace: UIButton!
+    @IBOutlet weak var labelFace: UILabel!
     @IBOutlet weak var texteSecouer: UILabel!
     let pref = NSUserDefaults.standardUserDefaults()
     var nombreTiré:Int?
-    var nombreFace = 6
+    var nombreFace:Int? = 6
     override func viewDidLoad() {
         super.viewDidLoad()
         var donnee = MesDonnes()
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
                 }
             }
         }
-        btChoixFace.setTitle(NSLocalizedString("Tirage",comment: "Message de tirage") + String(nombreFace), forState: UIControlState.Normal)
+        labelFace.text = "Tirage d'un nombre entre 1 et " + String(UInt8(nombreFace!))
         if (pref.boolForKey("secouer") == false) {
             btChoisir.hidden = false
             texteSecouer.hidden = true
@@ -70,9 +70,9 @@ class ViewController: UIViewController {
         return true
     }
     
-    override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent!) {}
+    override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent) {}
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent!) {
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if (pref.boolForKey("secouer") == true) {
             choisir()
         }
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         choisir()
     }
     func choisir() {
-        nombreTiré = random() % nombreFace + 1;
+        nombreTiré = random() % nombreFace! + 1;
         nombre.text = String(nombreTiré!)
         nombre.hidden = false
     }

@@ -9,9 +9,13 @@
 import UIKit
 
 class Parametre: UITableViewController {
-    //let pref = NSUserDefaults.standardUserDefaults()
+    let pref = NSUserDefaults.standardUserDefaults()
+    @IBOutlet weak var segmentChoixDe: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (pref.boolForKey("secouer") == false) {
+            segmentChoixDe.selectedSegmentIndex = 1
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +25,10 @@ class Parametre: UITableViewController {
     
     override func prefersStatusBarHidden() -> Bool  {
         return true
+    }
+    @IBAction func choixTypeLanceDeChange(sender: AnyObject) {
+        let appDefault = NSDictionary(object: "secouer", forKey: true)
+        pref.registerDefaults(appDefault)
+        pref.synchronize()
     }
 }

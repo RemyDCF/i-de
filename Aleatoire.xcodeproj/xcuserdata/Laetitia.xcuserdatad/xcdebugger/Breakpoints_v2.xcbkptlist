@@ -537,36 +537,6 @@
             endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.538415"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "156">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.538651"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "236">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -599,36 +569,6 @@
             endingLineNumber = "31"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.573582"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "508">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.573967"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "564">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -645,36 +585,6 @@
             endingLineNumber = "33"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.605723"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "980">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.606074"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "1040">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -691,36 +601,6 @@
             endingLineNumber = "35"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.640107"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "1516">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.640473"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "1540">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -737,36 +617,6 @@
             endingLineNumber = "32"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.672023"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "680">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.672374"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "748">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -799,36 +649,6 @@
             endingLineNumber = "36"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.738942"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "1660">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.739384"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "1700">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -845,36 +665,6 @@
             endingLineNumber = "38"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.771468"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "2616">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.771801"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "2624">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -891,36 +681,6 @@
             endingLineNumber = "37"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.805012"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "1660">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813900.805426"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "1700">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1017,36 +777,6 @@
             endingLineNumber = "45"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813901.007248"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "3384">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813901.007666"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "3468">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1095,36 +825,6 @@
             endingLineNumber = "46"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813901.106076"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "3384">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813901.106465"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "3468">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1157,36 +857,6 @@
             endingLineNumber = "49"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813901.140577"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "3996">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Aleatoire.ResultatDesTirages.viewDidLoad (Aleatoire.ResultatDesTirages)() -&gt; ()"
-                  moduleName = "Aleatoire"
-                  urlString = "file:///Users/Laetitia/aleatoire/aleatoire/ResultatDesTirages.swift"
-                  timestampString = "429813901.140912"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "4056">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
