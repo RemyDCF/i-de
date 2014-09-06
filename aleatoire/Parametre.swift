@@ -29,7 +29,7 @@ class Parametre: UITableViewController {
                 segmentChoixNombreFace.selectedSegmentIndex = 1
             }
             if (donnee.laChaine == "10") {
-                segmentChoixNombreFace.selectedSegmentIndex = 1
+                segmentChoixNombreFace.selectedSegmentIndex = 2
             }
         }
         else {
@@ -64,13 +64,13 @@ class Parametre: UITableViewController {
         super.viewDidLoad()
         var donnee = MesDonnes()
         if (segmentChoixNombreFace.selectedSegmentIndex == 0) {
-            donnee.laChaine == "6"
+            donnee.laChaine = "6"
         }
         if (segmentChoixNombreFace.selectedSegmentIndex == 1) {
-            donnee.laChaine == "8"
+            donnee.laChaine = "8"
         }
         if (segmentChoixNombreFace.selectedSegmentIndex == 2) {
-            donnee.laChaine == "10"
+            donnee.laChaine = "10"
         }
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")

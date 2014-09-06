@@ -76,5 +76,9 @@ class ViewController: UIViewController {
         nombre.text = String(nombreTiré!)
         nombre.hidden = false
     }
+    
+    override func prefersStatusBarHidden() -> Bool  {
+        return false
+    }
 }
 
