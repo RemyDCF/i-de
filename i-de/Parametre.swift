@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Parametre: UITableViewController {
+class Parametres: UIViewController {
     let pref = NSUserDefaults.standardUserDefaults()
     @IBOutlet weak var segmentChoixDe: UISegmentedControl!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
@@ -39,11 +39,11 @@ class Parametre: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func prefersStatusBarHidden() -> Bool  {
-        return true
+        let message = UIAlertController(title: "Erreur mémoire", message: "Attention à la mémoire", preferredStyle: .Alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        message.addAction(defaultAction)
+        
+        presentViewController(message, animated: true, completion: nil)
     }
     
     @IBAction func choixTypeLanceDeChange(sender: AnyObject) {
