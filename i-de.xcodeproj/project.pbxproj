@@ -88,12 +88,12 @@
 				3678FF0A19BC4E780097389D /* AppDelegate.swift */,
 				3678FF0C19BC4E780097389D /* ViewController.swift */,
 				3678FF0E19BC4E780097389D /* Main.storyboard */,
-				3678FF2819BC4F070097389D /* MesDonnes.h */,
-				3678FF2919BC4F070097389D /* MesDonnes.m */,
 				3678FF2B19BC4F2C0097389D /* Parametre.swift */,
 				3678FF2D19BC4F350097389D /* Settings.bundle */,
 				3678FF2E19BC4F350097389D /* Test.playground */,
 				3678FF1119BC4E780097389D /* Images.xcassets */,
+				3678FF2819BC4F070097389D /* MesDonnes.h */,
+				3678FF2919BC4F070097389D /* MesDonnes.m */,
 				3678FF0819BC4E780097389D /* Supporting Files */,
 			);
 			path = "i-de";
@@ -420,6 +420,7 @@
 				3678FF2319BC4E790097389D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3678FF2419BC4E790097389D /* Build configuration list for PBXNativeTarget "i-deTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +429,7 @@
 				3678FF2619BC4E790097389D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
