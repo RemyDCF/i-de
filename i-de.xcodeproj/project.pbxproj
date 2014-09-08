@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3611718019BE14AB000CF2E7 /* UIViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3611717F19BE14AB000CF2E7 /* UIViewAnimation.m */; };
 		3678FF0B19BC4E780097389D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF0A19BC4E780097389D /* AppDelegate.swift */; };
 		3678FF0D19BC4E780097389D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF0C19BC4E780097389D /* ViewController.swift */; };
 		3678FF1019BC4E780097389D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF0E19BC4E780097389D /* Main.storyboard */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3611717F19BE14AB000CF2E7 /* UIViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIViewAnimation.m; path = ../UIViewAnimation.m; sourceTree = "<group>"; };
+		3611718119BE14B6000CF2E7 /* UIViewAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UIViewAnimation.h; path = ../UIViewAnimation.h; sourceTree = "<group>"; };
 		3678FF0519BC4E780097389D /* i-de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "i-de.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3678FF0919BC4E780097389D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3678FF0A19BC4E780097389D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				3678FF2D19BC4F350097389D /* Settings.bundle */,
 				3678FF2E19BC4F350097389D /* Test.playground */,
 				3678FF1119BC4E780097389D /* Images.xcassets */,
+				3611717F19BE14AB000CF2E7 /* UIViewAnimation.m */,
+				3611718119BE14B6000CF2E7 /* UIViewAnimation.h */,
 				3678FF2819BC4F070097389D /* MesDonnes.h */,
 				3678FF2919BC4F070097389D /* MesDonnes.m */,
 				3678FF0819BC4E780097389D /* Supporting Files */,
@@ -227,6 +232,7 @@
 				3678FF0D19BC4E780097389D /* ViewController.swift in Sources */,
 				3678FF2A19BC4F070097389D /* MesDonnes.m in Sources */,
 				3678FF0B19BC4E780097389D /* AppDelegate.swift in Sources */,
+				3611718019BE14AB000CF2E7 /* UIViewAnimation.m in Sources */,
 				3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -72,13 +72,11 @@ class ViewController: UIViewController {
         choisir()
     }
     func choisir() {
+        nombre.moveTo(CGPoint(x: self.view.bounds.width, y: self.view.bounds.height / 2), duration: 1, option: UIViewAnimationOptions.CurveEaseInOut)
+        
         nombreTiré = random() % nombreFace! + 1;
         nombre.text = String(nombreTiré!)
         nombre.hidden = false
-    }
-    
-    override func prefersStatusBarHidden() -> Bool  {
-        return false
     }
 }
 

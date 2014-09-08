@@ -75,9 +75,9 @@
                             <constraint firstItem="UWC-Bl-t2e" firstAttribute="trailing" secondItem="E7o-0w-nyq" secondAttribute="trailing" id="rGy-hR-weF"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="mDv-l9-pHP" secondAttribute="bottom" constant="20" id="tbF-eF-WVi"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="vA8-MC-Gr9"/>
-                            <constraint firstItem="QD6-s7-DVY" firstAttribute="top" secondItem="LGv-U3-cP9" secondAttribute="bottom" constant="20" id="xVV-Ep-TjA"/>
+                            <constraint firstItem="QD6-s7-DVY" firstAttribute="top" secondItem="LGv-U3-cP9" secondAttribute="bottom" id="xVV-Ep-TjA"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="mDv-l9-pHP" secondAttribute="bottom" constant="20" id="y05-Io-J76"/>
-                            <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="LGv-U3-cP9" secondAttribute="bottom" constant="87" id="zgJ-TY-SHu"/>
+                            <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="LGv-U3-cP9" secondAttribute="bottom" constant="67" id="zgJ-TY-SHu"/>
                             <constraint firstItem="UWC-Bl-t2e" firstAttribute="leading" secondItem="E7o-0w-nyq" secondAttribute="leading" id="zpI-xk-KYW"/>
                         </constraints>
                         <variation key="default">
