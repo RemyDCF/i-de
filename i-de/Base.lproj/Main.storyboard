@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
-        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
-                                <rect key="frame" x="20" y="87" width="560" height="463"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuK-Yj-9va">
                                 <rect key="frame" x="20" y="49" width="560" height="30"/>
                                 <state key="normal" title="Choisir">
@@ -57,16 +51,29 @@
                                     <segue destination="Tea-ys-RQw" kind="show" id="eFj-UP-BnE"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
+                                <rect key="frame" x="20" y="87" width="560" height="463"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone" translatesAutoresizingMaskIntoConstraints="NO" id="jZE-f7-DTc">
+                                <rect key="frame" x="16" y="78" width="568" height="472"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tuK-Yj-9va" firstAttribute="top" secondItem="UWC-Bl-t2e" secondAttribute="top" id="6LW-I2-PBv"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="6lH-Jl-XgL"/>
+                            <constraint firstItem="jZE-f7-DTc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="6zQ-9H-Vjc"/>
                             <constraint firstItem="UWC-Bl-t2e" firstAttribute="trailing" secondItem="tuK-Yj-9va" secondAttribute="trailing" id="7dv-2b-HDt"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="9Tz-nx-RSf"/>
+                            <constraint firstItem="jZE-f7-DTc" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="ALE-ck-Bsu"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="E7o-0w-nyq" secondAttribute="bottom" constant="50" id="BjJ-Lk-SRZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mDv-l9-pHP" secondAttribute="trailing" constant="4" id="JMK-Rj-ox5"/>
+                            <constraint firstItem="mDv-l9-pHP" firstAttribute="top" secondItem="jZE-f7-DTc" secondAttribute="bottom" constant="8" id="Pjn-nb-3hy"/>
                             <constraint firstAttribute="trailing" secondItem="E7o-0w-nyq" secondAttribute="trailing" constant="20" id="PxJ-IS-qed"/>
+                            <constraint firstItem="jZE-f7-DTc" firstAttribute="top" secondItem="UWC-Bl-t2e" secondAttribute="bottom" constant="8" id="Vpr-w1-ZeP"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="mDv-l9-pHP" secondAttribute="bottom" constant="8" id="YNp-2e-yh0"/>
                             <constraint firstItem="mDv-l9-pHP" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Zce-Yt-0it"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="tuK-Yj-9va" secondAttribute="bottom" constant="8" symbolic="YES" id="b1h-7f-6rb"/>
@@ -92,6 +99,7 @@
                     <navigationItem key="navigationItem" id="DxT-jV-ozc"/>
                     <connections>
                         <outlet property="btChoisir" destination="tuK-Yj-9va" id="5ra-kJ-Zuh"/>
+                        <outlet property="image" destination="jZE-f7-DTc" id="DFN-6x-9I3"/>
                         <outlet property="labelFace" destination="QD6-s7-DVY" id="sUJ-uG-fUy"/>
                         <outlet property="nombre" destination="E7o-0w-nyq" id="0bu-cI-5jc"/>
                         <outlet property="texteSecouer" destination="UWC-Bl-t2e" id="jHO-YS-pA9"/>
@@ -191,4 +199,7 @@
             <point key="canvasLocation" x="1768" y="-110"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icone" width="120" height="120"/>
+    </resources>
 </document>
