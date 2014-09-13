@@ -54,7 +54,6 @@ class Parametres: UIViewController {
         else {
             appDefault = NSDictionary(object: false, forKey: "secouer")
         }
-        println(appDefault)
         pref.registerDefaults(appDefault!)
         pref.synchronize()
     }
