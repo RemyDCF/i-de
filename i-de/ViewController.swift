@@ -9,9 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var premierTirageDepuisLancement:Bool = true
-    @IBOutlet weak var nombre: UILabel!
-    @IBOutlet weak var image: UIImageView!
+     @IBOutlet weak var nombre: UILabel!
     @IBOutlet weak var btChoisir: UIButton!
     @IBOutlet weak var labelFace: UILabel!
     @IBOutlet weak var texteSecouer: UILabel!
@@ -74,15 +72,11 @@ class ViewController: UIViewController {
         choisir()
     }
     func choisir() {
-        if (premierTirageDepuisLancement) {
-            premierTirageDepuisLancement = false
-        }
         nombre.moveTo(CGPoint(x: self.view.bounds.width, y: self.view.bounds.height / 2), duration: 1, option: UIViewAnimationOptions.CurveLinear)
         
         nombreTiré = random() % nombreFace! + 1;
         nombre.text = String(nombreTiré!)
         nombre.hidden = false
-        image.hidden = false
     }
 }
 

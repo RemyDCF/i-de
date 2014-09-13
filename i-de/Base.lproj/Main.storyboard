@@ -58,33 +58,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone" translatesAutoresizingMaskIntoConstraints="NO" id="jZE-f7-DTc">
-                                <rect key="frame" x="12" y="240" width="572" height="120"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="jZE-f7-DTc" secondAttribute="trailing" id="0y0-NH-cPa"/>
                             <constraint firstItem="tuK-Yj-9va" firstAttribute="top" secondItem="UWC-Bl-t2e" secondAttribute="top" constant="-8" id="6LW-I2-PBv"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="6lH-Jl-XgL"/>
-                            <constraint firstItem="jZE-f7-DTc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="6zQ-9H-Vjc"/>
                             <constraint firstItem="UWC-Bl-t2e" firstAttribute="trailing" secondItem="tuK-Yj-9va" secondAttribute="trailing" id="7dv-2b-HDt"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="9Tz-nx-RSf"/>
-                            <constraint firstItem="jZE-f7-DTc" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="ALE-ck-Bsu"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="E7o-0w-nyq" secondAttribute="bottom" constant="51" id="BjJ-Lk-SRZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mDv-l9-pHP" secondAttribute="trailing" constant="4" id="JMK-Rj-ox5"/>
-                            <constraint firstItem="mDv-l9-pHP" firstAttribute="top" secondItem="jZE-f7-DTc" secondAttribute="bottom" constant="220" id="Pjn-nb-3hy"/>
                             <constraint firstAttribute="trailing" secondItem="E7o-0w-nyq" secondAttribute="trailing" constant="20" id="PxJ-IS-qed"/>
-                            <constraint firstItem="jZE-f7-DTc" firstAttribute="top" secondItem="UWC-Bl-t2e" secondAttribute="bottom" constant="103" id="Vpr-w1-ZeP"/>
-                            <constraint firstAttribute="centerX" secondItem="jZE-f7-DTc" secondAttribute="centerX" constant="2" id="XLy-D4-iQT"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="mDv-l9-pHP" secondAttribute="bottom" constant="8" id="YNp-2e-yh0"/>
                             <constraint firstItem="mDv-l9-pHP" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Zce-Yt-0it"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="tuK-Yj-9va" secondAttribute="bottom" constant="7" id="b1h-7f-6rb"/>
-                            <constraint firstAttribute="centerY" secondItem="jZE-f7-DTc" secondAttribute="centerY" id="eOy-g2-7sK"/>
                             <constraint firstItem="mDv-l9-pHP" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="m8i-d8-eXF"/>
                             <constraint firstItem="UWC-Bl-t2e" firstAttribute="leading" secondItem="tuK-Yj-9va" secondAttribute="leading" id="q0O-gO-3hI"/>
                             <constraint firstItem="UWC-Bl-t2e" firstAttribute="trailing" secondItem="E7o-0w-nyq" secondAttribute="trailing" id="rGy-hR-weF"/>
-                            <constraint firstItem="jZE-f7-DTc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-4" id="sUW-Ee-ybl"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="mDv-l9-pHP" secondAttribute="bottom" constant="20" id="tbF-eF-WVi"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="vA8-MC-Gr9"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="top" secondItem="LGv-U3-cP9" secondAttribute="bottom" constant="8" id="xVV-Ep-TjA"/>
@@ -94,13 +83,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="6zQ-9H-Vjc"/>
-                                <exclude reference="ALE-ck-Bsu"/>
-                                <exclude reference="Vpr-w1-ZeP"/>
                                 <exclude reference="YNp-2e-yh0"/>
                                 <exclude reference="tbF-eF-WVi"/>
                                 <exclude reference="JMK-Rj-ox5"/>
-                                <exclude reference="Pjn-nb-3hy"/>
                                 <exclude reference="m8i-d8-eXF"/>
                             </mask>
                         </variation>
@@ -108,7 +93,6 @@
                     <navigationItem key="navigationItem" id="DxT-jV-ozc"/>
                     <connections>
                         <outlet property="btChoisir" destination="tuK-Yj-9va" id="5ra-kJ-Zuh"/>
-                        <outlet property="image" destination="jZE-f7-DTc" id="DFN-6x-9I3"/>
                         <outlet property="labelFace" destination="QD6-s7-DVY" id="sUJ-uG-fUy"/>
                         <outlet property="nombre" destination="E7o-0w-nyq" id="0bu-cI-5jc"/>
                         <outlet property="texteSecouer" destination="UWC-Bl-t2e" id="jHO-YS-pA9"/>
@@ -211,7 +195,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icone" width="120" height="120"/>
         <image name="parametre" width="256" height="256"/>
     </resources>
 </document>
