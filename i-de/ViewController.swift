@@ -76,13 +76,13 @@ class ViewController: UIViewController {
     func choisir() {
         if (premierTirageDepuisLancement) {
             premierTirageDepuisLancement = false
-            image.alpha = 0.0
         }
-        nombre.moveTo(CGPoint(x: self.view.bounds.width, y: self.view.bounds.height / 2), duration: 1, option: UIViewAnimationOptions.CurveEaseInOut)
+        nombre.moveTo(CGPoint(x: self.view.bounds.width, y: self.view.bounds.height / 2), duration: 1, option: UIViewAnimationOptions.CurveLinear)
         
         nombreTiré = random() % nombreFace! + 1;
         nombre.text = String(nombreTiré!)
         nombre.hidden = false
+        image.hidden = false
     }
 }
 
