@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-     @IBOutlet weak var nombre: UILabel!
+    @IBOutlet weak var nombre: UILabel!
     @IBOutlet weak var btChoisir: UIButton!
     @IBOutlet weak var labelFace: UILabel!
     @IBOutlet weak var texteSecouer: UILabel!
@@ -23,18 +23,10 @@ class ViewController: UIViewController {
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
-            if (donnee.laChaine == "6") {
-                nombreFace = 6
-            }
-            if (donnee.laChaine == "8") {
-                nombreFace = 8
-            }
-            if (donnee.laChaine == "10") {
-                nombreFace = 10
-            }
+            nombreFace = Int(donnee.leNombre)
         }
         else {
-            donnee.laChaine = "6"
+            donnee.leNombre = 6
             var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
             if !erreur {
                 println("L'écriture de la valeur par défault de la face du dé à échoué")
@@ -72,11 +64,21 @@ class ViewController: UIViewController {
         choisir()
     }
     func choisir() {
-        nombre.moveTo(CGPoint(x: self.view.bounds.width, y: self.view.bounds.height / 2), duration: 1, option: UIViewAnimationOptions.CurveLinear)
-        
-        nombreTiré = random() % nombreFace! + 1;
-        nombre.text = String(nombreTiré!)
         nombre.hidden = false
+        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+            }) { (finished: Bool) -> Void in
+                UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                    }) { (finished: Bool) -> Void in
+                        self.nombreTiré = random() % self.nombreFace! + 1;
+                        self.nombre.text = String(self.nombreTiré!)
+                        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                            }) { (finished: Bool) -> Void in
+                        }
+                }
+        }
     }
 }
 

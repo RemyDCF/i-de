@@ -11,18 +11,15 @@
 @implementation MesDonnes
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:_laChaine forKey:@"nombreFace"];
+    [aCoder encodeInt:_leNombre forKey:@"nombreFace"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
-    _laChaine = [aDecoder decodeObjectForKey:@"nombreFace"];
-    [_laChaine retain];
+    _leNombre = [aDecoder decodeIntForKey:@"nombreFace"];
     return self;
 }
 
 - (void)dealloc {
-    [_laChaine release];
-    _laChaine = nil;
     [super dealloc];
 }
 @end

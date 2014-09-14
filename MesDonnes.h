@@ -10,6 +10,6 @@
 
 @interface MesDonnes : NSObject <NSCoding>
 
-@property(readwrite, nonatomic, retain) NSString *laChaine;
+@property(readwrite, nonatomic) int leNombre;
 
 @end

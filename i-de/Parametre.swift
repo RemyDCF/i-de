@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Parametres: UIViewController {
+class Parametres: UIViewController, UIAlertViewDelegate {
     let pref = NSUserDefaults.standardUserDefaults()
     @IBOutlet weak var segmentChoixDe: UISegmentedControl!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
@@ -22,14 +22,17 @@ class Parametres: UIViewController {
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
-            if (donnee.laChaine == "6") {
+            if (donnee.leNombre == 6) {
                 segmentChoixNombreFace.selectedSegmentIndex = 0
             }
-            if (donnee.laChaine == "8") {
+            if (donnee.leNombre == 8) {
                 segmentChoixNombreFace.selectedSegmentIndex = 1
             }
-            if (donnee.laChaine == "10") {
+            if (donnee.leNombre == 10) {
                 segmentChoixNombreFace.selectedSegmentIndex = 2
+            }
+            else {
+                segmentChoixNombreFace.selectedSegmentIndex = 3
             }
         }
         else {
@@ -62,16 +65,36 @@ class Parametres: UIViewController {
         super.viewDidLoad()
         var donnee = MesDonnes()
         if (segmentChoixNombreFace.selectedSegmentIndex == 0) {
-            donnee.laChaine = "6"
+            donnee.leNombre = 6
         }
         if (segmentChoixNombreFace.selectedSegmentIndex == 1) {
-            donnee.laChaine = "8"
+            donnee.leNombre = 8
         }
         if (segmentChoixNombreFace.selectedSegmentIndex == 2) {
-            donnee.laChaine = "10"
+            donnee.leNombre = 10
         }
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("nombreFace")
-        var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+        if (segmentChoixNombreFace.selectedSegmentIndex == 3) {
+            var passwordAlert : UIAlertView = UIAlertView(title: "Choix personnalisé", message: "Tapez le nombre de faces", delegate: self, cancelButtonTitle: "Annuler", otherButtonTitles: "Valider")
+            passwordAlert.alertViewStyle = UIAlertViewStyle.PlainTextInput
+            passwordAlert.textFieldAtIndex(0)!.keyboardType = UIKeyboardType.NumberPad
+            passwordAlert.show()
+        }
+        if (segmentChoixNombreFace.selectedSegmentIndex != 3) {
+            var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+            var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+            var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+        }
+    }
+    
+    func alertView(alertView: UIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1 {
+            var donnee = MesDonnes()
+            if ((alertView.textFieldAtIndex(0)!.text.toInt()) != nil) {
+                donnee.leNombre = Int32(alertView.textFieldAtIndex(0)!.text.toInt()!)
+                var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+                var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+                var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            }
+        }
     }
 }
