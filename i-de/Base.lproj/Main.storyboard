@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Fond écran" translatesAutoresizingMaskIntoConstraints="NO" id="oqr-ul-9t3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuK-Yj-9va">
                                 <rect key="frame" x="20" y="49" width="560" height="30"/>
                                 <state key="normal" title="Choisir">
@@ -90,7 +93,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="DxT-jV-ozc"/>
                     <connections>
                         <outlet property="btChoisir" destination="tuK-Yj-9va" id="5ra-kJ-Zuh"/>
                         <outlet property="labelFace" destination="QD6-s7-DVY" id="sUJ-uG-fUy"/>
@@ -195,6 +197,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fond écran" width="400" height="640"/>
         <image name="parametre" width="256" height="256"/>
     </resources>
 </document>
