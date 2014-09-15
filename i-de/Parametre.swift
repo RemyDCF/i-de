@@ -12,32 +12,34 @@ class Parametres: UIViewController, UIAlertViewDelegate {
     let pref = NSUserDefaults.standardUserDefaults()
     @IBOutlet weak var segmentChoixDe: UISegmentedControl!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
+    var segmentChoixFaceSelectionne:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         if (pref.boolForKey("secouer") == false) {
             segmentChoixDe.selectedSegmentIndex = 1
         }
-        var donnee = MesDonnes()
+        /*var donnee = MesDonnes()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
             if (donnee.leNombre == 6) {
-                segmentChoixNombreFace.selectedSegmentIndex = 0
+                self.segmentChoixFaceSelectionne = 0
             }
             if (donnee.leNombre == 8) {
-                segmentChoixNombreFace.selectedSegmentIndex = 1
+                self.segmentChoixFaceSelectionne = 1
             }
             if (donnee.leNombre == 10) {
-                segmentChoixNombreFace.selectedSegmentIndex = 2
+                self.segmentChoixFaceSelectionne = 2
             }
             else {
-                segmentChoixNombreFace.selectedSegmentIndex = 3
+                self.segmentChoixFaceSelectionne = 3
             }
         }
         else {
-            segmentChoixNombreFace.selectedSegmentIndex = 0
-        }
+            self.segmentChoixFaceSelectionne = 0
+        }*/
+        segmentChoixNombreFace.selectedSegmentIndex = -1
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,7 +76,7 @@ class Parametres: UIViewController, UIAlertViewDelegate {
             donnee.leNombre = 10
         }
         if (segmentChoixNombreFace.selectedSegmentIndex == 3) {
-            var passwordAlert : UIAlertView = UIAlertView(title: "Choix personnalisé", message: "Tapez le nombre de faces", delegate: self, cancelButtonTitle: "Annuler", otherButtonTitles: "Valider")
+            var passwordAlert : UIAlertView = UIAlertView(title: "Choix personnalisé", message: "Tapez le nombre de faces (Maximum : 180)", delegate: self, cancelButtonTitle: "Annuler", otherButtonTitles: "Valider")
             passwordAlert.alertViewStyle = UIAlertViewStyle.PlainTextInput
             passwordAlert.textFieldAtIndex(0)!.keyboardType = UIKeyboardType.NumberPad
             passwordAlert.show()
@@ -90,10 +92,15 @@ class Parametres: UIViewController, UIAlertViewDelegate {
         if buttonIndex == 1 {
             var donnee = MesDonnes()
             if ((alertView.textFieldAtIndex(0)!.text.toInt()) != nil) {
-                donnee.leNombre = Int32(alertView.textFieldAtIndex(0)!.text.toInt()!)
-                var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-                var path = dir[0] . stringByAppendingPathComponent("nombreFace")
-                var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+                if ((alertView.textFieldAtIndex(0)!.text.toInt()) <= 180) {
+                    donnee.leNombre = Int32(alertView.textFieldAtIndex(0)!.text.toInt()!)
+                    var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+                    var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+                    var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+                }
+                else {
+                    alertView.dismissWithClickedButtonIndex(0, animated: true)
+                }
             }
         }
     }
