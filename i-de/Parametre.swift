@@ -39,7 +39,7 @@ class Parametres: UIViewController, UIAlertViewDelegate {
         else {
             self.segmentChoixNombreFace.selectedSegmentIndex = 0
         }
-        updateLabelFaceNumber()
+        mettreAJourLabelFaceNumber()
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,26 +76,28 @@ class Parametres: UIViewController, UIAlertViewDelegate {
             donnee.leNombre = 10
         }
         if (segmentChoixNombreFace.selectedSegmentIndex == 3) {
-            let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (Maximum : 180)", preferredStyle: UIAlertControllerStyle.Alert)
+            let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 200)", preferredStyle: UIAlertControllerStyle.Alert)
             alerte.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
-                textField.placeholder = "Name"
-                textField.secureTextEntry = false
+                textField.placeholder = "Nombre"
+                textField.keyboardType = UIKeyboardType.NumberPad
                 inputTextField = textField
             })
             alerte.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.Destructive, handler: nil))
             alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
                 var string:String! = inputTextField?.text
                 let chiffre = inputTextField?.text!.toInt()
-                if (chiffre != nil && chiffre >= 1 && chiffre <= 180) {
+                if (chiffre != nil && chiffre >= 2 && chiffre <= 200) {
                     donnee.leNombre = Int32(chiffre!)
                     var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                     var path = dir[0] . stringByAppendingPathComponent("nombreFace")
                     var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
                 }
                 else {
-                    donnee.leNombre = 6
+                    let alerteErreurNombre = UIAlertController(title: "Erreur", message: "Attention, la saisie est incorrecte", preferredStyle: UIAlertControllerStyle.ActionSheet)
+                    alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alerteErreurNombre, animated: true, completion: nil)
                 }
-                self.updateLabelFaceNumber()
+                self.mettreAJourLabelFaceNumber()
             }))
             presentViewController(alerte, animated: true, completion: nil)
         }
@@ -103,11 +105,11 @@ class Parametres: UIViewController, UIAlertViewDelegate {
             var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
             var path = dir[0] . stringByAppendingPathComponent("nombreFace")
             var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            updateLabelFaceNumber()
+            mettreAJourLabelFaceNumber()
         }
     }
     
-    func updateLabelFaceNumber() {
+    func mettreAJourLabelFaceNumber() {
         var donnee = MesDonnes()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
