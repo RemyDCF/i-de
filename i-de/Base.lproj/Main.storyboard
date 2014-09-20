@@ -150,36 +150,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="m3B-TA-6WP">
-                                <rect key="frame" x="16" y="258" width="568" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="kde-cm-BY7"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="uiV-FD-NEQ"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="6 faces"/>
-                                    <segment title="8 faces"/>
-                                    <segment title="10 faces"/>
-                                    <segment title="Autre"/>
-                                </segments>
-                                <connections>
-                                    <action selector="choixNombreFaceChange:" destination="Tea-ys-RQw" eventType="valueChanged" id="9Uz-r2-Kdc"/>
-                                </connections>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="l8Q-h3-LYo">
-                                <rect key="frame" x="16" y="308" width="568" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="dXb-jZ-Jqd"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="gpp-oI-AqK"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Secouer"/>
-                                    <segment title="Appuyer sur un bouton"/>
-                                </segments>
-                                <connections>
-                                    <action selector="choixTypeLanceDeChange:" destination="Tea-ys-RQw" eventType="valueChanged" id="JVh-6Y-bHw"/>
-                                </connections>
-                            </segmentedControl>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etg-ph-jx9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
                                 <constraints>
@@ -197,20 +167,75 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="m3B-TA-6WP">
+                                <rect key="frame" x="16" y="231" width="568" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="kde-cm-BY7"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="uiV-FD-NEQ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="6 faces"/>
+                                    <segment title="8 faces"/>
+                                    <segment title="10 faces"/>
+                                    <segment title="Autre"/>
+                                </segments>
+                                <connections>
+                                    <action selector="choixNombreFaceChange:" destination="Tea-ys-RQw" eventType="valueChanged" id="9Uz-r2-Kdc"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="l8Q-h3-LYo">
+                                <rect key="frame" x="16" y="341" width="568" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="dXb-jZ-Jqd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="gpp-oI-AqK"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Secouer"/>
+                                    <segment title="Appuyer sur un bouton"/>
+                                </segments>
+                                <connections>
+                                    <action selector="choixTypeLanceDeChange:" destination="Tea-ys-RQw" eventType="valueChanged" id="JVh-6Y-bHw"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le nombre de face est de" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9Y-8i-nEp">
+                                <rect key="frame" x="16" y="267" width="568" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQi-8C-fbz">
+                                <rect key="frame" x="16" y="298" width="568" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="568" id="N6b-fe-AYM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="etg-ph-jx9" firstAttribute="leading" secondItem="AnL-0T-Z7E" secondAttribute="leading" id="4Mx-6Q-eIy"/>
+                            <constraint firstItem="IQi-8C-fbz" firstAttribute="leading" secondItem="dn7-xA-Krz" secondAttribute="leadingMargin" id="5Ja-fl-X7S"/>
+                            <constraint firstItem="IQi-8C-fbz" firstAttribute="top" secondItem="m3B-TA-6WP" secondAttribute="bottom" constant="39" id="5kF-dz-k4a"/>
+                            <constraint firstItem="l8Q-h3-LYo" firstAttribute="top" secondItem="IQi-8C-fbz" secondAttribute="bottom" constant="8" id="BX4-Mj-eBY"/>
+                            <constraint firstItem="J9Y-8i-nEp" firstAttribute="leading" secondItem="m3B-TA-6WP" secondAttribute="leading" id="Bc5-VO-K4q"/>
                             <constraint firstItem="l8Q-h3-LYo" firstAttribute="trailing" secondItem="dn7-xA-Krz" secondAttribute="trailingMargin" id="CtL-de-g2d"/>
                             <constraint firstItem="l8Q-h3-LYo" firstAttribute="leading" secondItem="dn7-xA-Krz" secondAttribute="leadingMargin" id="FKN-Fa-gOe"/>
-                            <constraint firstAttribute="centerY" secondItem="l8Q-h3-LYo" secondAttribute="centerY" constant="-22" id="PAd-0f-z4b"/>
+                            <constraint firstItem="J9Y-8i-nEp" firstAttribute="trailing" secondItem="dn7-xA-Krz" secondAttribute="trailingMargin" id="IZ1-9s-COB"/>
+                            <constraint firstAttribute="centerY" secondItem="l8Q-h3-LYo" secondAttribute="centerY" constant="-55" id="PAd-0f-z4b"/>
+                            <constraint firstItem="J9Y-8i-nEp" firstAttribute="leading" secondItem="dn7-xA-Krz" secondAttribute="leadingMargin" id="Q7q-p3-ExR"/>
+                            <constraint firstItem="J9Y-8i-nEp" firstAttribute="top" secondItem="m3B-TA-6WP" secondAttribute="bottom" constant="8" id="V1J-3h-Uh0"/>
                             <constraint firstItem="etg-ph-jx9" firstAttribute="trailing" secondItem="AnL-0T-Z7E" secondAttribute="trailing" id="XSc-Vc-x8q"/>
                             <constraint firstItem="m3B-TA-6WP" firstAttribute="leading" secondItem="dn7-xA-Krz" secondAttribute="leadingMargin" id="avr-VM-O7b"/>
                             <constraint firstItem="etg-ph-jx9" firstAttribute="leading" secondItem="dn7-xA-Krz" secondAttribute="leadingMargin" constant="-16" id="dYr-tZ-zs6"/>
+                            <constraint firstItem="IQi-8C-fbz" firstAttribute="trailing" secondItem="dn7-xA-Krz" secondAttribute="trailingMargin" id="fFj-lW-YY2"/>
                             <constraint firstItem="etg-ph-jx9" firstAttribute="top" secondItem="AnL-0T-Z7E" secondAttribute="bottom" constant="-20" id="hlK-6n-WhG"/>
-                            <constraint firstItem="l8Q-h3-LYo" firstAttribute="top" secondItem="m3B-TA-6WP" secondAttribute="bottom" constant="22" id="iPw-EY-23R"/>
+                            <constraint firstItem="l8Q-h3-LYo" firstAttribute="top" secondItem="m3B-TA-6WP" secondAttribute="bottom" constant="82" id="iPw-EY-23R"/>
+                            <constraint firstItem="l8Q-h3-LYo" firstAttribute="top" secondItem="J9Y-8i-nEp" secondAttribute="bottom" constant="39" id="j7z-w2-SKn"/>
                             <constraint firstItem="etg-ph-jx9" firstAttribute="top" secondItem="AnL-0T-Z7E" secondAttribute="bottom" id="tP3-rr-RXq"/>
                             <constraint firstItem="m3B-TA-6WP" firstAttribute="trailing" secondItem="dn7-xA-Krz" secondAttribute="trailingMargin" id="wfx-pA-soE"/>
+                            <constraint firstItem="IQi-8C-fbz" firstAttribute="leading" secondItem="J9Y-8i-nEp" secondAttribute="trailing" constant="-568" id="wkJ-d5-tda"/>
                             <constraint firstAttribute="trailingMargin" secondItem="etg-ph-jx9" secondAttribute="trailing" constant="-16" id="zd9-WU-rlz"/>
                         </constraints>
                         <variation key="default">
@@ -222,6 +247,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="labelNombreFace" destination="IQi-8C-fbz" id="PKt-gC-99w"/>
                         <outlet property="segmentChoixDe" destination="l8Q-h3-LYo" id="9Lq-fi-WlW"/>
                         <outlet property="segmentChoixNombreFace" destination="m3B-TA-6WP" id="ZJM-vR-xjA"/>
                     </connections>

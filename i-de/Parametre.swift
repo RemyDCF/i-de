@@ -12,34 +12,34 @@ class Parametres: UIViewController, UIAlertViewDelegate {
     let pref = NSUserDefaults.standardUserDefaults()
     @IBOutlet weak var segmentChoixDe: UISegmentedControl!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
-    var segmentChoixFaceSelectionne:Int = 0
+    @IBOutlet weak var labelNombreFace: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         if (pref.boolForKey("secouer") == false) {
             segmentChoixDe.selectedSegmentIndex = 1
         }
-        /*var donnee = MesDonnes()
+        var donnee = MesDonnes()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
             if (donnee.leNombre == 6) {
-                self.segmentChoixFaceSelectionne = 0
+                self.segmentChoixNombreFace.selectedSegmentIndex = 0
             }
-            if (donnee.leNombre == 8) {
-                self.segmentChoixFaceSelectionne = 1
+            else if (donnee.leNombre == 8) {
+                self.segmentChoixNombreFace.selectedSegmentIndex = 1
             }
-            if (donnee.leNombre == 10) {
-                self.segmentChoixFaceSelectionne = 2
+            else if (donnee.leNombre == 10) {
+                self.segmentChoixNombreFace.selectedSegmentIndex = 2
             }
             else {
-                self.segmentChoixFaceSelectionne = 3
+                self.segmentChoixNombreFace.selectedSegmentIndex = 3
             }
         }
         else {
-            self.segmentChoixFaceSelectionne = 0
-        }*/
-        segmentChoixNombreFace.selectedSegmentIndex = -1
+            self.segmentChoixNombreFace.selectedSegmentIndex = 0
+        }
+        updateLabelFaceNumber()
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,8 +88,6 @@ class Parametres: UIViewController, UIAlertViewDelegate {
                 let chiffre = inputTextField?.text!.toInt()
                 if (chiffre != nil && chiffre >= 1 && chiffre <= 180) {
                     donnee.leNombre = Int32(chiffre!)
-                    println(donnee.leNombre)
-                    println(chiffre)
                     var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                     var path = dir[0] . stringByAppendingPathComponent("nombreFace")
                     var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
@@ -97,6 +95,7 @@ class Parametres: UIViewController, UIAlertViewDelegate {
                 else {
                     donnee.leNombre = 6
                 }
+                self.updateLabelFaceNumber()
             }))
             presentViewController(alerte, animated: true, completion: nil)
         }
@@ -104,6 +103,20 @@ class Parametres: UIViewController, UIAlertViewDelegate {
             var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
             var path = dir[0] . stringByAppendingPathComponent("nombreFace")
             var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            updateLabelFaceNumber()
+        }
+    }
+    
+    func updateLabelFaceNumber() {
+        var donnee = MesDonnes()
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
+            labelNombreFace.text = String(donnee.leNombre)
+        }
+        else {
+            labelNombreFace.text = String(6)
         }
     }
 }
