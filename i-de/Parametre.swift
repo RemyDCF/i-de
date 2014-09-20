@@ -64,7 +64,7 @@ class Parametres: UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func choixNombreFaceChange(sender: AnyObject) {
-        super.viewDidLoad()
+        var inputTextField: UITextField?
         var donnee = MesDonnes()
         if (segmentChoixNombreFace.selectedSegmentIndex == 0) {
             donnee.leNombre = 6
@@ -76,32 +76,34 @@ class Parametres: UIViewController, UIAlertViewDelegate {
             donnee.leNombre = 10
         }
         if (segmentChoixNombreFace.selectedSegmentIndex == 3) {
-            var passwordAlert : UIAlertView = UIAlertView(title: "Choix personnalisé", message: "Tapez le nombre de faces (Maximum : 180)", delegate: self, cancelButtonTitle: "Annuler", otherButtonTitles: "Valider")
-            passwordAlert.alertViewStyle = UIAlertViewStyle.PlainTextInput
-            passwordAlert.textFieldAtIndex(0)!.keyboardType = UIKeyboardType.NumberPad
-            passwordAlert.show()
-        }
-        if (segmentChoixNombreFace.selectedSegmentIndex != 3) {
-            var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-            var path = dir[0] . stringByAppendingPathComponent("nombreFace")
-            var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-        }
-    }
-    
-    func alertView(alertView: UIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
-        if buttonIndex == 1 {
-            var donnee = MesDonnes()
-            if ((alertView.textFieldAtIndex(0)!.text.toInt()) != nil) {
-                if ((alertView.textFieldAtIndex(0)!.text.toInt()) <= 180) {
-                    donnee.leNombre = Int32(alertView.textFieldAtIndex(0)!.text.toInt()!)
+            let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (Maximum : 180)", preferredStyle: UIAlertControllerStyle.Alert)
+            alerte.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+                textField.placeholder = "Name"
+                textField.secureTextEntry = false
+                inputTextField = textField
+            })
+            alerte.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.Destructive, handler: nil))
+            alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
+                var string:String! = inputTextField?.text
+                let chiffre = inputTextField?.text!.toInt()
+                if (chiffre != nil && chiffre >= 1 && chiffre <= 180) {
+                    donnee.leNombre = Int32(chiffre!)
+                    println(donnee.leNombre)
+                    println(chiffre)
                     var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                     var path = dir[0] . stringByAppendingPathComponent("nombreFace")
                     var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
                 }
                 else {
-                    alertView.dismissWithClickedButtonIndex(0, animated: true)
+                    donnee.leNombre = 6
                 }
-            }
+            }))
+            presentViewController(alerte, animated: true, completion: nil)
+        }
+        if (segmentChoixNombreFace.selectedSegmentIndex != 3) {
+            var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+            var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+            var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
         }
     }
 }
