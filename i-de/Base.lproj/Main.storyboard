@@ -268,7 +268,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fond écran" width="400" height="640"/>
         <image name="parametre" width="256" height="256"/>
     </resources>
 </document>
