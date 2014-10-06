@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     let pref = NSUserDefaults.standardUserDefaults()
     var nombreTiré:Int?
     var nombreFace:Int? = 6
+    var premierLancer:Bool? = true
     override func viewDidLoad() {
         super.viewDidLoad()
         var donnee = MesDonnes()
@@ -65,19 +66,26 @@ class ViewController: UIViewController {
     }
     func choisir() {
         nombre.hidden = false
-        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-            }) { (finished: Bool) -> Void in
-                UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                    }) { (finished: Bool) -> Void in
-                        self.nombreTiré = random() % self.nombreFace! + 1;
-                        self.nombre.text = String(self.nombreTiré!)
-                        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                            }) { (finished: Bool) -> Void in
+        if (premierLancer == true) {
+            self.nombreTiré = random() % self.nombreFace! + 1;
+            self.nombre.text = String(self.nombreTiré!)
+            premierLancer = false
+        }
+        else {
+            UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                }) { (finished: Bool) -> Void in
+                    UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                        self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                        }) { (finished: Bool) -> Void in
+                            self.nombreTiré = random() % self.nombreFace! + 1;
+                            self.nombre.text = String(self.nombreTiré!)
+                            UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                                }) { (finished: Bool) -> Void in
                         }
                 }
+            }
         }
     }
 }
