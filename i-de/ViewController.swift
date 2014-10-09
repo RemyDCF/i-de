@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var nombreTiré:Int?
     var nombreFace:Int? = 6
     var premierLancer:Bool? = true
+    var animationEnCours:Bool? = false
     override func viewDidLoad() {
         super.viewDidLoad()
         var donnee = MesDonnes()
