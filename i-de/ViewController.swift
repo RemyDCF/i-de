@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -66,24 +66,32 @@ class ViewController: UIViewController {
         choisir()
     }
     func choisir() {
-        nombre.hidden = false
-        if (premierLancer == true) {
-            self.nombreTiré = random() % self.nombreFace! + 1;
-            self.nombre.text = String(self.nombreTiré!)
-            premierLancer = false
-        }
-        else {
-            UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                }) { (finished: Bool) -> Void in
-                    UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                        self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                        }) { (finished: Bool) -> Void in
-                            self.nombreTiré = random() % self.nombreFace! + 1;
-                            self.nombre.text = String(self.nombreTiré!)
-                            UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                                }) { (finished: Bool) -> Void in
+        if animationEnCours == false {
+            self.self.btChoisir.enabled = false
+            animationEnCours = true
+            nombre.hidden = false
+            if (premierLancer == true) {
+                self.nombreTiré = random() % self.nombreFace! + 1;
+                self.nombre.text = String(self.nombreTiré!)
+                premierLancer = false
+                animationEnCours = false
+                self.self.btChoisir.enabled = true
+            }
+            else {
+                UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                    }) { (finished: Bool) -> Void in
+                        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                            }) { (finished: Bool) -> Void in
+                                self.nombreTiré = random() % self.nombreFace! + 1;
+                                self.nombre.text = String(self.nombreTiré!)
+                                UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                                    }) { (finished: Bool) -> Void in
+                                        self.self.animationEnCours = false
+                                        self.self.btChoisir.enabled = true
+                                }
                         }
                 }
             }

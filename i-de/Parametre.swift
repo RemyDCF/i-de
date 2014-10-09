@@ -41,7 +41,7 @@ class Parametres: UIViewController, UIAlertViewDelegate {
         }
         mettreAJourLabelFaceNumber()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         let message = UIAlertController(title: "Erreur mémoire", message: "Attention à la mémoire", preferredStyle: .Alert)
