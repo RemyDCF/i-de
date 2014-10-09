@@ -18,37 +18,11 @@ class Parametres: UIViewController, UIAlertViewDelegate {
         if (pref.boolForKey("secouer") == false) {
             segmentChoixDe.selectedSegmentIndex = 1
         }
-        var donnee = MesDonnes()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("nombreFace")
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
-            if (donnee.leNombre == 6) {
-                self.segmentChoixNombreFace.selectedSegmentIndex = 0
-            }
-            else if (donnee.leNombre == 8) {
-                self.segmentChoixNombreFace.selectedSegmentIndex = 1
-            }
-            else if (donnee.leNombre == 10) {
-                self.segmentChoixNombreFace.selectedSegmentIndex = 2
-            }
-            else {
-                self.segmentChoixNombreFace.selectedSegmentIndex = 3
-            }
-        }
-        else {
-            self.segmentChoixNombreFace.selectedSegmentIndex = 0
-        }
-        mettreAJourLabelFaceNumber()
+        mettreAJourFaceDe()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        let message = UIAlertController(title: "Erreur mémoire", message: "Attention à la mémoire", preferredStyle: .Alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        message.addAction(defaultAction)
-        
-        presentViewController(message, animated: true, completion: nil)
     }
     
     @IBAction func choixTypeLanceDeChange(sender: AnyObject) {
@@ -82,7 +56,9 @@ class Parametres: UIViewController, UIAlertViewDelegate {
                 textField.keyboardType = UIKeyboardType.NumberPad
                 inputTextField = textField
             })
-            alerte.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.Destructive, handler: nil))
+            alerte.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction!) in
+                self.mettreAJourFaceDe()
+            }))
             alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
                 var string:String! = inputTextField?.text
                 let chiffre = inputTextField?.text!.toInt()
@@ -96,6 +72,7 @@ class Parametres: UIViewController, UIAlertViewDelegate {
                     let alerteErreurNombre = UIAlertController(title: "Erreur", message: "Attention, la saisie est incorrecte", preferredStyle: UIAlertControllerStyle.ActionSheet)
                     alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alerteErreurNombre, animated: true, completion: nil)
+                    self.mettreAJourFaceDe()
                 }
                 self.mettreAJourLabelFaceNumber()
             }))
@@ -120,5 +97,30 @@ class Parametres: UIViewController, UIAlertViewDelegate {
         else {
             labelNombreFace.text = String(6)
         }
+    }
+    
+    func mettreAJourFaceDe() {
+        var donnee = MesDonnes()
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
+            if (donnee.leNombre == 6) {
+                self.segmentChoixNombreFace.selectedSegmentIndex = 0
+            }
+            else if (donnee.leNombre == 8) {
+                self.segmentChoixNombreFace.selectedSegmentIndex = 1
+            }
+            else if (donnee.leNombre == 10) {
+                self.segmentChoixNombreFace.selectedSegmentIndex = 2
+            }
+            else {
+                self.segmentChoixNombreFace.selectedSegmentIndex = 3
+            }
+        }
+        else {
+            self.segmentChoixNombreFace.selectedSegmentIndex = 0
+        }
+        mettreAJourLabelFaceNumber()
     }
 }
