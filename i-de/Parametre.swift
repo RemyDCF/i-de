@@ -83,7 +83,6 @@ class Parametres: UITableViewController {
     }
 
     @IBAction func choixNombreFaceChange(sender: AnyObject) {
-        var inputTextField: UITextField?
         var donnee = MesDonnesNombreFace()
         if (segmentChoixNombreFace.selectedSegmentIndex == 0) {
             donnee.nombreFace = 6
@@ -94,43 +93,44 @@ class Parametres: UITableViewController {
         if (segmentChoixNombreFace.selectedSegmentIndex == 2) {
             donnee.nombreFace = 10
         }
-        if (segmentChoixNombreFace.selectedSegmentIndex == 3) {
-            let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 200)", preferredStyle: UIAlertControllerStyle.Alert)
-            alerte.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
-                textField.placeholder = "Nombre"
-                textField.keyboardType = UIKeyboardType.NumberPad
-                inputTextField = textField
-            })
-            alerte.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction!) in
-                self.mettreAJourFaceDe()
-            }))
-            alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
-                var string:String! = inputTextField?.text
-                let chiffre = inputTextField?.text!.toInt()
-                if (chiffre != nil && chiffre >= 2 && chiffre <= 200) {
-                    donnee.nombreFace = Int32(chiffre!)
-                    var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-                    var path = dir[0] . stringByAppendingPathComponent("nombreFace")
-                    var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-                }
-                else {
-                    let alerteErreurNombre = UIAlertController(title: "Erreur", message: "Attention, la saisie est incorrecte", preferredStyle: UIAlertControllerStyle.ActionSheet)
-                    alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                    self.presentViewController(alerteErreurNombre, animated: true, completion: nil)
-                    self.mettreAJourFaceDe()
-                }
-                self.mettreAJourLabelFaceNumber()
-            }))
-            presentViewController(alerte, animated: true, completion: nil)
-        }
-        if (segmentChoixNombreFace.selectedSegmentIndex != 3) {
             var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
             var path = dir[0] . stringByAppendingPathComponent("nombreFace")
-            var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
             mettreAJourLabelFaceNumber()
-        }
     }
     
+    @IBAction func choixNombreFaceChangeAutre(sender: AnyObject) {
+        var inputTextField: UITextField?
+        var donnee = MesDonnesNombreFace()
+        let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 200)", preferredStyle: UIAlertControllerStyle.Alert)
+        alerte.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "Nombre"
+            textField.keyboardType = UIKeyboardType.NumberPad
+            inputTextField = textField
+        })
+        alerte.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction!) in
+            self.mettreAJourFaceDe()
+        }))
+        alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
+            var string:String! = inputTextField?.text
+            let chiffre = inputTextField?.text!.toInt()
+            if (chiffre != nil && chiffre >= 2 && chiffre <= 200) {
+                donnee.nombreFace = Int32(chiffre!)
+                var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+                var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+                NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+            }
+            else {
+                let alerteErreurNombre = UIAlertController(title: "Erreur", message: "Attention, la saisie est incorrecte", preferredStyle: UIAlertControllerStyle.ActionSheet)
+                alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alerteErreurNombre, animated: true, completion: nil)
+            }
+            self.mettreAJourFaceDe()
+            self.mettreAJourLabelFaceNumber()
+        }))
+        presentViewController(alerte, animated: true, completion: nil)
+
+    }
     func mettreAJourLabelFaceNumber() {
         var donnee = MesDonnesNombreFace()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
@@ -160,7 +160,7 @@ class Parametres: UITableViewController {
                 self.segmentChoixNombreFace.selectedSegmentIndex = 2
             }
             else {
-                self.segmentChoixNombreFace.selectedSegmentIndex = 3
+                self.segmentChoixNombreFace.selectedSegmentIndex = -1
             }
         }
         else {

@@ -178,7 +178,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-NZ-39m">
-                                                    <rect key="frame" x="8" y="7" width="584" height="29"/>
+                                                    <rect key="frame" x="8" y="8" width="493" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="64X-b2-dsm"/>
                                                         <constraint firstAttribute="height" constant="28" id="hLQ-My-uV7"/>
@@ -187,7 +187,6 @@
                                                         <segment title="6 faces"/>
                                                         <segment title="8 faces"/>
                                                         <segment title="10 faces"/>
-                                                        <segment title="Autre"/>
                                                     </segments>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -198,11 +197,24 @@
                                                         <action selector="choixNombreFaceChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="J7D-cD-FjX"/>
                                                     </connections>
                                                 </segmentedControl>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdC-bz-YOF">
+                                                    <rect key="frame" x="509" y="9" width="83" height="28"/>
+                                                    <state key="normal" title="Autre">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="choixNombreFaceChangeAutre:" destination="EGX-2M-dTi" eventType="touchUpInside" id="whT-Sx-3ur"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="rAl-NZ-39m" firstAttribute="bottom" secondItem="YtC-si-dbp" secondAttribute="bottomMargin" id="4UN-PY-GMD"/>
+                                                <constraint firstItem="rAl-NZ-39m" firstAttribute="bottom" secondItem="YtC-si-dbp" secondAttribute="bottomMargin" constant="1" id="4UN-PY-GMD"/>
+                                                <constraint firstItem="LdC-bz-YOF" firstAttribute="top" secondItem="YtC-si-dbp" secondAttribute="topMargin" constant="1" id="AL9-W9-agC"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LdC-bz-YOF" secondAttribute="bottom" constant="-2" id="Kx0-b3-eTH"/>
                                                 <constraint firstItem="rAl-NZ-39m" firstAttribute="leading" secondItem="YtC-si-dbp" secondAttribute="leadingMargin" id="LZN-JM-Eki"/>
-                                                <constraint firstItem="rAl-NZ-39m" firstAttribute="trailing" secondItem="YtC-si-dbp" secondAttribute="trailingMargin" id="wyD-7s-Zdk"/>
+                                                <constraint firstItem="LdC-bz-YOF" firstAttribute="leading" secondItem="rAl-NZ-39m" secondAttribute="trailing" constant="8" id="kZW-hU-pGR"/>
+                                                <constraint firstItem="LdC-bz-YOF" firstAttribute="trailing" secondItem="YtC-si-dbp" secondAttribute="trailingMargin" id="vE1-Ia-7V0"/>
+                                                <constraint firstItem="rAl-NZ-39m" firstAttribute="trailing" secondItem="YtC-si-dbp" secondAttribute="trailingMargin" constant="-91" id="wyD-7s-Zdk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -315,7 +327,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ks-5L-tFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676" y="-80"/>
+            <point key="canvasLocation" x="1676" y="-84"/>
         </scene>
     </scenes>
     <resources>
