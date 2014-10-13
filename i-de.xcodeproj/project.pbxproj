@@ -12,9 +12,8 @@
 		3678FF1019BC4E780097389D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF0E19BC4E780097389D /* Main.storyboard */; };
 		3678FF1219BC4E780097389D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF1119BC4E780097389D /* Images.xcassets */; };
 		3678FF1E19BC4E790097389D /* i_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF1D19BC4E790097389D /* i_deTests.swift */; };
-		3678FF2A19BC4F070097389D /* MesDonnes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF2919BC4F070097389D /* MesDonnes.m */; };
 		3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF2B19BC4F2C0097389D /* Parametre.swift */; };
-		3678FF2F19BC4F350097389D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF2D19BC4F350097389D /* Settings.bundle */; };
+		C3F9BA7419E996E500EE845F /* MesDonnes.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F9BA7319E996E500EE845F /* MesDonnes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,11 +37,10 @@
 		3678FF1C19BC4E790097389D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3678FF1D19BC4E790097389D /* i_deTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = i_deTests.swift; sourceTree = "<group>"; };
 		3678FF2719BC4F070097389D /* i-de-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "i-de-Bridging-Header.h"; path = "i-de/i-de-Bridging-Header.h"; sourceTree = "<group>"; };
-		3678FF2819BC4F070097389D /* MesDonnes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MesDonnes.h; sourceTree = SOURCE_ROOT; };
-		3678FF2919BC4F070097389D /* MesDonnes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MesDonnes.m; sourceTree = SOURCE_ROOT; };
 		3678FF2B19BC4F2C0097389D /* Parametre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametre.swift; sourceTree = "<group>"; };
-		3678FF2D19BC4F350097389D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		3678FF2E19BC4F350097389D /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; };
+		C3F9BA7219E996E500EE845F /* MesDonnes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MesDonnes.h; sourceTree = "<group>"; };
+		C3F9BA7319E996E500EE845F /* MesDonnes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MesDonnes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +68,8 @@
 				3678FF1A19BC4E780097389D /* i-deTests */,
 				3678FF0619BC4E780097389D /* Products */,
 				3678FF2719BC4F070097389D /* i-de-Bridging-Header.h */,
+				C3F9BA7219E996E500EE845F /* MesDonnes.h */,
+				C3F9BA7319E996E500EE845F /* MesDonnes.m */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,11 +89,8 @@
 				3678FF0C19BC4E780097389D /* ViewController.swift */,
 				3678FF0E19BC4E780097389D /* Main.storyboard */,
 				3678FF2B19BC4F2C0097389D /* Parametre.swift */,
-				3678FF2D19BC4F350097389D /* Settings.bundle */,
 				3678FF2E19BC4F350097389D /* Test.playground */,
 				3678FF1119BC4E780097389D /* Images.xcassets */,
-				3678FF2819BC4F070097389D /* MesDonnes.h */,
-				3678FF2919BC4F070097389D /* MesDonnes.m */,
 				3678FF0819BC4E780097389D /* Supporting Files */,
 			);
 			path = "i-de";
@@ -206,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3678FF1019BC4E780097389D /* Main.storyboard in Resources */,
-				3678FF2F19BC4F350097389D /* Settings.bundle in Resources */,
 				3678FF1219BC4E780097389D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,8 +222,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3678FF0D19BC4E780097389D /* ViewController.swift in Sources */,
-				3678FF2A19BC4F070097389D /* MesDonnes.m in Sources */,
 				3678FF0B19BC4E780097389D /* AppDelegate.swift in Sources */,
+				C3F9BA7419E996E500EE845F /* MesDonnes.m in Sources */,
 				3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

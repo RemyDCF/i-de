@@ -8,15 +8,45 @@
 
 import UIKit
 
-class Parametres: UIViewController, UIAlertViewDelegate {
-    let pref = NSUserDefaults.standardUserDefaults()
+class Parametres: UITableViewController {
     @IBOutlet weak var segmentChoixDe: UISegmentedControl!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
     @IBOutlet weak var labelNombreFace: UILabel!
+    @IBOutlet weak var lancerAuDemmarage: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (pref.boolForKey("secouer") == false) {
-            segmentChoixDe.selectedSegmentIndex = 1
+        // Mise en place des données existantes
+        // Secouer
+        var donneeSecouer = MesDonnesSecouer()
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("secouer")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouer
+            if (!donneeSecouer.secouer) {
+                segmentChoixDe.selectedSegmentIndex = 1
+            }
+        }
+        else {
+            donneeSecouer.secouer = true
+            var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+            var path = dir[0] . stringByAppendingPathComponent("secouer")
+            var erreur = NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
+        }
+        // Lancer au demmarage
+        var donneeLancerAuDemmarage = MesDonnesLancerAuDemmarage()
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("lancerAuDemmarage")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneeLancerAuDemmarage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesLancerAuDemmarage
+            if (donneeLancerAuDemmarage.lancerAuDemmarage) {
+                lancerAuDemmarage.setOn(true, animated: true)
+            }
+        }
+        else {
+            donneeLancerAuDemmarage.lancerAuDemmarage = false
+            var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+            var path = dir[0] . stringByAppendingPathComponent("lancerAuDemmarage")
+            var erreur = NSKeyedArchiver.archiveRootObject(donneeLancerAuDemmarage, toFile: path)
         }
         mettreAJourFaceDe()
     }
@@ -26,28 +56,43 @@ class Parametres: UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func choixTypeLanceDeChange(sender: AnyObject) {
-        var appDefault:NSDictionary?
+        var donnee = MesDonnesSecouer()
         if (segmentChoixDe.selectedSegmentIndex == 0) {
-            appDefault = NSDictionary(object: true, forKey: "secouer")
+            donnee.secouer = true
         }
         else {
-            appDefault = NSDictionary(object: false, forKey: "secouer")
+            donnee.secouer = false
         }
-        pref.registerDefaults(appDefault!)
-        pref.synchronize()
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("secouer")
+        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
     }
+
     
+    @IBAction func lancerDemmarageChange(sender: AnyObject) {
+        var donnee = MesDonnesLancerAuDemmarage()
+        if (lancerAuDemmarage.on) {
+            donnee.lancerAuDemmarage = true
+        }
+        else {
+            donnee.lancerAuDemmarage = false
+        }
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("lancerAuDemmarage")
+        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+    }
+
     @IBAction func choixNombreFaceChange(sender: AnyObject) {
         var inputTextField: UITextField?
-        var donnee = MesDonnes()
+        var donnee = MesDonnesNombreFace()
         if (segmentChoixNombreFace.selectedSegmentIndex == 0) {
-            donnee.leNombre = 6
+            donnee.nombreFace = 6
         }
         if (segmentChoixNombreFace.selectedSegmentIndex == 1) {
-            donnee.leNombre = 8
+            donnee.nombreFace = 8
         }
         if (segmentChoixNombreFace.selectedSegmentIndex == 2) {
-            donnee.leNombre = 10
+            donnee.nombreFace = 10
         }
         if (segmentChoixNombreFace.selectedSegmentIndex == 3) {
             let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 200)", preferredStyle: UIAlertControllerStyle.Alert)
@@ -63,7 +108,7 @@ class Parametres: UIViewController, UIAlertViewDelegate {
                 var string:String! = inputTextField?.text
                 let chiffre = inputTextField?.text!.toInt()
                 if (chiffre != nil && chiffre >= 2 && chiffre <= 200) {
-                    donnee.leNombre = Int32(chiffre!)
+                    donnee.nombreFace = Int32(chiffre!)
                     var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                     var path = dir[0] . stringByAppendingPathComponent("nombreFace")
                     var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
@@ -87,12 +132,12 @@ class Parametres: UIViewController, UIAlertViewDelegate {
     }
     
     func mettreAJourLabelFaceNumber() {
-        var donnee = MesDonnes()
+        var donnee = MesDonnesNombreFace()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
-            labelNombreFace.text = String(donnee.leNombre)
+            donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesNombreFace
+            labelNombreFace.text = String(donnee.nombreFace)
         }
         else {
             labelNombreFace.text = String(6)
@@ -100,18 +145,18 @@ class Parametres: UIViewController, UIAlertViewDelegate {
     }
     
     func mettreAJourFaceDe() {
-        var donnee = MesDonnes()
+        var donnee = MesDonnesNombreFace()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
-            if (donnee.leNombre == 6) {
+            donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesNombreFace
+            if (donnee.nombreFace == 6) {
                 self.segmentChoixNombreFace.selectedSegmentIndex = 0
             }
-            else if (donnee.leNombre == 8) {
+            else if (donnee.nombreFace == 8) {
                 self.segmentChoixNombreFace.selectedSegmentIndex = 1
             }
-            else if (donnee.leNombre == 10) {
+            else if (donnee.nombreFace == 10) {
                 self.segmentChoixNombreFace.selectedSegmentIndex = 2
             }
             else {

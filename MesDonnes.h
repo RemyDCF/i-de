@@ -8,8 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MesDonnes : NSObject <NSCoding>
+@interface MesDonnesNombreFace : NSObject <NSCoding>
 
-@property(readwrite, nonatomic) int leNombre;
+@property(readwrite, nonatomic) int nombreFace;
+
+@end
+
+@interface MesDonnesSecouer : NSObject <NSCoding>
+
+@property(readwrite, nonatomic) bool secouer;
+
+@end
+
+@interface MesDonnesLancerAuDemmarage : NSObject <NSCoding>
+
+@property(readwrite, nonatomic) bool lancerAuDemmarage;
 
 @end

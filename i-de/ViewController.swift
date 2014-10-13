@@ -18,30 +18,60 @@ class ViewController: UIViewController {
     var nombreFace:Int? = 6
     var premierLancer:Bool? = true
     var animationEnCours:Bool? = false
+    var secouer:Bool? = true
     override func viewDidLoad() {
         super.viewDidLoad()
-        var donnee = MesDonnes()
+        // Nombre face
+        var donneeNombreFace = MesDonnesNombreFace()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnes
-            nombreFace = Int(donnee.leNombre)
+            donneeNombreFace = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesNombreFace
+            nombreFace = Int(donneeNombreFace.nombreFace)
         }
         else {
-            donnee.leNombre = 6
-            var erreur = NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            if !erreur {
-                println("L'écriture de la valeur par défault de la face du dé à échoué")
-            }
+            donneeNombreFace.nombreFace = 6
+            NSKeyedArchiver.archiveRootObject(donneeNombreFace, toFile: path)
         }
+        
         labelFace.text = "Tirage d'un nombre entre 1 et " + String(UInt8(nombreFace!))
-        if (pref.boolForKey("secouer") == false) {
-            btChoisir.hidden = false
-            texteSecouer.hidden = true
+        
+        // Secouer
+        var donneeSecouer = MesDonnesSecouer()
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("secouer")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouer
+            if (!donneeSecouer.secouer) {
+                btChoisir.hidden = false
+                texteSecouer.hidden = true
+            }
+            else {
+                btChoisir.hidden = true
+                texteSecouer.hidden = false
+                secouer = true
+            }
         }
         else {
             btChoisir.hidden = true
             texteSecouer.hidden = false
+            donneeSecouer.secouer = true
+            NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
+        }
+        
+        // Lancer au demmarage
+        var donneeLancerAuDemmarage = MesDonnesLancerAuDemmarage()
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("lancerAuDemmarage")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneeLancerAuDemmarage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesLancerAuDemmarage
+            if (donneeLancerAuDemmarage.lancerAuDemmarage) {
+                choisir()
+            }
+        }
+        else {
+            donneeLancerAuDemmarage.lancerAuDemmarage = false
+            NSKeyedArchiver.archiveRootObject(donneeLancerAuDemmarage, toFile: path)
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -58,7 +88,7 @@ class ViewController: UIViewController {
     override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent) {}
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
-        if (pref.boolForKey("secouer") == true) {
+        if (secouer == true) {
             choisir()
         }
     }
