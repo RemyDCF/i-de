@@ -13,8 +13,11 @@ class Parametres: UITableViewController {
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
     @IBOutlet weak var labelNombreFace: UILabel!
     @IBOutlet weak var lancerAuDemmarage: UISwitch!
+    @IBOutlet weak var boutonAutre: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Personnalisation des boutons
+        boutonAutre.setRoundedRectangle()
         // Mise en place des données existantes
         // Secouer
         var donneeSecouer = MesDonnesSecouer()

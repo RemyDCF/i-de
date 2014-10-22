@@ -73,7 +73,9 @@ class ViewController: UIViewController {
             donneeLancerAuDemmarage.lancerAuDemmarage = false
             NSKeyedArchiver.archiveRootObject(donneeLancerAuDemmarage, toFile: path)
         }
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Personnalisation du bouton choisir
+        btChoisir.setRoundedRectangle()
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,10 +94,14 @@ class ViewController: UIViewController {
             choisir()
         }
     }
-    @IBAction func appuiChoisir(sender: AnyObject) {
+    
+    @IBAction func choisirActionGauche(sender: AnyObject) {
+        choisir(sens: "Gauche")
+    }
+    @IBAction func choisirAction(sender: AnyObject) {
         choisir()
     }
-    func choisir() {
+    func choisir(sens:String = "Droite") {
         if animationEnCours == false {
             self.self.btChoisir.enabled = false
             animationEnCours = true
@@ -108,21 +114,41 @@ class ViewController: UIViewController {
                 self.self.btChoisir.enabled = true
             }
             else {
-                UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                    }) { (finished: Bool) -> Void in
-                        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                            }) { (finished: Bool) -> Void in
-                                self.nombreTiré = random() % self.nombreFace! + 1;
-                                self.nombre.text = String(self.nombreTiré!)
-                                UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                                    }) { (finished: Bool) -> Void in
-                                        self.self.animationEnCours = false
-                                        self.self.btChoisir.enabled = true
-                                }
-                        }
+                if (sens == "Droite") {
+                    UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                        self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                        }) { (finished: Bool) -> Void in
+                            UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                                }) { (finished: Bool) -> Void in
+                                    self.nombreTiré = random() % self.nombreFace! + 1;
+                                    self.nombre.text = String(self.nombreTiré!)
+                                    UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                                        self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                                        }) { (finished: Bool) -> Void in
+                                            self.self.animationEnCours = false
+                                            self.self.btChoisir.enabled = true
+                                    }
+                            }
+                    }
+                }
+                else {
+                    UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                        self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                        }) { (finished: Bool) -> Void in
+                            UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                                }) { (finished: Bool) -> Void in
+                                    self.nombreTiré = random() % self.nombreFace! + 1;
+                                    self.nombre.text = String(self.nombreTiré!)
+                                    UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                                        self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                                        }) { (finished: Bool) -> Void in
+                                            self.self.animationEnCours = false
+                                            self.self.btChoisir.enabled = true
+                                    }
+                            }
+                    }
                 }
             }
         }

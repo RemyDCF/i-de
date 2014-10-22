@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,20 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuK-Yj-9va">
-                                <rect key="frame" x="20" y="49" width="560" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="jTJ-A2-3Fc"/>
-                                </constraints>
-                                <state key="normal" title="Choisir">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="appuiChoisir:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4ud-OC-vsB"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secouez pour choisir" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWC-Bl-t2e">
-                                <rect key="frame" x="16" y="57" width="568" height="21"/>
+                                <rect key="frame" x="16" y="62" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="uP7-Er-aeg"/>
                                 </constraints>
@@ -39,8 +27,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tirage d'un nombre entre 1 et 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QD6-s7-DVY">
-                                <rect key="frame" x="16" y="28" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="28" width="568" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="ohT-3D-f23"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -52,35 +43,54 @@
                                 </constraints>
                                 <state key="normal" image="parametre"/>
                                 <connections>
-                                    <segue destination="EGX-2M-dTi" kind="show" id="fr1-me-HZU"/>
+                                    <segue destination="EGX-2M-dTi" kind="show" id="UyD-oK-Nhm"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
-                                <rect key="frame" x="16" y="86" width="568" height="442"/>
+                                <rect key="frame" x="16" y="135" width="568" height="393"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuK-Yj-9va">
+                                <rect key="frame" x="16" y="536" width="516" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="jTJ-A2-3Fc"/>
+                                </constraints>
+                                <state key="normal" title="Choisir">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="choisirAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pVp-D6-CHg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="UWC-Bl-t2e" firstAttribute="top" secondItem="QD6-s7-DVY" secondAttribute="bottom" constant="8" id="76N-5D-dwh"/>
                             <constraint firstItem="UWC-Bl-t2e" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="88J-yY-9p7"/>
-                            <constraint firstItem="tuK-Yj-9va" firstAttribute="leading" secondItem="QD6-s7-DVY" secondAttribute="trailing" constant="-564" id="DcV-Zq-Zg2"/>
+                            <constraint firstItem="tuK-Yj-9va" firstAttribute="leading" secondItem="QD6-s7-DVY" secondAttribute="trailing" constant="-568" id="DcV-Zq-Zg2"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="DgY-1S-GRG"/>
-                            <constraint firstItem="tuK-Yj-9va" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="EtU-Gn-oAf"/>
+                            <constraint firstItem="tuK-Yj-9va" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="EtU-Gn-oAf"/>
                             <constraint firstItem="mDv-l9-pHP" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="L8f-05-6wZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UWC-Bl-t2e" secondAttribute="trailing" id="LhP-vV-bVy"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="mDv-l9-pHP" secondAttribute="bottom" constant="20" id="QMW-ws-c0g"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="RA8-5K-sCT"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="top" secondItem="LGv-U3-cP9" secondAttribute="bottom" constant="8" id="Uf6-r7-pks"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="m6t-yN-nCW"/>
+                            <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="tuK-Yj-9va" secondAttribute="bottom" constant="20" id="p2b-mU-LdQ"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="E7o-0w-nyq" secondAttribute="bottom" constant="72" id="sPC-cW-E7T"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tuK-Yj-9va" secondAttribute="trailing" constant="4" id="u4V-Ye-hPa"/>
-                            <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="UWC-Bl-t2e" secondAttribute="bottom" constant="8" id="veb-Y9-8I4"/>
-                            <constraint firstItem="tuK-Yj-9va" firstAttribute="top" secondItem="QD6-s7-DVY" secondAttribute="bottom" id="w4E-Mo-Ffa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tuK-Yj-9va" secondAttribute="trailing" constant="52" id="u4V-Ye-hPa"/>
+                            <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="UWC-Bl-t2e" secondAttribute="bottom" constant="52" id="veb-Y9-8I4"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="zxb-ew-Bq8"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PTi-nh-Zrq" appends="YES" id="2ME-sZ-fgD"/>
+                            <outletCollection property="gestureRecognizers" destination="Keu-Xu-3fe" appends="YES" id="KOl-Gk-ruj"/>
+                            <outletCollection property="gestureRecognizers" destination="aAB-g0-kZR" appends="YES" id="JV3-Dt-AIB"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="btChoisir" destination="tuK-Yj-9va" id="5ra-kJ-Zuh"/>
@@ -90,6 +100,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="PTi-nh-Zrq">
+                    <connections>
+                        <action selector="choisirAction:" destination="vXZ-lx-hvc" id="UTK-hW-HDe"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Keu-Xu-3fe" userLabel="Swipe Gesture Recognizer (Droite)">
+                    <connections>
+                        <action selector="choisirAction:" destination="vXZ-lx-hvc" id="jVU-yT-71A"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="aAB-g0-kZR" userLabel="Swipe Gesture Recognizer (Gauche)">
+                    <connections>
+                        <action selector="choisirActionGauche:" destination="vXZ-lx-hvc" id="ROI-4a-zN4"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="951" y="-115"/>
         </scene>
@@ -117,7 +142,7 @@
                                                         </constraint>
                                                     </constraints>
                                                     <items>
-                                                        <navigationItem title="Parametres" id="G3h-h9-VRc">
+                                                        <navigationItem title="Paramètres" id="G3h-h9-VRc">
                                                             <barButtonItem key="rightBarButtonItem" title="OK" id="2yB-x3-Bks">
                                                                 <connections>
                                                                     <segue destination="vXZ-lx-hvc" kind="show" id="NQK-7P-1Gy"/>
@@ -137,48 +162,54 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="General" id="yhT-h9-p0x">
+                            <tableViewSection headerTitle="Général" id="yhT-h9-p0x">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="izD-Pe-a9G">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="izD-Pe-a9G">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="izD-Pe-a9G" id="rYy-BT-6ay">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lancement du dé au demmarage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzs-eG-K1b">
-                                                    <rect key="frame" x="8" y="8" width="527" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lancement du dé au demarrage" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzs-eG-K1b">
+                                                    <rect key="frame" x="8" y="8" width="527" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Edk-HQ-DhM">
-                                                    <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ilb-B0-7C0">
+                                                    <rect key="frame" x="543" y="17" width="51" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="31" id="c9F-wg-nTU"/>
+                                                        <constraint firstAttribute="width" constant="49" id="sm4-iE-9yu"/>
+                                                    </constraints>
                                                     <connections>
-                                                        <action selector="lancerDemmarageChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="o6m-FD-zpe"/>
+                                                        <action selector="lancerDemmarageChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="wic-qV-ZMl"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="jzs-eG-K1b" firstAttribute="leading" secondItem="rYy-BT-6ay" secondAttribute="leadingMargin" id="0vZ-Z7-nP8"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="jzs-eG-K1b" secondAttribute="bottom" id="RTE-3P-Fnn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ilb-B0-7C0" secondAttribute="trailing" id="SUe-cQ-F2M"/>
+                                                <constraint firstItem="jzs-eG-K1b" firstAttribute="top" secondItem="rYy-BT-6ay" secondAttribute="topMargin" id="X4q-wj-66X"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="jzs-eG-K1b" secondAttribute="bottom" id="ct7-AQ-gc1"/>
                                                 <constraint firstItem="jzs-eG-K1b" firstAttribute="leading" secondItem="rYy-BT-6ay" secondAttribute="leadingMargin" id="dse-Dj-zdv"/>
-                                                <constraint firstItem="Edk-HQ-DhM" firstAttribute="top" secondItem="rYy-BT-6ay" secondAttribute="topMargin" constant="-2" id="glM-Xe-CjL"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Edk-HQ-DhM" secondAttribute="bottom" constant="-2" id="j0O-D7-KhF"/>
-                                                <constraint firstItem="Edk-HQ-DhM" firstAttribute="leading" secondItem="jzs-eG-K1b" secondAttribute="trailing" constant="8" id="jJR-P8-jJ1"/>
+                                                <constraint firstItem="ilb-B0-7C0" firstAttribute="leading" secondItem="jzs-eG-K1b" secondAttribute="trailing" constant="8" symbolic="YES" id="faB-Zb-XNT"/>
                                                 <constraint firstItem="jzs-eG-K1b" firstAttribute="top" secondItem="rYy-BT-6ay" secondAttribute="topMargin" id="lxe-4D-b40"/>
-                                                <constraint firstItem="Edk-HQ-DhM" firstAttribute="trailing" secondItem="rYy-BT-6ay" secondAttribute="trailingMargin" id="z4c-cl-oaz"/>
+                                                <constraint firstItem="ilb-B0-7C0" firstAttribute="centerY" secondItem="rYy-BT-6ay" secondAttribute="centerY" id="yFU-AW-1ja"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Faces du dé" id="YOu-vt-WJ5">
+                            <tableViewSection headerTitle="Nombre de face" id="YOu-vt-WJ5">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="2DX-um-0aO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="84" id="2DX-um-0aO">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2DX-um-0aO" id="YtC-si-dbp">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-NZ-39m">
-                                                    <rect key="frame" x="8" y="8" width="493" height="29"/>
+                                                    <rect key="frame" x="8" y="9" width="584" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="64X-b2-dsm"/>
                                                         <constraint firstAttribute="height" constant="28" id="hLQ-My-uV7"/>
@@ -197,25 +228,32 @@
                                                         <action selector="choixNombreFaceChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="J7D-cD-FjX"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdC-bz-YOF">
-                                                    <rect key="frame" x="509" y="9" width="83" height="28"/>
-                                                    <state key="normal" title="Autre">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQ3-uq-2uW">
+                                                    <rect key="frame" x="8" y="46" width="584" height="30"/>
+                                                    <state key="normal" title="Choisir un nombre personnalisé"/>
                                                     <connections>
-                                                        <action selector="choixNombreFaceChangeAutre:" destination="EGX-2M-dTi" eventType="touchUpInside" id="whT-Sx-3ur"/>
+                                                        <action selector="choixNombreFaceChangeAutre:" destination="EGX-2M-dTi" eventType="touchUpInside" id="v1M-uT-eZ6"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="wQ3-uq-2uW" firstAttribute="leading" secondItem="YtC-si-dbp" secondAttribute="leadingMargin" id="1eA-PE-Wsv"/>
                                                 <constraint firstItem="rAl-NZ-39m" firstAttribute="bottom" secondItem="YtC-si-dbp" secondAttribute="bottomMargin" constant="1" id="4UN-PY-GMD"/>
-                                                <constraint firstItem="LdC-bz-YOF" firstAttribute="top" secondItem="YtC-si-dbp" secondAttribute="topMargin" constant="1" id="AL9-W9-agC"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="LdC-bz-YOF" secondAttribute="bottom" constant="-2" id="Kx0-b3-eTH"/>
+                                                <constraint firstItem="wQ3-uq-2uW" firstAttribute="top" secondItem="rAl-NZ-39m" secondAttribute="bottom" constant="9" id="5Mg-Mo-bb8"/>
+                                                <constraint firstItem="wQ3-uq-2uW" firstAttribute="bottom" secondItem="YtC-si-dbp" secondAttribute="bottomMargin" id="BRq-pg-bz7"/>
+                                                <constraint firstItem="wQ3-uq-2uW" firstAttribute="top" secondItem="rAl-NZ-39m" secondAttribute="bottom" constant="9" id="IQ4-n3-Wqx"/>
                                                 <constraint firstItem="rAl-NZ-39m" firstAttribute="leading" secondItem="YtC-si-dbp" secondAttribute="leadingMargin" id="LZN-JM-Eki"/>
-                                                <constraint firstItem="LdC-bz-YOF" firstAttribute="leading" secondItem="rAl-NZ-39m" secondAttribute="trailing" constant="8" id="kZW-hU-pGR"/>
-                                                <constraint firstItem="LdC-bz-YOF" firstAttribute="trailing" secondItem="YtC-si-dbp" secondAttribute="trailingMargin" id="vE1-Ia-7V0"/>
-                                                <constraint firstItem="rAl-NZ-39m" firstAttribute="trailing" secondItem="YtC-si-dbp" secondAttribute="trailingMargin" constant="-91" id="wyD-7s-Zdk"/>
+                                                <constraint firstItem="wQ3-uq-2uW" firstAttribute="trailing" secondItem="YtC-si-dbp" secondAttribute="trailingMargin" id="VbJ-j8-6jz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wQ3-uq-2uW" secondAttribute="bottom" constant="-1" id="cKL-u0-v1f"/>
+                                                <constraint firstItem="rAl-NZ-39m" firstAttribute="trailing" secondItem="YtC-si-dbp" secondAttribute="trailingMargin" id="wyD-7s-Zdk"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="4UN-PY-GMD"/>
+                                                    <exclude reference="BRq-pg-bz7"/>
+                                                    <exclude reference="IQ4-n3-Wqx"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="b9d-0k-fVJ">
@@ -318,16 +356,18 @@
                             <outlet property="delegate" destination="EGX-2M-dTi" id="H0S-sy-y3P"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="yx0-Qw-h1s"/>
                     <connections>
+                        <outlet property="boutonAutre" destination="wQ3-uq-2uW" id="Vdz-Xm-pqH"/>
                         <outlet property="labelNombreFace" destination="oHF-AQ-CfD" id="IUb-yK-Op2"/>
-                        <outlet property="lancerAuDemmarage" destination="Edk-HQ-DhM" id="BrA-O1-zv1"/>
+                        <outlet property="lancerAuDemmarage" destination="ilb-B0-7C0" id="eOe-cU-ef0"/>
                         <outlet property="segmentChoixDe" destination="wTe-kW-8QH" id="pqn-dH-opd"/>
                         <outlet property="segmentChoixNombreFace" destination="rAl-NZ-39m" id="fUp-tj-qx0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ks-5L-tFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676" y="-84"/>
+            <point key="canvasLocation" x="1610" y="-115"/>
         </scene>
     </scenes>
     <resources>
