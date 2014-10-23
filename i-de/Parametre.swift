@@ -128,7 +128,7 @@ class Parametres: UITableViewController {
                 NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
             }
             else {
-                let alerteErreurNombre = UIAlertController(title: "Erreur", message: "Attention, la saisie est incorrecte", preferredStyle: UIAlertControllerStyle.ActionSheet)
+                let alerteErreurNombre = UIAlertController(title: "Erreur", message: "Attention, la saisie est incorrecte", preferredStyle: UIAlertControllerStyle.Alert)
                 alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
                     self.afficherAlerteChoixNombrePersonnalise()
                 }))
