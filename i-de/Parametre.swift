@@ -103,6 +103,10 @@ class Parametres: UITableViewController {
     }
     
     @IBAction func choixNombreFaceChangeAutre(sender: AnyObject) {
+        afficherAlerteChoixNombrePersonnalise()
+    }
+    
+    func afficherAlerteChoixNombrePersonnalise() {
         var inputTextField: UITextField?
         var donnee = MesDonnesNombreFace()
         let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 200)", preferredStyle: UIAlertControllerStyle.Alert)
@@ -125,15 +129,17 @@ class Parametres: UITableViewController {
             }
             else {
                 let alerteErreurNombre = UIAlertController(title: "Erreur", message: "Attention, la saisie est incorrecte", preferredStyle: UIAlertControllerStyle.ActionSheet)
-                alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
+                    self.afficherAlerteChoixNombrePersonnalise()
+                }))
                 self.presentViewController(alerteErreurNombre, animated: true, completion: nil)
             }
             self.mettreAJourFaceDe()
             self.mettreAJourLabelFaceNumber()
         }))
         presentViewController(alerte, animated: true, completion: nil)
-
     }
+    
     func mettreAJourLabelFaceNumber() {
         var donnee = MesDonnesNombreFace()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
