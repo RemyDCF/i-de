@@ -119,7 +119,7 @@ class ViewController: UIViewController {
                     UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
                         self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
                         }) { (finished: Bool) -> Void in
-                            UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                            UIView.animateKeyframesWithDuration(0.3, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
                                 self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
                                 }) { (finished: Bool) -> Void in
                                     self.nombreTiré = random() % self.nombreFace! + 1;
@@ -138,7 +138,7 @@ class ViewController: UIViewController {
                     UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
                         self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
                         }) { (finished: Bool) -> Void in
-                            UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                            UIView.animateKeyframesWithDuration(0.3, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
                                 self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
                                 }) { (finished: Bool) -> Void in
                                     self.nombreTiré = random() % self.nombreFace! + 1;
@@ -148,6 +148,7 @@ class ViewController: UIViewController {
                                         }) { (finished: Bool) -> Void in
                                             self.self.animationEnCours = false
                                             self.self.btChoisir.enabled = true
+                                            self.self.btChoisir.setRoundedRectangle()
                                     }
                             }
                     }
