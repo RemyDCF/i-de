@@ -104,6 +104,7 @@ class ViewController: UIViewController {
     func choisir(sens:String = "Droite") {
         if animationEnCours == false {
             self.self.btChoisir.enabled = false
+            self.self.btChoisir.setRoundedRectangleDisabled()
             animationEnCours = true
             nombre.hidden = false
             if (premierLancer == true) {
@@ -128,6 +129,7 @@ class ViewController: UIViewController {
                                         }) { (finished: Bool) -> Void in
                                             self.self.animationEnCours = false
                                             self.self.btChoisir.enabled = true
+                                            self.self.btChoisir.setRoundedRectangle()
                                     }
                             }
                     }

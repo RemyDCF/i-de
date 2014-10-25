@@ -15,4 +15,9 @@ extension UIButton {
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor
     }
+    func setRoundedRectangleDisabled(cornerRadius: CGFloat = 5, borderWidth: CGFloat = 1, borderColor: CGColor = UIColor(red:0.79, green:0.79, blue:0.79, alpha:1).CGColor) -> Void {
+        self.layer.cornerRadius = cornerRadius
+        self.layer.borderWidth = borderWidth
+        self.layer.borderColor = borderColor
+    }
 }
