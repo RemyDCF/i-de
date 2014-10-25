@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
-                                <rect key="frame" x="16" y="135" width="568" height="393"/>
+                                <rect key="frame" x="16" y="91" width="568" height="437"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -83,7 +83,7 @@
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="tuK-Yj-9va" secondAttribute="bottom" constant="20" id="p2b-mU-LdQ"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="E7o-0w-nyq" secondAttribute="bottom" constant="72" id="sPC-cW-E7T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tuK-Yj-9va" secondAttribute="trailing" constant="52" id="u4V-Ye-hPa"/>
-                            <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="UWC-Bl-t2e" secondAttribute="bottom" constant="52" id="veb-Y9-8I4"/>
+                            <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="UWC-Bl-t2e" secondAttribute="bottom" constant="8" id="veb-Y9-8I4"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="zxb-ew-Bq8"/>
                         </constraints>
                         <connections>
@@ -172,7 +172,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="izD-Pe-a9G" id="rYy-BT-6ay">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lancement du dé automatique au demarrage" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzs-eG-K1b">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lancement du dé automatique au démarrage" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzs-eG-K1b">
                                                     <rect key="frame" x="8" y="8" width="527" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
