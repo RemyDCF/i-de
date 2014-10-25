@@ -90,6 +90,8 @@
                             <outletCollection property="gestureRecognizers" destination="PTi-nh-Zrq" appends="YES" id="2ME-sZ-fgD"/>
                             <outletCollection property="gestureRecognizers" destination="Keu-Xu-3fe" appends="YES" id="KOl-Gk-ruj"/>
                             <outletCollection property="gestureRecognizers" destination="aAB-g0-kZR" appends="YES" id="JV3-Dt-AIB"/>
+                            <outletCollection property="gestureRecognizers" destination="XNC-So-bO8" appends="YES" id="1eX-IH-z80"/>
+                            <outletCollection property="gestureRecognizers" destination="Rbx-OM-RpN" appends="YES" id="Qp4-iM-ZAH"/>
                         </connections>
                     </view>
                     <connections>
@@ -107,12 +109,22 @@
                 </pongPressGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="Keu-Xu-3fe" userLabel="Swipe Gesture Recognizer (Droite)">
                     <connections>
-                        <action selector="choisirAction:" destination="vXZ-lx-hvc" id="jVU-yT-71A"/>
+                        <action selector="choisirActionDroite:" destination="vXZ-lx-hvc" id="NK9-bT-l3R"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="aAB-g0-kZR" userLabel="Swipe Gesture Recognizer (Gauche)">
                     <connections>
                         <action selector="choisirActionGauche:" destination="vXZ-lx-hvc" id="ROI-4a-zN4"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="XNC-So-bO8" userLabel="Swipe Gesture Recognizer (Haut)">
+                    <connections>
+                        <action selector="choisirActionHaut:" destination="vXZ-lx-hvc" id="Hkz-6N-scn"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="Rbx-OM-RpN" userLabel="Swipe Gesture Recognizer (Bas)">
+                    <connections>
+                        <action selector="choisirActionBas:" destination="vXZ-lx-hvc" id="ykH-KD-wjO"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

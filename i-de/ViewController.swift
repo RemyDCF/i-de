@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeLancerAuDemmarage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesLancerAuDemmarage
             if (donneeLancerAuDemmarage.lancerAuDemmarage) {
-                choisir()
+                choisir(sens: "Droite")
             }
         }
         else {
@@ -107,21 +107,28 @@ class ViewController: UIViewController {
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if (secouer == true) {
-            choisir()
+            choisir(sens: "Droite")
         }
     }
     
     @IBAction func choisirActionGauche(sender: AnyObject) {
         choisir(sens: "Gauche")
     }
-    @IBAction func choisirAction(sender: AnyObject) {
-        choisir()
+    @IBAction func choisirActionDroite(sender: AnyObject) {
+        choisir(sens: "Droite")
     }
-    func choisir(sens:String = "Droite") {
+    @IBAction func choisirActionHaut(sender: AnyObject) {
+        choisir(sens: "Haut")
+    }
+    @IBAction func choisirActionBas(sender: AnyObject) {
+        choisir(sens: "Bas")
+    }
+    
+    func choisir(sens:String! = "") {
         if (animationsAutorisés == true) {
             if (!animationEnCours) {
-                self.self.btChoisir.enabled = false
-                self.self.btChoisir.setRoundedRectangleDisabled()
+                self.btChoisir.enabled = false
+                self.btChoisir.setRoundedRectangleDisabled()
                 animationEnCours = true
                 nombre.hidden = false
                 if (premierLancer == true) {
@@ -129,7 +136,7 @@ class ViewController: UIViewController {
                     self.nombre.text = String(self.nombreTiré!)
                     premierLancer = false
                     animationEnCours = false
-                    self.self.btChoisir.enabled = true
+                    self.btChoisir.enabled = true
                 }
                 else {
                     if (sens == "Droite") {
@@ -144,14 +151,14 @@ class ViewController: UIViewController {
                                         UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
                                             self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
                                             }) { (finished: Bool) -> Void in
-                                                self.self.animationEnCours = false
-                                                self.self.btChoisir.enabled = true
-                                                self.self.btChoisir.setRoundedRectangle()
+                                                self.animationEnCours = false
+                                                self.btChoisir.enabled = true
+                                                self.btChoisir.setRoundedRectangle()
                                         }
                                 }
                         }
                     }
-                    else {
+                    else if (sens == "Gauche") {
                         UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
                             self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
                             }) { (finished: Bool) -> Void in
@@ -163,20 +170,59 @@ class ViewController: UIViewController {
                                         UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
                                             self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
                                             }) { (finished: Bool) -> Void in
-                                                self.self.animationEnCours = false
-                                                self.self.btChoisir.enabled = true
-                                                self.self.btChoisir.setRoundedRectangle()
+                                                self.animationEnCours = false
+                                                self.btChoisir.enabled = true
+                                                self.btChoisir.setRoundedRectangle()
                                         }
                                 }
                         }
                     }
+                    else if (sens == "Haut") {
+                        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                            }) { (finished: Bool) -> Void in
+                                UIView.animateKeyframesWithDuration(0.3, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 200, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                                    }) { (finished: Bool) -> Void in
+                                        self.nombreTiré = random() % self.nombreFace! + 1;
+                                        self.nombre.text = String(self.nombreTiré!)
+                                        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                                            }) { (finished: Bool) -> Void in
+                                                self.animationEnCours = false
+                                                self.btChoisir.enabled = true
+                                                self.btChoisir.setRoundedRectangle()
+                                        }
+                                }
+                        }
+                    }
+                    else if (sens == "Bas") {
+                        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                            }) { (finished: Bool) -> Void in
+                                UIView.animateKeyframesWithDuration(0.3, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 200, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                                    }) { (finished: Bool) -> Void in
+                                        self.nombreTiré = random() % self.nombreFace! + 1;
+                                        self.nombre.text = String(self.nombreTiré!)
+                                        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                                            }) { (finished: Bool) -> Void in
+                                                self.animationEnCours = false
+                                                self.btChoisir.enabled = true
+                                                self.btChoisir.setRoundedRectangle()
+                                        }
+                                }
+                        }
+                    }
+                    else {
+                    }
                 }
             }
-        }
-        else {
-            self.nombreTiré = random() % self.nombreFace! + 1;
-            self.nombre.text = String(self.nombreTiré!)
+            else {
+                self.nombreTiré = random() % self.nombreFace! + 1;
+                self.nombre.text = String(self.nombreTiré!)
+            }
         }
     }
 }
-
