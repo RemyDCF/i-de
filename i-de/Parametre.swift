@@ -13,6 +13,7 @@ class Parametres: UITableViewController {
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
     @IBOutlet weak var labelNombreFace: UILabel!
     @IBOutlet weak var lancerAuDemmarage: UISwitch!
+    @IBOutlet weak var animations: UISwitch!
     @IBOutlet weak var boutonAutre: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,22 @@ class Parametres: UITableViewController {
             var path = dir[0] . stringByAppendingPathComponent("lancerAuDemmarage")
             var erreur = NSKeyedArchiver.archiveRootObject(donneeLancerAuDemmarage, toFile: path)
         }
+        // Animations
+        var donneeAnimations = MesDonnesAnimations()
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("animations")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneeAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesAnimations
+            if (donneeAnimations.animations) {
+                animations.setOn(true, animated: true)
+            }
+        }
+        else {
+            donneeAnimations.animations = false
+            var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+            var path = dir[0] . stringByAppendingPathComponent("animations")
+            var erreur = NSKeyedArchiver.archiveRootObject(donneeAnimations, toFile: path)
+        }
         mettreAJourFaceDe()
     }
     
@@ -85,6 +102,19 @@ class Parametres: UITableViewController {
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
     }
 
+    @IBAction func animationsChange(sender: AnyObject) {
+        var donnee = MesDonnesAnimations()
+        if (animations.on) {
+            donnee.animations = true
+        }
+        else {
+            donnee.animations = false
+        }
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("animations")
+        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+    }
+    
     @IBAction func choixNombreFaceChange(sender: AnyObject) {
         var donnee = MesDonnesNombreFace()
         if (segmentChoixNombreFace.selectedSegmentIndex == 0) {

@@ -202,6 +202,41 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="etO-kv-NHc">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="etO-kv-NHc" id="7QI-rj-rFi">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animations" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQr-8v-bbn">
+                                                    <rect key="frame" x="8" y="8" width="527" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dSM-WQ-SN5">
+                                                    <rect key="frame" x="543" y="17" width="51" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="31" id="ekR-yf-jq7"/>
+                                                        <constraint firstAttribute="width" constant="49" id="t6F-X8-lcG"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="animationsChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="sG2-8c-DFz"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cQr-8v-bbn" firstAttribute="top" secondItem="7QI-rj-rFi" secondAttribute="topMargin" id="0ux-fz-oU0"/>
+                                                <constraint firstItem="cQr-8v-bbn" firstAttribute="leading" secondItem="7QI-rj-rFi" secondAttribute="leadingMargin" id="DGd-1i-da2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dSM-WQ-SN5" secondAttribute="trailing" id="GmI-Pa-RZI"/>
+                                                <constraint firstItem="dSM-WQ-SN5" firstAttribute="leading" secondItem="cQr-8v-bbn" secondAttribute="trailing" constant="8" symbolic="YES" id="JkQ-31-mnJ"/>
+                                                <constraint firstItem="cQr-8v-bbn" firstAttribute="top" secondItem="7QI-rj-rFi" secondAttribute="topMargin" id="OYG-h8-plX"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cQr-8v-bbn" secondAttribute="bottom" id="Y68-pJ-vFB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cQr-8v-bbn" secondAttribute="bottom" id="Z15-AU-u0i"/>
+                                                <constraint firstItem="cQr-8v-bbn" firstAttribute="leading" secondItem="7QI-rj-rFi" secondAttribute="leadingMargin" id="bmC-xG-GOx"/>
+                                                <constraint firstItem="dSM-WQ-SN5" firstAttribute="centerY" secondItem="7QI-rj-rFi" secondAttribute="centerY" id="iQd-CR-8Ri"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Nombre de face" id="YOu-vt-WJ5">
@@ -360,6 +395,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="animations" destination="dSM-WQ-SN5" id="1aG-ii-aIi"/>
                         <outlet property="boutonAutre" destination="wQ3-uq-2uW" id="Vdz-Xm-pqH"/>
                         <outlet property="labelNombreFace" destination="oHF-AQ-CfD" id="IUb-yK-Op2"/>
                         <outlet property="lancerAuDemmarage" destination="ilb-B0-7C0" id="eOe-cU-ef0"/>

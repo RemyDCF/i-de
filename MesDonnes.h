@@ -25,3 +25,9 @@
 @property(readwrite, nonatomic) bool lancerAuDemmarage;
 
 @end
+
+@interface MesDonnesAnimations : NSObject <NSCoding>
+
+@property(readwrite, nonatomic) bool animations;
+
+@end

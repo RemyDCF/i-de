@@ -55,3 +55,19 @@
     [super dealloc];
 }
 @end
+
+@implementation MesDonnesAnimations
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeBool:_animations forKey:@"animations"];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    _animations = [aDecoder decodeBoolForKey:@"animations"];
+    return self;
+}
+
+- (void)dealloc {
+    [super dealloc];
+}
+@end
