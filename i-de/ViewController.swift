@@ -20,13 +20,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var btChoisir: UIButton!
     @IBOutlet weak var btParametres: UIButton!
     @IBOutlet weak var labelFace: UILabel!
-    @IBOutlet weak var texteSecouer: UILabel!
     let pref = NSUserDefaults.standardUserDefaults()
     var nombreTiré:Int!
     var nombreFace:Int! = 6
     var premierLancer:Bool! = true
     var animationEnCours:Bool! = false
-    var secouer:Bool! = true
+    var secouer:Bool! = false
     var animationsAutorisés:Bool! = true
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,19 +50,16 @@ class ViewController: UIViewController {
         path = dir[0] . stringByAppendingPathComponent("secouer")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouer
-            if (!donneeSecouer.secouer) {
-                btChoisir.hidden = false
-                texteSecouer.hidden = true
-            }
-            else {
-                btChoisir.hidden = true
-                texteSecouer.hidden = false
+            if (donneeSecouer.secouer) {
                 secouer = true
+                btChoisir.setRoundedRectangleDisabled()
+                btChoisir.setTitle("Secouer pour choisir", forState: UIControlState.Normal)
             }
         }
         else {
-            btChoisir.hidden = true
-            texteSecouer.hidden = false
+            secouer = true
+            btChoisir.setRoundedRectangleDisabled()
+            btChoisir.setTitle("Secouer pour choisir", forState: UIControlState.Normal)
             donneeSecouer.secouer = true
             NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
         }
@@ -98,8 +94,10 @@ class ViewController: UIViewController {
         }
         
         
-        // Personnalisation du bouton choisir
-        btChoisir.setRoundedRectangle()
+        // Personnalisation des boutons
+        if (self.secouer == false) {
+            self.btChoisir.setRoundedRectangle()
+        }
         btParametres.setRoundedRectangle()
     }
     
@@ -136,7 +134,6 @@ class ViewController: UIViewController {
     func choisir(sens:SensSwipe) {
         if (animationsAutorisés == true) {
             if (!animationEnCours) {
-                self.btChoisir.enabled = false
                 self.btChoisir.setRoundedRectangleDisabled()
                 animationEnCours = true
                 nombre.hidden = false
@@ -145,7 +142,9 @@ class ViewController: UIViewController {
                     self.nombre.text = String(self.nombreTiré!)
                     premierLancer = false
                     animationEnCours = false
-                    self.btChoisir.enabled = true
+                    if (secouer == false) {
+                        self.btChoisir.setRoundedRectangle()
+                    }
                 }
                 else {
                     UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
@@ -187,8 +186,9 @@ class ViewController: UIViewController {
                                         }
                                         }) { (finished: Bool) -> Void in
                                             self.animationEnCours = false
-                                            self.btChoisir.enabled = true
-                                            self.btChoisir.setRoundedRectangle()
+                                            if (self.secouer == false) {
+                                                self.btChoisir.setRoundedRectangle()
+                                            }
                                     }
                             }
                     }

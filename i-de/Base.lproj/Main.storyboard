@@ -17,15 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secouez pour choisir" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWC-Bl-t2e">
-                                <rect key="frame" x="16" y="62" width="568" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="uP7-Er-aeg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tirage d'un nombre entre 1 et 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QD6-s7-DVY">
                                 <rect key="frame" x="16" y="28" width="568" height="26"/>
                                 <constraints>
@@ -47,7 +38,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
-                                <rect key="frame" x="16" y="91" width="568" height="437"/>
+                                <rect key="frame" x="16" y="62" width="568" height="466"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -62,28 +53,25 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="choisirAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pVp-D6-CHg"/>
+                                    <action selector="choisirActionDroite:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0NJ-Au-Xd4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="UWC-Bl-t2e" firstAttribute="top" secondItem="QD6-s7-DVY" secondAttribute="bottom" constant="8" id="76N-5D-dwh"/>
-                            <constraint firstItem="UWC-Bl-t2e" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="88J-yY-9p7"/>
                             <constraint firstItem="tuK-Yj-9va" firstAttribute="leading" secondItem="QD6-s7-DVY" secondAttribute="trailing" constant="-568" id="DcV-Zq-Zg2"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="DgY-1S-GRG"/>
                             <constraint firstItem="tuK-Yj-9va" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="EtU-Gn-oAf"/>
                             <constraint firstItem="mDv-l9-pHP" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="L8f-05-6wZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UWC-Bl-t2e" secondAttribute="trailing" id="LhP-vV-bVy"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="mDv-l9-pHP" secondAttribute="bottom" constant="20" id="QMW-ws-c0g"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="RA8-5K-sCT"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="top" secondItem="LGv-U3-cP9" secondAttribute="bottom" constant="8" id="Uf6-r7-pks"/>
+                            <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="QD6-s7-DVY" secondAttribute="bottom" constant="8" id="aIm-lu-jkt"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="m6t-yN-nCW"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="tuK-Yj-9va" secondAttribute="bottom" constant="20" id="p2b-mU-LdQ"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="E7o-0w-nyq" secondAttribute="bottom" constant="72" id="sPC-cW-E7T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tuK-Yj-9va" secondAttribute="trailing" constant="68" id="u4V-Ye-hPa"/>
-                            <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="UWC-Bl-t2e" secondAttribute="bottom" constant="8" id="veb-Y9-8I4"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="zxb-ew-Bq8"/>
                         </constraints>
                         <connections>
@@ -99,7 +87,6 @@
                         <outlet property="btParametres" destination="mDv-l9-pHP" id="IIc-rQ-Qcp"/>
                         <outlet property="labelFace" destination="QD6-s7-DVY" id="sUJ-uG-fUy"/>
                         <outlet property="nombre" destination="E7o-0w-nyq" id="0bu-cI-5jc"/>
-                        <outlet property="texteSecouer" destination="UWC-Bl-t2e" id="jHO-YS-pA9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

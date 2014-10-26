@@ -87,11 +87,9 @@
 		3678FF0719BC4E780097389D /* i-de */ = {
 			isa = PBXGroup;
 			children = (
-				3678FF0A19BC4E780097389D /* AppDelegate.swift */,
-				ADEED77619FCEAE1004FC171 /* ViewController.swift */,
+				AD0128D719FD28330034537B /* Classes */,
 				3678FF0E19BC4E780097389D /* Main.storyboard */,
-				ADAC628119F681F300C00359 /* UIButtonExtend.swift */,
-				3678FF2B19BC4F2C0097389D /* Parametre.swift */,
+				AD0128D819FD28460034537B /* Extensions Classes */,
 				3678FF2E19BC4F350097389D /* Test.playground */,
 				3678FF1119BC4E780097389D /* Images.xcassets */,
 				3678FF0819BC4E780097389D /* Supporting Files */,
@@ -122,6 +120,24 @@
 				3678FF1C19BC4E790097389D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD0128D719FD28330034537B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3678FF0A19BC4E780097389D /* AppDelegate.swift */,
+				ADEED77619FCEAE1004FC171 /* ViewController.swift */,
+				3678FF2B19BC4F2C0097389D /* Parametre.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		AD0128D819FD28460034537B /* Extensions Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ADAC628119F681F300C00359 /* UIButtonExtend.swift */,
+			);
+			name = "Extensions Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
