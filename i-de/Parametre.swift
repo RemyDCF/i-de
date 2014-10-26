@@ -9,7 +9,7 @@
 import UIKit
 
 class Parametres: UITableViewController {
-    @IBOutlet weak var segmentChoixDe: UISegmentedControl!
+    @IBOutlet weak var choixDe: UISwitch!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
     @IBOutlet weak var labelNombreFace: UILabel!
     @IBOutlet weak var lancerAuDemmarage: UISwitch!
@@ -27,7 +27,7 @@ class Parametres: UITableViewController {
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouer
             if (!donneeSecouer.secouer) {
-                segmentChoixDe.selectedSegmentIndex = 1
+                choixDe.setOn(false, animated: true)
             }
         }
         else {
@@ -77,7 +77,7 @@ class Parametres: UITableViewController {
     
     @IBAction func choixTypeLanceDeChange(sender: AnyObject) {
         var donnee = MesDonnesSecouer()
-        if (segmentChoixDe.selectedSegmentIndex == 0) {
+        if (choixDe.on) {
             donnee.secouer = true
         }
         else {

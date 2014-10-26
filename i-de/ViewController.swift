@@ -52,14 +52,10 @@ class ViewController: UIViewController {
             donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouer
             if (donneeSecouer.secouer) {
                 secouer = true
-                btChoisir.setRoundedRectangleDisabled()
-                btChoisir.setTitle("Secouer pour choisir", forState: UIControlState.Normal)
             }
         }
         else {
             secouer = true
-            btChoisir.setRoundedRectangleDisabled()
-            btChoisir.setTitle("Secouer pour choisir", forState: UIControlState.Normal)
             donneeSecouer.secouer = true
             NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
         }
@@ -95,9 +91,7 @@ class ViewController: UIViewController {
         
         
         // Personnalisation des boutons
-        if (self.secouer == false) {
-            self.btChoisir.setRoundedRectangle()
-        }
+        self.btChoisir.setRoundedRectangle()
         btParametres.setRoundedRectangle()
     }
     
@@ -186,9 +180,7 @@ class ViewController: UIViewController {
                                         }
                                         }) { (finished: Bool) -> Void in
                                             self.animationEnCours = false
-                                            if (self.secouer == false) {
-                                                self.btChoisir.setRoundedRectangle()
-                                            }
+                                            self.btChoisir.setRoundedRectangle()
                                     }
                             }
                     }

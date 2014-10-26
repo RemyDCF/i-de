@@ -237,6 +237,41 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="TET-w7-q2T">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TET-w7-q2T" id="BqD-0F-9Vx">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secouer" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jw-We-P4g">
+                                                    <rect key="frame" x="8" y="8" width="527" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iAG-WU-AOg">
+                                                    <rect key="frame" x="543" y="17" width="51" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="49" id="9Sp-Gt-aa0"/>
+                                                        <constraint firstAttribute="height" constant="31" id="Y2E-Q9-F4M"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="choixTypeLanceDeChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="QzE-zr-h4s"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Jw-We-P4g" firstAttribute="leading" secondItem="BqD-0F-9Vx" secondAttribute="leadingMargin" id="3Wk-dS-jXx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0Jw-We-P4g" secondAttribute="bottom" id="3Wl-bC-gbm"/>
+                                                <constraint firstItem="iAG-WU-AOg" firstAttribute="centerY" secondItem="BqD-0F-9Vx" secondAttribute="centerY" id="9E8-R3-qRe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="iAG-WU-AOg" secondAttribute="trailing" id="WtD-fU-KLD"/>
+                                                <constraint firstItem="0Jw-We-P4g" firstAttribute="top" secondItem="BqD-0F-9Vx" secondAttribute="topMargin" id="bYy-xF-Opk"/>
+                                                <constraint firstItem="0Jw-We-P4g" firstAttribute="top" secondItem="BqD-0F-9Vx" secondAttribute="topMargin" id="d2x-is-OcO"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0Jw-We-P4g" secondAttribute="bottom" id="k0L-Zj-3c8"/>
+                                                <constraint firstItem="0Jw-We-P4g" firstAttribute="leading" secondItem="BqD-0F-9Vx" secondAttribute="leadingMargin" id="qFt-Od-v0B"/>
+                                                <constraint firstItem="iAG-WU-AOg" firstAttribute="leading" secondItem="0Jw-We-P4g" secondAttribute="trailing" constant="8" symbolic="YES" id="ykU-qM-rOc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Nombre de face" id="YOu-vt-WJ5">
@@ -353,41 +388,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Type de lancement" id="V3k-5I-OLv">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Dol-CM-vTL">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dol-CM-vTL" id="xoe-kt-OnG">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wTe-kW-8QH">
-                                                    <rect key="frame" x="8" y="7" width="584" height="29"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="28" id="Qx2-N0-uyb"/>
-                                                    </constraints>
-                                                    <segments>
-                                                        <segment title="Secouer"/>
-                                                        <segment title="Appuyer sur un bouton"/>
-                                                    </segments>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="Qx2-N0-uyb"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <connections>
-                                                        <action selector="choixTypeLanceDeChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="TXQ-QG-54C"/>
-                                                    </connections>
-                                                </segmentedControl>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="wTe-kW-8QH" firstAttribute="leading" secondItem="xoe-kt-OnG" secondAttribute="leadingMargin" id="M0v-7K-bl6"/>
-                                                <constraint firstItem="wTe-kW-8QH" firstAttribute="trailing" secondItem="xoe-kt-OnG" secondAttribute="trailingMargin" id="fvV-S3-dPc"/>
-                                                <constraint firstItem="wTe-kW-8QH" firstAttribute="bottom" secondItem="xoe-kt-OnG" secondAttribute="bottomMargin" id="p6h-XM-P9G"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="EGX-2M-dTi" id="4JF-51-WN3"/>
@@ -397,9 +397,9 @@
                     <connections>
                         <outlet property="animations" destination="dSM-WQ-SN5" id="1aG-ii-aIi"/>
                         <outlet property="boutonAutre" destination="wQ3-uq-2uW" id="Vdz-Xm-pqH"/>
+                        <outlet property="choixDe" destination="iAG-WU-AOg" id="3Ns-G7-hbq"/>
                         <outlet property="labelNombreFace" destination="oHF-AQ-CfD" id="IUb-yK-Op2"/>
                         <outlet property="lancerAuDemmarage" destination="ilb-B0-7C0" id="eOe-cU-ef0"/>
-                        <outlet property="segmentChoixDe" destination="wTe-kW-8QH" id="pqn-dH-opd"/>
                         <outlet property="segmentChoixNombreFace" destination="rAl-NZ-39m" id="fUp-tj-qx0"/>
                     </connections>
                 </tableViewController>
