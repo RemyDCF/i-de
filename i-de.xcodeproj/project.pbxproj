@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3678FF0B19BC4E780097389D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF0A19BC4E780097389D /* AppDelegate.swift */; };
-		3678FF0D19BC4E780097389D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF0C19BC4E780097389D /* ViewController.swift */; };
 		3678FF1019BC4E780097389D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF0E19BC4E780097389D /* Main.storyboard */; };
 		3678FF1219BC4E780097389D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF1119BC4E780097389D /* Images.xcassets */; };
 		3678FF1E19BC4E790097389D /* i_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF1D19BC4E790097389D /* i_deTests.swift */; };
 		3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF2B19BC4F2C0097389D /* Parametre.swift */; };
 		ADAC628219F681F300C00359 /* UIButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAC628119F681F300C00359 /* UIButtonCustom.swift */; };
+		ADEED77719FCEAE1004FC171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEED77619FCEAE1004FC171 /* ViewController.swift */; };
 		C3F9BA7419E996E500EE845F /* MesDonnes.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F9BA7319E996E500EE845F /* MesDonnes.m */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +31,6 @@
 		3678FF0519BC4E780097389D /* i-de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "i-de.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3678FF0919BC4E780097389D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3678FF0A19BC4E780097389D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3678FF0C19BC4E780097389D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3678FF0F19BC4E780097389D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3678FF1119BC4E780097389D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3678FF1719BC4E780097389D /* i-deTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "i-deTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +40,7 @@
 		3678FF2B19BC4F2C0097389D /* Parametre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametre.swift; sourceTree = "<group>"; };
 		3678FF2E19BC4F350097389D /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; };
 		ADAC628119F681F300C00359 /* UIButtonCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonCustom.swift; sourceTree = "<group>"; };
+		ADEED77619FCEAE1004FC171 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C3F9BA7219E996E500EE845F /* MesDonnes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MesDonnes.h; sourceTree = "<group>"; };
 		C3F9BA7319E996E500EE845F /* MesDonnes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MesDonnes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				3678FF0A19BC4E780097389D /* AppDelegate.swift */,
-				3678FF0C19BC4E780097389D /* ViewController.swift */,
+				ADEED77619FCEAE1004FC171 /* ViewController.swift */,
 				3678FF0E19BC4E780097389D /* Main.storyboard */,
 				ADAC628119F681F300C00359 /* UIButtonCustom.swift */,
 				3678FF2B19BC4F2C0097389D /* Parametre.swift */,
@@ -224,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3678FF0D19BC4E780097389D /* ViewController.swift in Sources */,
+				ADEED77719FCEAE1004FC171 /* ViewController.swift in Sources */,
 				3678FF0B19BC4E780097389D /* AppDelegate.swift in Sources */,
 				C3F9BA7419E996E500EE845F /* MesDonnes.m in Sources */,
 				ADAC628219F681F300C00359 /* UIButtonCustom.swift in Sources */,
