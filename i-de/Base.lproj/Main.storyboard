@@ -104,7 +104,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="PTi-nh-Zrq">
                     <connections>
-                        <action selector="choisirAction:" destination="vXZ-lx-hvc" id="UTK-hW-HDe"/>
+                        <action selector="choisirActionDroite:" destination="vXZ-lx-hvc" id="bqC-Gl-4cv"/>
                     </connections>
                 </pongPressGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="Keu-Xu-3fe" userLabel="Swipe Gesture Recognizer (Droite)">
