@@ -36,10 +36,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDv-l9-pHP">
-                                <rect key="frame" x="540" y="536" width="44" height="44"/>
+                                <rect key="frame" x="524" y="520" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="YCi-zM-ZRk"/>
-                                    <constraint firstAttribute="width" constant="44" id="tnX-Sq-BN8"/>
+                                    <constraint firstAttribute="height" constant="60" id="YCi-zM-ZRk"/>
+                                    <constraint firstAttribute="width" constant="60" id="tnX-Sq-BN8"/>
                                 </constraints>
                                 <state key="normal" image="parametre"/>
                                 <connections>
@@ -54,9 +54,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuK-Yj-9va">
-                                <rect key="frame" x="16" y="536" width="516" height="44"/>
+                                <rect key="frame" x="16" y="520" width="500" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="jTJ-A2-3Fc"/>
+                                    <constraint firstAttribute="height" constant="60" id="jTJ-A2-3Fc"/>
                                 </constraints>
                                 <state key="normal" title="Choisir">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,7 +82,7 @@
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="m6t-yN-nCW"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="tuK-Yj-9va" secondAttribute="bottom" constant="20" id="p2b-mU-LdQ"/>
                             <constraint firstItem="2xT-Za-B83" firstAttribute="top" secondItem="E7o-0w-nyq" secondAttribute="bottom" constant="72" id="sPC-cW-E7T"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tuK-Yj-9va" secondAttribute="trailing" constant="52" id="u4V-Ye-hPa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tuK-Yj-9va" secondAttribute="trailing" constant="68" id="u4V-Ye-hPa"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="UWC-Bl-t2e" secondAttribute="bottom" constant="8" id="veb-Y9-8I4"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="zxb-ew-Bq8"/>
                         </constraints>
@@ -96,6 +96,7 @@
                     </view>
                     <connections>
                         <outlet property="btChoisir" destination="tuK-Yj-9va" id="5ra-kJ-Zuh"/>
+                        <outlet property="btParametres" destination="mDv-l9-pHP" id="IIc-rQ-Qcp"/>
                         <outlet property="labelFace" destination="QD6-s7-DVY" id="sUJ-uG-fUy"/>
                         <outlet property="nombre" destination="E7o-0w-nyq" id="0bu-cI-5jc"/>
                         <outlet property="texteSecouer" destination="UWC-Bl-t2e" id="jHO-YS-pA9"/>
@@ -421,6 +422,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="parametre" width="256" height="256"/>
+        <image name="parametre" width="500" height="500"/>
     </resources>
 </document>

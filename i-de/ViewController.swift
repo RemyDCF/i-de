@@ -18,6 +18,7 @@ enum SensSwipe {
 class ViewController: UIViewController {
     @IBOutlet weak var nombre: UILabel!
     @IBOutlet weak var btChoisir: UIButton!
+    @IBOutlet weak var btParametres: UIButton!
     @IBOutlet weak var labelFace: UILabel!
     @IBOutlet weak var texteSecouer: UILabel!
     let pref = NSUserDefaults.standardUserDefaults()
@@ -99,6 +100,7 @@ class ViewController: UIViewController {
         
         // Personnalisation du bouton choisir
         btChoisir.setRoundedRectangle()
+        btParametres.setRoundedRectangle()
     }
     
     override func didReceiveMemoryWarning() {
