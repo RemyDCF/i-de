@@ -63,7 +63,7 @@ class Parametres: UITableViewController {
             }
         }
         else {
-            donneeAnimations.animations = false
+            donneeAnimations.animations = true
             var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
             var path = dir[0] . stringByAppendingPathComponent("animations")
             var erreur = NSKeyedArchiver.archiveRootObject(donneeAnimations, toFile: path)

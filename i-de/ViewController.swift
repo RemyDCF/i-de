@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btChoisir: UIButton!
     @IBOutlet weak var btParametres: UIButton!
     @IBOutlet weak var labelFace: UILabel!
-    let pref = NSUserDefaults.standardUserDefaults()
-    var nombreTiré:Int!
+    @IBOutlet weak var image: UIImageView!
+    var nombreTiré:Int! = 0
     var nombreFace:Int! = 6
     var premierLancer:Bool! = true
     var animationEnCours:Bool! = false
@@ -78,6 +78,7 @@ class ViewController: UIViewController {
         var donneeAnimations = MesDonnesAnimations()
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         path = dir[0] . stringByAppendingPathComponent("animations")
+        println(path)
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesAnimations
             if (!donneeAnimations.animations) {
@@ -85,13 +86,13 @@ class ViewController: UIViewController {
             }
         }
         else {
-            donneeLancerAuDemmarage.lancerAuDemmarage = false
-            NSKeyedArchiver.archiveRootObject(donneeLancerAuDemmarage, toFile: path)
+            donneeAnimations.animations = true
+            NSKeyedArchiver.archiveRootObject(donneeAnimations, toFile: path)
         }
         
         
         // Personnalisation des boutons
-        self.btChoisir.setRoundedRectangle()
+        btChoisir.setRoundedRectangle()
         btParametres.setRoundedRectangle()
     }
     
@@ -126,19 +127,18 @@ class ViewController: UIViewController {
     }
     
     func choisir(sens:SensSwipe) {
+        image.hidden = true
+        nombre.hidden = false
         if (animationsAutorisés == true) {
             if (!animationEnCours) {
                 self.btChoisir.setRoundedRectangleDisabled()
                 animationEnCours = true
-                nombre.hidden = false
                 if (premierLancer == true) {
                     self.nombreTiré = random() % self.nombreFace! + 1;
                     self.nombre.text = String(self.nombreTiré!)
                     premierLancer = false
                     animationEnCours = false
-                    if (secouer == false) {
-                        self.btChoisir.setRoundedRectangle()
-                    }
+                    self.btChoisir.setRoundedRectangle()
                 }
                 else {
                     UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
@@ -186,10 +186,10 @@ class ViewController: UIViewController {
                     }
                 }
             }
-            else {
-                self.nombreTiré = random() % self.nombreFace! + 1;
-                self.nombre.text = String(self.nombreTiré!)
-            }
+        }
+        else {
+            self.nombreTiré = random() % self.nombreFace! + 1;
+            self.nombre.text = String(self.nombreTiré!)
         }
     }
 }
