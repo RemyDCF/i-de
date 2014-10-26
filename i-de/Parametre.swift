@@ -137,22 +137,21 @@ class Parametres: UITableViewController {
     }
     
     func afficherAlerteChoixNombrePersonnalise() {
-        var inputTextField: UITextField?
         var donnee = MesDonnesNombreFace()
         let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 200)", preferredStyle: UIAlertControllerStyle.Alert)
         alerte.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "Nombre"
             textField.keyboardType = UIKeyboardType.NumberPad
-            inputTextField = textField
         })
         alerte.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction!) in
             self.mettreAJourFaceDe()
         }))
         alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
-            var string:String! = inputTextField?.text
-            let chiffre = inputTextField?.text!.toInt()
-            if (chiffre != nil && chiffre >= 2 && chiffre <= 200) {
-                donnee.nombreFace = Int32(chiffre!)
+            let textFields = alerte.textFields as [UITextField]
+            let textField = textFields[0]
+            var nombre:Int! = textField.text.toInt()
+            if (nombre != nil && nombre >= 2 && nombre <= 200) {
+                donnee.nombreFace = Int32(nombre!)
                 var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                 var path = dir[0] . stringByAppendingPathComponent("nombreFace")
                 NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
