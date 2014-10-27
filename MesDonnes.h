@@ -14,20 +14,28 @@
 
 @end
 
-@interface MesDonnesSecouer : NSObject <NSCoding>
+@interface MesDonnesLancerAuDemarrage : NSObject <NSCoding>
 
-@property(readwrite, nonatomic) bool secouer;
-
-@end
-
-@interface MesDonnesLancerAuDemmarage : NSObject <NSCoding>
-
-@property(readwrite, nonatomic) bool lancerAuDemmarage;
+@property(readwrite, nonatomic) bool lancerAuDemarrage;
 
 @end
 
 @interface MesDonnesAnimations : NSObject <NSCoding>
 
 @property(readwrite, nonatomic) bool animations;
+
+@end
+
+#pragma mark - Secouer
+
+@interface MesDonnesSecouer : NSObject <NSCoding>
+
+@property(readwrite, nonatomic) bool secouer;
+
+@end
+
+@interface MesDonnesSecouerRotation : NSObject <NSCoding>
+
+@property(readwrite, nonatomic) bool secouerRotation;
 
 @end

@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     var animationEnCours:Bool! = false
     var secouer:Bool! = false
     var animationsAutorisés:Bool! = true
+    var rotation:Bool! = true
     override func viewDidLoad() {
         super.viewDidLoad()
         // Nombre face
@@ -60,25 +61,40 @@ class ViewController: UIViewController {
             NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
         }
         
-        // Lancer au demmarage
-        var donneeLancerAuDemmarage = MesDonnesLancerAuDemmarage()
+        // Secouer Rotation
+        var donneeSecouerRotation = MesDonnesSecouerRotation()
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("lancerAuDemmarage")
+        path = dir[0] . stringByAppendingPathComponent("secouerRotation")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeLancerAuDemmarage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesLancerAuDemmarage
-            if (donneeLancerAuDemmarage.lancerAuDemmarage) {
+            donneeSecouerRotation = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouerRotation
+            if (!donneeSecouerRotation.secouerRotation) {
+                rotation = false
+            }
+        }
+        else {
+            rotation = true
+            donneeSecouerRotation.secouerRotation = true
+            NSKeyedArchiver.archiveRootObject(donneeSecouerRotation, toFile: path)
+        }
+        
+        // Lancer au demmarage
+        var donneelancerAuDemarrage = MesDonnesLancerAuDemarrage()
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneelancerAuDemarrage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesLancerAuDemarrage
+            if (donneelancerAuDemarrage.lancerAuDemarrage) {
                 choisir(.Droite)
             }
         }
         else {
-            donneeLancerAuDemmarage.lancerAuDemmarage = false
-            NSKeyedArchiver.archiveRootObject(donneeLancerAuDemmarage, toFile: path)
+            donneelancerAuDemarrage.lancerAuDemarrage = false
+            NSKeyedArchiver.archiveRootObject(donneelancerAuDemarrage, toFile: path)
         }
         // Animations
         var donneeAnimations = MesDonnesAnimations()
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         path = dir[0] . stringByAppendingPathComponent("animations")
-        println(path)
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesAnimations
             if (!donneeAnimations.animations) {
@@ -190,6 +206,20 @@ class ViewController: UIViewController {
         else {
             self.nombreTiré = random() % self.nombreFace! + 1;
             self.nombre.text = String(self.nombreTiré!)
+        }
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        if (rotation == true) {
+            return true
+        }
+        else {
+            if (secouer == true) {
+                return false
+            }
+            else {
+                return true
+            }
         }
     }
 }

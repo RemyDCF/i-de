@@ -12,6 +12,7 @@
 		3678FF1219BC4E780097389D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF1119BC4E780097389D /* Images.xcassets */; };
 		3678FF1E19BC4E790097389D /* i_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF1D19BC4E790097389D /* i_deTests.swift */; };
 		3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF2B19BC4F2C0097389D /* Parametre.swift */; };
+		AD6C8F7619FE869C004711EE /* ParametreSecouer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */; };
 		ADAC628219F681F300C00359 /* UIButtonExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAC628119F681F300C00359 /* UIButtonExtend.swift */; };
 		ADEED77719FCEAE1004FC171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEED77619FCEAE1004FC171 /* ViewController.swift */; };
 		C3F9BA7419E996E500EE845F /* MesDonnes.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F9BA7319E996E500EE845F /* MesDonnes.m */; };
@@ -39,6 +40,7 @@
 		3678FF2719BC4F070097389D /* i-de-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "i-de-Bridging-Header.h"; path = "i-de/i-de-Bridging-Header.h"; sourceTree = "<group>"; };
 		3678FF2B19BC4F2C0097389D /* Parametre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametre.swift; sourceTree = "<group>"; };
 		3678FF2E19BC4F350097389D /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; };
+		AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametreSecouer.swift; sourceTree = "<group>"; };
 		ADAC628119F681F300C00359 /* UIButtonExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtend.swift; sourceTree = "<group>"; };
 		ADEED77619FCEAE1004FC171 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C3F9BA7219E996E500EE845F /* MesDonnes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MesDonnes.h; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				3678FF0A19BC4E780097389D /* AppDelegate.swift */,
 				ADEED77619FCEAE1004FC171 /* ViewController.swift */,
 				3678FF2B19BC4F2C0097389D /* Parametre.swift */,
+				AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				3678FF0B19BC4E780097389D /* AppDelegate.swift in Sources */,
 				C3F9BA7419E996E500EE845F /* MesDonnes.m in Sources */,
 				ADAC628219F681F300C00359 /* UIButtonExtend.swift in Sources */,
+				AD6C8F7619FE869C004711EE /* ParametreSecouer.swift in Sources */,
 				3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

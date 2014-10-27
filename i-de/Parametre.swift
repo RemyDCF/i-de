@@ -12,13 +12,16 @@ class Parametres: UITableViewController {
     @IBOutlet weak var choixDe: UISwitch!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
     @IBOutlet weak var labelNombreFace: UILabel!
-    @IBOutlet weak var lancerAuDemmarage: UISwitch!
+    @IBOutlet weak var lancerAuDemarrage: UISwitch!
     @IBOutlet weak var animations: UISwitch!
     @IBOutlet weak var boutonAutre: UIButton!
+    @IBOutlet weak var boutonParametreSecouer: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Personnalisation des boutons
         boutonAutre.setRoundedRectangle()
+        boutonParametreSecouer.setRoundedRectangle()
+        boutonParametreSecouer.setImage(UIImage(named: "parametreDisabled"), forState: UIControlState.Disabled)
         // Mise en place des données existantes
         // Secouer
         var donneeSecouer = MesDonnesSecouer()
@@ -28,6 +31,7 @@ class Parametres: UITableViewController {
             donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouer
             if (!donneeSecouer.secouer) {
                 choixDe.setOn(false, animated: true)
+                boutonParametreSecouer.setRoundedRectangleDisabled()
             }
         }
         else {
@@ -37,20 +41,20 @@ class Parametres: UITableViewController {
             var erreur = NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
         }
         // Lancer au demmarage
-        var donneeLancerAuDemmarage = MesDonnesLancerAuDemmarage()
+        var donneelancerAuDemarrage = MesDonnesLancerAuDemarrage()
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("lancerAuDemmarage")
+        path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeLancerAuDemmarage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesLancerAuDemmarage
-            if (donneeLancerAuDemmarage.lancerAuDemmarage) {
-                lancerAuDemmarage.setOn(true, animated: true)
+            donneelancerAuDemarrage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesLancerAuDemarrage
+            if (donneelancerAuDemarrage.lancerAuDemarrage) {
+                lancerAuDemarrage.setOn(true, animated: true)
             }
         }
         else {
-            donneeLancerAuDemmarage.lancerAuDemmarage = false
+            donneelancerAuDemarrage.lancerAuDemarrage = false
             var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-            var path = dir[0] . stringByAppendingPathComponent("lancerAuDemmarage")
-            var erreur = NSKeyedArchiver.archiveRootObject(donneeLancerAuDemmarage, toFile: path)
+            var path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
+            var erreur = NSKeyedArchiver.archiveRootObject(donneelancerAuDemarrage, toFile: path)
         }
         // Animations
         var donneeAnimations = MesDonnesAnimations()
@@ -76,12 +80,15 @@ class Parametres: UITableViewController {
     }
     
     @IBAction func choixTypeLanceDeChange(sender: AnyObject) {
+        // Le switch de Secouer est changé
         var donnee = MesDonnesSecouer()
         if (choixDe.on) {
             donnee.secouer = true
+            boutonParametreSecouer.setRoundedRectangle()
         }
         else {
             donnee.secouer = false
+            boutonParametreSecouer.setRoundedRectangleDisabled()
         }
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("secouer")
@@ -89,20 +96,22 @@ class Parametres: UITableViewController {
     }
 
     
-    @IBAction func lancerDemmarageChange(sender: AnyObject) {
-        var donnee = MesDonnesLancerAuDemmarage()
-        if (lancerAuDemmarage.on) {
-            donnee.lancerAuDemmarage = true
+    @IBAction func lancerDemarrageChange(sender: AnyObject) {
+        // Le switch de lancer au demarrage est changé
+        var donnee = MesDonnesLancerAuDemarrage()
+        if (lancerAuDemarrage.on) {
+            donnee.lancerAuDemarrage = true
         }
         else {
-            donnee.lancerAuDemmarage = false
+            donnee.lancerAuDemarrage = false
         }
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("lancerAuDemmarage")
+        var path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
     }
 
     @IBAction func animationsChange(sender: AnyObject) {
+        // Le switch des animations est changé
         var donnee = MesDonnesAnimations()
         if (animations.on) {
             donnee.animations = true
@@ -116,6 +125,7 @@ class Parametres: UITableViewController {
     }
     
     @IBAction func choixNombreFaceChange(sender: AnyObject) {
+        // Le nombre de face est changé
         var donnee = MesDonnesNombreFace()
         if (segmentChoixNombreFace.selectedSegmentIndex == 0) {
             donnee.nombreFace = 6
@@ -133,10 +143,12 @@ class Parametres: UITableViewController {
     }
     
     @IBAction func choixNombreFaceChangeAutre(sender: AnyObject) {
+        // Cette fonction affiche l'alerte pour le nombre personnalisé
         afficherAlerteChoixNombrePersonnalise()
     }
     
     func afficherAlerteChoixNombrePersonnalise() {
+        // On change le nombre de faces personnalisé
         var donnee = MesDonnesNombreFace()
         let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 200)", preferredStyle: UIAlertControllerStyle.Alert)
         alerte.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
@@ -170,6 +182,7 @@ class Parametres: UITableViewController {
     }
     
     func mettreAJourLabelFaceNumber() {
+        // Cette fonction met à jour le nombre de face
         var donnee = MesDonnesNombreFace()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
@@ -183,6 +196,7 @@ class Parametres: UITableViewController {
     }
     
     func mettreAJourFaceDe() {
+        // Cette fonction met à jour le UISegmentedControl du choix des faces du dé
         var donnee = MesDonnesNombreFace()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
