@@ -89,3 +89,19 @@
     [super dealloc];
 }
 @end
+
+@implementation MesDonnesSecouerAnimations
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeBool:_secouerAnimations forKey:@"secouerAnimations"];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    _secouerAnimations = [aDecoder decodeBoolForKey:@"secouerAnimations"];
+    return self;
+}
+
+- (void)dealloc {
+    [super dealloc];
+}
+@end

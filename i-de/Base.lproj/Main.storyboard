@@ -522,6 +522,34 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="W2D-Yy-cUG">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W2D-Yy-cUG" id="6Rz-JM-mQw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3a-Vn-bb5">
+                                                    <rect key="frame" x="8" y="8" width="527" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FG1-p6-wXL">
+                                                    <rect key="frame" x="543" y="17" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchAnimationsChange:" destination="OTf-00-B5v" eventType="valueChanged" id="pml-ps-8Rr"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FG1-p6-wXL" firstAttribute="centerY" secondItem="w3a-Vn-bb5" secondAttribute="centerY" id="GWR-yM-ovY"/>
+                                                <constraint firstItem="FG1-p6-wXL" firstAttribute="leading" secondItem="w3a-Vn-bb5" secondAttribute="trailing" constant="8" symbolic="YES" id="KnE-re-4bQ"/>
+                                                <constraint firstItem="FG1-p6-wXL" firstAttribute="trailing" secondItem="6Rz-JM-mQw" secondAttribute="trailingMargin" id="YTm-2j-V2P"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="w3a-Vn-bb5" secondAttribute="bottom" id="hBI-1u-6Bb"/>
+                                                <constraint firstItem="w3a-Vn-bb5" firstAttribute="top" secondItem="6Rz-JM-mQw" secondAttribute="topMargin" id="kkp-LR-L1B"/>
+                                                <constraint firstItem="w3a-Vn-bb5" firstAttribute="leading" secondItem="6Rz-JM-mQw" secondAttribute="leadingMargin" id="qu7-bx-eih"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -531,6 +559,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="switchAnimations" destination="FG1-p6-wXL" id="glT-kq-tlq"/>
                         <outlet property="switchRotation" destination="a2t-6D-eaH" id="moP-KV-iJH"/>
                     </connections>
                 </tableViewController>
@@ -544,6 +573,6 @@
         <image name="parametre" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NYE-cp-bQl"/>
+        <segue reference="KZO-vT-4Sw"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,7 @@ import UIKit
 
 class ParametreSecouer: UITableViewController {
     @IBOutlet weak var switchRotation: UISwitch!
+    @IBOutlet weak var switchAnimations: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Rotation
@@ -24,11 +25,23 @@ class ParametreSecouer: UITableViewController {
         }
         else {
             donneeSecouerRotation.secouerRotation = true
-            var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-            var path = dir[0] . stringByAppendingPathComponent("secouerRotation")
             var erreur = NSKeyedArchiver.archiveRootObject(donneeSecouerRotation, toFile: path)
         }
-
+        // Animations
+        var donneeSecouerAnimations = MesDonnesSecouerAnimations()
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneeSecouerAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouerAnimations
+            if (!donneeSecouerAnimations.secouerAnimations) {
+                switchAnimations.setOn(false, animated: true)
+            }
+        }
+        else {
+            switchAnimations.setOn(false, animated: true)
+            donneeSecouerAnimations.secouerAnimations = false
+            var erreur = NSKeyedArchiver.archiveRootObject(donneeSecouerRotation, toFile: path)
+        }
     }
     
     @IBAction func switchRotationChange(sender: AnyObject!) {
@@ -41,6 +54,19 @@ class ParametreSecouer: UITableViewController {
         }
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("secouerRotation")
+        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+    }
+    
+    @IBAction func switchAnimationsChange(sender: AnyObject!) {
+        var donnee = MesDonnesSecouerAnimations()
+        if (switchAnimations.on) {
+            donnee.secouerAnimations = true
+        }
+        else {
+            donnee.secouerAnimations = false
+        }
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
     }
 }

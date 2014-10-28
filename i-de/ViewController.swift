@@ -15,6 +15,11 @@ enum SensSwipe {
     case Gauche
 }
 
+enum SenderChoisir {
+    case Secouer
+    case Autre
+}
+
 class ViewController: UIViewController {
     @IBOutlet weak var nombre: UILabel!
     @IBOutlet weak var btChoisir: UIButton!
@@ -27,6 +32,7 @@ class ViewController: UIViewController {
     var animationEnCours:Bool! = false
     var secouer:Bool! = false
     var animationsAutorisés:Bool! = true
+    var animationsSecouerAutorisés:Bool! = true
     var rotation:Bool! = true
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +80,22 @@ class ViewController: UIViewController {
         else {
             rotation = true
             donneeSecouerRotation.secouerRotation = true
+            NSKeyedArchiver.archiveRootObject(donneeSecouerRotation, toFile: path)
+        }
+        
+        // Secouer Animations
+        var donneeSecouerAnimations = MesDonnesSecouerAnimations()
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneeSecouerAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouerAnimations
+            if (!donneeSecouerAnimations.secouerAnimations) {
+                animationsSecouerAutorisés = false
+            }
+        }
+        else {
+            animationsSecouerAutorisés = false
+            donneeSecouerAnimations.secouerAnimations = false
             NSKeyedArchiver.archiveRootObject(donneeSecouerRotation, toFile: path)
         }
         
@@ -125,7 +147,7 @@ class ViewController: UIViewController {
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if (secouer == true) {
-            choisir(.Droite)
+            choisir(.Droite, sender: .Secouer)
         }
     }
     
@@ -142,73 +164,88 @@ class ViewController: UIViewController {
         choisir(.Bas)
     }
     
-    func choisir(sens:SensSwipe) {
+    func choisir(sens:SensSwipe, sender:SenderChoisir = .Autre) {
         image.hidden = true
         nombre.hidden = false
-        if (animationsAutorisés == true) {
-            if (!animationEnCours) {
-                self.btChoisir.setRoundedRectangleDisabled()
-                animationEnCours = true
-                if (premierLancer == true) {
-                    self.nombreTiré = random() % self.nombreFace! + 1;
-                    self.nombre.text = String(self.nombreTiré!)
-                    premierLancer = false
-                    animationEnCours = false
-                    self.btChoisir.setRoundedRectangle()
-                }
-                else {
-                    UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                        switch sens {
-                        case .Droite:
-                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                        case .Gauche:
-                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                        case .Haut:
-                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                        case .Bas:
-                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                        }
-                        }) { (finished: Bool) -> Void in
-                            UIView.animateKeyframesWithDuration(0.3, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                                switch sens {
-                                case .Droite:
-                                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                                case .Gauche:
-                                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                                case .Haut:
-                                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 200, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                                case .Bas:
-                                    self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 200, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                                }
-                                }) { (finished: Bool) -> Void in
-                                    self.nombreTiré = random() % self.nombreFace! + 1;
-                                    self.nombre.text = String(self.nombreTiré!)
-                                    UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                                        switch sens {
-                                        case .Droite:
-                                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                                        case .Gauche:
-                                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                                        case .Haut:
-                                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                                        case .Bas:
-                                            self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
-                                        }
-                                        }) { (finished: Bool) -> Void in
-                                            self.animationEnCours = false
-                                            self.btChoisir.setRoundedRectangle()
-                                    }
-                            }
-                    }
-                }
+        if (sender == .Secouer) {
+            if (animationsSecouerAutorisés == true) {
+                animerDe(sens)
+            }
+            else {
+                self.nombreTiré = random() % self.nombreFace! + 1;
+                self.nombre.text = String(self.nombreTiré!)
             }
         }
         else {
-            self.nombreTiré = random() % self.nombreFace! + 1;
-            self.nombre.text = String(self.nombreTiré!)
+            if (animationsAutorisés == true) {
+                if (!animationEnCours) {
+                    self.btChoisir.setRoundedRectangleDisabled()
+                    animationEnCours = true
+                    if (premierLancer == true) {
+                        self.nombreTiré = random() % self.nombreFace! + 1;
+                        self.nombre.text = String(self.nombreTiré!)
+                        premierLancer = false
+                        animationEnCours = false
+                        self.btChoisir.setRoundedRectangle()
+                    }
+                    else {
+                        animerDe(sens)
+                    }
+                }
+            }
+            else {
+                self.nombreTiré = random() % self.nombreFace! + 1;
+                self.nombre.text = String(self.nombreTiré!)
+            }
         }
     }
     
+    func animerDe(sens:SensSwipe) {
+        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+            switch sens {
+            case .Droite:
+                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+            case .Gauche:
+                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+            case .Haut:
+                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
+            case .Bas:
+                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
+            }
+            }) { (finished: Bool) -> Void in
+                UIView.animateKeyframesWithDuration(0.3, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                    switch sens {
+                    case .Droite:
+                        self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                    case .Gauche:
+                        self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 200, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                    case .Haut:
+                        self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 200, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                    case .Bas:
+                        self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 200, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                    }
+                    }) { (finished: Bool) -> Void in
+                        self.nombreTiré = random() % self.nombreFace! + 1;
+                        self.nombre.text = String(self.nombreTiré!)
+                        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                            switch sens {
+                            case .Droite:
+                                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x + 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                            case .Gauche:
+                                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x - 100, self.nombre.frame.origin.y, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                            case .Haut:
+                                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                            case .Bas:
+                                self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                            }
+                            }) { (finished: Bool) -> Void in
+                                self.animationEnCours = false
+                                self.btChoisir.setRoundedRectangle()
+                        }
+                }
+        }
+        
+    }
     override func shouldAutorotate() -> Bool {
         if (rotation == true) {
             return true

@@ -39,3 +39,9 @@
 @property(readwrite, nonatomic) bool secouerRotation;
 
 @end
+
+@interface MesDonnesSecouerAnimations : NSObject <NSCoding>
+
+@property(readwrite, nonatomic) bool secouerAnimations;
+
+@end
