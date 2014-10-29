@@ -99,6 +99,7 @@
                             <outletCollection property="gestureRecognizers" destination="aAB-g0-kZR" appends="YES" id="JV3-Dt-AIB"/>
                             <outletCollection property="gestureRecognizers" destination="XNC-So-bO8" appends="YES" id="1eX-IH-z80"/>
                             <outletCollection property="gestureRecognizers" destination="Rbx-OM-RpN" appends="YES" id="Qp4-iM-ZAH"/>
+                            <outletCollection property="gestureRecognizers" destination="y3g-xs-kgG" appends="YES" id="8un-ta-BnR"/>
                         </connections>
                     </view>
                     <connections>
@@ -125,6 +126,11 @@
                         <action selector="choisirActionGauche:" destination="vXZ-lx-hvc" id="ROI-4a-zN4"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer id="y3g-xs-kgG">
+                    <connections>
+                        <action selector="choisirActionDroite:" destination="vXZ-lx-hvc" id="cuF-Ec-VgA"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="XNC-So-bO8" userLabel="Swipe Gesture Recognizer (Haut)">
                     <connections>
                         <action selector="choisirActionHaut:" destination="vXZ-lx-hvc" id="Hkz-6N-scn"/>
