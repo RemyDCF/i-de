@@ -40,7 +40,7 @@ class ParametreSecouer: UITableViewController {
         else {
             switchAnimations.setOn(false, animated: true)
             donneeSecouerAnimations.secouerAnimations = false
-            var erreur = NSKeyedArchiver.archiveRootObject(donneeSecouerRotation, toFile: path)
+            var erreur = NSKeyedArchiver.archiveRootObject(donneeSecouerAnimations, toFile: path)
         }
     }
     

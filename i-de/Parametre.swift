@@ -36,9 +36,19 @@ class Parametres: UITableViewController {
         }
         else {
             donneeSecouer.secouer = true
-            var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-            var path = dir[0] . stringByAppendingPathComponent("secouer")
             var erreur = NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
+            
+            var donneeSecouerAnimations = MesDonnesSecouerAnimations()
+            dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+            path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
+            donneeSecouerAnimations.secouerAnimations = false
+            erreur = NSKeyedArchiver.archiveRootObject(donneeSecouerAnimations, toFile: path)
+            
+            var donneeSecouerRotation = MesDonnesSecouerRotation()
+            dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+            path = dir[0] . stringByAppendingPathComponent("secouerRotation")
+            donneeSecouerRotation.secouerRotation = false
+            erreur = NSKeyedArchiver.archiveRootObject(donneeSecouerRotation, toFile: path)
         }
         // Lancer au demmarage
         var donneelancerAuDemarrage = MesDonnesLancerAuDemarrage()

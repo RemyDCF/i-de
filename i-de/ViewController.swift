@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         else {
             animationsSecouerAutorisés = false
             donneeSecouerAnimations.secouerAnimations = false
-            NSKeyedArchiver.archiveRootObject(donneeSecouerRotation, toFile: path)
+            NSKeyedArchiver.archiveRootObject(donneeSecouerAnimations, toFile: path)
         }
         
         // Lancer au demmarage
