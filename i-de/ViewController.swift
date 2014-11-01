@@ -165,38 +165,45 @@ class ViewController: UIViewController {
     }
     
     func choisir(sens:SensSwipe, sender:SenderChoisir = .Autre) {
-        image.hidden = true
-        nombre.hidden = false
-        if (sender == .Secouer) {
-            if (animationsSecouerAutorisés == true) {
-                animerDe(sens)
-            }
-            else {
-                self.nombreTiré = random() % self.nombreFace! + 1;
-                self.nombre.text = String(self.nombreTiré!)
-            }
+        if (premierLancer == true) {
+            self.btChoisir.setRoundedRectangleDisabled()
+            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                self.image.alpha = 0.0
+                }, completion: { (finished: Bool) -> Void in
+                    self.nombreTiré = random() % self.nombreFace! + 1;
+                    self.nombre.text = String(self.nombreTiré!)
+                    UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                        self.nombre.alpha = 1.0
+                        }, completion: { (finished: Bool) -> Void in
+                            self.premierLancer = false
+                            self.animationEnCours = false
+                            self.btChoisir.setRoundedRectangle()
+                    })
+            })
         }
         else {
-            if (animationsAutorisés == true) {
-                if (!animationEnCours) {
-                    self.btChoisir.setRoundedRectangleDisabled()
-                    animationEnCours = true
-                    if (premierLancer == true) {
-                        self.nombreTiré = random() % self.nombreFace! + 1;
-                        self.nombre.text = String(self.nombreTiré!)
-                        premierLancer = false
-                        animationEnCours = false
-                        self.btChoisir.setRoundedRectangle()
-                    }
-                    else {
-                        animerDe(sens)
-                    }
+            if (sender == .Secouer) {
+                if (animationsSecouerAutorisés == true) {
+                    animerDe(sens)
+                }
+                else {
+                    self.nombreTiré = random() % self.nombreFace! + 1;
+                    self.nombre.text = String(self.nombreTiré!)
                 }
             }
             else {
-                self.nombreTiré = random() % self.nombreFace! + 1;
-                self.nombre.text = String(self.nombreTiré!)
+                if (animationsAutorisés == true) {
+                    if (!animationEnCours) {
+                        animationEnCours = true
+                        animerDe(sens)
+                    }
+                }
+                else {
+                    self.nombreTiré = random() % self.nombreFace! + 1;
+                    self.nombre.text = String(self.nombreTiré!)
+                }
             }
+            
         }
     }
     

@@ -40,7 +40,7 @@
                                     <segue destination="EGX-2M-dTi" kind="show" id="NYE-cp-bQl"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
                                 <rect key="frame" x="16" y="62" width="568" height="466"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -579,6 +579,6 @@
         <image name="parametre" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KZO-vT-4Sw"/>
+        <segue reference="NYE-cp-bQl"/>
     </inferredMetricsTieBreakers>
 </document>
