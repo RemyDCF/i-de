@@ -12,11 +12,11 @@
 		3678FF1219BC4E780097389D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF1119BC4E780097389D /* Images.xcassets */; };
 		3678FF1E19BC4E790097389D /* i_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF1D19BC4E790097389D /* i_deTests.swift */; };
 		3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF2B19BC4F2C0097389D /* Parametre.swift */; };
+		AD02BAF61A10F4BE003FB741 /* MesDonnes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */; };
 		AD6C8F7619FE869C004711EE /* ParametreSecouer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */; };
 		AD8FA6CB1A000BD600DDC684 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */; };
 		ADAC628219F681F300C00359 /* UIButtonExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAC628119F681F300C00359 /* UIButtonExtend.swift */; };
 		ADEED77719FCEAE1004FC171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEED77619FCEAE1004FC171 /* ViewController.swift */; };
-		C3F9BA7419E996E500EE845F /* MesDonnes.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F9BA7319E996E500EE845F /* MesDonnes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,15 +38,13 @@
 		3678FF1719BC4E780097389D /* i-deTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "i-deTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3678FF1C19BC4E790097389D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3678FF1D19BC4E790097389D /* i_deTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = i_deTests.swift; sourceTree = "<group>"; };
-		3678FF2719BC4F070097389D /* i-de-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "i-de-Bridging-Header.h"; path = "i-de/i-de-Bridging-Header.h"; sourceTree = "<group>"; };
 		3678FF2B19BC4F2C0097389D /* Parametre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametre.swift; sourceTree = "<group>"; };
 		3678FF2E19BC4F350097389D /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; };
+		AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesDonnes.swift; sourceTree = "<group>"; };
 		AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametreSecouer.swift; sourceTree = "<group>"; };
 		AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		ADAC628119F681F300C00359 /* UIButtonExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtend.swift; sourceTree = "<group>"; };
 		ADEED77619FCEAE1004FC171 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C3F9BA7219E996E500EE845F /* MesDonnes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MesDonnes.h; sourceTree = "<group>"; };
-		C3F9BA7319E996E500EE845F /* MesDonnes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MesDonnes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +71,6 @@
 				3678FF0719BC4E780097389D /* i-de */,
 				3678FF1A19BC4E780097389D /* i-deTests */,
 				3678FF0619BC4E780097389D /* Products */,
-				3678FF2719BC4F070097389D /* i-de-Bridging-Header.h */,
-				C3F9BA7219E996E500EE845F /* MesDonnes.h */,
-				C3F9BA7319E996E500EE845F /* MesDonnes.m */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +129,7 @@
 				ADEED77619FCEAE1004FC171 /* ViewController.swift */,
 				3678FF2B19BC4F2C0097389D /* Parametre.swift */,
 				AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */,
+				AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -249,10 +245,10 @@
 			files = (
 				ADEED77719FCEAE1004FC171 /* ViewController.swift in Sources */,
 				3678FF0B19BC4E780097389D /* AppDelegate.swift in Sources */,
-				C3F9BA7419E996E500EE845F /* MesDonnes.m in Sources */,
 				ADAC628219F681F300C00359 /* UIButtonExtend.swift in Sources */,
 				AD6C8F7619FE869C004711EE /* ParametreSecouer.swift in Sources */,
 				3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */,
+				AD02BAF61A10F4BE003FB741 /* MesDonnes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +371,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "i-de/i-de-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -392,7 +389,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "i-de/i-de-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

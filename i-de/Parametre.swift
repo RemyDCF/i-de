@@ -173,7 +173,7 @@ class Parametres: UITableViewController {
             let textField = textFields[0]
             var nombre:Int! = textField.text.toInt()
             if (nombre != nil && nombre >= 2 && nombre <= 200) {
-                donnee.nombreFace = Int32(nombre!)
+                donnee.nombreFace = nombre!
                 var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                 var path = dir[0] . stringByAppendingPathComponent("nombreFace")
                 NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
