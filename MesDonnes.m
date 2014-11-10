@@ -19,9 +19,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 @end
 
 @implementation MesDonnesLancerAuDemarrage
@@ -35,9 +32,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 @end
 
 @implementation MesDonnesAnimations
@@ -51,9 +45,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 @end
 
 #pragma mark - Secouer
@@ -69,9 +60,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 @end
 
 @implementation MesDonnesSecouerRotation
@@ -85,9 +73,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 @end
 
 @implementation MesDonnesSecouerAnimations
@@ -101,7 +86,4 @@
     return self;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 @end
