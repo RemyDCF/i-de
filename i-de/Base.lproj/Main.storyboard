@@ -451,7 +451,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MZ-6y-IdK">
-                                                    <rect key="frame" x="8" y="17" width="48" height="30"/>
+                                                    <rect key="frame" x="8" y="21" width="48" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="Retour">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -461,38 +461,18 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secouer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02S-iV-uq3">
-                                                    <rect key="frame" x="262" y="18" width="77" height="28"/>
+                                                    <rect key="frame" x="262" y="21" width="77" height="28"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="02S-iV-uq3" secondAttribute="centerY" id="0SG-Ng-guE"/>
+                                                <constraint firstAttribute="centerY" secondItem="02S-iV-uq3" secondAttribute="centerY" constant="-3.5" id="0SG-Ng-guE"/>
                                                 <constraint firstAttribute="centerX" secondItem="02S-iV-uq3" secondAttribute="centerX" id="BT6-lm-ZBj"/>
-                                                <constraint firstAttribute="centerY" secondItem="7MZ-6y-IdK" secondAttribute="centerY" id="L9J-Um-4ac"/>
+                                                <constraint firstAttribute="centerY" secondItem="7MZ-6y-IdK" secondAttribute="centerY" constant="-4.5" id="L9J-Um-4ac"/>
                                                 <constraint firstItem="7MZ-6y-IdK" firstAttribute="leading" secondItem="tZR-r5-ScY" secondAttribute="leadingMargin" id="TNo-Lc-9Ip"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="02S-iV-uq3" secondAttribute="bottom" constant="9" id="x5G-Qa-Lx3"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="96" id="SkD-fs-641">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SkD-fs-641" id="33I-bQ-2OK">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quand l'option secouer est activé, on peut secouer le téléphone pour choisir un chiffre" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBj-Jw-Ouw">
-                                                    <rect key="frame" x="8" y="11" width="584" height="81"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="uBj-Jw-Ouw" firstAttribute="top" secondItem="33I-bQ-2OK" secondAttribute="topMargin" constant="3" id="3EW-mu-InH"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="uBj-Jw-Ouw" secondAttribute="bottom" constant="-5" id="4cr-4D-IWC"/>
-                                                <constraint firstItem="uBj-Jw-Ouw" firstAttribute="leading" secondItem="33I-bQ-2OK" secondAttribute="leadingMargin" id="rdB-lq-zj2"/>
-                                                <constraint firstItem="uBj-Jw-Ouw" firstAttribute="trailing" secondItem="33I-bQ-2OK" secondAttribute="trailingMargin" id="yoT-Bd-Zgb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="02S-iV-uq3" secondAttribute="bottom" constant="6" id="x5G-Qa-Lx3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
