@@ -94,12 +94,12 @@
                             </mask>
                         </variation>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="PTi-nh-Zrq" appends="YES" id="2ME-sZ-fgD"/>
                             <outletCollection property="gestureRecognizers" destination="Keu-Xu-3fe" appends="YES" id="KOl-Gk-ruj"/>
                             <outletCollection property="gestureRecognizers" destination="aAB-g0-kZR" appends="YES" id="JV3-Dt-AIB"/>
                             <outletCollection property="gestureRecognizers" destination="XNC-So-bO8" appends="YES" id="1eX-IH-z80"/>
                             <outletCollection property="gestureRecognizers" destination="Rbx-OM-RpN" appends="YES" id="Qp4-iM-ZAH"/>
                             <outletCollection property="gestureRecognizers" destination="y3g-xs-kgG" appends="YES" id="8un-ta-BnR"/>
+                            <outletCollection property="gestureRecognizers" destination="PTi-nh-Zrq" appends="YES" id="JOL-hn-EIv"/>
                         </connections>
                     </view>
                     <connections>
@@ -113,7 +113,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="PTi-nh-Zrq">
                     <connections>
-                        <action selector="choisirActionDroite:" destination="vXZ-lx-hvc" id="bqC-Gl-4cv"/>
+                        <action selector="choisirTap:" destination="vXZ-lx-hvc" id="1Of-gx-v0f"/>
                     </connections>
                 </pongPressGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="Keu-Xu-3fe" userLabel="Swipe Gesture Recognizer (Droite)">
@@ -128,7 +128,7 @@
                 </swipeGestureRecognizer>
                 <tapGestureRecognizer id="y3g-xs-kgG">
                     <connections>
-                        <action selector="choisirActionDroite:" destination="vXZ-lx-hvc" id="cuF-Ec-VgA"/>
+                        <action selector="choisirTap:" destination="vXZ-lx-hvc" id="OdF-tg-Rpb"/>
                     </connections>
                 </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="XNC-So-bO8" userLabel="Swipe Gesture Recognizer (Haut)">

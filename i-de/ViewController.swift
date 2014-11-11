@@ -13,10 +13,12 @@ enum SensSwipe {
     case Bas
     case Droite
     case Gauche
+    case Aucun
 }
 
 enum SenderChoisir {
     case Secouer
+    case Tap
     case Autre
 }
 
@@ -163,7 +165,9 @@ class ViewController: UIViewController {
     @IBAction func choisirActionBas(sender: AnyObject) {
         choisir(.Bas)
     }
-    
+    @IBAction func choisirTap(sender: AnyObject) {
+        choisir(.Aucun, sender: .Tap)
+    }
     func choisir(sens:SensSwipe, sender:SenderChoisir = .Autre) {
         if (premierLancer == true) {
             self.btChoisir.setRoundedRectangleDisabled()
@@ -190,6 +194,21 @@ class ViewController: UIViewController {
                     self.nombreTiré = random() % self.nombreFace! + 1;
                     self.nombre.text = String(self.nombreTiré!)
                 }
+            }
+            else if (sender == .Tap) {
+                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                    self.nombre.alpha = 0.0
+                    }, completion: { (finished: Bool) -> Void in
+                        self.nombreTiré = random() % self.nombreFace! + 1;
+                        self.nombre.text = String(self.nombreTiré!)
+                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                            self.nombre.alpha = 1.0
+                            }, completion: { (finished: Bool) -> Void in
+                                self.premierLancer = false
+                                self.animationEnCours = false
+                                self.btChoisir.setRoundedRectangle()
+                        })
+                })
             }
             else {
                 if (animationsAutorisés == true) {
@@ -218,6 +237,8 @@ class ViewController: UIViewController {
                 self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
             case .Bas:
                 self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
+            default:
+                break
             }
             }) { (finished: Bool) -> Void in
                 UIView.animateKeyframesWithDuration(0.3, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
@@ -230,6 +251,8 @@ class ViewController: UIViewController {
                         self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 200, self.nombre.frame.size.width, self.nombre.frame.size.height)
                     case .Bas:
                         self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 200, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                    default:
+                        break
                     }
                     }) { (finished: Bool) -> Void in
                         self.nombreTiré = random() % self.nombreFace! + 1;
@@ -244,6 +267,8 @@ class ViewController: UIViewController {
                                 self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y - 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
                             case .Bas:
                                 self.nombre.frame = CGRectMake(self.nombre.frame.origin.x, self.nombre.frame.origin.y + 100, self.nombre.frame.size.width, self.nombre.frame.size.height)
+                            default:
+                                break
                             }
                             }) { (finished: Bool) -> Void in
                                 self.animationEnCours = false
