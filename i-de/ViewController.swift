@@ -186,43 +186,52 @@ class ViewController: UIViewController {
             })
         }
         else {
-            if (sender == .Secouer) {
-                if (animationsSecouerAutorisés == true) {
-                    animerDe(sens)
-                }
-                else {
-                    self.nombreTiré = random() % self.nombreFace! + 1;
-                    self.nombre.text = String(self.nombreTiré!)
-                }
-            }
-            else if (sender == .Tap) {
-                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                    self.nombre.alpha = 0.0
-                    }, completion: { (finished: Bool) -> Void in
+            if (!animationEnCours) {
+                animationEnCours = true
+                if (sender == .Secouer) {
+                    if (animationsSecouerAutorisés == true) {
+                        animerDe(sens)
+                    }
+                    else {
                         self.nombreTiré = random() % self.nombreFace! + 1;
                         self.nombre.text = String(self.nombreTiré!)
-                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                            self.nombre.alpha = 1.0
+                    }
+                }
+                else if (sender == .Tap) {
+                    if (animationsAutorisés == true) {
+                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                            self.nombre.alpha = 0.0
                             }, completion: { (finished: Bool) -> Void in
-                                self.premierLancer = false
-                                self.animationEnCours = false
-                                self.btChoisir.setRoundedRectangle()
+                                self.nombreTiré = random() % self.nombreFace! + 1;
+                                self.nombre.text = String(self.nombreTiré!)
+                                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                                    self.nombre.alpha = 1.0
+                                    }, completion: { (finished: Bool) -> Void in
+                                        self.animationEnCours = false
+                                        self.premierLancer = false
+                                        self.animationEnCours = false
+                                        self.btChoisir.setRoundedRectangle()
+                                })
                         })
-                })
-            }
-            else {
-                if (animationsAutorisés == true) {
-                    if (!animationEnCours) {
-                        animationEnCours = true
-                        animerDe(sens)
+                    }
+                    else {
+                        self.nombreTiré = random() % self.nombreFace! + 1;
+                        self.nombre.text = String(self.nombreTiré!)
+                        self.animationEnCours = false
                     }
                 }
                 else {
-                    self.nombreTiré = random() % self.nombreFace! + 1;
-                    self.nombre.text = String(self.nombreTiré!)
+                    if (animationsAutorisés == true) {
+                        animationEnCours = true
+                        animerDe(sens)
+                    }
+                    else {
+                        self.nombreTiré = random() % self.nombreFace! + 1;
+                        self.nombre.text = String(self.nombreTiré!)
+                        self.animationEnCours = false
+                    }
                 }
             }
-            
         }
     }
     
@@ -276,7 +285,6 @@ class ViewController: UIViewController {
                         }
                 }
         }
-        
     }
     override func shouldAutorotate() -> Bool {
         if (rotation == true) {
