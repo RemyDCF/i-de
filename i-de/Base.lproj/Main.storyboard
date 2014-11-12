@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -56,7 +56,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="choisirActionDroite:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0NJ-Au-Xd4"/>
+                                    <action selector="choisirTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VvD-7g-SOF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,8 +98,8 @@
                             <outletCollection property="gestureRecognizers" destination="aAB-g0-kZR" appends="YES" id="JV3-Dt-AIB"/>
                             <outletCollection property="gestureRecognizers" destination="XNC-So-bO8" appends="YES" id="1eX-IH-z80"/>
                             <outletCollection property="gestureRecognizers" destination="Rbx-OM-RpN" appends="YES" id="Qp4-iM-ZAH"/>
-                            <outletCollection property="gestureRecognizers" destination="y3g-xs-kgG" appends="YES" id="8un-ta-BnR"/>
                             <outletCollection property="gestureRecognizers" destination="PTi-nh-Zrq" appends="YES" id="JOL-hn-EIv"/>
+                            <outletCollection property="gestureRecognizers" destination="y3g-xs-kgG" appends="YES" id="TL4-eG-W8i"/>
                         </connections>
                     </view>
                     <connections>
