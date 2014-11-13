@@ -170,6 +170,7 @@ class ViewController: UIViewController {
     }
     func choisir(sens:SensSwipe, sender:SenderChoisir = .Autre) {
         if (premierLancer == true) {
+            // Si c'est le premier lancer
             self.btChoisir.setRoundedRectangleDisabled()
             UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.image.alpha = 0.0
@@ -186,18 +187,36 @@ class ViewController: UIViewController {
             })
         }
         else {
+            // Sinon...
             if (!animationEnCours) {
+                // Il faut que l'animation soit en cours
                 animationEnCours = true
                 if (sender == .Secouer) {
-                    if (animationsSecouerAutorisés == true) {
-                        animerDe(sens)
+                    // Si on secoue
+                    if (animationsAutorisés == true) {
+                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                            self.nombre.alpha = 0.0
+                            }, completion: { (finished: Bool) -> Void in
+                                self.nombreTiré = random() % self.nombreFace! + 1;
+                                self.nombre.text = String(self.nombreTiré!)
+                                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                                    self.nombre.alpha = 1.0
+                                    }, completion: { (finished: Bool) -> Void in
+                                        self.animationEnCours = false
+                                        self.premierLancer = false
+                                        self.animationEnCours = false
+                                        self.btChoisir.setRoundedRectangle()
+                                })
+                        })
                     }
                     else {
                         self.nombreTiré = random() % self.nombreFace! + 1;
                         self.nombre.text = String(self.nombreTiré!)
+                        self.animationEnCours = false
                     }
                 }
                 else if (sender == .Tap) {
+                    // Si on "Tap"
                     if (animationsAutorisés == true) {
                         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                             self.nombre.alpha = 0.0
@@ -221,6 +240,7 @@ class ViewController: UIViewController {
                     }
                 }
                 else {
+                    // Si on "Slide"
                     if (animationsAutorisés == true) {
                         animationEnCours = true
                         animerDe(sens)
