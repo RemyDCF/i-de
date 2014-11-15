@@ -171,19 +171,27 @@ class ViewController: UIViewController {
         if (premierLancer == true) {
             // Si c'est le premier lancer
             self.btChoisir.setRoundedRectangleDisabled()
-            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            if (animationsAutorisés == true) {
+                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                    self.image.alpha = 0.0
+                    }, completion: { (finished: Bool) -> Void in
+                        self.nombreTiré = random() % self.nombreFace! + 1;
+                        self.nombre.text = String(self.nombreTiré!)
+                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                            self.nombre.alpha = 1.0
+                            }, completion: { (finished: Bool) -> Void in
+                                self.premierLancer = false
+                                self.animationEnCours = false
+                                self.btChoisir.setRoundedRectangle()
+                        })
+                })
+            }
+            else {
                 self.image.alpha = 0.0
-                }, completion: { (finished: Bool) -> Void in
-                    self.nombreTiré = random() % self.nombreFace! + 1;
-                    self.nombre.text = String(self.nombreTiré!)
-                    UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                        self.nombre.alpha = 1.0
-                        }, completion: { (finished: Bool) -> Void in
-                            self.premierLancer = false
-                            self.animationEnCours = false
-                            self.btChoisir.setRoundedRectangle()
-                    })
-            })
+                self.nombreTiré = random() % self.nombreFace! + 1;
+                self.nombre.text = String(self.nombreTiré!)
+                self.nombre.alpha = 1.0
+            }
         }
         else {
             self.btChoisir.setRoundedRectangleDisabled()
