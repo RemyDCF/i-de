@@ -78,20 +78,20 @@ class MesDonnesSecouer : NSObject {
     }
 }
 
-class MesDonnesSecouerRotation : NSObject {
-    var secouerRotation: Bool = true
+class MesDonnesRotation : NSObject {
+    var rotation: Bool = true
     
     override init() {
         super.init()
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeBool(self.secouerRotation, forKey: "secouerRotation")
+        aCoder.encodeBool(self.rotation, forKey: "rotation")
     }
     
     init(coder aDecoder: NSCoder) {
         super.init()
-        self.secouerRotation = aDecoder.decodeBoolForKey("secouerRotation")
+        self.rotation = aDecoder.decodeBoolForKey("rotation")
     }
 }
 

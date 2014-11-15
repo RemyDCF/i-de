@@ -68,20 +68,20 @@ class ViewController: UIViewController {
             NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
         }
         
-        // Secouer Rotation
-        var donneeSecouerRotation = MesDonnesSecouerRotation()
+        // Rotation
+        var donneeRotation = MesDonnesRotation()
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("secouerRotation")
+        path = dir[0] . stringByAppendingPathComponent("rotation")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeSecouerRotation = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouerRotation
-            if (!donneeSecouerRotation.secouerRotation) {
+            donneeRotation = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesRotation
+            if (!donneeRotation.rotation) {
                 rotation = false
             }
         }
         else {
             rotation = true
-            donneeSecouerRotation.secouerRotation = true
-            NSKeyedArchiver.archiveRootObject(donneeSecouerRotation, toFile: path)
+            donneeRotation.rotation = true
+            NSKeyedArchiver.archiveRootObject(donneeRotation, toFile: path)
         }
         
         // Secouer Animations

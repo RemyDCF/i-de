@@ -9,6 +9,7 @@
 import UIKit
 
 class Parametres: UITableViewController {
+    @IBOutlet weak var switchRotation: UISwitch!
     @IBOutlet weak var choixDe: UISwitch!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
     @IBOutlet weak var labelNombreFace: UILabel!
@@ -44,11 +45,11 @@ class Parametres: UITableViewController {
             donneeSecouerAnimations.secouerAnimations = false
             erreur = NSKeyedArchiver.archiveRootObject(donneeSecouerAnimations, toFile: path)
             
-            var donneeSecouerRotation = MesDonnesSecouerRotation()
+            var donneeRotation = MesDonnesRotation()
             dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-            path = dir[0] . stringByAppendingPathComponent("secouerRotation")
-            donneeSecouerRotation.secouerRotation = false
-            erreur = NSKeyedArchiver.archiveRootObject(donneeSecouerRotation, toFile: path)
+            path = dir[0] . stringByAppendingPathComponent("rotation")
+            donneeRotation.rotation = false
+            erreur = NSKeyedArchiver.archiveRootObject(donneeRotation, toFile: path)
         }
         // Lancer au demmarage
         var donneelancerAuDemarrage = MesDonnesLancerAuDemarrage()
@@ -81,6 +82,20 @@ class Parametres: UITableViewController {
             var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
             var path = dir[0] . stringByAppendingPathComponent("animations")
             var erreur = NSKeyedArchiver.archiveRootObject(donneeAnimations, toFile: path)
+        }
+        // Rotation
+        var donneeRotation = MesDonnesRotation()
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("rotation")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneeRotation = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesRotation
+            if (!donneeRotation.rotation) {
+                switchRotation.setOn(false, animated: true)
+            }
+        }
+        else {
+            donneeRotation.rotation = true
+            var erreur = NSKeyedArchiver.archiveRootObject(donneeRotation, toFile: path)
         }
         mettreAJourFaceDe()
     }
@@ -155,6 +170,19 @@ class Parametres: UITableViewController {
     @IBAction func choixNombreFaceChangeAutre(sender: AnyObject) {
         // Cette fonction affiche l'alerte pour le nombre personnalisé
         afficherAlerteChoixNombrePersonnalise()
+    }
+    
+    @IBAction func switchRotationChange(sender: AnyObject!) {
+        var donnee = MesDonnesRotation()
+        if (switchRotation.on) {
+            donnee.rotation = true
+        }
+        else {
+            donnee.rotation = false
+        }
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("rotation")
+        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
     }
     
     func afficherAlerteChoixNombrePersonnalise() {

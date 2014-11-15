@@ -314,6 +314,34 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="AEw-7h-dgh">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AEw-7h-dgh" id="Nnf-I7-L90">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotation autorisé" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgm-QO-o8a">
+                                                    <rect key="frame" x="8" y="9" width="527" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEG-9T-23T">
+                                                    <rect key="frame" x="543" y="18" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchRotationChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="0BV-Jr-67Q"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aEG-9T-23T" firstAttribute="leading" secondItem="rgm-QO-o8a" secondAttribute="trailing" constant="8" symbolic="YES" id="1I2-5N-tsh"/>
+                                                <constraint firstItem="rgm-QO-o8a" firstAttribute="leading" secondItem="Nnf-I7-L90" secondAttribute="leadingMargin" id="8nr-rO-1io"/>
+                                                <constraint firstItem="rgm-QO-o8a" firstAttribute="top" secondItem="Nnf-I7-L90" secondAttribute="topMargin" constant="1" id="9gO-c7-zL4"/>
+                                                <constraint firstItem="aEG-9T-23T" firstAttribute="top" secondItem="Nnf-I7-L90" secondAttribute="topMargin" constant="10" id="JZG-Y1-GKz"/>
+                                                <constraint firstItem="aEG-9T-23T" firstAttribute="centerY" secondItem="rgm-QO-o8a" secondAttribute="centerY" id="QVz-hZ-slN"/>
+                                                <constraint firstItem="aEG-9T-23T" firstAttribute="trailing" secondItem="Nnf-I7-L90" secondAttribute="trailingMargin" id="xKN-aj-GcV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Nombre de face" id="YOu-vt-WJ5">
@@ -430,11 +458,12 @@
                         <outlet property="labelNombreFace" destination="oHF-AQ-CfD" id="IUb-yK-Op2"/>
                         <outlet property="lancerAuDemarrage" destination="ilb-B0-7C0" id="eOe-cU-ef0"/>
                         <outlet property="segmentChoixNombreFace" destination="rAl-NZ-39m" id="fUp-tj-qx0"/>
+                        <outlet property="switchRotation" destination="aEG-9T-23T" id="H0X-SV-TEE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ks-5L-tFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="-122"/>
+            <point key="canvasLocation" x="1588" y="-123"/>
         </scene>
         <!--Parametre Secouer-->
         <scene sceneID="gdV-UH-4x6">
@@ -482,34 +511,6 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Parametres" id="kc2-vs-yLc">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="Iud-Qa-WD7">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iud-Qa-WD7" id="uew-J1-O9e">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotation autorisé" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTn-NZ-IVg">
-                                                    <rect key="frame" x="8" y="8" width="527" height="48"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2t-6D-eaH">
-                                                    <rect key="frame" x="543" y="17" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="switchRotationChange:" destination="OTf-00-B5v" eventType="valueChanged" id="Y7H-i2-acO"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="a2t-6D-eaH" firstAttribute="centerY" secondItem="fTn-NZ-IVg" secondAttribute="centerY" id="2ad-hd-yvt"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="fTn-NZ-IVg" secondAttribute="bottom" id="Dzw-hz-xXW"/>
-                                                <constraint firstItem="a2t-6D-eaH" firstAttribute="trailing" secondItem="uew-J1-O9e" secondAttribute="trailingMargin" id="MXP-iB-qSD"/>
-                                                <constraint firstItem="fTn-NZ-IVg" firstAttribute="leading" secondItem="uew-J1-O9e" secondAttribute="leadingMargin" id="NMJ-o2-e36"/>
-                                                <constraint firstItem="fTn-NZ-IVg" firstAttribute="top" secondItem="uew-J1-O9e" secondAttribute="topMargin" id="f2d-re-zQN"/>
-                                                <constraint firstItem="a2t-6D-eaH" firstAttribute="leading" secondItem="fTn-NZ-IVg" secondAttribute="trailing" constant="8" symbolic="YES" id="f64-sm-xjS"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="W2D-Yy-cUG">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W2D-Yy-cUG" id="6Rz-JM-mQw">
@@ -548,7 +549,6 @@
                     </tableView>
                     <connections>
                         <outlet property="switchAnimations" destination="FG1-p6-wXL" id="glT-kq-tlq"/>
-                        <outlet property="switchRotation" destination="a2t-6D-eaH" id="moP-KV-iJH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWe-nN-LGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
