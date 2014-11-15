@@ -52,7 +52,6 @@ class ViewController: UIViewController {
         }
         
         labelFace.text = "Tirage d'un nombre entre 1 et " + String(UInt8(nombreFace))
-        
         // Secouer
         var donneeSecouer = MesDonnesSecouer()
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
@@ -187,13 +186,14 @@ class ViewController: UIViewController {
             })
         }
         else {
+            self.btChoisir.setRoundedRectangleDisabled()
             // Sinon...
             if (!animationEnCours) {
                 // Il faut que l'animation soit en cours
                 animationEnCours = true
                 if (sender == .Secouer) {
                     // Si on secoue
-                    if (animationsAutorisés == true) {
+                    if (animationsSecouerAutorisés == true) {
                         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                             self.nombre.alpha = 0.0
                             }, completion: { (finished: Bool) -> Void in
@@ -213,6 +213,7 @@ class ViewController: UIViewController {
                         self.nombreTiré = random() % self.nombreFace! + 1;
                         self.nombre.text = String(self.nombreTiré!)
                         self.animationEnCours = false
+                        self.btChoisir.setRoundedRectangle()
                     }
                 }
                 else if (sender == .Tap) {
@@ -237,6 +238,7 @@ class ViewController: UIViewController {
                         self.nombreTiré = random() % self.nombreFace! + 1;
                         self.nombre.text = String(self.nombreTiré!)
                         self.animationEnCours = false
+                        self.btChoisir.setRoundedRectangle()
                     }
                 }
                 else {
@@ -249,6 +251,7 @@ class ViewController: UIViewController {
                         self.nombreTiré = random() % self.nombreFace! + 1;
                         self.nombre.text = String(self.nombreTiré!)
                         self.animationEnCours = false
+                        self.btChoisir.setRoundedRectangle()
                     }
                 }
             }

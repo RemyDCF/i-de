@@ -53,7 +53,7 @@
                                     <constraint firstAttribute="height" constant="60" id="jTJ-A2-3Fc"/>
                                 </constraints>
                                 <state key="normal" title="Choisir">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="choisirTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VvD-7g-SOF"/>
@@ -164,7 +164,7 @@
                                                     <rect key="frame" x="562" y="25" width="30" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="OK">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <segue destination="vXZ-lx-hvc" kind="show" id="oas-Pn-kXq"/>
@@ -345,7 +345,9 @@
                                                 </segmentedControl>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQ3-uq-2uW">
                                                     <rect key="frame" x="8" y="46" width="584" height="30"/>
-                                                    <state key="normal" title="Choisir un nombre personnalisé"/>
+                                                    <state key="normal" title="Choisir un nombre personnalisé">
+                                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="choixNombreFaceChangeAutre:" destination="EGX-2M-dTi" eventType="touchUpInside" id="v1M-uT-eZ6"/>
                                                     </connections>
@@ -454,7 +456,7 @@
                                                     <rect key="frame" x="8" y="21" width="48" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="Retour">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <segue destination="EGX-2M-dTi" kind="presentation" id="KZO-vT-4Sw"/>
@@ -559,6 +561,7 @@
         <image name="parametre" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NYE-cp-bQl"/>
+        <segue reference="KZO-vT-4Sw"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.24283768503289466" green="0.70000000000000007" blue="0.31903140419407883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
