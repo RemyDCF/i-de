@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C68k" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -26,8 +26,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cube" translatesAutoresizingMaskIntoConstraints="NO" id="bjL-rZ-lfl">
-                                <rect key="frame" x="16" y="62" width="568" height="450"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone" translatesAutoresizingMaskIntoConstraints="NO" id="bjL-rZ-lfl">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Vh8-QZ-EhS"/>
+                                    <constraint firstAttribute="width" constant="200" id="cPs-46-tKq"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDv-l9-pHP">
                                 <rect key="frame" x="524" y="520" width="60" height="60"/>
@@ -60,9 +64,10 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.81960784313725488" green="1" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="bjL-rZ-lfl" secondAttribute="centerY" id="Cbz-bH-Ge5"/>
                             <constraint firstItem="tuK-Yj-9va" firstAttribute="leading" secondItem="QD6-s7-DVY" secondAttribute="trailing" constant="-568" id="DcV-Zq-Zg2"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="DgY-1S-GRG"/>
                             <constraint firstItem="bjL-rZ-lfl" firstAttribute="top" secondItem="QD6-s7-DVY" secondAttribute="bottom" constant="8" id="Dkg-xg-ICn"/>
@@ -73,6 +78,7 @@
                             <constraint firstItem="bjL-rZ-lfl" firstAttribute="top" secondItem="QD6-s7-DVY" secondAttribute="bottom" constant="8" id="RLD-kF-DMK"/>
                             <constraint firstItem="bjL-rZ-lfl" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="SYB-9f-L8y"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="top" secondItem="LGv-U3-cP9" secondAttribute="bottom" constant="8" id="Uf6-r7-pks"/>
+                            <constraint firstAttribute="centerX" secondItem="bjL-rZ-lfl" secondAttribute="centerX" id="WlG-Gx-d5E"/>
                             <constraint firstItem="tuK-Yj-9va" firstAttribute="top" secondItem="bjL-rZ-lfl" secondAttribute="bottom" constant="8" id="YWy-kR-NaU"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="QD6-s7-DVY" secondAttribute="bottom" constant="8" id="aIm-lu-jkt"/>
                             <constraint firstItem="bjL-rZ-lfl" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="b1L-gT-Iti"/>
@@ -88,9 +94,13 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Dkg-xg-ICn"/>
+                                <exclude reference="RLD-kF-DMK"/>
                                 <exclude reference="SYB-9f-L8y"/>
+                                <exclude reference="b1L-gT-Iti"/>
                                 <exclude reference="mSW-lm-IUY"/>
+                                <exclude reference="ntV-sD-cz7"/>
                                 <exclude reference="YWy-kR-NaU"/>
+                                <exclude reference="qZ4-Ya-24Y"/>
                             </mask>
                         </variation>
                         <connections>
@@ -557,7 +567,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cube" width="200" height="200"/>
+        <image name="icone" width="1000" height="1000"/>
         <image name="parametre" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
