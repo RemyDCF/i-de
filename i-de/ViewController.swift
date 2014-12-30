@@ -65,6 +65,7 @@ class ViewController: UIViewController {
             }
             else {
                 labelNombre.text = ""
+                image.alpha = 1.0
             }
         }
         else {
@@ -179,12 +180,12 @@ class ViewController: UIViewController {
         choisir(.Aucun, sender: .Tap)
     }
     func choisir(sens:SensSwipe, sender:SenderChoisir = .Autre) {
+        self.image.alpha = 0.0
         if (AppValues.premierLancer == true) {
             // Si c'est le premier lancer
             self.btChoisir.setRoundedRectangleDisabled()
             if (AppValues.animationsAutorisés == true) {
                 UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                    self.image.alpha = 0.0
                     }, completion: { (finished: Bool) -> Void in
                         AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
                         self.labelNombre.text = String(AppValues.nombreTiré!)
@@ -198,7 +199,6 @@ class ViewController: UIViewController {
                 })
             }
             else {
-                self.image.alpha = 0.0
                 AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
                 self.labelNombre.text = String(AppValues.nombreTiré!)
                 self.labelNombre.alpha = 1.0
