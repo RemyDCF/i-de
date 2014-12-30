@@ -10,7 +10,7 @@ import UIKit
 
 class Parametres: UITableViewController {
     @IBOutlet weak var switchRotation: UISwitch!
-    @IBOutlet weak var choixDe: UISwitch!
+    @IBOutlet weak var secouerDe: UISwitch!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
     @IBOutlet weak var labelNombreFace: UILabel!
     @IBOutlet weak var lancerAuDemarrage: UISwitch!
@@ -24,37 +24,19 @@ class Parametres: UITableViewController {
         boutonParametreSecouer.setRoundedRectangle()
         boutonParametreSecouer.setImage(UIImage(named: "parametreDisabled"), forState: UIControlState.Disabled)
         // Mise en place des données existantes
-        // Secouer
-        var donneeSecouer = MesDonnesSecouer()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("secouer")
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouer
-            if (!donneeSecouer.secouer) {
-                choixDe.setOn(false, animated: true)
-                boutonParametreSecouer.setRoundedRectangleDisabled()
-            }
+        if (!AppValues.secouer) {
+            secouerDe.setOn(false, animated: true)
+            boutonParametreSecouer.setRoundedRectangleDisabled()
         }
-        else {
-            donneeSecouer.secouer = true
-            var erreur = NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
-            
-            var donneeSecouerAnimations = MesDonnesSecouerAnimations()
-            dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-            path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
-            donneeSecouerAnimations.secouerAnimations = false
-            erreur = NSKeyedArchiver.archiveRootObject(donneeSecouerAnimations, toFile: path)
-            
-            var donneeRotation = MesDonnesRotation()
-            dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-            path = dir[0] . stringByAppendingPathComponent("rotation")
-            donneeRotation.rotation = false
-            erreur = NSKeyedArchiver.archiveRootObject(donneeRotation, toFile: path)
+        if (AppValues.animationsAutorisés == true) {
+            animations.setOn(true, animated: true)
         }
-        // Lancer au demmarage
+        if (!AppValues.rotation) {
+            switchRotation.setOn(false, animated: true)
+        }
         var donneelancerAuDemarrage = MesDonnesLancerAuDemarrage()
-        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneelancerAuDemarrage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesLancerAuDemarrage
             if (donneelancerAuDemarrage.lancerAuDemarrage) {
@@ -67,36 +49,6 @@ class Parametres: UITableViewController {
             var path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
             var erreur = NSKeyedArchiver.archiveRootObject(donneelancerAuDemarrage, toFile: path)
         }
-        // Animations
-        var donneeAnimations = MesDonnesAnimations()
-        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("animations")
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesAnimations
-            if (donneeAnimations.animations) {
-                animations.setOn(true, animated: true)
-            }
-        }
-        else {
-            donneeAnimations.animations = true
-            var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-            var path = dir[0] . stringByAppendingPathComponent("animations")
-            var erreur = NSKeyedArchiver.archiveRootObject(donneeAnimations, toFile: path)
-        }
-        // Rotation
-        var donneeRotation = MesDonnesRotation()
-        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("rotation")
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeRotation = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesRotation
-            if (!donneeRotation.rotation) {
-                switchRotation.setOn(false, animated: true)
-            }
-        }
-        else {
-            donneeRotation.rotation = true
-            var erreur = NSKeyedArchiver.archiveRootObject(donneeRotation, toFile: path)
-        }
         mettreAJourFaceDe()
     }
     
@@ -104,49 +56,34 @@ class Parametres: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func choixTypeLanceDeChange(sender: AnyObject) {
+    @IBAction func secouerDeChange(sender: AnyObject) {
         // Le switch de Secouer est changé
         var donnee = MesDonnesSecouer()
-        if (choixDe.on) {
-            donnee.secouer = true
-            boutonParametreSecouer.setRoundedRectangle()
-        }
-        else {
-            donnee.secouer = false
-            boutonParametreSecouer.setRoundedRectangleDisabled()
-        }
+        donnee.secouer = secouerDe.on
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("secouer")
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+        AppValues.secouer = secouerDe.on
     }
-
+    
     
     @IBAction func lancerDemarrageChange(sender: AnyObject) {
         // Le switch de lancer au demarrage est changé
         var donnee = MesDonnesLancerAuDemarrage()
-        if (lancerAuDemarrage.on) {
-            donnee.lancerAuDemarrage = true
-        }
-        else {
-            donnee.lancerAuDemarrage = false
-        }
+        donnee.lancerAuDemarrage = lancerAuDemarrage.on
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
     }
-
+    
     @IBAction func animationsChange(sender: AnyObject) {
         // Le switch des animations est changé
         var donnee = MesDonnesAnimations()
-        if (animations.on) {
-            donnee.animations = true
-        }
-        else {
-            donnee.animations = false
-        }
+            donnee.animations = animations.on
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("animations")
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+        AppValues.animationsAutorisés = animations.on
     }
     
     @IBAction func choixNombreFaceChange(sender: AnyObject) {
@@ -161,10 +98,11 @@ class Parametres: UITableViewController {
         if (segmentChoixNombreFace.selectedSegmentIndex == 2) {
             donnee.nombreFace = 10
         }
-            var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-            var path = dir[0] . stringByAppendingPathComponent("nombreFace")
-            NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-            mettreAJourLabelFaceNumber()
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+        AppValues.nombreFace = donnee.nombreFace
+        mettreAJourLabelFaceNumber()
     }
     
     @IBAction func choixNombreFaceChangeAutre(sender: AnyObject) {
@@ -174,16 +112,12 @@ class Parametres: UITableViewController {
     
     @IBAction func switchRotationChange(sender: AnyObject!) {
         var donnee = MesDonnesRotation()
-        if (switchRotation.on) {
-            donnee.rotation = true
-        }
-        else {
-            donnee.rotation = false
-        }
+        donnee.rotation = switchRotation.on
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("rotation")
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
     }
+    
     
     func afficherAlerteChoixNombrePersonnalise() {
         // On change le nombre de faces personnalisé
@@ -205,6 +139,7 @@ class Parametres: UITableViewController {
                 var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                 var path = dir[0] . stringByAppendingPathComponent("nombreFace")
                 NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+                AppValues.nombreFace = nombre!
             }
             else {
                 let alerteErreurNombre = UIAlertController(title: "Erreur", message: "Attention, la saisie est incorrecte", preferredStyle: UIAlertControllerStyle.Alert)

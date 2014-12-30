@@ -31,14 +31,10 @@ class ParametreSecouer: UITableViewController {
     
     @IBAction func switchAnimationsChange(sender: AnyObject!) {
         var donnee = MesDonnesSecouerAnimations()
-        if (switchAnimations.on) {
-            donnee.secouerAnimations = true
-        }
-        else {
-            donnee.secouerAnimations = false
-        }
+        donnee.secouerAnimations = switchAnimations.on
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+        AppValues.animationsSecouerAutorisés = switchAnimations.on
     }
 }

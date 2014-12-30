@@ -26,13 +26,13 @@
                     </variation>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone" translatesAutoresizingMaskIntoConstraints="NO" id="oeg-k4-gKM">
-                    <rect key="frame" x="140" y="-260" width="200" height="1000"/>
+                    <rect key="frame" x="140" y="180" width="200" height="120"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="gCJ-gb-4NO"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.81960784313725488" green="1" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="rZv-Vq-WL4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="8YV-WD-MHT"/>
                 <constraint firstAttribute="centerX" secondItem="oeg-k4-gKM" secondAttribute="centerX" id="Bpc-hT-Hqd"/>
@@ -52,6 +52,6 @@
         </view>
     </objects>
     <resources>
-        <image name="icone" width="1000" height="1000"/>
+        <image name="icone" width="120" height="120"/>
     </resources>
 </document>
