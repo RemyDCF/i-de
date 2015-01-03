@@ -22,17 +22,6 @@ enum SenderChoisir {
     case Autre
 }
 
-struct AppValues {
-    static var nombreTiré:Int! = 0
-    static var nombreFace:Int! = 6
-    static var premierLancer:Bool! = true
-    static var animationEnCours:Bool! = false
-    static var secouer:Bool! = false
-    static var animationsAutorisés:Bool! = true
-    static var animationsSecouerAutorisés:Bool! = true
-    static var rotation:Bool! = true
-    static var valeurMouvement: CGFloat = 100
-}
 class ViewController: UIViewController {
     @IBOutlet weak var labelNombre: UILabel!
     @IBOutlet weak var btChoisir: UIButton!

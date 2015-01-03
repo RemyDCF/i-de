@@ -27,11 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone" translatesAutoresizingMaskIntoConstraints="NO" id="bjL-rZ-lfl">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Vh8-QZ-EhS"/>
-                                    <constraint firstAttribute="width" constant="200" id="cPs-46-tKq"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="62" width="568" height="401"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
                                 <rect key="frame" x="16" y="62" width="568" height="401"/>
@@ -61,14 +57,18 @@
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="DgY-1S-GRG"/>
                             <constraint firstItem="bjL-rZ-lfl" firstAttribute="top" secondItem="QD6-s7-DVY" secondAttribute="bottom" constant="8" id="Dkg-xg-ICn"/>
                             <constraint firstItem="tuK-Yj-9va" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="EtU-Gn-oAf"/>
+                            <constraint firstItem="bjL-rZ-lfl" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Kau-IE-iBR"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="RA8-5K-sCT"/>
                             <constraint firstItem="bjL-rZ-lfl" firstAttribute="top" secondItem="QD6-s7-DVY" secondAttribute="bottom" constant="8" id="RLD-kF-DMK"/>
+                            <constraint firstItem="tuK-Yj-9va" firstAttribute="top" secondItem="bjL-rZ-lfl" secondAttribute="bottom" constant="8" id="Rwd-KX-4hz"/>
                             <constraint firstItem="bjL-rZ-lfl" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="SYB-9f-L8y"/>
+                            <constraint firstItem="bjL-rZ-lfl" firstAttribute="top" secondItem="QD6-s7-DVY" secondAttribute="bottom" constant="8" id="UZV-ct-dnE"/>
                             <constraint firstItem="QD6-s7-DVY" firstAttribute="top" secondItem="LGv-U3-cP9" secondAttribute="bottom" constant="8" id="Uf6-r7-pks"/>
                             <constraint firstAttribute="centerX" secondItem="bjL-rZ-lfl" secondAttribute="centerX" id="WlG-Gx-d5E"/>
                             <constraint firstItem="tuK-Yj-9va" firstAttribute="top" secondItem="bjL-rZ-lfl" secondAttribute="bottom" constant="8" id="YWy-kR-NaU"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="top" secondItem="QD6-s7-DVY" secondAttribute="bottom" constant="8" id="aIm-lu-jkt"/>
                             <constraint firstItem="bjL-rZ-lfl" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="b1L-gT-Iti"/>
+                            <constraint firstItem="bjL-rZ-lfl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="gJt-C9-abA"/>
                             <constraint firstItem="E7o-0w-nyq" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="m6t-yN-nCW"/>
                             <constraint firstItem="bjL-rZ-lfl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="mSW-lm-IUY"/>
                             <constraint firstItem="bjL-rZ-lfl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ntV-sD-cz7"/>
@@ -80,9 +80,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Cbz-bH-Ge5"/>
                                 <exclude reference="Dkg-xg-ICn"/>
                                 <exclude reference="RLD-kF-DMK"/>
                                 <exclude reference="SYB-9f-L8y"/>
+                                <exclude reference="WlG-Gx-d5E"/>
                                 <exclude reference="b1L-gT-Iti"/>
                                 <exclude reference="mSW-lm-IUY"/>
                                 <exclude reference="ntV-sD-cz7"/>

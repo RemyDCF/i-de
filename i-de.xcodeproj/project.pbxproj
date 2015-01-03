@@ -17,6 +17,7 @@
 		AD8FA6CB1A000BD600DDC684 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */; };
 		AD9443FB1A51A110005C8D23 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9443FA1A51A110005C8D23 /* TabController.swift */; };
 		ADAC628219F681F300C00359 /* UIButtonExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAC628119F681F300C00359 /* UIButtonExtend.swift */; };
+		ADB9C0B11A583D86007624D4 /* AppValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9C0B01A583D86007624D4 /* AppValues.swift */; };
 		ADEED77719FCEAE1004FC171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEED77619FCEAE1004FC171 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		AD9443FA1A51A110005C8D23 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		ADAC628119F681F300C00359 /* UIButtonExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtend.swift; sourceTree = "<group>"; };
+		ADB9C0B01A583D86007624D4 /* AppValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppValues.swift; sourceTree = "<group>"; };
 		ADEED77619FCEAE1004FC171 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 			children = (
 				3678FF0A19BC4E780097389D /* AppDelegate.swift */,
 				ADEED77619FCEAE1004FC171 /* ViewController.swift */,
+				ADB9C0B01A583D86007624D4 /* AppValues.swift */,
 				3678FF2B19BC4F2C0097389D /* Parametre.swift */,
 				AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */,
 				AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */,
@@ -247,6 +250,7 @@
 				AD9443FB1A51A110005C8D23 /* TabController.swift in Sources */,
 				ADEED77719FCEAE1004FC171 /* ViewController.swift in Sources */,
 				3678FF0B19BC4E780097389D /* AppDelegate.swift in Sources */,
+				ADB9C0B11A583D86007624D4 /* AppValues.swift in Sources */,
 				ADAC628219F681F300C00359 /* UIButtonExtend.swift in Sources */,
 				AD6C8F7619FE869C004711EE /* ParametreSecouer.swift in Sources */,
 				3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */,
