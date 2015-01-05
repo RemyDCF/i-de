@@ -22,7 +22,7 @@ class Parametres: UITableViewController {
         // Personnalisation des boutons
         boutonAutre.setRoundedRectangle()
         boutonParametreSecouer.setRoundedRectangle()
-        boutonParametreSecouer.setImage(UIImage(named: "parametreDisabled"), forState: UIControlState.Disabled)
+        boutonParametreSecouer.setImage(UIImage(named: "parametresDisabled"), forState: UIControlState.Disabled)
         // Mise en place des données existantes
         if (!AppValues.secouer) {
             secouerDe.setOn(false, animated: true)
@@ -64,6 +64,12 @@ class Parametres: UITableViewController {
         var path = dir[0] . stringByAppendingPathComponent("secouer")
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
         AppValues.secouer = secouerDe.on
+        if (secouerDe.on == false) {
+            boutonParametreSecouer.setRoundedRectangleDisabled()
+        }
+        else {
+            boutonParametreSecouer.setRoundedRectangle()
+        }
     }
     
     

@@ -522,9 +522,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icone" width="120" height="120"/>
+        <image name="icone" width="40" height="40"/>
         <image name="iconeTabBar" width="25" height="25"/>
-        <image name="parametres" width="500" height="500"/>
+        <image name="parametres" width="166" height="166"/>
         <image name="parametresTabBar" width="25" height="25"/>
     </resources>
     <color key="tintColor" red="0.24283768503289466" green="0.70000000000000007" blue="0.31903140419407883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
