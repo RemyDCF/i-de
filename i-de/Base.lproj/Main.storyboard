@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sxq-Qa-iFU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sxq-Qa-iFU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -26,16 +26,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone" translatesAutoresizingMaskIntoConstraints="NO" id="bjL-rZ-lfl">
-                                <rect key="frame" x="16" y="62" width="568" height="401"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
-                                <rect key="frame" x="16" y="62" width="568" height="401"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuK-Yj-9va">
                                 <rect key="frame" x="16" y="471" width="568" height="60"/>
                                 <constraints>
@@ -48,6 +38,16 @@
                                     <action selector="choisirTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VvD-7g-SOF"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone" translatesAutoresizingMaskIntoConstraints="NO" id="bjL-rZ-lfl">
+                                <rect key="frame" x="16" y="62" width="568" height="401"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
+                                <rect key="frame" x="16" y="62" width="568" height="401"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -305,7 +305,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Nombre de face" id="YOu-vt-WJ5">
+                            <tableViewSection headerTitle="Nombre de faces" id="YOu-vt-WJ5">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="84" id="2DX-um-0aO">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -367,10 +367,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b9d-0k-fVJ" id="HJs-5q-3Ih">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le nombre de face est de" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaN-Jl-R6j">
-                                                    <rect key="frame" x="8" y="9" width="204" height="47"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le nombre de faces est de" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaN-Jl-R6j">
+                                                    <rect key="frame" x="8" y="12" width="534" height="46"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="204" id="Z5j-Wk-8cl"/>
+                                                        <constraint firstAttribute="width" constant="534" id="Z5j-Wk-8cl"/>
                                                         <constraint firstAttribute="height" constant="21" id="qWO-OC-pLI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -383,9 +383,9 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHF-AQ-CfD">
-                                                    <rect key="frame" x="220" y="10" width="372" height="47"/>
+                                                    <rect key="frame" x="550" y="12" width="42" height="46"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="372" id="vgS-8J-e7J"/>
+                                                        <constraint firstAttribute="width" constant="42" id="vgS-8J-e7J"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -394,12 +394,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="oHF-AQ-CfD" firstAttribute="trailing" secondItem="HJs-5q-3Ih" secondAttribute="trailingMargin" id="2Gc-dM-WLh"/>
-                                                <constraint firstItem="qaN-Jl-R6j" firstAttribute="top" secondItem="HJs-5q-3Ih" secondAttribute="topMargin" constant="1" id="8Po-AR-qDa"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="qaN-Jl-R6j" secondAttribute="bottom" id="btJ-pw-hP8"/>
+                                                <constraint firstItem="qaN-Jl-R6j" firstAttribute="top" secondItem="HJs-5q-3Ih" secondAttribute="topMargin" constant="4" id="8Po-AR-qDa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qaN-Jl-R6j" secondAttribute="bottom" constant="-2" id="btJ-pw-hP8"/>
                                                 <constraint firstItem="oHF-AQ-CfD" firstAttribute="leading" secondItem="qaN-Jl-R6j" secondAttribute="trailing" constant="8" id="fZJ-vi-1ND"/>
                                                 <constraint firstItem="qaN-Jl-R6j" firstAttribute="leading" secondItem="HJs-5q-3Ih" secondAttribute="leadingMargin" id="gAB-3j-kdv"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="oHF-AQ-CfD" secondAttribute="bottom" constant="-1" id="o3l-FR-WBu"/>
-                                                <constraint firstItem="oHF-AQ-CfD" firstAttribute="top" secondItem="HJs-5q-3Ih" secondAttribute="topMargin" constant="2" id="qk3-PD-Foe"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="oHF-AQ-CfD" secondAttribute="bottom" constant="-2" id="o3l-FR-WBu"/>
+                                                <constraint firstItem="oHF-AQ-CfD" firstAttribute="top" secondItem="HJs-5q-3Ih" secondAttribute="topMargin" constant="4" id="qk3-PD-Foe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -425,7 +425,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ks-5L-tFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2464" y="640"/>
+            <point key="canvasLocation" x="2464" y="636"/>
         </scene>
         <!--Secouer-->
         <scene sceneID="gdV-UH-4x6">
@@ -522,7 +522,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icone" width="40" height="40"/>
+        <image name="icone" width="150" height="150"/>
         <image name="iconeTabBar" width="25" height="25"/>
         <image name="parametres" width="166" height="166"/>
         <image name="parametresTabBar" width="25" height="25"/>
