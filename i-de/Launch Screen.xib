@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -26,7 +26,7 @@
                     </variation>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone" translatesAutoresizingMaskIntoConstraints="NO" id="oeg-k4-gKM">
-                    <rect key="frame" x="140" y="220" width="200" height="40"/>
+                    <rect key="frame" x="140" y="165" width="200" height="150"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="gCJ-gb-4NO"/>
                     </constraints>
@@ -52,6 +52,6 @@
         </view>
     </objects>
     <resources>
-        <image name="icone" width="40" height="40"/>
+        <image name="icone" width="150" height="150"/>
     </resources>
 </document>
