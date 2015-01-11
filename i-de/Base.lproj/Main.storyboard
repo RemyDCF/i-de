@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sxq-Qa-iFU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sxq-Qa-iFU">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -275,31 +275,48 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="AEw-7h-dgh">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="84" id="AEw-7h-dgh">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AEw-7h-dgh" id="Nnf-I7-L90">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotation autorisé" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgm-QO-o8a">
-                                                    <rect key="frame" x="8" y="9" width="527" height="48"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEG-9T-23T">
-                                                    <rect key="frame" x="543" y="18" width="51" height="31"/>
+                                                    <rect key="frame" x="543" y="26" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="switchRotationChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="0BV-Jr-67Q"/>
                                                     </connections>
                                                 </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nécessite le redémmarage de l'application" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2om-xy-gU8">
+                                                    <rect key="frame" x="8" y="52" width="527" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="29" id="WY5-hx-lv2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotation autorisé" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgm-QO-o8a">
+                                                    <rect key="frame" x="8" y="10" width="527" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="uPW-Bl-4Qj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="aEG-9T-23T" firstAttribute="leading" secondItem="rgm-QO-o8a" secondAttribute="trailing" constant="8" symbolic="YES" id="1I2-5N-tsh"/>
-                                                <constraint firstItem="rgm-QO-o8a" firstAttribute="leading" secondItem="Nnf-I7-L90" secondAttribute="leadingMargin" id="8nr-rO-1io"/>
-                                                <constraint firstItem="rgm-QO-o8a" firstAttribute="top" secondItem="Nnf-I7-L90" secondAttribute="topMargin" constant="1" id="9gO-c7-zL4"/>
-                                                <constraint firstItem="aEG-9T-23T" firstAttribute="top" secondItem="Nnf-I7-L90" secondAttribute="topMargin" constant="10" id="JZG-Y1-GKz"/>
-                                                <constraint firstItem="aEG-9T-23T" firstAttribute="centerY" secondItem="rgm-QO-o8a" secondAttribute="centerY" id="QVz-hZ-slN"/>
-                                                <constraint firstItem="aEG-9T-23T" firstAttribute="trailing" secondItem="Nnf-I7-L90" secondAttribute="trailingMargin" id="xKN-aj-GcV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2om-xy-gU8" secondAttribute="bottom" constant="-6" id="DqH-Mu-VLN"/>
+                                                <constraint firstAttribute="centerY" secondItem="aEG-9T-23T" secondAttribute="centerY" id="FSk-Yd-0k6"/>
+                                                <constraint firstItem="2om-xy-gU8" firstAttribute="top" secondItem="rgm-QO-o8a" secondAttribute="bottom" constant="8" id="HeP-9m-iWn"/>
+                                                <constraint firstAttribute="centerY" secondItem="aEG-9T-23T" secondAttribute="centerY" id="W1R-xs-cS3"/>
+                                                <constraint firstItem="rgm-QO-o8a" firstAttribute="leading" secondItem="Nnf-I7-L90" secondAttribute="leadingMargin" id="Z5V-rf-UEj"/>
+                                                <constraint firstItem="aEG-9T-23T" firstAttribute="leading" secondItem="rgm-QO-o8a" secondAttribute="trailing" constant="8" id="aNu-dB-zAA"/>
+                                                <constraint firstItem="aEG-9T-23T" firstAttribute="trailing" secondItem="Nnf-I7-L90" secondAttribute="trailingMargin" id="n1q-pO-aJE"/>
+                                                <constraint firstItem="2om-xy-gU8" firstAttribute="leading" secondItem="Nnf-I7-L90" secondAttribute="leadingMargin" id="oJU-kK-beH"/>
+                                                <constraint firstItem="2om-xy-gU8" firstAttribute="top" secondItem="rgm-QO-o8a" secondAttribute="bottom" constant="8" id="sfp-Zp-lhk"/>
+                                                <constraint firstItem="rgm-QO-o8a" firstAttribute="top" secondItem="Nnf-I7-L90" secondAttribute="topMargin" constant="2" id="tG6-gA-AKT"/>
+                                                <constraint firstItem="aEG-9T-23T" firstAttribute="leading" secondItem="2om-xy-gU8" secondAttribute="trailing" constant="8" id="zi9-PW-vYs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -425,7 +442,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ks-5L-tFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2464" y="636"/>
+            <point key="canvasLocation" x="2464" y="619"/>
         </scene>
         <!--Secouer-->
         <scene sceneID="gdV-UH-4x6">
@@ -522,7 +539,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icone" width="150" height="150"/>
+        <image name="icone" width="125" height="125"/>
         <image name="iconeTabBar" width="25" height="25"/>
         <image name="parametres" width="166" height="166"/>
         <image name="parametresTabBar" width="25" height="25"/>

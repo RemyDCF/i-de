@@ -60,17 +60,10 @@ class ViewController: UIViewController {
             donneelancerAuDemarrage.lancerAuDemarrage = false
             NSKeyedArchiver.archiveRootObject(donneelancerAuDemarrage, toFile: path)
         }
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Mouvenent animation
-        if (UIDevice().userInterfaceIdiom == .Pad) {
-            AppValues.valeurMouvement = 200
-        }
         // Secouer
         var donneeSecouer = MesDonnesSecouer()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("secouer")
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("secouer")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouer
             if (donneeSecouer.secouer) {
@@ -82,11 +75,18 @@ class ViewController: UIViewController {
             donneeSecouer.secouer = true
             NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
         }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Mouvenent animation
+        if (UIDevice().userInterfaceIdiom == .Pad) {
+            AppValues.valeurMouvement *= 2
+        }
         
         // Rotation
         var donneeRotation = MesDonnesRotation()
-        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("rotation")
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("rotation")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeRotation = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesRotation
             if (!donneeRotation.rotation) {
@@ -269,16 +269,16 @@ class ViewController: UIViewController {
             switch sens {
             case .Droite:
                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x + AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                self.image.frame = CGRectMake(self.labelNombre.frame.origin.x + AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                self.image.frame = CGRectMake(self.image.frame.origin.x + AppValues.valeurMouvement, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
             case .Gauche:
                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x - AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                self.image.frame = CGRectMake(self.labelNombre.frame.origin.x - AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                self.image.frame = CGRectMake(self.image.frame.origin.x - AppValues.valeurMouvement, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
             case .Haut:
                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y - AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                self.image.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y - AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y - AppValues.valeurMouvement, self.image.frame.size.width, self.image.frame.size.height)
             case .Bas:
                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y + AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                self.image.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y + AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y + AppValues.valeurMouvement, self.image.frame.size.width, self.image.frame.size.height)
             default:
                 break
             }
@@ -287,36 +287,36 @@ class ViewController: UIViewController {
                     switch sens {
                     case .Droite:
                         self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x - AppValues.valeurMouvement * 2, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                        self.image.frame = CGRectMake(self.labelNombre.frame.origin.x - AppValues.valeurMouvement * 2, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                        self.image.frame = CGRectMake(self.image.frame.origin.x - AppValues.valeurMouvement * 2, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
                     case .Gauche:
                         self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x + AppValues.valeurMouvement * 2, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                        self.image.frame = CGRectMake(self.labelNombre.frame.origin.x + AppValues.valeurMouvement * 2, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                        self.image.frame = CGRectMake(self.image.frame.origin.x + AppValues.valeurMouvement * 2, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
                     case .Haut:
                         self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y + AppValues.valeurMouvement * 2, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                        self.image.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y + AppValues.valeurMouvement * 2, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                        self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y + AppValues.valeurMouvement * 2, self.image.frame.size.width, self.image.frame.size.height)
                     case .Bas:
                         self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y - AppValues.valeurMouvement * 2, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                        self.image.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y - AppValues.valeurMouvement * 2, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                        self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y - AppValues.valeurMouvement * 2, self.image.frame.size.width, self.image.frame.size.height)
                     default:
                         break
                     }
                     }) { (finished: Bool) -> Void in
-                        AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
-                        self.labelNombre.text = String(AppValues.nombreTiré!)
                         UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+                            AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                            self.labelNombre.text = String(AppValues.nombreTiré!)
                             switch sens {
                             case .Droite:
                                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x + AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                                self.image.frame = CGRectMake(self.labelNombre.frame.origin.x + AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                                self.image.frame = CGRectMake(self.image.frame.origin.x + AppValues.valeurMouvement, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
                             case .Gauche:
                                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x - AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                                self.image.frame = CGRectMake(self.labelNombre.frame.origin.x - AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                                self.image.frame = CGRectMake(self.image.frame.origin.x - AppValues.valeurMouvement, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
                             case .Haut:
                                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y - AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                                self.image.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y - AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                                self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y - AppValues.valeurMouvement, self.image.frame.size.width, self.image.frame.size.height)
                             case .Bas:
                                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y + AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                                self.image.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y + AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
+                                self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y + AppValues.valeurMouvement, self.image.frame.size.width, self.image.frame.size.height)
                             default:
                                 break
                             }

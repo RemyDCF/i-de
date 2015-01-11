@@ -17,5 +17,5 @@ struct AppValues {
     static var animationsAutorisés:Bool! = true
     static var animationsSecouerAutorisés:Bool! = true
     static var rotation:Bool! = true
-    static var valeurMouvement: CGFloat = 100
+    static var valeurMouvement:CGFloat = 80
 }
