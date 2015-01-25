@@ -9,7 +9,6 @@
 import UIKit
 
 class Parametres: UITableViewController {
-    @IBOutlet weak var switchRotation: UISwitch!
     @IBOutlet weak var secouerDe: UISwitch!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
     @IBOutlet weak var labelNombreFace: UILabel!
@@ -30,9 +29,6 @@ class Parametres: UITableViewController {
         }
         if (AppValues.animationsAutorisés == true) {
             animations.setOn(true, animated: true)
-        }
-        if (!AppValues.rotation) {
-            switchRotation.setOn(false, animated: true)
         }
         var donneelancerAuDemarrage = MesDonnesLancerAuDemarrage()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
@@ -115,15 +111,6 @@ class Parametres: UITableViewController {
         // Cette fonction affiche l'alerte pour le nombre personnalisé
         afficherAlerteChoixNombrePersonnalise()
     }
-    
-    @IBAction func switchRotationChange(sender: AnyObject!) {
-        var donnee = MesDonnesRotation()
-        donnee.rotation = switchRotation.on
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("rotation")
-        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-    }
-    
     
     func afficherAlerteChoixNombrePersonnalise() {
         // On change le nombre de faces personnalisé

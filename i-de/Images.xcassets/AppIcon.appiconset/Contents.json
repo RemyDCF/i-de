@@ -39,37 +39,37 @@
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Settings_iPad.png",
+      "filename" : "Settings.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Settings@2x_iPad.png",
+      "filename" : "Settings@2x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "Spotlight_iPad.png",
+      "filename" : "Spotlight.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "Spotlight@2x_iPad.png",
+      "filename" : "Spotlight@2x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "AppIcon_iPad.png",
+      "filename" : "AppIcon-1.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "AppIcon@2x_iPad.png",
+      "filename" : "AppIcon@2x-2.png",
       "scale" : "2x"
     }
   ],

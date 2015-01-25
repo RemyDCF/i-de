@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sxq-Qa-iFU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C106a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sxq-Qa-iFU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -44,7 +44,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-0w-nyq">
                                 <rect key="frame" x="16" y="62" width="568" height="401"/>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -275,51 +275,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="84" id="AEw-7h-dgh">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AEw-7h-dgh" id="Nnf-I7-L90">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEG-9T-23T">
-                                                    <rect key="frame" x="543" y="26" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="switchRotationChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="0BV-Jr-67Q"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nécessite le redémmarage de l'application" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2om-xy-gU8">
-                                                    <rect key="frame" x="8" y="52" width="527" height="29"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="29" id="WY5-hx-lv2"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotation autorisé" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgm-QO-o8a">
-                                                    <rect key="frame" x="8" y="10" width="527" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="uPW-Bl-4Qj"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="2om-xy-gU8" secondAttribute="bottom" constant="-6" id="DqH-Mu-VLN"/>
-                                                <constraint firstAttribute="centerY" secondItem="aEG-9T-23T" secondAttribute="centerY" id="FSk-Yd-0k6"/>
-                                                <constraint firstItem="2om-xy-gU8" firstAttribute="top" secondItem="rgm-QO-o8a" secondAttribute="bottom" constant="8" id="HeP-9m-iWn"/>
-                                                <constraint firstAttribute="centerY" secondItem="aEG-9T-23T" secondAttribute="centerY" id="W1R-xs-cS3"/>
-                                                <constraint firstItem="rgm-QO-o8a" firstAttribute="leading" secondItem="Nnf-I7-L90" secondAttribute="leadingMargin" id="Z5V-rf-UEj"/>
-                                                <constraint firstItem="aEG-9T-23T" firstAttribute="leading" secondItem="rgm-QO-o8a" secondAttribute="trailing" constant="8" id="aNu-dB-zAA"/>
-                                                <constraint firstItem="aEG-9T-23T" firstAttribute="trailing" secondItem="Nnf-I7-L90" secondAttribute="trailingMargin" id="n1q-pO-aJE"/>
-                                                <constraint firstItem="2om-xy-gU8" firstAttribute="leading" secondItem="Nnf-I7-L90" secondAttribute="leadingMargin" id="oJU-kK-beH"/>
-                                                <constraint firstItem="2om-xy-gU8" firstAttribute="top" secondItem="rgm-QO-o8a" secondAttribute="bottom" constant="8" id="sfp-Zp-lhk"/>
-                                                <constraint firstItem="rgm-QO-o8a" firstAttribute="top" secondItem="Nnf-I7-L90" secondAttribute="topMargin" constant="2" id="tG6-gA-AKT"/>
-                                                <constraint firstItem="aEG-9T-23T" firstAttribute="leading" secondItem="2om-xy-gU8" secondAttribute="trailing" constant="8" id="zi9-PW-vYs"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Nombre de faces" id="YOu-vt-WJ5">
@@ -437,7 +392,6 @@
                         <outlet property="lancerAuDemarrage" destination="ilb-B0-7C0" id="eOe-cU-ef0"/>
                         <outlet property="secouerDe" destination="iAG-WU-AOg" id="3k5-kF-FiB"/>
                         <outlet property="segmentChoixNombreFace" destination="rAl-NZ-39m" id="fUp-tj-qx0"/>
-                        <outlet property="switchRotation" destination="aEG-9T-23T" id="H0X-SV-TEE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ks-5L-tFi" userLabel="First Responder" sceneMemberID="firstResponder"/>

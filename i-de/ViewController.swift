@@ -83,26 +83,10 @@ class ViewController: UIViewController {
             AppValues.valeurMouvement *= 2
         }
         
-        // Rotation
-        var donneeRotation = MesDonnesRotation()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("rotation")
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeRotation = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesRotation
-            if (!donneeRotation.rotation) {
-                AppValues.rotation = false
-            }
-        }
-        else {
-            AppValues.rotation = true
-            donneeRotation.rotation = true
-            NSKeyedArchiver.archiveRootObject(donneeRotation, toFile: path)
-        }
-        
         // Secouer Animations
         var donneeSecouerAnimations = MesDonnesSecouerAnimations()
-        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeSecouerAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouerAnimations
             if (!donneeSecouerAnimations.secouerAnimations) {
@@ -172,6 +156,54 @@ class ViewController: UIViewController {
             // Si c'est le premier lancer
             self.btChoisir.setRoundedRectangleDisabled()
             if (AppValues.animationsAutorisés == true) {
+                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                    }, completion: { (finished: Bool) -> Void in
+                        AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                        self.labelNombre.text = String(AppValues.nombreTiré!)
+                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                            self.labelNombre.alpha = 1.0
+                            }, completion: { (finished: Bool) -> Void in
+                                AppValues.premierLancer = false
+                                AppValues.animationEnCours = false
+                                self.btChoisir.setRoundedRectangle()
+                        })
+                })
+            }
+            else {
+                AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                self.labelNombre.text = String(AppValues.nombreTiré!)
+                self.labelNombre.alpha = 1.0
+            }
+        }
+        else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft) {
+            // Si c'est le premier lancer
+            self.btChoisir.setRoundedRectangleDisabled()
+            if (AppValues.animationsAutorisés == true) {
+                println("kf")
+                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                    }, completion: { (finished: Bool) -> Void in
+                        AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                        self.labelNombre.text = String(AppValues.nombreTiré!)
+                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                            self.labelNombre.alpha = 1.0
+                            }, completion: { (finished: Bool) -> Void in
+                                AppValues.premierLancer = false
+                                AppValues.animationEnCours = false
+                                self.btChoisir.setRoundedRectangle()
+                        })
+                })
+            }
+            else {
+                AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                self.labelNombre.text = String(AppValues.nombreTiré!)
+                self.labelNombre.alpha = 1.0
+            }
+        }
+        else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight) {
+            // Si c'est le premier lancer
+            self.btChoisir.setRoundedRectangleDisabled()
+            if (AppValues.animationsAutorisés == true) {
+                println("kf")
                 UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                     }, completion: { (finished: Bool) -> Void in
                         AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
@@ -325,14 +357,6 @@ class ViewController: UIViewController {
                                 self.btChoisir.setRoundedRectangle()
                         }
                 }
-        }
-    }
-    override func shouldAutorotate() -> Bool {
-        if (AppValues.rotation == true) {
-            return true
-        }
-        else {
-            return false
         }
     }
 }
