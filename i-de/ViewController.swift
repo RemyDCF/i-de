@@ -79,15 +79,6 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let gradient : CAGradientLayer = CAGradientLayer()
-        gradient.frame = self.view.bounds
-        
-        let cor1 = UIColor(red:0, green:0.64, blue:0.98, alpha:1).CGColor
-        let cor2 = UIColor(red:0.07, green:0.56, blue:0.82, alpha:1).CGColor
-        let arrayColors = [cor1, cor2]
-        
-        gradient.colors = arrayColors
-        view.layer.insertSublayer(gradient, atIndex: 0)
         // Mouvenent animation
         if (UIDevice().userInterfaceIdiom == .Pad) {
             AppValues.valeurMouvement *= 2
@@ -126,7 +117,7 @@ class ViewController: UIViewController {
         
         
         // Personnalisation des boutons
-        btChoisir.setRoundedRectangle(borderColor: UIColor.whiteColor().CGColor)
+        btChoisir.setRoundedRectangle()
     }
     
     override func didReceiveMemoryWarning() {
@@ -162,6 +153,7 @@ class ViewController: UIViewController {
         choisir(.Aucun, sender: .Tap)
     }
     func choisir(sens:SensSwipe, sender:SenderChoisir = .Autre) {
+        btChoisir.enabled = false
         if (AppValues.premierLancer == true) {
             // Si c'est le premier lancer
             self.btChoisir.setRoundedRectangleDisabled()
@@ -175,7 +167,7 @@ class ViewController: UIViewController {
                             }, completion: { (finished: Bool) -> Void in
                                 AppValues.premierLancer = false
                                 AppValues.animationEnCours = false
-                                self.btChoisir.setRoundedRectangle(borderColor: UIColor.whiteColor().CGColor)
+                                self.btChoisir.setRoundedRectangle()
                         })
                 })
             }
@@ -199,7 +191,7 @@ class ViewController: UIViewController {
                             }, completion: { (finished: Bool) -> Void in
                                 AppValues.premierLancer = false
                                 AppValues.animationEnCours = false
-                                self.btChoisir.setRoundedRectangle(borderColor: UIColor.whiteColor().CGColor)
+                                self.btChoisir.setRoundedRectangle()
                         })
                 })
             }
@@ -223,7 +215,7 @@ class ViewController: UIViewController {
                             }, completion: { (finished: Bool) -> Void in
                                 AppValues.premierLancer = false
                                 AppValues.animationEnCours = false
-                                self.btChoisir.setRoundedRectangle(borderColor: UIColor.whiteColor().CGColor)
+                                self.btChoisir.setRoundedRectangle()
                         })
                 })
             }
@@ -253,7 +245,7 @@ class ViewController: UIViewController {
                                         AppValues.animationEnCours = false
                                         AppValues.premierLancer = false
                                         AppValues.animationEnCours = false
-                                        self.btChoisir.setRoundedRectangle(borderColor: UIColor.whiteColor().CGColor)
+                                        self.btChoisir.setRoundedRectangle()
                                 })
                         })
                     }
@@ -261,7 +253,7 @@ class ViewController: UIViewController {
                         AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
                         self.labelNombre.text = String(AppValues.nombreTiré!)
                         AppValues.animationEnCours = false
-                        self.btChoisir.setRoundedRectangle(borderColor: UIColor.whiteColor().CGColor)
+                        self.btChoisir.setRoundedRectangle()
                     }
                 }
                 else if (sender == .Tap) {
@@ -278,7 +270,7 @@ class ViewController: UIViewController {
                                         AppValues.animationEnCours = false
                                         AppValues.premierLancer = false
                                         AppValues.animationEnCours = false
-                                        self.btChoisir.setRoundedRectangle(borderColor: UIColor.whiteColor().CGColor)
+                                        self.btChoisir.setRoundedRectangle()
                                 })
                         })
                     }
@@ -286,7 +278,7 @@ class ViewController: UIViewController {
                         AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
                         self.labelNombre.text = String(AppValues.nombreTiré!)
                         AppValues.animationEnCours = false
-                        self.btChoisir.setRoundedRectangle(borderColor: UIColor.whiteColor().CGColor)
+                        self.btChoisir.setRoundedRectangle()
                     }
                 }
                 else {
@@ -299,11 +291,12 @@ class ViewController: UIViewController {
                         AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
                         self.labelNombre.text = String(AppValues.nombreTiré!)
                         AppValues.animationEnCours = false
-                        self.btChoisir.setRoundedRectangle(borderColor: UIColor.whiteColor().CGColor)
+                        self.btChoisir.setRoundedRectangle()
                     }
                 }
             }
         }
+        btChoisir.enabled = true
     }
     
     func animerDe(sens:SensSwipe) {
@@ -364,7 +357,8 @@ class ViewController: UIViewController {
                             }
                             }) { (finished: Bool) -> Void in
                                 AppValues.animationEnCours = false
-                                self.btChoisir.setRoundedRectangle(borderColor: UIColor.whiteColor().CGColor)
+                                self.btChoisir.setRoundedRectangle()
+                                self.btChoisir.enabled = true
                         }
                 }
         }
