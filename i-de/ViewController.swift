@@ -153,14 +153,12 @@ class ViewController: UIViewController {
         choisir(.Aucun, sender: .Tap)
     }
     func choisir(sens:SensSwipe, sender:SenderChoisir = .Autre) {
-        btChoisir.enabled = false
         if (AppValues.premierLancer == true) {
             // Si c'est le premier lancer
-            self.btChoisir.setRoundedRectangleDisabled()
             if (AppValues.animationsAutorisés == true) {
                 UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                     }, completion: { (finished: Bool) -> Void in
-                        AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                         self.labelNombre.text = String(AppValues.nombreTiré!)
                         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
                             self.labelNombre.alpha = 1.0
@@ -172,19 +170,17 @@ class ViewController: UIViewController {
                 })
             }
             else {
-                AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                 self.labelNombre.text = String(AppValues.nombreTiré!)
                 self.labelNombre.alpha = 1.0
             }
         }
         else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft) {
             // Si c'est le premier lancer
-            self.btChoisir.setRoundedRectangleDisabled()
             if (AppValues.animationsAutorisés == true) {
-                println("kf")
                 UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                     }, completion: { (finished: Bool) -> Void in
-                        AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                         self.labelNombre.text = String(AppValues.nombreTiré!)
                         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
                             self.labelNombre.alpha = 1.0
@@ -196,19 +192,17 @@ class ViewController: UIViewController {
                 })
             }
             else {
-                AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                 self.labelNombre.text = String(AppValues.nombreTiré!)
                 self.labelNombre.alpha = 1.0
             }
         }
         else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight) {
             // Si c'est le premier lancer
-            self.btChoisir.setRoundedRectangleDisabled()
             if (AppValues.animationsAutorisés == true) {
-                println("kf")
                 UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                     }, completion: { (finished: Bool) -> Void in
-                        AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                         self.labelNombre.text = String(AppValues.nombreTiré!)
                         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
                             self.labelNombre.alpha = 1.0
@@ -220,13 +214,12 @@ class ViewController: UIViewController {
                 })
             }
             else {
-                AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                 self.labelNombre.text = String(AppValues.nombreTiré!)
                 self.labelNombre.alpha = 1.0
             }
         }
         else {
-            self.btChoisir.setRoundedRectangleDisabled()
             // Sinon...
             if (!AppValues.animationEnCours) {
                 // Il faut que l'animation soit en cours
@@ -237,7 +230,7 @@ class ViewController: UIViewController {
                         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                             self.labelNombre.alpha = 0.0
                             }, completion: { (finished: Bool) -> Void in
-                                AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                                AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                                 self.labelNombre.text = String(AppValues.nombreTiré!)
                                 UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
                                     self.labelNombre.alpha = 1.0
@@ -250,7 +243,7 @@ class ViewController: UIViewController {
                         })
                     }
                     else {
-                        AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                         self.labelNombre.text = String(AppValues.nombreTiré!)
                         AppValues.animationEnCours = false
                         self.btChoisir.setRoundedRectangle()
@@ -262,7 +255,7 @@ class ViewController: UIViewController {
                         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                             self.labelNombre.alpha = 0.0
                             }, completion: { (finished: Bool) -> Void in
-                                AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                                AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                                 self.labelNombre.text = String(AppValues.nombreTiré!)
                                 UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
                                     self.labelNombre.alpha = 1.0
@@ -275,7 +268,7 @@ class ViewController: UIViewController {
                         })
                     }
                     else {
-                        AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                         self.labelNombre.text = String(AppValues.nombreTiré!)
                         AppValues.animationEnCours = false
                         self.btChoisir.setRoundedRectangle()
@@ -288,7 +281,7 @@ class ViewController: UIViewController {
                         animerDe(sens)
                     }
                     else {
-                        AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                         self.labelNombre.text = String(AppValues.nombreTiré!)
                         AppValues.animationEnCours = false
                         self.btChoisir.setRoundedRectangle()
@@ -296,7 +289,6 @@ class ViewController: UIViewController {
                 }
             }
         }
-        btChoisir.enabled = true
     }
     
     func animerDe(sens:SensSwipe) {
@@ -337,7 +329,7 @@ class ViewController: UIViewController {
                     }
                     }) { (finished: Bool) -> Void in
                         UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-                            AppValues.nombreTiré = random() % AppValues.nombreFace! + 1;
+                            AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                             self.labelNombre.text = String(AppValues.nombreTiré!)
                             switch sens {
                             case .Droite:
@@ -358,7 +350,6 @@ class ViewController: UIViewController {
                             }) { (finished: Bool) -> Void in
                                 AppValues.animationEnCours = false
                                 self.btChoisir.setRoundedRectangle()
-                                self.btChoisir.enabled = true
                         }
                 }
         }

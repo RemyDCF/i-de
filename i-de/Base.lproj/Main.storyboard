@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2xT-Za-B83"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tirage d'un nombre entre 1 et 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QD6-s7-DVY">
@@ -149,7 +149,7 @@
             <objects>
                 <tableViewController id="EGX-2M-dTi" customClass="Parametres" customModule="i_de" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="ig7-Gi-Xfr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
@@ -163,7 +163,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lancement du dé automatique au démarrage" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzs-eG-K1b">
                                                     <rect key="frame" x="8" y="8" width="527" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ilb-B0-7C0">
@@ -172,6 +172,7 @@
                                                         <constraint firstAttribute="height" constant="31" id="c9F-wg-nTU"/>
                                                         <constraint firstAttribute="width" constant="49" id="sm4-iE-9yu"/>
                                                     </constraints>
+                                                    <color key="onTintColor" red="0.0" green="0.63921568630000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="lancerDemarrageChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="eJn-5U-aTC"/>
                                                     </connections>
@@ -198,7 +199,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animations" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQr-8v-bbn">
                                                     <rect key="frame" x="8" y="8" width="527" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dSM-WQ-SN5">
@@ -207,6 +208,7 @@
                                                         <constraint firstAttribute="height" constant="31" id="ekR-yf-jq7"/>
                                                         <constraint firstAttribute="width" constant="49" id="t6F-X8-lcG"/>
                                                     </constraints>
+                                                    <color key="onTintColor" red="0.0" green="0.63921568630000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="animationsChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="sG2-8c-DFz"/>
                                                     </connections>
@@ -233,7 +235,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secouer" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jw-We-P4g">
                                                     <rect key="frame" x="8" y="8" width="527" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ym4-ad-oP4">
@@ -255,6 +257,7 @@
                                                         <constraint firstAttribute="width" constant="49" id="9Sp-Gt-aa0"/>
                                                         <constraint firstAttribute="height" constant="31" id="Y2E-Q9-F4M"/>
                                                     </constraints>
+                                                    <color key="onTintColor" red="0.0" green="0.63921568630000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="secouerDeChange:" destination="EGX-2M-dTi" eventType="valueChanged" id="h6Q-Xh-jiw"/>
                                                     </connections>
@@ -347,7 +350,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="qWO-OC-pLI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -361,7 +364,7 @@
                                                         <constraint firstAttribute="width" constant="42" id="vgS-8J-e7J"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -404,11 +407,11 @@
             <objects>
                 <tableViewController title="Secouer" id="OTf-00-B5v" customClass="ParametreSecouer" customModule="i_de" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jol-1h-pen">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="Parametres" id="kc2-vs-yLc">
+                            <tableViewSection headerTitle="Paramètres" id="kc2-vs-yLc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="W2D-Yy-cUG">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -418,11 +421,12 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3a-Vn-bb5">
                                                     <rect key="frame" x="8" y="8" width="527" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FG1-p6-wXL">
                                                     <rect key="frame" x="543" y="17" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.0" green="0.63921568630000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="switchAnimationsChange:" destination="OTf-00-B5v" eventType="valueChanged" id="pml-ps-8Rr"/>
                                                     </connections>
@@ -460,9 +464,10 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Sxq-Qa-iFU" customClass="TabController" customModule="i_de" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="OMO-gX-SNA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="OMO-gX-SNA">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.63921568630000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <outlet property="bar" destination="OMO-gX-SNA" id="RVk-gR-fbm"/>
@@ -478,7 +483,7 @@
         <scene sceneID="vEf-yF-WbE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="itA-VN-3Y6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Paramètres" image="parametresTabBar" id="2Zi-8x-izf"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Paramètres" image="parametresTabBar" id="2Zi-8x-izf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dgQ-Sj-XSS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
