@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Parametres: UITableViewController, UIAlertViewDelegate {
+class Parametres: UITableViewController {
     @IBOutlet weak var secouerDe: UISwitch!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
     @IBOutlet weak var labelNombreFace: UILabel!
@@ -113,45 +113,36 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     func afficherAlerteChoixNombrePersonnalise() {
         // On change le nombre de faces personnalisé
         var donnee = MesDonnesNombreFace()
-        if (controllerAvailable()) {
-            let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 200)", preferredStyle: UIAlertControllerStyle.Alert)
-            alerte.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
-                textField.placeholder = "Nombre"
-                textField.keyboardType = UIKeyboardType.NumberPad
-            })
-            alerte.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction!) in
-                self.mettreAJourFaceDe()
-            }))
-            alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
-                let textFields = alerte.textFields as [UITextField]
-                let textField = textFields[0]
-                var nombre:Int! = textField.text.toInt()
-                if (nombre != nil && nombre >= 2 && nombre <= 200) {
-                    donnee.nombreFace = nombre!
-                    var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-                    var path = dir[0] . stringByAppendingPathComponent("nombreFace")
-                    NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-                    AppValues.nombreFace = nombre!
-                }
-                else {
-                    let alerteErreurNombre = UIAlertController(title: "Erreur", message: "Attention, la saisie est incorrecte", preferredStyle: UIAlertControllerStyle.Alert)
-                    alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
-                        self.afficherAlerteChoixNombrePersonnalise()
-                    }))
-                    self.presentViewController(alerteErreurNombre, animated: true, completion: nil)
-                }
-                self.mettreAJourFaceDe()
-                self.mettreAJourLabelFaceNumber()
-            }))
-            presentViewController(alerte, animated: true, completion: nil)
-        }
-        else {
-            var alerte = UIAlertView(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 200)", delegate: self, cancelButtonTitle: "Annuler", otherButtonTitles: "OK")
-            alerte.alertViewStyle = UIAlertViewStyle.PlainTextInput
-            alerte.textFieldAtIndex(0)!.keyboardType = UIKeyboardType.NumberPad
-            alerte.textFieldAtIndex(0)!.placeholder = "Nombre"
-            alerte.show()
-        }
+        let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 2147483647)", preferredStyle: UIAlertControllerStyle.Alert)
+        alerte.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "Nombre"
+            textField.keyboardType = UIKeyboardType.NumberPad
+        })
+        alerte.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction!) in
+            self.mettreAJourFaceDe()
+        }))
+        alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
+            let textFields = alerte.textFields as [UITextField]
+            let textField = textFields[0]
+            var nombre:Int! = textField.text.toInt()
+            if (nombre != nil && nombre >= 2 && nombre <= 2147483647) {
+                donnee.nombreFace = nombre!
+                var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+                var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+                NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+                AppValues.nombreFace = nombre!
+            }
+            else {
+                let alerteErreurNombre = UIAlertController(title: "Erreur", message: "Attention, la saisie est incorrecte", preferredStyle: UIAlertControllerStyle.Alert)
+                alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
+                    self.afficherAlerteChoixNombrePersonnalise()
+                }))
+                self.presentViewController(alerteErreurNombre, animated: true, completion: nil)
+            }
+            self.mettreAJourFaceDe()
+            self.mettreAJourLabelFaceNumber()
+        }))
+        presentViewController(alerte, animated: true, completion: nil)
     }
     
     func mettreAJourLabelFaceNumber() {
@@ -202,29 +193,5 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
             return false;
         }
         
-    }
-    func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
-        if (alertView.tag == 1) {
-            afficherAlerteChoixNombrePersonnalise()
-        }
-        if (buttonIndex == 1) {
-            var donnee = MesDonnesNombreFace()
-            var textField: UITextField! = alertView.textFieldAtIndex(0)
-            var nombre:Int! = textField.text.toInt()
-            if (nombre != nil && nombre >= 2 && nombre <= 200) {
-                donnee.nombreFace = nombre!
-                var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-                var path = dir[0] . stringByAppendingPathComponent("nombreFace")
-                NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-                AppValues.nombreFace = nombre!
-            }
-            else {
-                var alerte = UIAlertView(title: "Erreur", message: "Attention, la saisie est incorrecte", delegate: self, cancelButtonTitle: "OK")
-                alerte.tag = 1
-                alerte.show()
-            }
-            self.mettreAJourFaceDe()
-            self.mettreAJourLabelFaceNumber()
-        }
     }
 }
