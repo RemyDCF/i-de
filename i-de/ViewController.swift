@@ -84,6 +84,9 @@ class ViewController: UIViewController {
             AppValues.couleurDe = donneeCouleurDe.couleurDe
             labelNombre.borderColor = AppValues.couleurDe
             labelNombre.textColor = AppValues.couleurDe
+            labelFace.textColor = AppValues.couleurDe
+            btChoisir.borderColor = AppValues.couleurDe
+            btChoisir.titleLabel?.textColor = AppValues.couleurDe
         }
         else {
             AppValues.couleurDe = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
