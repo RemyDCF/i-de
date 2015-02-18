@@ -14,18 +14,15 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     @IBOutlet weak var labelNombreFace: UILabel!
     @IBOutlet weak var lancerAuDemarrage: UISwitch!
     @IBOutlet weak var animations: UISwitch!
-    @IBOutlet weak var boutonAutre: UIButton!
-    @IBOutlet weak var boutonParametreSecouer: UIButton!
+    @IBOutlet weak var boutonParametreSecouer: RYButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Personnalisation des boutons
-        boutonAutre.setRoundedRectangle()
-        boutonParametreSecouer.setRoundedRectangle()
         boutonParametreSecouer.setImage(UIImage(named: "parametresDisabled"), forState: UIControlState.Disabled)
         // Mise en place des données existantes
         if (!AppValues.secouer) {
             secouerDe.setOn(false, animated: true)
-            boutonParametreSecouer.setRoundedRectangleDisabled()
+            //boutonParametreSecouer.setRoundedRectangleDisabled()
         }
         if (AppValues.animationsAutorisés == true) {
             animations.setOn(true, animated: true)
@@ -61,10 +58,11 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
         AppValues.secouer = secouerDe.on
         if (secouerDe.on == false) {
-            boutonParametreSecouer.setRoundedRectangleDisabled()
+            boutonParametreSecouer.enabled = false
+            boutonParametreSecouer.borderColor = UIColor(red:0.79, green:0.79, blue:0.79, alpha:1)
         }
         else {
-            boutonParametreSecouer.setRoundedRectangle()
+            boutonParametreSecouer.enabled = true
         }
     }
     

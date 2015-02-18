@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>RIKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>i-de.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,26 @@
 			<true/>
 		</dict>
 		<key>3678FF1619BC4E780097389D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD0FE5271A921ACB0027FAE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD0FE5311A921ACC0027FAE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD4C590F1A921FE6008D0286</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD4C59191A921FE6008D0286</key>
 		<dict>
 			<key>primary</key>
 			<true/>

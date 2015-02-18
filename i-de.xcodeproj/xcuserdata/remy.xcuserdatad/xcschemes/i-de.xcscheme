@@ -34,6 +34,20 @@
                ReferencedContainer = "container:i-de.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AD0FE5311A921ACC0027FAE9"
+               BuildableName = "RIKitTests.xctest"
+               BlueprintName = "RIKitTests"
+               ReferencedContainer = "container:i-de.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "3678FF1619BC4E780097389D"
                BuildableName = "i-deTests.xctest"
                BlueprintName = "i-deTests"
+               ReferencedContainer = "container:i-de.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AD0FE5311A921ACC0027FAE9"
+               BuildableName = "RIKitTests.xctest"
+               BlueprintName = "RIKitTests"
                ReferencedContainer = "container:i-de.xcodeproj">
             </BuildableReference>
          </TestableReference>

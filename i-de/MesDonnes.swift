@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 DCF. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MesDonnesNombreFace : NSObject {
     var nombreFace: Int = 6
@@ -109,5 +109,22 @@ class MesDonnesSecouerAnimations : NSObject {
     init(coder aDecoder: NSCoder) {
         super.init()
         self.secouerAnimations = aDecoder.decodeBoolForKey("secouerAnimations")
+    }
+}
+
+class MesDonnesCouleurDe : NSObject {
+    var couleurDe: UIColor = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
+    
+    override init() {
+        super.init()
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(couleurDe, forKey: "couleurDe")
+    }
+    
+    init(coder aDecoder: NSCoder) {
+        super.init()
+        couleurDe = aDecoder.decodeObjectForKey("couleurDe") as UIColor
     }
 }

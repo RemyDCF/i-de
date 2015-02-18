@@ -24,10 +24,9 @@ enum SenderChoisir {
 }
 
 class ViewController: UIViewController {
-    @IBOutlet weak var labelNombre: UILabel!
-    @IBOutlet weak var btChoisir: UIButton!
+    @IBOutlet weak var labelNombre: RYLabel!
     @IBOutlet weak var labelFace: UILabel!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var btChoisir: RYButton!
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -76,6 +75,21 @@ class ViewController: UIViewController {
             donneeSecouer.secouer = true
             NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
         }
+        // Couleur De
+        var donneeCouleurDe = MesDonnesCouleurDe()
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("couleurDe")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneeCouleurDe = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesCouleurDe
+            AppValues.couleurDe = donneeCouleurDe.couleurDe
+            labelNombre.borderColor = AppValues.couleurDe
+            labelNombre.textColor = AppValues.couleurDe
+        }
+        else {
+            AppValues.couleurDe = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
+            donneeCouleurDe.couleurDe = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
+            NSKeyedArchiver.archiveRootObject(donneeCouleurDe, toFile: path)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,10 +128,6 @@ class ViewController: UIViewController {
             donneeAnimations.animations = true
             NSKeyedArchiver.archiveRootObject(donneeAnimations, toFile: path)
         }
-        
-        
-        // Personnalisation des boutons
-        btChoisir.setRoundedRectangle()
     }
     
     override func didReceiveMemoryWarning() {
@@ -152,22 +162,24 @@ class ViewController: UIViewController {
     @IBAction func choisirTap(sender: AnyObject) {
         choisir(.Aucun, sender: .Tap)
     }
+    func animationFondu() {
+        var anim = RYAnimation()
+        CATransaction.begin()
+        CATransaction.setCompletionBlock { () -> Void in
+            AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
+            self.labelNombre.text = String(AppValues.nombreTiré!)
+            self.labelNombre.layer.addAnimation(anim.setOpacity(0, toOpacity: 1, duration: 0.5), forKey: "opacity")
+        }
+        labelNombre.layer.addAnimation(anim.setOpacity(1, toOpacity: 0, duration: 0.5), forKey: "opacity")
+        CATransaction.commit()
+        
+    }
     func choisir(sens:SensSwipe, sender:SenderChoisir = .Autre) {
         if (AppValues.premierLancer == true) {
             // Si c'est le premier lancer
             if (AppValues.animationsAutorisés == true) {
-                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                    }, completion: { (finished: Bool) -> Void in
-                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-                        self.labelNombre.text = String(AppValues.nombreTiré!)
-                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                            self.labelNombre.alpha = 1.0
-                            }, completion: { (finished: Bool) -> Void in
-                                AppValues.premierLancer = false
-                                AppValues.animationEnCours = false
-                                self.btChoisir.setRoundedRectangle()
-                        })
-                })
+                animationFondu()
+                AppValues.premierLancer = false
             }
             else {
                 AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
@@ -178,18 +190,7 @@ class ViewController: UIViewController {
         else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft) {
             // Si c'est le premier lancer
             if (AppValues.animationsAutorisés == true) {
-                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                    }, completion: { (finished: Bool) -> Void in
-                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-                        self.labelNombre.text = String(AppValues.nombreTiré!)
-                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                            self.labelNombre.alpha = 1.0
-                            }, completion: { (finished: Bool) -> Void in
-                                AppValues.premierLancer = false
-                                AppValues.animationEnCours = false
-                                self.btChoisir.setRoundedRectangle()
-                        })
-                })
+                animationFondu()
             }
             else {
                 AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
@@ -200,18 +201,7 @@ class ViewController: UIViewController {
         else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight) {
             // Si c'est le premier lancer
             if (AppValues.animationsAutorisés == true) {
-                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                    }, completion: { (finished: Bool) -> Void in
-                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-                        self.labelNombre.text = String(AppValues.nombreTiré!)
-                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                            self.labelNombre.alpha = 1.0
-                            }, completion: { (finished: Bool) -> Void in
-                                AppValues.premierLancer = false
-                                AppValues.animationEnCours = false
-                                self.btChoisir.setRoundedRectangle()
-                        })
-                })
+                animationFondu()
             }
             else {
                 AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
@@ -220,72 +210,40 @@ class ViewController: UIViewController {
             }
         }
         else {
-            // Sinon...
-            if (!AppValues.animationEnCours) {
-                // Il faut que l'animation soit en cours
-                AppValues.animationEnCours = true
-                if (sender == .Secouer) {
-                    // Si on secoue
-                    if (AppValues.animationsSecouerAutorisés == true) {
-                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                            self.labelNombre.alpha = 0.0
-                            }, completion: { (finished: Bool) -> Void in
-                                AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-                                self.labelNombre.text = String(AppValues.nombreTiré!)
-                                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                                    self.labelNombre.alpha = 1.0
-                                    }, completion: { (finished: Bool) -> Void in
-                                        AppValues.animationEnCours = false
-                                        AppValues.premierLancer = false
-                                        AppValues.animationEnCours = false
-                                        self.btChoisir.setRoundedRectangle()
-                                })
-                        })
-                    }
-                    else {
-                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-                        self.labelNombre.text = String(AppValues.nombreTiré!)
-                        AppValues.animationEnCours = false
-                        self.btChoisir.setRoundedRectangle()
-                    }
-                }
-                else if (sender == .Tap) {
-                    // Si on "Tap"
-                    if (AppValues.animationsAutorisés == true) {
-                        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                            self.labelNombre.alpha = 0.0
-                            }, completion: { (finished: Bool) -> Void in
-                                AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-                                self.labelNombre.text = String(AppValues.nombreTiré!)
-                                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                                    self.labelNombre.alpha = 1.0
-                                    }, completion: { (finished: Bool) -> Void in
-                                        AppValues.animationEnCours = false
-                                        AppValues.premierLancer = false
-                                        AppValues.animationEnCours = false
-                                        self.btChoisir.setRoundedRectangle()
-                                })
-                        })
-                    }
-                    else {
-                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-                        self.labelNombre.text = String(AppValues.nombreTiré!)
-                        AppValues.animationEnCours = false
-                        self.btChoisir.setRoundedRectangle()
-                    }
+            if (sender == .Secouer) {
+                // Si on secoue
+                if (AppValues.animationsSecouerAutorisés == true) {
+                    animationFondu()
                 }
                 else {
-                    // Si on "Slide"
-                    if (AppValues.animationsAutorisés == true) {
-                        AppValues.animationEnCours = true
-                        animerDe(sens)
-                    }
-                    else {
-                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-                        self.labelNombre.text = String(AppValues.nombreTiré!)
-                        AppValues.animationEnCours = false
-                        self.btChoisir.setRoundedRectangle()
-                    }
+                    AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
+                    self.labelNombre.text = String(AppValues.nombreTiré!)
+                    AppValues.animationEnCours = false
+                }
+            }
+            else if (sender == .Tap) {
+                // Si on "Tap"
+                if (AppValues.animationsAutorisés == true) {
+                    animationFondu()
+                }
+                else {
+                    AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
+                    self.labelNombre.text = String(AppValues.nombreTiré!)
+                    AppValues.animationEnCours = false
+                    //self.btChoisir.setRoundedRectangle()
+                }
+            }
+            else {
+                // Si on "Slide"
+                if (AppValues.animationsAutorisés == true) {
+                    AppValues.animationEnCours = true
+                    animerDe(sens)
+                }
+                else {
+                    AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
+                    self.labelNombre.text = String(AppValues.nombreTiré!)
+                    AppValues.animationEnCours = false
+                    //self.btChoisir.setRoundedRectangle()
                 }
             }
         }
@@ -296,16 +254,12 @@ class ViewController: UIViewController {
             switch sens {
             case .Droite:
                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x + AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                self.image.frame = CGRectMake(self.image.frame.origin.x + AppValues.valeurMouvement, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
             case .Gauche:
                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x - AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                self.image.frame = CGRectMake(self.image.frame.origin.x - AppValues.valeurMouvement, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
             case .Haut:
                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y - AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y - AppValues.valeurMouvement, self.image.frame.size.width, self.image.frame.size.height)
             case .Bas:
                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y + AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y + AppValues.valeurMouvement, self.image.frame.size.width, self.image.frame.size.height)
             default:
                 break
             }
@@ -314,16 +268,12 @@ class ViewController: UIViewController {
                     switch sens {
                     case .Droite:
                         self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x - AppValues.valeurMouvement * 2, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                        self.image.frame = CGRectMake(self.image.frame.origin.x - AppValues.valeurMouvement * 2, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
                     case .Gauche:
                         self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x + AppValues.valeurMouvement * 2, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                        self.image.frame = CGRectMake(self.image.frame.origin.x + AppValues.valeurMouvement * 2, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
                     case .Haut:
                         self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y + AppValues.valeurMouvement * 2, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                        self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y + AppValues.valeurMouvement * 2, self.image.frame.size.width, self.image.frame.size.height)
                     case .Bas:
                         self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y - AppValues.valeurMouvement * 2, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                        self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y - AppValues.valeurMouvement * 2, self.image.frame.size.width, self.image.frame.size.height)
                     default:
                         break
                     }
@@ -334,22 +284,18 @@ class ViewController: UIViewController {
                             switch sens {
                             case .Droite:
                                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x + AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                                self.image.frame = CGRectMake(self.image.frame.origin.x + AppValues.valeurMouvement, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
                             case .Gauche:
                                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x - AppValues.valeurMouvement, self.labelNombre.frame.origin.y, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                                self.image.frame = CGRectMake(self.image.frame.origin.x - AppValues.valeurMouvement, self.image.frame.origin.y, self.image.frame.size.width, self.image.frame.size.height)
                             case .Haut:
                                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y - AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                                self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y - AppValues.valeurMouvement, self.image.frame.size.width, self.image.frame.size.height)
                             case .Bas:
                                 self.labelNombre.frame = CGRectMake(self.labelNombre.frame.origin.x, self.labelNombre.frame.origin.y + AppValues.valeurMouvement, self.labelNombre.frame.size.width, self.labelNombre.frame.size.height)
-                                self.image.frame = CGRectMake(self.image.frame.origin.x, self.image.frame.origin.y + AppValues.valeurMouvement, self.image.frame.size.width, self.image.frame.size.height)
                             default:
                                 break
                             }
                             }) { (finished: Bool) -> Void in
                                 AppValues.animationEnCours = false
-                                self.btChoisir.setRoundedRectangle()
+                                //self.btChoisir.setRoundedRectangle()
                         }
                 }
         }

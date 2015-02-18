@@ -12,11 +12,14 @@
 		3678FF1219BC4E780097389D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF1119BC4E780097389D /* Images.xcassets */; };
 		3678FF1E19BC4E790097389D /* i_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF1D19BC4E790097389D /* i_deTests.swift */; };
 		3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF2B19BC4F2C0097389D /* Parametre.swift */; };
+		AD01A5041A93CA330025CECD /* CouleurDeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD01A5031A93CA330025CECD /* CouleurDeController.swift */; };
 		AD02BAF61A10F4BE003FB741 /* MesDonnes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */; };
+		AD25D5E11A9390FD00977003 /* RYAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD25D5E01A9390FD00977003 /* RYAnimation.swift */; };
 		AD6C8F7619FE869C004711EE /* ParametreSecouer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */; };
 		AD8FA6CB1A000BD600DDC684 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */; };
 		AD9443FB1A51A110005C8D23 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9443FA1A51A110005C8D23 /* TabController.swift */; };
-		ADAC628219F681F300C00359 /* UIButtonExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAC628119F681F300C00359 /* UIButtonExtend.swift */; };
+		ADB66B9F1A9229DE00AB1E4A /* RYButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB66B9D1A9229DE00AB1E4A /* RYButton.swift */; };
+		ADB66BA01A9229DE00AB1E4A /* RYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB66B9E1A9229DE00AB1E4A /* RYLabel.swift */; };
 		ADB9C0B11A583D86007624D4 /* AppValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9C0B01A583D86007624D4 /* AppValues.swift */; };
 		ADEED77719FCEAE1004FC171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEED77619FCEAE1004FC171 /* ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +34,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AD0FE5461A921ACC0027FAE9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3678FF0519BC4E780097389D /* i-de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "i-de.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3678FF0919BC4E780097389D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,11 +57,14 @@
 		3678FF1C19BC4E790097389D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3678FF1D19BC4E790097389D /* i_deTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = i_deTests.swift; sourceTree = "<group>"; };
 		3678FF2B19BC4F2C0097389D /* Parametre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametre.swift; sourceTree = "<group>"; };
+		AD01A5031A93CA330025CECD /* CouleurDeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouleurDeController.swift; sourceTree = "<group>"; };
 		AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesDonnes.swift; sourceTree = "<group>"; };
+		AD25D5E01A9390FD00977003 /* RYAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RYAnimation.swift; sourceTree = "<group>"; };
 		AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametreSecouer.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		AD9443FA1A51A110005C8D23 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
-		ADAC628119F681F300C00359 /* UIButtonExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtend.swift; sourceTree = "<group>"; };
+		ADB66B9D1A9229DE00AB1E4A /* RYButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RYButton.swift; sourceTree = "<group>"; };
+		ADB66B9E1A9229DE00AB1E4A /* RYLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RYLabel.swift; sourceTree = "<group>"; };
 		ADB9C0B01A583D86007624D4 /* AppValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppValues.swift; sourceTree = "<group>"; };
 		ADEED77619FCEAE1004FC171 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +153,7 @@
 				AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */,
 				AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */,
 				AD9443FA1A51A110005C8D23 /* TabController.swift */,
+				AD01A5031A93CA330025CECD /* CouleurDeController.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -141,7 +161,9 @@
 		AD0128D819FD28460034537B /* Extensions Classes */ = {
 			isa = PBXGroup;
 			children = (
-				ADAC628119F681F300C00359 /* UIButtonExtend.swift */,
+				ADB66B9D1A9229DE00AB1E4A /* RYButton.swift */,
+				AD25D5E01A9390FD00977003 /* RYAnimation.swift */,
+				ADB66B9E1A9229DE00AB1E4A /* RYLabel.swift */,
 			);
 			name = "Extensions Classes";
 			sourceTree = "<group>";
@@ -156,6 +178,7 @@
 				3678FF0119BC4E780097389D /* Sources */,
 				3678FF0219BC4E780097389D /* Frameworks */,
 				3678FF0319BC4E780097389D /* Resources */,
+				AD0FE5461A921ACC0027FAE9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,14 +270,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB66B9F1A9229DE00AB1E4A /* RYButton.swift in Sources */,
+				AD01A5041A93CA330025CECD /* CouleurDeController.swift in Sources */,
 				AD9443FB1A51A110005C8D23 /* TabController.swift in Sources */,
 				ADEED77719FCEAE1004FC171 /* ViewController.swift in Sources */,
+				ADB66BA01A9229DE00AB1E4A /* RYLabel.swift in Sources */,
 				3678FF0B19BC4E780097389D /* AppDelegate.swift in Sources */,
 				ADB9C0B11A583D86007624D4 /* AppValues.swift in Sources */,
-				ADAC628219F681F300C00359 /* UIButtonExtend.swift in Sources */,
 				AD6C8F7619FE869C004711EE /* ParametreSecouer.swift in Sources */,
 				3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */,
 				AD02BAF61A10F4BE003FB741 /* MesDonnes.swift in Sources */,
+				AD25D5E11A9390FD00977003 /* RYAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,8 +400,12 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RIKit-dbkegylcmshprwbaimgoaizraslr/Build/Products/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "i-de/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -395,8 +425,12 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RIKit-dbkegylcmshprwbaimgoaizraslr/Build/Products/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "i-de/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -17,4 +17,5 @@ struct AppValues {
     static var animationsAutorisés:Bool! = true
     static var animationsSecouerAutorisés:Bool! = true
     static var valeurMouvement:CGFloat = 80
+    static var couleurDe:UIColor = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
 }
