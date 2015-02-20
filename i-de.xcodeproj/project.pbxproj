@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		3678FF0B19BC4E780097389D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF0A19BC4E780097389D /* AppDelegate.swift */; };
-		3678FF1019BC4E780097389D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF0E19BC4E780097389D /* Main.storyboard */; };
 		3678FF1219BC4E780097389D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF1119BC4E780097389D /* Images.xcassets */; };
 		3678FF1E19BC4E790097389D /* i_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF1D19BC4E790097389D /* i_deTests.swift */; };
 		3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF2B19BC4F2C0097389D /* Parametre.swift */; };
 		AD01A5041A93CA330025CECD /* CouleurDeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD01A5031A93CA330025CECD /* CouleurDeController.swift */; };
 		AD02BAF61A10F4BE003FB741 /* MesDonnes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */; };
 		AD25D5E11A9390FD00977003 /* RYAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD25D5E01A9390FD00977003 /* RYAnimation.swift */; };
+		AD3CC82E1A975BB40071BF42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD3CC8301A975BB40071BF42 /* Main.storyboard */; };
 		AD6C8F7619FE869C004711EE /* ParametreSecouer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */; };
+		AD873B2F1A975ACB004A13DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD873B291A975ACB004A13DD /* Localizable.strings */; };
 		AD8FA6CB1A000BD600DDC684 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */; };
 		AD9443FB1A51A110005C8D23 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9443FA1A51A110005C8D23 /* TabController.swift */; };
 		ADB66B9F1A9229DE00AB1E4A /* RYButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB66B9D1A9229DE00AB1E4A /* RYButton.swift */; };
@@ -51,7 +52,6 @@
 		3678FF0519BC4E780097389D /* i-de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "i-de.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3678FF0919BC4E780097389D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3678FF0A19BC4E780097389D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3678FF0F19BC4E780097389D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3678FF1119BC4E780097389D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3678FF1719BC4E780097389D /* i-deTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "i-deTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3678FF1C19BC4E790097389D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +60,12 @@
 		AD01A5031A93CA330025CECD /* CouleurDeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouleurDeController.swift; sourceTree = "<group>"; };
 		AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesDonnes.swift; sourceTree = "<group>"; };
 		AD25D5E01A9390FD00977003 /* RYAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RYAnimation.swift; sourceTree = "<group>"; };
+		AD3CC82F1A975BB40071BF42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD3CC8321A975BB90071BF42 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		AD3CC8341A975BBC0071BF42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		AD3CC8351A975C8E0071BF42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametreSecouer.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		AD873B2A1A975ACB004A13DD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		AD9443FA1A51A110005C8D23 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		ADB66B9D1A9229DE00AB1E4A /* RYButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RYButton.swift; sourceTree = "<group>"; };
@@ -108,9 +113,10 @@
 		3678FF0719BC4E780097389D /* i-de */ = {
 			isa = PBXGroup;
 			children = (
+				ADD032481A9635DA004B244C /* Localisation */,
 				AD0128D719FD28330034537B /* Classes */,
-				3678FF0E19BC4E780097389D /* Main.storyboard */,
 				AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */,
+				AD3CC8301A975BB40071BF42 /* Main.storyboard */,
 				AD0128D819FD28460034537B /* Extensions Classes */,
 				3678FF1119BC4E780097389D /* Images.xcassets */,
 				3678FF0819BC4E780097389D /* Supporting Files */,
@@ -166,6 +172,14 @@
 				ADB66B9E1A9229DE00AB1E4A /* RYLabel.swift */,
 			);
 			name = "Extensions Classes";
+			sourceTree = "<group>";
+		};
+		ADD032481A9635DA004B244C /* Localisation */ = {
+			isa = PBXGroup;
+			children = (
+				AD873B291A975ACB004A13DD /* Localizable.strings */,
+			);
+			name = Localisation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,8 +245,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
+				fr,
 			);
 			mainGroup = 3678FEFC19BC4E780097389D;
 			productRefGroup = 3678FF0619BC4E780097389D /* Products */;
@@ -250,9 +265,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3678FF1019BC4E780097389D /* Main.storyboard in Resources */,
+				AD873B2F1A975ACB004A13DD /* Localizable.strings in Resources */,
 				3678FF1219BC4E780097389D /* Images.xcassets in Resources */,
 				AD8FA6CB1A000BD600DDC684 /* Launch Screen.xib in Resources */,
+				AD3CC82E1A975BB40071BF42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,12 +319,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3678FF0E19BC4E780097389D /* Main.storyboard */ = {
+		AD3CC8301A975BB40071BF42 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3678FF0F19BC4E780097389D /* Base */,
+				AD3CC82F1A975BB40071BF42 /* Base */,
+				AD3CC8321A975BB90071BF42 /* fr */,
+				AD3CC8341A975BBC0071BF42 /* en */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD873B291A975ACB004A13DD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD873B2A1A975ACB004A13DD /* fr */,
+				AD3CC8351A975C8E0071BF42 /* en */,
+			);
+			name = Localizable.strings;
+			path = fr.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -405,7 +433,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RIKit-dbkegylcmshprwbaimgoaizraslr/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "i-de/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -430,7 +458,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RIKit-dbkegylcmshprwbaimgoaizraslr/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "i-de/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -1,0 +1,78 @@
+
+/* Class = "IBUILabel"; text = "Secouer"; ObjectID = "0Jw-We-P4g"; */
+"0Jw-We-P4g.text" = "Secouer";
+
+/* Class = "IBUITabBarItem"; title = "Paramètres"; ObjectID = "2Zi-8x-izf"; */
+"2Zi-8x-izf.title" = "Paramètres";
+
+/* Class = "IBUILabel"; text = "Rouge :"; ObjectID = "G7f-3O-OG6"; */
+"G7f-3O-OG6.text" = "Rouge :";
+
+/* Class = "IBUITabBarItem"; title = "Dé"; ObjectID = "IoH-t5-32v"; */
+"IoH-t5-32v.title" = "Dé";
+
+/* Class = "IBUILabel"; text = "6"; ObjectID = "JL4-B3-wje"; */
+"JL4-B3-wje.text" = "6";
+
+/* Class = "IBUIButton"; normalTitle = "Choisir un nombre personnalisé"; ObjectID = "JRz-xZ-kBB"; */
+"JRz-xZ-kBB.normalTitle" = "Choisir un nombre personnalisé";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Nombre de faces"; ObjectID = "LKC-G7-ylm"; */
+"LKC-G7-ylm.headerTitle" = "Nombre de faces";
+
+/* Class = "IBUITableViewController"; title = "Secouer"; ObjectID = "OTf-00-B5v"; */
+"OTf-00-B5v.title" = "Secouer";
+
+/* Class = "IBUILabel"; text = "Tirage d'un nombre entre 1 et 6"; ObjectID = "QD6-s7-DVY"; */
+"QD6-s7-DVY.text" = "Tirage d'un nombre entre 1 et 6";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Personnalisation"; ObjectID = "YOu-vt-WJ5"; */
+"YOu-vt-WJ5.headerTitle" = "Personnalisation";
+
+/* Class = "IBUILabel"; text = "Vert :"; ObjectID = "Zrs-zV-nTP"; */
+"Zrs-zV-nTP.text" = "Vert :";
+
+/* Class = "IBUIButton"; normalTitle = "Revenir à la couleur par défault"; ObjectID = "bwX-kk-7Qe"; */
+"bwX-kk-7Qe.normalTitle" = "Revenir à la couleur par défault";
+
+/* Class = "IBUILabel"; text = "Animations"; ObjectID = "cQr-8v-bbn"; */
+"cQr-8v-bbn.text" = "Animations";
+
+/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[0] = "6 faces"; ObjectID = "evC-yp-0qt"; */
+"evC-yp-0qt.segmentTitles[0]" = "6 faces";
+
+/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[1] = "8 faces"; ObjectID = "evC-yp-0qt"; */
+"evC-yp-0qt.segmentTitles[1]" = "8 faces";
+
+/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[2] = "10 faces"; ObjectID = "evC-yp-0qt"; */
+"evC-yp-0qt.segmentTitles[2]" = "10 faces";
+
+/* Class = "IBUINavigationItem"; title = "Paramètres"; ObjectID = "f5c-b2-OU2"; */
+"f5c-b2-OU2.title" = "Paramètres";
+
+/* Class = "IBUILabel"; text = "Lancement du dé automatique au démarrage"; ObjectID = "jzs-eG-K1b"; */
+"jzs-eG-K1b.text" = "Lancement du dé automatique au démarrage";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Paramètres"; ObjectID = "kc2-vs-yLc"; */
+"kc2-vs-yLc.headerTitle" = "Paramètres";
+
+/* Class = "IBUILabel"; text = "Le nombre de faces est de"; ObjectID = "pK4-T8-9ES"; */
+"pK4-T8-9ES.text" = "Le nombre de faces est de";
+
+/* Class = "IBUILabel"; text = "Bleu :"; ObjectID = "qOi-8a-5PN"; */
+"qOi-8a-5PN.text" = "Bleu :";
+
+/* Class = "IBUILabel"; text = "Couleur du dé"; ObjectID = "qaN-Jl-R6j"; */
+"qaN-Jl-R6j.text" = "Couleur du dé";
+
+/* Class = "IBUIButton"; normalTitle = "Choisir"; ObjectID = "tuK-Yj-9va"; */
+"tuK-Yj-9va.normalTitle" = "Choisir";
+
+/* Class = "IBUILabel"; text = "Animations"; ObjectID = "w3a-Vn-bb5"; */
+"w3a-Vn-bb5.text" = "Animations";
+
+/* Class = "IBUIViewController"; title = "Couleur du dé"; ObjectID = "x9Q-er-76h"; */
+"x9Q-er-76h.title" = "Couleur du dé";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Général"; ObjectID = "yhT-h9-p0x"; */
+"yhT-h9-p0x.headerTitle" = "Général";

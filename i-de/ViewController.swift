@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeNombreFace = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesNombreFace
             AppValues.nombreFace = Int(donneeNombreFace.nombreFace)
-            labelFace.text = "Tirage d'un nombre entre 1 et " + String(donneeNombreFace.nombreFace)
+            labelFace.text = NSLocalizedString("phraseTirage", tableName: nil, comment: "") + String(donneeNombreFace.nombreFace)
         }
         else {
             donneeNombreFace.nombreFace = 6
@@ -96,6 +96,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        println(NSLocale.preferredLanguages()[0])
         // Mouvenent animation
         if (UIDevice().userInterfaceIdiom == .Pad) {
             AppValues.valeurMouvement *= 2
@@ -166,16 +167,18 @@ class ViewController: UIViewController {
         choisir(.Aucun, sender: .Tap)
     }
     func animationFondu() {
-        var anim = RYAnimation()
-        CATransaction.begin()
-        CATransaction.setCompletionBlock { () -> Void in
-            AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-            self.labelNombre.text = String(AppValues.nombreTiré!)
-            self.labelNombre.layer.addAnimation(anim.setOpacity(0, toOpacity: 1, duration: 0.5), forKey: "opacity")
-        }
-        labelNombre.layer.addAnimation(anim.setOpacity(1, toOpacity: 0, duration: 0.5), forKey: "opacity")
-        CATransaction.commit()
-        
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            self.labelNombre.alpha = 0.0
+            }, completion: { (finished: Bool) -> Void in
+                AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
+                self.labelNombre.text = String(AppValues.nombreTiré!)
+                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                    self.labelNombre.alpha = 1.0
+                    }, completion: { (finished: Bool) -> Void in
+                        AppValues.premierLancer = false
+                        AppValues.animationEnCours = false
+                })
+        })
     }
     func choisir(sens:SensSwipe, sender:SenderChoisir = .Autre) {
         if (AppValues.premierLancer == true) {
