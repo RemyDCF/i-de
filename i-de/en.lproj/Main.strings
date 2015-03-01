@@ -1,78 +1,93 @@
 
-/* Class = "IBUILabel"; text = "Secouer"; ObjectID = "0Jw-We-P4g"; */
-"0Jw-We-P4g.text" = "Secouer";
+/* Class = "IBUILabel"; text = "Shake"; ObjectID = "0Jw-We-P4g"; */
+"0Jw-We-P4g.text" = "Shake";
 
-/* Class = "IBUITabBarItem"; title = "Paramètres"; ObjectID = "2Zi-8x-izf"; */
-"2Zi-8x-izf.title" = "Paramètres";
+/* Class = "IBUITabBarItem"; title = "Settings"; ObjectID = "2Zi-8x-izf"; */
+"2Zi-8x-izf.title" = "Settings";
 
-/* Class = "IBUILabel"; text = "Rouge :"; ObjectID = "G7f-3O-OG6"; */
-"G7f-3O-OG6.text" = "Rouge :";
+/* Class = "IBUIButton"; normalTitle = "Remove Ads"; ObjectID = "FRE-e2-8dJ"; */
+"FRE-e2-8dJ.normalTitle" = "Remove Ads";
 
-/* Class = "IBUITabBarItem"; title = "Dé"; ObjectID = "IoH-t5-32v"; */
-"IoH-t5-32v.title" = "Dé";
+/* Class = "IBUILabel"; text = "Red :"; ObjectID = "G7f-3O-OG6"; */
+"G7f-3O-OG6.text" = "Red :";
+
+/* Class = "IBUITabBarItem"; title = "Dice"; ObjectID = "IoH-t5-32v"; */
+"IoH-t5-32v.title" = "Dice";
 
 /* Class = "IBUILabel"; text = "6"; ObjectID = "JL4-B3-wje"; */
 "JL4-B3-wje.text" = "6";
 
-/* Class = "IBUIButton"; normalTitle = "Choisir un nombre personnalisé"; ObjectID = "JRz-xZ-kBB"; */
-"JRz-xZ-kBB.normalTitle" = "Choisir un nombre personnalisé";
+/* Class = "IBUIButton"; normalTitle = "Choose a custom number"; ObjectID = "JRz-xZ-kBB"; */
+"JRz-xZ-kBB.normalTitle" = "Choose a custom number";
 
-/* Class = "IBUITableViewSection"; headerTitle = "Nombre de faces"; ObjectID = "LKC-G7-ylm"; */
-"LKC-G7-ylm.headerTitle" = "Nombre de faces";
+/* Class = "IBUITableViewSection"; headerTitle = "Number of sides"; ObjectID = "LKC-G7-ylm"; */
+"LKC-G7-ylm.headerTitle" = "Number of sides";
 
-/* Class = "IBUITableViewController"; title = "Secouer"; ObjectID = "OTf-00-B5v"; */
-"OTf-00-B5v.title" = "Secouer";
+/* Class = "IBUIButton"; normalTitle = "Delete Ads"; ObjectID = "OOP-Ck-6fr"; */
+"OOP-Ck-6fr.normalTitle" = "Delete Ads";
 
-/* Class = "IBUILabel"; text = "Tirage d'un nombre entre 1 et 6"; ObjectID = "QD6-s7-DVY"; */
-"QD6-s7-DVY.text" = "Tirage d'un nombre entre 1 et 6";
+/* Class = "IBUITableViewController"; title = "Shake"; ObjectID = "OTf-00-B5v"; */
+"OTf-00-B5v.title" = "Shake";
 
-/* Class = "IBUITableViewSection"; headerTitle = "Personnalisation"; ObjectID = "YOu-vt-WJ5"; */
-"YOu-vt-WJ5.headerTitle" = "Personnalisation";
+/* Class = "IBUILabel"; text = "Drawing of a number between 1 and 6"; ObjectID = "QD6-s7-DVY"; */
+"QD6-s7-DVY.text" = "Drawing of a number between 1 and 6";
 
-/* Class = "IBUILabel"; text = "Vert :"; ObjectID = "Zrs-zV-nTP"; */
-"Zrs-zV-nTP.text" = "Vert :";
+/* Class = "IBUITableViewSection"; headerTitle = "Personalization"; ObjectID = "YOu-vt-WJ5"; */
+"YOu-vt-WJ5.headerTitle" = "Personalization";
 
-/* Class = "IBUIButton"; normalTitle = "Revenir à la couleur par défault"; ObjectID = "bwX-kk-7Qe"; */
-"bwX-kk-7Qe.normalTitle" = "Revenir à la couleur par défault";
+/* Class = "IBUILabel"; text = "Green :"; ObjectID = "Zrs-zV-nTP"; */
+"Zrs-zV-nTP.text" = "Green :";
+
+/* Class = "IBUIButton"; normalTitle = "Return to the default color"; ObjectID = "bwX-kk-7Qe"; */
+"bwX-kk-7Qe.normalTitle" = "Return to the default color";
 
 /* Class = "IBUILabel"; text = "Animations"; ObjectID = "cQr-8v-bbn"; */
 "cQr-8v-bbn.text" = "Animations";
 
-/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[0] = "6 faces"; ObjectID = "evC-yp-0qt"; */
-"evC-yp-0qt.segmentTitles[0]" = "6 faces";
+/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[0] = "6 sides"; ObjectID = "evC-yp-0qt"; */
+"evC-yp-0qt.segmentTitles[0]" = "6 sides";
 
-/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[1] = "8 faces"; ObjectID = "evC-yp-0qt"; */
-"evC-yp-0qt.segmentTitles[1]" = "8 faces";
+/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[1] = "8 sides"; ObjectID = "evC-yp-0qt"; */
+"evC-yp-0qt.segmentTitles[1]" = "8 sides";
 
-/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[2] = "10 faces"; ObjectID = "evC-yp-0qt"; */
-"evC-yp-0qt.segmentTitles[2]" = "10 faces";
+/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[2] = "10 sides"; ObjectID = "evC-yp-0qt"; */
+"evC-yp-0qt.segmentTitles[2]" = "10 sides";
 
-/* Class = "IBUINavigationItem"; title = "Paramètres"; ObjectID = "f5c-b2-OU2"; */
-"f5c-b2-OU2.title" = "Paramètres";
+/* Class = "IBUINavigationItem"; title = "Settings"; ObjectID = "f5c-b2-OU2"; */
+"f5c-b2-OU2.title" = "Settings";
 
-/* Class = "IBUILabel"; text = "Lancement du dé automatique au démarrage"; ObjectID = "jzs-eG-K1b"; */
-"jzs-eG-K1b.text" = "Lancement du dé automatique au démarrage";
+/* Class = "IBUIButton"; normalTitle = "Restore purchase"; ObjectID = "hTc-Li-ycw"; */
+"hTc-Li-ycw.normalTitle" = "Restore purchase";
 
-/* Class = "IBUITableViewSection"; headerTitle = "Paramètres"; ObjectID = "kc2-vs-yLc"; */
-"kc2-vs-yLc.headerTitle" = "Paramètres";
+/* Class = "IBUILabel"; text = "Automatically dice draw at startup"; ObjectID = "jzs-eG-K1b"; */
+"jzs-eG-K1b.text" = "Automatically dice draw at startup";
 
-/* Class = "IBUILabel"; text = "Le nombre de faces est de"; ObjectID = "pK4-T8-9ES"; */
-"pK4-T8-9ES.text" = "Le nombre de faces est de";
+/* Class = "IBUITableViewSection"; headerTitle = "Ads"; ObjectID = "kDW-aU-1Ka"; */
+"kDW-aU-1Ka.headerTitle" = "Ads";
 
-/* Class = "IBUILabel"; text = "Bleu :"; ObjectID = "qOi-8a-5PN"; */
-"qOi-8a-5PN.text" = "Bleu :";
+/* Class = "IBUITableViewSection"; headerTitle = "Settings"; ObjectID = "kc2-vs-yLc"; */
+"kc2-vs-yLc.headerTitle" = "Settings";
 
-/* Class = "IBUILabel"; text = "Couleur du dé"; ObjectID = "qaN-Jl-R6j"; */
-"qaN-Jl-R6j.text" = "Couleur du dé";
+/* Class = "IBUIViewController"; title = "Delete Ad"; ObjectID = "oVN-GM-0y4"; */
+"oVN-GM-0y4.title" = "Delete Ad";
 
-/* Class = "IBUIButton"; normalTitle = "Choisir"; ObjectID = "tuK-Yj-9va"; */
-"tuK-Yj-9va.normalTitle" = "Choisir";
+/* Class = "IBUILabel"; text = "Number of sides is "; ObjectID = "pK4-T8-9ES"; */
+"pK4-T8-9ES.text" = "Number of sides is ";
+
+/* Class = "IBUILabel"; text = "Blue :"; ObjectID = "qOi-8a-5PN"; */
+"qOi-8a-5PN.text" = "Blue :";
+
+/* Class = "IBUILabel"; text = "Color of the dice"; ObjectID = "qaN-Jl-R6j"; */
+"qaN-Jl-R6j.text" = "Color of the dice";
+
+/* Class = "IBUIButton"; normalTitle = "Choose"; ObjectID = "tuK-Yj-9va"; */
+"tuK-Yj-9va.normalTitle" = "Choose";
 
 /* Class = "IBUILabel"; text = "Animations"; ObjectID = "w3a-Vn-bb5"; */
 "w3a-Vn-bb5.text" = "Animations";
 
-/* Class = "IBUIViewController"; title = "Couleur du dé"; ObjectID = "x9Q-er-76h"; */
-"x9Q-er-76h.title" = "Couleur du dé";
+/* Class = "IBUIViewController"; title = "Color of the dice"; ObjectID = "x9Q-er-76h"; */
+"x9Q-er-76h.title" = "Color of the dice";
 
-/* Class = "IBUITableViewSection"; headerTitle = "Général"; ObjectID = "yhT-h9-p0x"; */
-"yhT-h9-p0x.headerTitle" = "Général";
+/* Class = "IBUITableViewSection"; headerTitle = "General"; ObjectID = "yhT-h9-p0x"; */
+"yhT-h9-p0x.headerTitle" = "General";

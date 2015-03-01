@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  i-de
+
+  Created by remy on 19/02/2015.
+  Copyright (c) 2015 DCF. All rights reserved.
+*/
+
+"phraseTirage" = "Drawing of a number between 1 and ";
+"choixPerso" = "Custom number";
+"nombreFace" = "Enter the number of sides (between 2 and 200)";
+"nombre" = "Number";
+"annuler" = "Cancel";
+"erreur" = "Error";
+"saisieIncorrecte" = "The custom number is invalid";
+"erreurAchat" = "The transaction has not been completed, the purchases are not actived on this device. Thank you to activate the in-app purchases restrictions";
+"achatReussi" = "Completed !";
+"relancerApp" = "Restart the application to stop displaying ads.";

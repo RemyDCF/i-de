@@ -13,10 +13,14 @@
 		3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF2B19BC4F2C0097389D /* Parametre.swift */; };
 		AD01A5041A93CA330025CECD /* CouleurDeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD01A5031A93CA330025CECD /* CouleurDeController.swift */; };
 		AD02BAF61A10F4BE003FB741 /* MesDonnes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */; };
+		AD19E5341AA3512700523DBB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD19E5361AA3512700523DBB /* Localizable.strings */; };
 		AD25D5E11A9390FD00977003 /* RYAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD25D5E01A9390FD00977003 /* RYAnimation.swift */; };
-		AD3CC82E1A975BB40071BF42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD3CC8301A975BB40071BF42 /* Main.storyboard */; };
+		AD3A48701A98ED1C0022E52A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3A486E1A98ED1C0022E52A /* AdSupport.framework */; };
+		AD3A48711A98ED1C0022E52A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3A486F1A98ED1C0022E52A /* iAd.framework */; };
+		AD3A48731A99044F0022E52A /* SupprimerPubliciteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3A48721A99044F0022E52A /* SupprimerPubliciteController.swift */; };
+		AD3A48751A99047F0022E52A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3A48741A99047F0022E52A /* StoreKit.framework */; };
 		AD6C8F7619FE869C004711EE /* ParametreSecouer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */; };
-		AD873B2F1A975ACB004A13DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD873B291A975ACB004A13DD /* Localizable.strings */; };
+		AD75F8AC1A9B9A84000A8B98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD75F8AA1A9B9A84000A8B98 /* Main.storyboard */; };
 		AD8FA6CB1A000BD600DDC684 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */; };
 		AD9443FB1A51A110005C8D23 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9443FA1A51A110005C8D23 /* TabController.swift */; };
 		ADB66B9F1A9229DE00AB1E4A /* RYButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB66B9D1A9229DE00AB1E4A /* RYButton.swift */; };
@@ -59,13 +63,17 @@
 		3678FF2B19BC4F2C0097389D /* Parametre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametre.swift; sourceTree = "<group>"; };
 		AD01A5031A93CA330025CECD /* CouleurDeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouleurDeController.swift; sourceTree = "<group>"; };
 		AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesDonnes.swift; sourceTree = "<group>"; };
+		AD19E5351AA3512700523DBB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD19E5371AA351A600523DBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD19E5381AA3559F00523DBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		AD19E5391AA355AE00523DBB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		AD25D5E01A9390FD00977003 /* RYAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RYAnimation.swift; sourceTree = "<group>"; };
-		AD3CC82F1A975BB40071BF42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AD3CC8321A975BB90071BF42 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		AD3CC8341A975BBC0071BF42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		AD3CC8351A975C8E0071BF42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD3A486E1A98ED1C0022E52A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		AD3A486F1A98ED1C0022E52A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		AD3A48721A99044F0022E52A /* SupprimerPubliciteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupprimerPubliciteController.swift; sourceTree = "<group>"; };
+		AD3A48741A99047F0022E52A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametreSecouer.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		AD873B2A1A975ACB004A13DD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
+		AD75F8AF1A9B9B98000A8B98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		AD9443FA1A51A110005C8D23 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		ADB66B9D1A9229DE00AB1E4A /* RYButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RYButton.swift; sourceTree = "<group>"; };
@@ -79,6 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD3A48751A99047F0022E52A /* StoreKit.framework in Frameworks */,
+				AD3A48701A98ED1C0022E52A /* AdSupport.framework in Frameworks */,
+				AD3A48711A98ED1C0022E52A /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +106,9 @@
 		3678FEFC19BC4E780097389D = {
 			isa = PBXGroup;
 			children = (
+				AD3A48741A99047F0022E52A /* StoreKit.framework */,
+				AD3A486E1A98ED1C0022E52A /* AdSupport.framework */,
+				AD3A486F1A98ED1C0022E52A /* iAd.framework */,
 				3678FF0719BC4E780097389D /* i-de */,
 				3678FF1A19BC4E780097389D /* i-deTests */,
 				3678FF0619BC4E780097389D /* Products */,
@@ -113,10 +127,9 @@
 		3678FF0719BC4E780097389D /* i-de */ = {
 			isa = PBXGroup;
 			children = (
-				ADD032481A9635DA004B244C /* Localisation */,
 				AD0128D719FD28330034537B /* Classes */,
 				AD8FA6CA1A000BD600DDC684 /* Launch Screen.xib */,
-				AD3CC8301A975BB40071BF42 /* Main.storyboard */,
+				AD75F8AA1A9B9A84000A8B98 /* Main.storyboard */,
 				AD0128D819FD28460034537B /* Extensions Classes */,
 				3678FF1119BC4E780097389D /* Images.xcassets */,
 				3678FF0819BC4E780097389D /* Supporting Files */,
@@ -127,6 +140,7 @@
 		3678FF0819BC4E780097389D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD19E5361AA3512700523DBB /* Localizable.strings */,
 				3678FF0919BC4E780097389D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -160,6 +174,7 @@
 				AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */,
 				AD9443FA1A51A110005C8D23 /* TabController.swift */,
 				AD01A5031A93CA330025CECD /* CouleurDeController.swift */,
+				AD3A48721A99044F0022E52A /* SupprimerPubliciteController.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -172,14 +187,6 @@
 				ADB66B9E1A9229DE00AB1E4A /* RYLabel.swift */,
 			);
 			name = "Extensions Classes";
-			sourceTree = "<group>";
-		};
-		ADD032481A9635DA004B244C /* Localisation */ = {
-			isa = PBXGroup;
-			children = (
-				AD873B291A975ACB004A13DD /* Localizable.strings */,
-			);
-			name = Localisation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +240,11 @@
 					3678FF0419BC4E780097389D = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 767R4Y4A3U;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					3678FF1619BC4E780097389D = {
 						CreatedOnToolsVersion = 6.0;
@@ -265,10 +277,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD873B2F1A975ACB004A13DD /* Localizable.strings in Resources */,
+				AD19E5341AA3512700523DBB /* Localizable.strings in Resources */,
 				3678FF1219BC4E780097389D /* Images.xcassets in Resources */,
 				AD8FA6CB1A000BD600DDC684 /* Launch Screen.xib in Resources */,
-				AD3CC82E1A975BB40071BF42 /* Main.storyboard in Resources */,
+				AD75F8AC1A9B9A84000A8B98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +307,7 @@
 				ADB9C0B11A583D86007624D4 /* AppValues.swift in Sources */,
 				AD6C8F7619FE869C004711EE /* ParametreSecouer.swift in Sources */,
 				3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */,
+				AD3A48731A99044F0022E52A /* SupprimerPubliciteController.swift in Sources */,
 				AD02BAF61A10F4BE003FB741 /* MesDonnes.swift in Sources */,
 				AD25D5E11A9390FD00977003 /* RYAnimation.swift in Sources */,
 			);
@@ -319,24 +332,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AD3CC8301A975BB40071BF42 /* Main.storyboard */ = {
+		AD19E5361AA3512700523DBB /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AD3CC82F1A975BB40071BF42 /* Base */,
-				AD3CC8321A975BB90071BF42 /* fr */,
-				AD3CC8341A975BBC0071BF42 /* en */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AD873B291A975ACB004A13DD /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD873B2A1A975ACB004A13DD /* fr */,
-				AD3CC8351A975C8E0071BF42 /* en */,
+				AD19E5351AA3512700523DBB /* fr */,
+				AD19E5371AA351A600523DBB /* en */,
 			);
 			name = Localizable.strings;
-			path = fr.lproj;
+			sourceTree = "<group>";
+		};
+		AD75F8AA1A9B9A84000A8B98 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD75F8AF1A9B9B98000A8B98 /* Base */,
+				AD19E5381AA3559F00523DBB /* en */,
+				AD19E5391AA355AE00523DBB /* fr */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

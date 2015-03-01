@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import iAd
 
 enum SensSwipe {
     case Haut
@@ -23,11 +24,11 @@ enum SenderChoisir {
     case Autre
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ADBannerViewDelegate {
     @IBOutlet weak var labelNombre: RYLabel!
     @IBOutlet weak var labelFace: UILabel!
     @IBOutlet weak var btChoisir: RYButton!
-    
+    var bannierePub: ADBannerView! = ADBannerView(adType: ADAdType.Banner)
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         // Nombre face
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeNombreFace = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesNombreFace
             AppValues.nombreFace = Int(donneeNombreFace.nombreFace)
-            labelFace.text = NSLocalizedString("phraseTirage", tableName: nil, comment: "") + String(donneeNombreFace.nombreFace)
+            labelFace.text = NSLocalizedString("phraseTirage", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "") + String(donneeNombreFace.nombreFace)
         }
         else {
             donneeNombreFace.nombreFace = 6
@@ -96,7 +97,27 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(NSLocale.preferredLanguages()[0])
+        var donneePublicite = MesDonnesPublicite()
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("publicite")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneePublicite = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesPublicite
+            if (donneePublicite.publicite) {
+                AppValues.valeurMouvement -= 10
+                self.canDisplayBannerAds = true
+                bannierePub.delegate = self
+                bannierePub.hidden = true
+            }
+            else {
+                self.canDisplayBannerAds = false
+                bannierePub.delegate = self
+                bannierePub.hidden = true
+            }
+        }
+        else {
+            donneePublicite.publicite = true
+            var erreur = NSKeyedArchiver.archiveRootObject(donneePublicite, toFile: path)
+        }
         // Mouvenent animation
         if (UIDevice().userInterfaceIdiom == .Pad) {
             AppValues.valeurMouvement *= 2
@@ -104,8 +125,8 @@ class ViewController: UIViewController {
         
         // Secouer Animations
         var donneeSecouerAnimations = MesDonnesSecouerAnimations()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeSecouerAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouerAnimations
             if (!donneeSecouerAnimations.secouerAnimations) {
@@ -305,5 +326,17 @@ class ViewController: UIViewController {
                         }
                 }
         }
+    }
+    
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        self.bannierePub.hidden = false
+    }
+    
+    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
+        return willLeave
+    }
+    
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+        self.bannierePub.hidden = false
     }
 }

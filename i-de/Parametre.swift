@@ -15,10 +15,12 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     @IBOutlet weak var lancerAuDemarrage: UISwitch!
     @IBOutlet weak var animations: UISwitch!
     @IBOutlet weak var boutonParametreSecouer: RYButton!
+    @IBOutlet weak var boutonSupprimerPubs:RYButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Personnalisation des boutons
         boutonParametreSecouer.setImage(UIImage(named: "parametresDisabled"), forState: UIControlState.Disabled)
+        boutonSupprimerPubs.setTitle("Publicitées supprimées", forState: UIControlState.Disabled)
         // Mise en place des données existantes
         if (!AppValues.secouer) {
             secouerDe.setOn(false, animated: true)
@@ -38,9 +40,21 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
         }
         else {
             donneelancerAuDemarrage.lancerAuDemarrage = false
-            var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-            var path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
             var erreur = NSKeyedArchiver.archiveRootObject(donneelancerAuDemarrage, toFile: path)
+        }
+        var donneePublicite = MesDonnesPublicite()
+        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        path = dir[0] . stringByAppendingPathComponent("publicite")
+        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
+            donneePublicite = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesPublicite
+            if (!donneePublicite.publicite) {
+                boutonSupprimerPubs.enabled = false
+                boutonSupprimerPubs.borderColor = UIColor(red:0.79, green:0.79, blue:0.79, alpha:1)
+            }
+        }
+        else {
+            donneePublicite.publicite = true
+            var erreur = NSKeyedArchiver.archiveRootObject(donneePublicite, toFile: path)
         }
         mettreAJourFaceDe()
     }
@@ -63,6 +77,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
         }
         else {
             boutonParametreSecouer.enabled = true
+            boutonParametreSecouer.borderColor = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
         }
     }
     
@@ -114,19 +129,19 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
         // On change le nombre de faces personnalisé
         var donnee = MesDonnesNombreFace()
         if controllerAvailable() {
-            let alerte = UIAlertController(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 2147483647)", preferredStyle: UIAlertControllerStyle.Alert)
+            let alerte = UIAlertController(title: NSLocalizedString("choixPerso", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("nombreFace", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             alerte.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
-                textField.placeholder = "Nombre"
+                textField.placeholder = NSLocalizedString("nombre", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "")
                 textField.keyboardType = UIKeyboardType.NumberPad
             })
-            alerte.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction!) in
+            alerte.addAction(UIAlertAction(title: NSLocalizedString("annuler", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction!) in
                 self.mettreAJourFaceDe()
             }))
             alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
                 let textFields = alerte.textFields as [UITextField]
                 let textField = textFields[0]
                 var nombre:Int! = textField.text.toInt()
-                if (nombre != nil && nombre >= 2 && nombre <= 2147483647) {
+                if (nombre != nil && nombre >= 2 && nombre <= 200) {
                     donnee.nombreFace = nombre!
                     var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                     var path = dir[0] . stringByAppendingPathComponent("nombreFace")
@@ -134,7 +149,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
                     AppValues.nombreFace = nombre!
                 }
                 else {
-                    let alerteErreurNombre = UIAlertController(title: "Erreur", message: "Attention, la saisie est incorrecte", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alerteErreurNombre = UIAlertController(title: NSLocalizedString("erreur", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("saisieIncorrecte", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
                     alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
                         self.afficherAlerteChoixNombrePersonnalise()
                     }))
@@ -146,10 +161,10 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
             presentViewController(alerte, animated: true, completion: nil)
         }
         else {
-            var alerte = UIAlertView(title: "Choix personnalisé", message: "Tapez le nombre de faces (entre 2 et 2147483647)", delegate: self, cancelButtonTitle: "Annuler", otherButtonTitles: "OK")
+            var alerte = UIAlertView(title: NSLocalizedString("choixPerso", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("nombreFace", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("annuler", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), otherButtonTitles: "OK")
             alerte.alertViewStyle = UIAlertViewStyle.PlainTextInput
             alerte.textFieldAtIndex(0)!.keyboardType = UIKeyboardType.NumberPad
-            alerte.textFieldAtIndex(0)!.placeholder = "Nombre"
+            alerte.textFieldAtIndex(0)!.placeholder = NSLocalizedString("nombre", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "")
             alerte.show()
         }
     }
@@ -211,7 +226,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
             var donnee = MesDonnesNombreFace()
             var textField: UITextField! = alertView.textFieldAtIndex(0)
             var nombre:Int! = textField.text.toInt()
-            if (nombre != nil && nombre >= 2 && nombre <= 2147483647) {
+            if (nombre != nil && nombre >= 2 && nombre <= 200) {
                 donnee.nombreFace = nombre!
                 var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                 var path = dir[0] . stringByAppendingPathComponent("nombreFace")
@@ -219,7 +234,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
                 AppValues.nombreFace = nombre!
             }
             else {
-                var alerte = UIAlertView(title: "Erreur", message: "Attention, la saisie est incorrecte", delegate: self, cancelButtonTitle: "OK")
+                var alerte = UIAlertView(title: NSLocalizedString("erreur", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("saisieIncorrecte", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), delegate: self, cancelButtonTitle: "OK")
                 alerte.tag = 1
                 alerte.show()
             }
