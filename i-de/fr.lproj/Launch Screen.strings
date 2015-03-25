@@ -1,0 +1,6 @@
+
+/* Class = "UIButton"; normalTitle = "Choisir"; ObjectID = "Fqs-G5-vyo"; */
+"Fqs-G5-vyo.normalTitle" = "Choose";
+
+/* Class = "UILabel"; text = "Tirage d'un nombre entre 1 et 6"; ObjectID = "rZv-Vq-WL4"; */
+"rZv-Vq-WL4.text" = "Drawing of a number between 1 and 6";

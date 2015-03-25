@@ -28,6 +28,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
     @IBOutlet weak var labelNombre: RYLabel!
     @IBOutlet weak var labelFace: UILabel!
     @IBOutlet weak var btChoisir: RYButton!
+    var animationEnCours = false
     var bannierePub: ADBannerView! = ADBannerView(adType: ADAdType.Banner)
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -87,7 +88,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
             labelNombre.textColor = AppValues.couleurDe
             labelFace.textColor = AppValues.couleurDe
             btChoisir.borderColor = AppValues.couleurDe
-            btChoisir.titleLabel?.textColor = AppValues.couleurDe
+            btChoisir.setTitleColor(AppValues.couleurDe, forState: UIControlState.Normal)
         }
         else {
             AppValues.couleurDe = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
@@ -168,7 +169,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if (AppValues.secouer == true) {
-            choisir(.Droite, sender: .Secouer)
+            choisir(.Aucun, sender: .Secouer)
         }
     }
     
@@ -197,82 +198,80 @@ class ViewController: UIViewController, ADBannerViewDelegate {
                     self.labelNombre.alpha = 1.0
                     }, completion: { (finished: Bool) -> Void in
                         AppValues.premierLancer = false
-                        AppValues.animationEnCours = false
+                        self.animationEnCours = false
                 })
         })
     }
     func choisir(sens:SensSwipe, sender:SenderChoisir = .Autre) {
-        if (AppValues.premierLancer == true) {
-            // Si c'est le premier lancer
-            if (AppValues.animationsAutorisés == true) {
-                animationFondu()
-                AppValues.premierLancer = false
-            }
-            else {
-                AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-                self.labelNombre.text = String(AppValues.nombreTiré!)
-                self.labelNombre.alpha = 1.0
-            }
-        }
-        else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft) {
-            // Si c'est le premier lancer
-            if (AppValues.animationsAutorisés == true) {
-                animationFondu()
-            }
-            else {
-                AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-                self.labelNombre.text = String(AppValues.nombreTiré!)
-                self.labelNombre.alpha = 1.0
-            }
-        }
-        else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight) {
-            // Si c'est le premier lancer
-            if (AppValues.animationsAutorisés == true) {
-                animationFondu()
-            }
-            else {
-                AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
-                self.labelNombre.text = String(AppValues.nombreTiré!)
-                self.labelNombre.alpha = 1.0
-            }
-        }
-        else {
-            if (sender == .Secouer) {
-                // Si on secoue
-                if (AppValues.animationsSecouerAutorisés == true) {
+        if animationEnCours == false {
+            animationEnCours = true
+            if (AppValues.premierLancer == true) {
+                // Si c'est le premier lancer
+                if (AppValues.animationsAutorisés == true) {
                     animationFondu()
+                    AppValues.premierLancer = false
                 }
                 else {
                     AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                     self.labelNombre.text = String(AppValues.nombreTiré!)
-                    AppValues.animationEnCours = false
+                    self.labelNombre.alpha = 1.0
                 }
             }
-            else if (sender == .Tap) {
-                // Si on "Tap"
+            else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft) {
+                // Si c'est le premier lancer
                 if (AppValues.animationsAutorisés == true) {
                     animationFondu()
                 }
                 else {
                     AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                     self.labelNombre.text = String(AppValues.nombreTiré!)
-                    AppValues.animationEnCours = false
-                    //self.btChoisir.setRoundedRectangle()
+                    self.labelNombre.alpha = 1.0
                 }
             }
-            else {
-                // Si on "Slide"
+            else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight) {
+                // Si c'est le premier lancer
                 if (AppValues.animationsAutorisés == true) {
-                    AppValues.animationEnCours = true
-                    animerDe(sens)
+                    animationFondu()
                 }
                 else {
                     AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
                     self.labelNombre.text = String(AppValues.nombreTiré!)
-                    AppValues.animationEnCours = false
-                    //self.btChoisir.setRoundedRectangle()
+                    self.labelNombre.alpha = 1.0
                 }
             }
+            else {
+                if (sender == .Secouer) {
+                    // Si on secoue
+                    if (AppValues.animationsSecouerAutorisés == true) {
+                        animationFondu()
+                    }
+                    else {
+                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
+                        self.labelNombre.text = String(AppValues.nombreTiré!)
+                    }
+                }
+                else if (sender == .Tap) {
+                    // Si on "Tap"
+                    if (AppValues.animationsAutorisés == true) {
+                        animationFondu()
+                    }
+                    else {
+                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
+                        self.labelNombre.text = String(AppValues.nombreTiré!)
+                    }
+                }
+                else {
+                    // Si on "Slide"
+                    if (AppValues.animationsAutorisés == true) {
+                        animerDe(sens)
+                    }
+                    else {
+                        AppValues.nombreTiré = Int((arc4random() % UInt32(AppValues.nombreFace!)) + 1)
+                        self.labelNombre.text = String(AppValues.nombreTiré!)
+                    }
+                }
+            }
+            animationEnCours = false
         }
     }
     
@@ -321,8 +320,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
                                 break
                             }
                             }) { (finished: Bool) -> Void in
-                                AppValues.animationEnCours = false
-                                //self.btChoisir.setRoundedRectangle()
+                                self.animationEnCours = false
                         }
                 }
         }
@@ -337,6 +335,6 @@ class ViewController: UIViewController, ADBannerViewDelegate {
     }
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        self.bannierePub.hidden = false
+        self.bannierePub.hidden = true
     }
 }
