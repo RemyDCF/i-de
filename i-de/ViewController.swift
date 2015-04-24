@@ -37,7 +37,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeNombreFace = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesNombreFace
+            donneeNombreFace = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesNombreFace
             AppValues.nombreFace = Int(donneeNombreFace.nombreFace)
             labelFace.text = NSLocalizedString("phraseTirage", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "") + String(donneeNombreFace.nombreFace)
         }
@@ -50,7 +50,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneelancerAuDemarrage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesLancerAuDemarrage
+            donneelancerAuDemarrage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesLancerAuDemarrage
             if (donneelancerAuDemarrage.lancerAuDemarrage) {
                 choisirTap(self)
             }
@@ -67,7 +67,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         path = dir[0] . stringByAppendingPathComponent("secouer")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouer
+            donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesSecouer
             if (donneeSecouer.secouer) {
                 AppValues.secouer = true
             }
@@ -82,7 +82,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         path = dir[0] . stringByAppendingPathComponent("couleurDe")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeCouleurDe = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesCouleurDe
+            donneeCouleurDe = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesCouleurDe
             AppValues.couleurDe = donneeCouleurDe.couleurDe
             labelNombre.borderColor = AppValues.couleurDe
             labelNombre.textColor = AppValues.couleurDe
@@ -98,6 +98,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
         var donneePublicite = MesDonnesPublicite()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("publicite")
@@ -119,6 +120,20 @@ class ViewController: UIViewController, ADBannerViewDelegate {
             donneePublicite.publicite = true
             var erreur = NSKeyedArchiver.archiveRootObject(donneePublicite, toFile: path)
         }
+        */
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if (userDefaults.boolForKey("pub") == true) {
+            AppValues.valeurMouvement -= 10
+            self.canDisplayBannerAds = true
+            bannierePub.delegate = self
+            bannierePub.hidden = true
+        }
+        else {
+            self.canDisplayBannerAds = false
+            bannierePub.delegate = self
+            bannierePub.hidden = true
+            println("a")
+        }
         // Mouvenent animation
         if (UIDevice().userInterfaceIdiom == .Pad) {
             AppValues.valeurMouvement *= 2
@@ -126,10 +141,10 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         
         // Secouer Animations
         var donneeSecouerAnimations = MesDonnesSecouerAnimations()
-        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeSecouerAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouerAnimations
+            donneeSecouerAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesSecouerAnimations
             if (!donneeSecouerAnimations.secouerAnimations) {
                 AppValues.animationsSecouerAutorisés = false
             }
@@ -145,7 +160,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         path = dir[0] . stringByAppendingPathComponent("animations")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesAnimations
+            donneeAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesAnimations
             if (!donneeAnimations.animations) {
                 AppValues.animationsAutorisés = false
             }

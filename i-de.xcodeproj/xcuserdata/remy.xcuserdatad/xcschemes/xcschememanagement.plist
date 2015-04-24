@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>i-de WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>i-de.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -43,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>AD4C59191A921FE6008D0286</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD781A611AEA6E14008AF250</key>
 		<dict>
 			<key>primary</key>
 			<true/>

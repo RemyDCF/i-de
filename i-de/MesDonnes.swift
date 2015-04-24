@@ -125,23 +125,6 @@ class MesDonnesCouleurDe : NSObject {
     
     init(coder aDecoder: NSCoder) {
         super.init()
-        couleurDe = aDecoder.decodeObjectForKey("couleurDe") as UIColor
-    }
-}
-
-class MesDonnesPublicite : NSObject {
-    var publicite: Bool = true
-    
-    override init() {
-        super.init()
-    }
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeBool(self.publicite, forKey: "publicite")
-    }
-    
-    init(coder aDecoder: NSCoder) {
-        super.init()
-        self.publicite = aDecoder.decodeBoolForKey("publicite")
+        couleurDe = aDecoder.decodeObjectForKey("couleurDe") as! UIColor
     }
 }

@@ -17,7 +17,7 @@ class ParametreSecouer: UITableViewController {
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         var path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeSecouerAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesSecouerAnimations
+            donneeSecouerAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesSecouerAnimations
             if (!donneeSecouerAnimations.secouerAnimations) {
                 switchAnimations.setOn(false, animated: true)
             }
