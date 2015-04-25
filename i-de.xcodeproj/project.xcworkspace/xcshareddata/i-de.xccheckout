@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>D85579CF-EE32-4F88-9353-895BC7418ADD</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>i-de</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2445B76F111E427663976F87AAD5F11F1F3B17ED</key>
 		<string>https://bitbucket.org/RemyDCF/i-de.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>i-de.xcodeproj/project.xcworkspace</string>
+	<string>i-de.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2445B76F111E427663976F87AAD5F11F1F3B17ED</key>

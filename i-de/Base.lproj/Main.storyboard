@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sxq-Qa-iFU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sxq-Qa-iFU">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -175,50 +175,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Social" id="g0M-Em-28x">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="g9N-cI-NHb">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g9N-cI-NHb" id="D2E-mM-iAm">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-nc-9Cp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="567" height="64"/>
-                                                    <state key="normal">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="ouvrirTwitter:" destination="EGX-2M-dTi" eventType="touchUpInside" id="YHn-Zv-7IG"/>
-                                                    </connections>
-                                                </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="UdN-Fe-29J">
-                                                    <rect key="frame" x="8" y="8" width="48" height="48"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Suivez moi sur twitter (@i_De_app)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trn-41-c8V">
-                                                    <rect key="frame" x="64" y="8" width="495" height="48"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.32549019607843138" green="0.67843137254901964" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Gca-nc-9Cp" firstAttribute="leading" secondItem="D2E-mM-iAm" secondAttribute="leading" id="C35-Yv-WZq"/>
-                                                <constraint firstItem="UdN-Fe-29J" firstAttribute="leading" secondItem="D2E-mM-iAm" secondAttribute="leadingMargin" id="E9i-bb-7yq"/>
-                                                <constraint firstItem="Trn-41-c8V" firstAttribute="trailing" secondItem="D2E-mM-iAm" secondAttribute="trailingMargin" id="EsN-hg-kzz"/>
-                                                <constraint firstItem="Gca-nc-9Cp" firstAttribute="top" secondItem="D2E-mM-iAm" secondAttribute="top" id="FXu-mg-lMX"/>
-                                                <constraint firstItem="UdN-Fe-29J" firstAttribute="bottom" secondItem="D2E-mM-iAm" secondAttribute="bottomMargin" id="V3E-CF-ow9"/>
-                                                <constraint firstAttribute="trailing" secondItem="Gca-nc-9Cp" secondAttribute="trailing" id="Xv4-HL-S6g"/>
-                                                <constraint firstItem="UdN-Fe-29J" firstAttribute="top" secondItem="D2E-mM-iAm" secondAttribute="topMargin" id="eUk-Sw-19j"/>
-                                                <constraint firstItem="Trn-41-c8V" firstAttribute="top" secondItem="D2E-mM-iAm" secondAttribute="topMargin" id="g5i-fJ-Riz"/>
-                                                <constraint firstItem="Trn-41-c8V" firstAttribute="leading" secondItem="UdN-Fe-29J" secondAttribute="trailing" constant="8" id="hut-F4-IaQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="Gca-nc-9Cp" secondAttribute="bottom" id="sG8-xf-eQA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Trn-41-c8V" secondAttribute="bottom" id="w7Z-br-ZWI"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.9716698232323232" green="0.9716698232323232" blue="0.9716698232323232" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="Général" id="yhT-h9-p0x">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="izD-Pe-a9G">
@@ -547,6 +503,53 @@
                                                 <constraint firstItem="JL4-B3-wje" firstAttribute="trailing" secondItem="B5r-et-F88" secondAttribute="trailingMargin" id="taE-6c-5n3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Social" id="g0M-Em-28x">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="g9N-cI-NHb">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g9N-cI-NHb" id="D2E-mM-iAm">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-nc-9Cp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="567" height="64"/>
+                                                    <state key="normal">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="ouvrirTwitter:" destination="EGX-2M-dTi" eventType="touchUpInside" id="YHn-Zv-7IG"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="UdN-Fe-29J">
+                                                    <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="48" id="CEc-hz-sZm"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Suivez moi sur twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trn-41-c8V">
+                                                    <rect key="frame" x="64" y="8" width="495" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.32549019607843138" green="0.67843137254901964" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Gca-nc-9Cp" firstAttribute="leading" secondItem="D2E-mM-iAm" secondAttribute="leading" id="C35-Yv-WZq"/>
+                                                <constraint firstItem="UdN-Fe-29J" firstAttribute="leading" secondItem="D2E-mM-iAm" secondAttribute="leadingMargin" id="E9i-bb-7yq"/>
+                                                <constraint firstItem="Trn-41-c8V" firstAttribute="trailing" secondItem="D2E-mM-iAm" secondAttribute="trailingMargin" id="EsN-hg-kzz"/>
+                                                <constraint firstItem="Gca-nc-9Cp" firstAttribute="top" secondItem="D2E-mM-iAm" secondAttribute="top" id="FXu-mg-lMX"/>
+                                                <constraint firstItem="UdN-Fe-29J" firstAttribute="bottom" secondItem="D2E-mM-iAm" secondAttribute="bottomMargin" id="V3E-CF-ow9"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gca-nc-9Cp" secondAttribute="trailing" id="Xv4-HL-S6g"/>
+                                                <constraint firstItem="UdN-Fe-29J" firstAttribute="top" secondItem="D2E-mM-iAm" secondAttribute="topMargin" id="eUk-Sw-19j"/>
+                                                <constraint firstItem="Trn-41-c8V" firstAttribute="top" secondItem="D2E-mM-iAm" secondAttribute="topMargin" id="g5i-fJ-Riz"/>
+                                                <constraint firstItem="Trn-41-c8V" firstAttribute="leading" secondItem="UdN-Fe-29J" secondAttribute="trailing" constant="8" id="hut-F4-IaQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="Gca-nc-9Cp" secondAttribute="bottom" id="sG8-xf-eQA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Trn-41-c8V" secondAttribute="bottom" id="w7Z-br-ZWI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.9716698232323232" green="0.9716698232323232" blue="0.9716698232323232" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

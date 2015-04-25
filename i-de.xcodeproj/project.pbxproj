@@ -24,8 +24,8 @@
 		AD781A5F1AEA6E13008AF250 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD781A5E1AEA6E13008AF250 /* Images.xcassets */; };
 		AD781A631AEA6E14008AF250 /* i-de WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = AD781A621AEA6E14008AF250 /* i-de WatchKit App.app */; };
 		AD781A6B1AEA6E14008AF250 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD781A691AEA6E14008AF250 /* Interface.storyboard */; };
-		AD781A6D1AEA6E14008AF250 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD781A6C1AEA6E14008AF250 /* Images.xcassets */; };
 		AD781A701AEA6E14008AF250 /* i-de WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AD781A581AEA6E13008AF250 /* i-de WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AD8555C71AEAB3C7009DDB7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8555C61AEAB3C7009DDB7E /* Images.xcassets */; };
 		AD9443FB1A51A110005C8D23 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9443FA1A51A110005C8D23 /* TabController.swift */; };
 		ADB66B9F1A9229DE00AB1E4A /* RYButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB66B9D1A9229DE00AB1E4A /* RYButton.swift */; };
 		ADB66BA01A9229DE00AB1E4A /* RYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB66B9E1A9229DE00AB1E4A /* RYLabel.swift */; };
@@ -127,7 +127,7 @@
 		AD781A621AEA6E14008AF250 /* i-de WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "i-de WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD781A681AEA6E14008AF250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD781A6A1AEA6E14008AF250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		AD781A6C1AEA6E14008AF250 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AD8555C61AEAB3C7009DDB7E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AD9443FA1A51A110005C8D23 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		ADB66B9D1A9229DE00AB1E4A /* RYButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RYButton.swift; sourceTree = "<group>"; };
 		ADB66B9E1A9229DE00AB1E4A /* RYLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RYLabel.swift; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				AD781A691AEA6E14008AF250 /* Interface.storyboard */,
-				AD781A6C1AEA6E14008AF250 /* Images.xcassets */,
+				AD8555C61AEAB3C7009DDB7E /* Images.xcassets */,
 				AD781A671AEA6E14008AF250 /* Supporting Files */,
 			);
 			path = "i-de WatchKit App";
@@ -514,7 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD781A6B1AEA6E14008AF250 /* Interface.storyboard in Resources */,
-				AD781A6D1AEA6E14008AF250 /* Images.xcassets in Resources */,
+				AD8555C71AEAB3C7009DDB7E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,7 +662,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RIKit-dbkegylcmshprwbaimgoaizraslr/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "i-de/Info.plist";
@@ -738,7 +737,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RIKit-dbkegylcmshprwbaimgoaizraslr/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "i-de/Info.plist";

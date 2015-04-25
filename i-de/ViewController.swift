@@ -98,29 +98,6 @@ class ViewController: UIViewController, ADBannerViewDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        var donneePublicite = MesDonnesPublicite()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("publicite")
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneePublicite = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as MesDonnesPublicite
-            if (donneePublicite.publicite) {
-                AppValues.valeurMouvement -= 10
-                self.canDisplayBannerAds = true
-                bannierePub.delegate = self
-                bannierePub.hidden = true
-            }
-            else {
-                self.canDisplayBannerAds = false
-                bannierePub.delegate = self
-                bannierePub.hidden = true
-            }
-        }
-        else {
-            donneePublicite.publicite = true
-            var erreur = NSKeyedArchiver.archiveRootObject(donneePublicite, toFile: path)
-        }
-        */
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if (userDefaults.boolForKey("pub") == true) {
             AppValues.valeurMouvement -= 10
@@ -132,7 +109,6 @@ class ViewController: UIViewController, ADBannerViewDelegate {
             self.canDisplayBannerAds = false
             bannierePub.delegate = self
             bannierePub.hidden = true
-            println("a")
         }
         // Mouvenent animation
         if (UIDevice().userInterfaceIdiom == .Pad) {

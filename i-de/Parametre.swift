@@ -17,12 +17,8 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     @IBOutlet weak var boutonParametreSecouer: RYButton!
     @IBOutlet weak var boutonSupprimerPubs:RYButton!
     let listeLabel: Array<String> = []
-    // App Groups
-    let appGroupID = "group.com.dacostafaro.iDeAppGroups"
-    var defaults:NSUserDefaults!
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaults = NSUserDefaults(suiteName: appGroupID)
         // Personnalisation des boutons
         boutonParametreSecouer.setImage(UIImage(named: "parametresDisabled"), forState: UIControlState.Disabled)
         boutonSupprimerPubs.setTitle("Publicitées supprimées", forState: UIControlState.Disabled)
@@ -112,7 +108,6 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
         var path = dir[0] . stringByAppendingPathComponent("nombreFace")
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
         AppValues.nombreFace = donnee.nombreFace
-        defaults.setValue(donnee.nombreFace, forKey: "nombreFace")
         mettreAJourLabelFaceNumber()
     }
     
@@ -142,7 +137,6 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
                     var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                     var path = dir[0] . stringByAppendingPathComponent("nombreFace")
                     NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-                    self.defaults.setValue(nombre, forKey: "nombreFace")
                     AppValues.nombreFace = nombre!
                 }
                 else {
@@ -228,7 +222,6 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
                 var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                 var path = dir[0] . stringByAppendingPathComponent("nombreFace")
                 NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-                defaults.setValue(nombre, forKey: "nombreFace")
                 AppValues.nombreFace = nombre!
             }
             else {
