@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6724" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,57 +11,35 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tirage d'un nombre entre 1 et 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZv-Vq-WL4">
-                    <rect key="frame" x="8" y="28" width="464" height="39"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconeBlanche" translatesAutoresizingMaskIntoConstraints="NO" id="hqN-ky-IN8">
+                    <rect key="frame" x="174" y="80" width="132" height="132"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="26" id="ekI-QF-BC3"/>
-                        <constraint firstAttribute="height" constant="39" id="xD3-Nl-FJM"/>
+                        <constraint firstAttribute="height" constant="132" id="LgK-AE-nya"/>
+                        <constraint firstAttribute="width" constant="132" id="hjQ-Gu-Yxn"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <color key="textColor" red="0.0" green="0.63921568630000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="ekI-QF-BC3"/>
-                        </mask>
-                    </variation>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHL-Sq-JCF">
-                    <rect key="frame" x="89" y="201" width="302" height="78"/>
-                    <gestureRecognizers/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="remy" translatesAutoresizingMaskIntoConstraints="NO" id="5p6-ab-PYt">
+                    <rect key="frame" x="187" y="314" width="106" height="114"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="78" id="qdn-No-ORl"/>
-                        <constraint firstAttribute="width" constant="302" id="qiH-bb-eg4"/>
+                        <constraint firstAttribute="width" constant="106" id="MAH-FP-n4Y"/>
+                        <constraint firstAttribute="height" constant="114" id="cuI-7J-XH0"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
-                    <color key="textColor" red="0.0" green="0.63921568630000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqs-G5-vyo">
-                    <rect key="frame" x="8" y="412" width="464" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="qZg-J3-aZ4"/>
-                    </constraints>
-                    <state key="normal" title="Choisir">
-                        <color key="titleColor" red="0.0" green="0.63921568630000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0078431372549019607" green="0.43137254901960786" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="rZv-Vq-WL4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="8YV-WD-MHT"/>
-                <constraint firstAttribute="centerY" secondItem="sHL-Sq-JCF" secondAttribute="centerY" id="Ep7-Kb-Ts3"/>
-                <constraint firstAttribute="centerX" secondItem="sHL-Sq-JCF" secondAttribute="centerX" id="MYp-sx-IFu"/>
-                <constraint firstItem="rZv-Vq-WL4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="28" id="bMK-wm-C1h"/>
-                <constraint firstItem="Fqs-G5-vyo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="fBS-kb-0yW"/>
-                <constraint firstAttribute="trailing" secondItem="Fqs-G5-vyo" secondAttribute="trailing" constant="8" id="guR-tL-zuk"/>
-                <constraint firstAttribute="bottom" secondItem="Fqs-G5-vyo" secondAttribute="bottom" constant="8" id="iRg-fi-xjO"/>
-                <constraint firstAttribute="trailing" secondItem="rZv-Vq-WL4" secondAttribute="trailing" constant="8" id="jM4-eQ-ty4"/>
+                <constraint firstAttribute="centerY" secondItem="hqN-ky-IN8" secondAttribute="centerY" constant="94" id="5mk-Ec-2ao"/>
+                <constraint firstAttribute="centerX" secondItem="5p6-ab-PYt" secondAttribute="centerX" id="JmK-av-T3w"/>
+                <constraint firstAttribute="centerX" secondItem="hqN-ky-IN8" secondAttribute="centerX" id="PWZ-U9-LGS"/>
+                <constraint firstAttribute="bottom" secondItem="5p6-ab-PYt" secondAttribute="bottom" constant="52" id="iBd-ot-XoF"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="404" y="445"/>
         </view>
     </objects>
+    <resources>
+        <image name="iconeBlanche" width="1000" height="1000"/>
+        <image name="remy" width="550" height="595"/>
+    </resources>
 </document>
