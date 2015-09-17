@@ -15,13 +15,11 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     @IBOutlet weak var lancerAuDemarrage: UISwitch!
     @IBOutlet weak var animations: UISwitch!
     @IBOutlet weak var boutonParametreSecouer: RYButton!
-    @IBOutlet weak var boutonSupprimerPubs:RYButton!
     let listeLabel: Array<String> = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Personnalisation des boutons
         boutonParametreSecouer.setImage(UIImage(named: "parametresDisabled"), forState: UIControlState.Disabled)
-        boutonSupprimerPubs.setTitle("Publicitées supprimées", forState: UIControlState.Disabled)
         // Mise en place des données existantes
         if (!AppValues.secouer) {
             secouerDe.setOn(false, animated: true)
@@ -32,7 +30,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
         }
         var donneelancerAuDemarrage = MesDonnesLancerAuDemarrage()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
+        let path = dir[0] + "lancerAuDemarrage"
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneelancerAuDemarrage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesLancerAuDemarrage
             if (donneelancerAuDemarrage.lancerAuDemarrage) {
@@ -41,12 +39,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
         }
         else {
             donneelancerAuDemarrage.lancerAuDemarrage = false
-            var erreur = NSKeyedArchiver.archiveRootObject(donneelancerAuDemarrage, toFile: path)
-        }
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if (userDefaults.boolForKey("pub") == false) {
-            boutonSupprimerPubs.enabled = false
-            boutonSupprimerPubs.borderColor = UIColor(red:0.79, green:0.79, blue:0.79, alpha:1)
+            NSKeyedArchiver.archiveRootObject(donneelancerAuDemarrage, toFile: path)
         }
     }
     
@@ -56,10 +49,10 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     
     @IBAction func secouerDeChange(sender: AnyObject) {
         // Le switch de Secouer est changé
-        var donnee = MesDonnesSecouer()
+        let donnee = MesDonnesSecouer()
         donnee.secouer = secouerDe.on
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("secouer")
+        let path = dir[0] + "secouer"
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
         AppValues.secouer = secouerDe.on
         if (secouerDe.on == false) {
@@ -75,26 +68,26 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     
     @IBAction func lancerDemarrageChange(sender: AnyObject) {
         // Le switch de lancer au demarrage est changé
-        var donnee = MesDonnesLancerAuDemarrage()
+        let donnee = MesDonnesLancerAuDemarrage()
         donnee.lancerAuDemarrage = lancerAuDemarrage.on
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
+        let path = dir[0] + "lancerAuDemarrage"
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
     }
     
     @IBAction func animationsChange(sender: AnyObject) {
         // Le switch des animations est changé
-        var donnee = MesDonnesAnimations()
+        let donnee = MesDonnesAnimations()
         donnee.animations = animations.on
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("animations")
+        let path = dir[0] + "animations"
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
         AppValues.animationsAutorisés = animations.on
     }
     
     @IBAction func choixNombreFaceChange(sender: AnyObject) {
         // Le nombre de face est changé
-        var donnee = MesDonnesNombreFace()
+        let donnee = MesDonnesNombreFace()
         if (segmentChoixNombreFace.selectedSegmentIndex == 0) {
             donnee.nombreFace = 6
         }
@@ -105,7 +98,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
             donnee.nombreFace = 10
         }
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+        let path = dir[0] + "nombreFace"
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
         AppValues.nombreFace = donnee.nombreFace
         mettreAJourLabelFaceNumber()
@@ -118,30 +111,29 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     
     func afficherAlerteChoixNombrePersonnalise() {
         // On change le nombre de faces personnalisé
-        var donnee = MesDonnesNombreFace()
-        if controllerAvailable() {
+        let donnee = MesDonnesNombreFace()
             let alerte = UIAlertController(title: NSLocalizedString("choixPerso", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("nombreFace", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
-            alerte.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            alerte.addTextFieldWithConfigurationHandler({(textField: UITextField) in
                 textField.placeholder = NSLocalizedString("nombre", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "")
                 textField.keyboardType = UIKeyboardType.NumberPad
             })
-            alerte.addAction(UIAlertAction(title: NSLocalizedString("annuler", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction!) in
+            alerte.addAction(UIAlertAction(title: NSLocalizedString("annuler", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction) in
                 self.mettreAJourFaceDe()
             }))
-            alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
-                let textFields = alerte.textFields as! [UITextField]
+            alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction) in
+                let textFields = alerte.textFields as [UITextField]!
                 let textField = textFields[0]
-                var nombre:Int! = textField.text.toInt()
+                let nombre:Int! = Int(textField.text!)
                 if (nombre != nil && nombre >= 2 && nombre <= 200) {
                     donnee.nombreFace = nombre!
                     var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-                    var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+                    let path = dir[0] + "nombreFace"
                     NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
                     AppValues.nombreFace = nombre!
                 }
                 else {
                     let alerteErreurNombre = UIAlertController(title: NSLocalizedString("erreur", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("saisieIncorrecte", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
-                    alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction!) in
+                    alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction) in
                         self.afficherAlerteChoixNombrePersonnalise()
                     }))
                     self.presentViewController(alerteErreurNombre, animated: true, completion: nil)
@@ -150,21 +142,13 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
                 self.mettreAJourLabelFaceNumber()
             }))
             presentViewController(alerte, animated: true, completion: nil)
-        }
-        else {
-            var alerte = UIAlertView(title: NSLocalizedString("choixPerso", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("nombreFace", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), delegate: self, cancelButtonTitle: NSLocalizedString("annuler", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), otherButtonTitles: "OK")
-            alerte.alertViewStyle = UIAlertViewStyle.PlainTextInput
-            alerte.textFieldAtIndex(0)!.keyboardType = UIKeyboardType.NumberPad
-            alerte.textFieldAtIndex(0)!.placeholder = NSLocalizedString("nombre", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "")
-            alerte.show()
-        }
     }
     
     func mettreAJourLabelFaceNumber() {
         // Cette fonction met à jour le nombre de face
         var donnee = MesDonnesNombreFace()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+        let path = dir[0] + "nombreFace"
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesNombreFace
             labelNombreFace.text = String(donnee.nombreFace)
@@ -178,7 +162,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
         // Cette fonction met à jour le UISegmentedControl du choix des faces du dé
         var donnee = MesDonnesNombreFace()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+        let path = dir[0] + "nombreFace"
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesNombreFace
             if (donnee.nombreFace == 6) {
@@ -198,46 +182,6 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
             self.segmentChoixNombreFace.selectedSegmentIndex = 0
         }
         mettreAJourLabelFaceNumber()
-    }
-    
-    func controllerAvailable() -> Bool {
-        if let gotModernAlert: AnyClass = NSClassFromString("UIAlertController") {
-            return true;
-        }
-        else {
-            return false;
-        }
-        
-    }
-    func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
-        if (alertView.tag == 1) {
-            afficherAlerteChoixNombrePersonnalise()
-        }
-        if (buttonIndex == 1) {
-            var donnee = MesDonnesNombreFace()
-            var textField: UITextField! = alertView.textFieldAtIndex(0)
-            var nombre:Int! = textField.text.toInt()
-            if (nombre != nil && nombre >= 2 && nombre <= 200) {
-                donnee.nombreFace = nombre!
-                var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-                var path = dir[0] . stringByAppendingPathComponent("nombreFace")
-                NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-                AppValues.nombreFace = nombre!
-            }
-            else {
-                var alerte = UIAlertView(title: NSLocalizedString("erreur", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("saisieIncorrecte", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), delegate: self, cancelButtonTitle: "OK")
-                alerte.tag = 1
-                alerte.show()
-            }
-            self.mettreAJourFaceDe()
-            self.mettreAJourLabelFaceNumber()
-        }
-    }
-    @IBAction func supprimerPubs(sender: AnyObject!) {
-        PFPurchase.buyProduct("iDeInAppPurchase589GH5GKJERHGIEURYTGUI5EHTGIUERYT", block: { (error: NSError?) -> Void in
-            var alerte = UIAlertView(title: NSLocalizedString("erreur", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("erreurAchat", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), delegate: self, cancelButtonTitle: "OK")
-            alerte.show()
-        })
     }
     @IBAction func ouvrirTwitter(sender: AnyObject!) {
         UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/i_de_app")!)

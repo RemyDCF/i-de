@@ -14,7 +14,7 @@ class TabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bar.tintColor = UIColor.whiteColor()
-        for x in (bar.items as! [UITabBarItem]) {
+        for x in (bar.items as [UITabBarItem]!) {
             if (x.tag == 0) {
                 x.image = UIImage(named: "iconeTabBarDisabled")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
                 x.selectedImage = UIImage(named: "iconeTabBar")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)

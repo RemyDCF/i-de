@@ -29,7 +29,7 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     @IBAction func tirage(sender: AnyObject!) {
-        var nombreTiré = Int((arc4random() % 6) + 1)
+        let nombreTiré = Int((arc4random() % 6) + 1)
         self.chiffre.setText(String(nombreTiré))
     }
 }

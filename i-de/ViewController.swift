@@ -8,7 +8,6 @@
 
 import UIKit
 import QuartzCore
-import iAd
 
 enum SensSwipe {
     case Haut
@@ -24,18 +23,17 @@ enum SenderChoisir {
     case Autre
 }
 
-class ViewController: UIViewController, ADBannerViewDelegate {
+class ViewController: UIViewController {
     @IBOutlet weak var labelNombre: RYLabel!
     @IBOutlet weak var labelFace: UILabel!
     @IBOutlet weak var btChoisir: RYButton!
     var animationEnCours = false
-    var bannierePub: ADBannerView! = ADBannerView(adType: ADAdType.Banner)
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         // Nombre face
         var donneeNombreFace = MesDonnesNombreFace()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("nombreFace")
+        var path = dir[0] + "nombreFace"
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeNombreFace = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesNombreFace
             AppValues.nombreFace = Int(donneeNombreFace.nombreFace)
@@ -48,7 +46,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         // Lancer au demmarage
         var donneelancerAuDemarrage = MesDonnesLancerAuDemarrage()
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("lancerAuDemarrage")
+        path = dir[0] + "lancerAuDemarrage"
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneelancerAuDemarrage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesLancerAuDemarrage
             if (donneelancerAuDemarrage.lancerAuDemarrage) {
@@ -65,7 +63,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         // Secouer
         var donneeSecouer = MesDonnesSecouer()
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("secouer")
+        path = dir[0] + "secouer"
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesSecouer
             if (donneeSecouer.secouer) {
@@ -80,7 +78,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         // Couleur De
         var donneeCouleurDe = MesDonnesCouleurDe()
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("couleurDe")
+        path = dir[0] + "couleurDe"
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeCouleurDe = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesCouleurDe
             AppValues.couleurDe = donneeCouleurDe.couleurDe
@@ -98,18 +96,6 @@ class ViewController: UIViewController, ADBannerViewDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if (userDefaults.boolForKey("pub") == true) {
-            AppValues.valeurMouvement -= 10
-            self.canDisplayBannerAds = true
-            bannierePub.delegate = self
-            bannierePub.hidden = true
-        }
-        else {
-            self.canDisplayBannerAds = false
-            bannierePub.delegate = self
-            bannierePub.hidden = true
-        }
         // Mouvenent animation
         if (UIDevice().userInterfaceIdiom == .Pad) {
             AppValues.valeurMouvement *= 2
@@ -118,7 +104,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         // Secouer Animations
         var donneeSecouerAnimations = MesDonnesSecouerAnimations()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("secouerAnimations")
+        var path = dir[0] + "secouerAnimations"
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeSecouerAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesSecouerAnimations
             if (!donneeSecouerAnimations.secouerAnimations) {
@@ -134,7 +120,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         // Animations
         var donneeAnimations = MesDonnesAnimations()
         dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] . stringByAppendingPathComponent("animations")
+        path = dir[0] + "animations"
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesAnimations
             if (!donneeAnimations.animations) {
@@ -156,9 +142,9 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         return true
     }
     
-    override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent) {}
+    override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {}
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if (AppValues.secouer == true) {
             choisir(.Aucun, sender: .Secouer)
         }
@@ -315,17 +301,5 @@ class ViewController: UIViewController, ADBannerViewDelegate {
                         }
                 }
         }
-    }
-    
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        self.bannierePub.hidden = false
-    }
-    
-    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
-        return willLeave
-    }
-    
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        self.bannierePub.hidden = true
     }
 }

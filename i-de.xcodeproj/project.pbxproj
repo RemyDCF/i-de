@@ -11,43 +11,25 @@
 		3678FF1219BC4E780097389D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3678FF1119BC4E780097389D /* Images.xcassets */; };
 		3678FF1E19BC4E790097389D /* i_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF1D19BC4E790097389D /* i_deTests.swift */; };
 		3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF2B19BC4F2C0097389D /* Parametre.swift */; };
+		39082F621BAB1523009C7D51 /* i-de WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AD781A581AEA6E13008AF250 /* i-de WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		39082F651BAB1523009C7D51 /* i-de WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AD781A621AEA6E14008AF250 /* i-de WatchKit App.app */; };
 		AD01A5041A93CA330025CECD /* CouleurDeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD01A5031A93CA330025CECD /* CouleurDeController.swift */; };
 		AD02BAF61A10F4BE003FB741 /* MesDonnes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */; };
 		AD19E5341AA3512700523DBB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD19E5361AA3512700523DBB /* Localizable.strings */; };
 		AD25D5E11A9390FD00977003 /* RYAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD25D5E01A9390FD00977003 /* RYAnimation.swift */; };
-		AD3A48701A98ED1C0022E52A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3A486E1A98ED1C0022E52A /* AdSupport.framework */; };
-		AD3A48711A98ED1C0022E52A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3A486F1A98ED1C0022E52A /* iAd.framework */; };
-		AD3A48751A99047F0022E52A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3A48741A99047F0022E52A /* StoreKit.framework */; };
 		AD6C8F7619FE869C004711EE /* ParametreSecouer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */; };
 		AD75F8AC1A9B9A84000A8B98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD75F8AA1A9B9A84000A8B98 /* Main.storyboard */; };
 		AD781A5D1AEA6E13008AF250 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD781A5C1AEA6E13008AF250 /* InterfaceController.swift */; };
 		AD781A5F1AEA6E13008AF250 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD781A5E1AEA6E13008AF250 /* Images.xcassets */; };
-		AD781A631AEA6E14008AF250 /* i-de WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = AD781A621AEA6E14008AF250 /* i-de WatchKit App.app */; };
 		AD781A6B1AEA6E14008AF250 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD781A691AEA6E14008AF250 /* Interface.storyboard */; };
-		AD781A701AEA6E14008AF250 /* i-de WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AD781A581AEA6E13008AF250 /* i-de WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD8555C71AEAB3C7009DDB7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8555C61AEAB3C7009DDB7E /* Images.xcassets */; };
-		AD8CBCD41AFF9A270046E501 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8CBCD31AFF9A270046E501 /* libsqlite3.dylib */; };
 		AD9443FB1A51A110005C8D23 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9443FA1A51A110005C8D23 /* TabController.swift */; };
-		ADA58ACB1B1E0B570065A10C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA58AC51B1E0B570065A10C /* Bolts.framework */; };
-		ADA58ACC1B1E0B570065A10C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA58AC61B1E0B570065A10C /* Parse.framework */; };
-		ADA58ACD1B1E0B570065A10C /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA58AC71B1E0B570065A10C /* ParseCrashReporting.framework */; };
-		ADA58ACE1B1E0B570065A10C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA58AC81B1E0B570065A10C /* ParseFacebookUtils.framework */; };
-		ADA58ACF1B1E0B570065A10C /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA58AC91B1E0B570065A10C /* ParseFacebookUtilsV4.framework */; };
-		ADA58AD01B1E0B570065A10C /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA58ACA1B1E0B570065A10C /* ParseUI.framework */; };
 		ADB66B9F1A9229DE00AB1E4A /* RYButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB66B9D1A9229DE00AB1E4A /* RYButton.swift */; };
 		ADB66BA01A9229DE00AB1E4A /* RYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB66B9E1A9229DE00AB1E4A /* RYLabel.swift */; };
 		ADB9C0B11A583D86007624D4 /* AppValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9C0B01A583D86007624D4 /* AppValues.swift */; };
-		ADC752C51AC9AD1C00445EB7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC752C41AC9AD1C00445EB7 /* AudioToolbox.framework */; };
-		ADC752C71AC9AD2500445EB7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC752C61AC9AD2500445EB7 /* CFNetwork.framework */; };
-		ADC752CB1AC9AD3900445EB7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC752C81AC9AD3900445EB7 /* CoreGraphics.framework */; };
-		ADC752CC1AC9AD3900445EB7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC752C91AC9AD3900445EB7 /* CoreLocation.framework */; };
-		ADC752CD1AC9AD3900445EB7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC752CA1AC9AD3900445EB7 /* QuartzCore.framework */; };
-		ADC752CF1AC9AD4B00445EB7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC752CE1AC9AD4B00445EB7 /* MobileCoreServices.framework */; };
-		ADC752D21AC9AD6400445EB7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC752D01AC9AD6400445EB7 /* Security.framework */; };
-		ADC752D31AC9AD6400445EB7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC752D11AC9AD6400445EB7 /* SystemConfiguration.framework */; };
-		ADC752D51AC9AD6E00445EB7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC752D41AC9AD6E00445EB7 /* libz.dylib */; };
 		ADD2F3831AB9F3AC0082B6F4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD2F3851AB9F3AC0082B6F4 /* Launch Screen.xib */; };
 		ADEED77719FCEAE1004FC171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEED77619FCEAE1004FC171 /* ViewController.swift */; };
+		D0D30D9F1300C7675F9E3A77 /* Pods_i_de.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D407F3984869B379F44669A9 /* Pods_i_de.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,23 +40,45 @@
 			remoteGlobalIDString = 3678FF0419BC4E780097389D;
 			remoteInfo = "i-de";
 		};
-		AD781A641AEA6E14008AF250 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3678FEFD19BC4E780097389D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AD781A611AEA6E14008AF250;
-			remoteInfo = "i-de WatchKit App";
-		};
-		AD781A6E1AEA6E14008AF250 /* PBXContainerItemProxy */ = {
+		39082F601BAB1523009C7D51 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3678FEFD19BC4E780097389D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AD781A571AEA6E13008AF250;
 			remoteInfo = "i-de WatchKit Extension";
 		};
+		39082F631BAB1523009C7D51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3678FEFD19BC4E780097389D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD781A611AEA6E14008AF250;
+			remoteInfo = "i-de WatchKit App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		39082F661BAB1523009C7D51 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				39082F621BAB1523009C7D51 /* i-de WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39082F671BAB1523009C7D51 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				39082F651BAB1523009C7D51 /* i-de WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD0FE5461A921ACC0027FAE9 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,20 +89,10 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD781A771AEA6E14008AF250 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				AD781A701AEA6E14008AF250 /* i-de WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1BF88FA6CD8E7E23699BC36B /* Pods-i-de.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-de.release.xcconfig"; path = "Pods/Target Support Files/Pods-i-de/Pods-i-de.release.xcconfig"; sourceTree = "<group>"; };
 		3678FF0519BC4E780097389D /* i-de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "i-de.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3678FF0919BC4E780097389D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3678FF0A19BC4E780097389D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +101,7 @@
 		3678FF1C19BC4E790097389D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3678FF1D19BC4E790097389D /* i_deTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = i_deTests.swift; sourceTree = "<group>"; };
 		3678FF2B19BC4F2C0097389D /* Parametre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametre.swift; sourceTree = "<group>"; };
+		43B5684A18F796832518199C /* Pods-i-de.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-de.debug.xcconfig"; path = "Pods/Target Support Files/Pods-i-de/Pods-i-de.debug.xcconfig"; sourceTree = "<group>"; };
 		AD01A5031A93CA330025CECD /* CouleurDeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouleurDeController.swift; sourceTree = "<group>"; };
 		AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesDonnes.swift; sourceTree = "<group>"; };
 		AD19E5351AA3512700523DBB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -153,6 +148,7 @@
 		ADD2F3871AB9F3B30082B6F4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "fr.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
 		ADD2F3891AB9F3B80082B6F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
 		ADEED77619FCEAE1004FC171 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D407F3984869B379F44669A9 /* Pods_i_de.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_i_de.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,25 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADA58ACB1B1E0B570065A10C /* Bolts.framework in Frameworks */,
-				ADA58ACC1B1E0B570065A10C /* Parse.framework in Frameworks */,
-				ADA58ACD1B1E0B570065A10C /* ParseCrashReporting.framework in Frameworks */,
-				ADA58ACE1B1E0B570065A10C /* ParseFacebookUtils.framework in Frameworks */,
-				ADA58ACF1B1E0B570065A10C /* ParseFacebookUtilsV4.framework in Frameworks */,
-				ADA58AD01B1E0B570065A10C /* ParseUI.framework in Frameworks */,
-				AD8CBCD41AFF9A270046E501 /* libsqlite3.dylib in Frameworks */,
-				ADC752D51AC9AD6E00445EB7 /* libz.dylib in Frameworks */,
-				ADC752D21AC9AD6400445EB7 /* Security.framework in Frameworks */,
-				ADC752D31AC9AD6400445EB7 /* SystemConfiguration.framework in Frameworks */,
-				ADC752CF1AC9AD4B00445EB7 /* MobileCoreServices.framework in Frameworks */,
-				ADC752CB1AC9AD3900445EB7 /* CoreGraphics.framework in Frameworks */,
-				ADC752CC1AC9AD3900445EB7 /* CoreLocation.framework in Frameworks */,
-				ADC752CD1AC9AD3900445EB7 /* QuartzCore.framework in Frameworks */,
-				ADC752C71AC9AD2500445EB7 /* CFNetwork.framework in Frameworks */,
-				ADC752C51AC9AD1C00445EB7 /* AudioToolbox.framework in Frameworks */,
-				AD3A48751A99047F0022E52A /* StoreKit.framework in Frameworks */,
-				AD3A48701A98ED1C0022E52A /* AdSupport.framework in Frameworks */,
-				AD3A48711A98ED1C0022E52A /* iAd.framework in Frameworks */,
+				D0D30D9F1300C7675F9E3A77 /* Pods_i_de.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +187,7 @@
 				3678FF0619BC4E780097389D /* Products */,
 				8D2A175857F8F33B43043B0D /* Frameworks */,
 				ADC752D81AC9AE1800445EB7 /* i-de-Bridging-Header.h */,
+				61DF3DD9205B99D5F0F694C3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -263,6 +242,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		61DF3DD9205B99D5F0F694C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1BF88FA6CD8E7E23699BC36B /* Pods-i-de.release.xcconfig */,
+				43B5684A18F796832518199C /* Pods-i-de.debug.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8D2A175857F8F33B43043B0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +273,7 @@
 				ADC752CA1AC9AD3900445EB7 /* QuartzCore.framework */,
 				ADC752C61AC9AD2500445EB7 /* CFNetwork.framework */,
 				ADC752C41AC9AD1C00445EB7 /* AudioToolbox.framework */,
+				D407F3984869B379F44669A9 /* Pods_i_de.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -357,16 +346,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3678FF2119BC4E790097389D /* Build configuration list for PBXNativeTarget "i-de" */;
 			buildPhases = (
+				C1557DED83B8C8A760026307 /* Check Pods Manifest.lock */,
 				3678FF0119BC4E780097389D /* Sources */,
 				3678FF0219BC4E780097389D /* Frameworks */,
 				3678FF0319BC4E780097389D /* Resources */,
 				AD0FE5461A921ACC0027FAE9 /* Embed Frameworks */,
-				AD781A771AEA6E14008AF250 /* Embed App Extensions */,
+				4D7E68BAC31FCB8A5A2B336E /* Embed Pods Frameworks */,
+				19497EE66FFC9367B3CD5821 /* Copy Pods Resources */,
+				39082F671BAB1523009C7D51 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AD781A6F1AEA6E14008AF250 /* PBXTargetDependency */,
+				39082F641BAB1523009C7D51 /* PBXTargetDependency */,
 			);
 			name = "i-de";
 			productName = "i-de";
@@ -402,27 +394,28 @@
 			buildRules = (
 			);
 			dependencies = (
-				AD781A651AEA6E14008AF250 /* PBXTargetDependency */,
 			);
 			name = "i-de WatchKit Extension";
 			productName = "i-de WatchKit Extension";
 			productReference = AD781A581AEA6E13008AF250 /* i-de WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		AD781A611AEA6E14008AF250 /* i-de WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD781A711AEA6E14008AF250 /* Build configuration list for PBXNativeTarget "i-de WatchKit App" */;
 			buildPhases = (
 				AD781A601AEA6E14008AF250 /* Resources */,
+				39082F661BAB1523009C7D51 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				39082F611BAB1523009C7D51 /* PBXTargetDependency */,
 			);
 			name = "i-de WatchKit App";
 			productName = "i-de WatchKit App";
 			productReference = AD781A621AEA6E14008AF250 /* i-de WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
+			productType = "com.apple.product-type.application.watchapp2";
 		};
 /* End PBXNativeTarget section */
 
@@ -430,7 +423,9 @@
 		3678FEFD19BC4E780097389D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = DCF;
 				TargetAttributes = {
 					3678FF0419BC4E780097389D = {
@@ -505,7 +500,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD781A5F1AEA6E13008AF250 /* Images.xcassets in Resources */,
-				AD781A631AEA6E14008AF250 /* i-de WatchKit App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +513,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19497EE66FFC9367B3CD5821 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-i-de/Pods-i-de-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D7E68BAC31FCB8A5A2B336E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-i-de/Pods-i-de-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1557DED83B8C8A760026307 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3678FF0119BC4E780097389D /* Sources */ = {
@@ -563,15 +605,15 @@
 			target = 3678FF0419BC4E780097389D /* i-de */;
 			targetProxy = 3678FF1819BC4E780097389D /* PBXContainerItemProxy */;
 		};
-		AD781A651AEA6E14008AF250 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AD781A611AEA6E14008AF250 /* i-de WatchKit App */;
-			targetProxy = AD781A641AEA6E14008AF250 /* PBXContainerItemProxy */;
-		};
-		AD781A6F1AEA6E14008AF250 /* PBXTargetDependency */ = {
+		39082F611BAB1523009C7D51 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AD781A571AEA6E13008AF250 /* i-de WatchKit Extension */;
-			targetProxy = AD781A6E1AEA6E14008AF250 /* PBXContainerItemProxy */;
+			targetProxy = 39082F601BAB1523009C7D51 /* PBXContainerItemProxy */;
+		};
+		39082F641BAB1523009C7D51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD781A611AEA6E14008AF250 /* i-de WatchKit App */;
+			targetProxy = 39082F631BAB1523009C7D51 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -653,6 +695,7 @@
 		};
 		3678FF2319BC4E790097389D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BF88FA6CD8E7E23699BC36B /* Pods-i-de.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -669,8 +712,17 @@
 					framework,
 				);
 				INFOPLIST_FILE = "i-de/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"Parse\"",
+					"-framework",
+					"\"Spring\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dacostafaro.i-de";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -689,6 +741,7 @@
 				);
 				INFOPLIST_FILE = "i-deTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "DCF.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/i-de.app/i-de";
 			};
@@ -715,6 +768,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -732,6 +786,7 @@
 		};
 		AD1FD7451AC474CF00E21815 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43B5684A18F796832518199C /* Pods-i-de.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -748,8 +803,17 @@
 					framework,
 				);
 				INFOPLIST_FILE = "i-de/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"Parse\"",
+					"-framework",
+					"\"Spring\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dacostafaro.i-de";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -768,6 +832,7 @@
 				);
 				INFOPLIST_FILE = "i-deTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "DCF.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/i-de.app/i-de";
 			};
@@ -780,14 +845,16 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = i_de_WatchKit_Extension;
 				INFOPLIST_FILE = "i-de WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dacostafaro.i-de.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -798,6 +865,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -808,12 +876,13 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				IBSC_MODULE = i_de_WatchKit_Extension;
 				INFOPLIST_FILE = "i-de WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dacostafaro.i-de.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -828,8 +897,12 @@
 				INFOPLIST_FILE = "i-de WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dacostafaro.i-de.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -852,9 +925,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dacostafaro.i-de.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};

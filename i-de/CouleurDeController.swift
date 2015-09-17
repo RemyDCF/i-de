@@ -16,7 +16,7 @@ class CouleurDeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var couleurDe = AppValues.couleurDe as UIColor
+        let couleurDe = AppValues.couleurDe as UIColor
         vueCouleur.backgroundColor = couleurDe
         var r:CGFloat = 0
         var g:CGFloat = 0
@@ -48,10 +48,10 @@ class CouleurDeController: UIViewController {
     }
     
     func enregistrerCouleur(couleur: UIColor) {
-        var donnee = MesDonnesCouleurDe()
+        let donnee = MesDonnesCouleurDe()
         donnee.couleurDe = couleur
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] . stringByAppendingPathComponent("couleurDe")
+        let path = dir[0] + "couleurDe"
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
         AppValues.couleurDe = couleur
         vueCouleur.backgroundColor = couleur
