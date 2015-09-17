@@ -27,43 +27,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelNombre: RYLabel!
     @IBOutlet weak var labelFace: UILabel!
     @IBOutlet weak var btChoisir: RYButton!
+    let defaults = NSUserDefaults.standardUserDefaults()
     var animationEnCours = false
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         // Nombre face
-        var donneeNombreFace = MesDonnesNombreFace()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] + "nombreFace"
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeNombreFace = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesNombreFace
-            AppValues.nombreFace = Int(donneeNombreFace.nombreFace)
-            labelFace.text = NSLocalizedString("phraseTirage", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "") + String(donneeNombreFace.nombreFace)
+        let nombreFace = defaults.integerForKey(NSUserDefaultsKeys.NombreFace)
+        if nombreFace != 0 {
+            AppValues.nombreFace = Int(nombreFace)
+            labelFace.text = NSLocalizedString("phraseTirage", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "") + String(nombreFace)
         }
         else {
-            donneeNombreFace.nombreFace = 6
-            NSKeyedArchiver.archiveRootObject(donneeNombreFace, toFile: path)
+            AppValues.nombreFace = Int(6)
+            labelFace.text = NSLocalizedString("phraseTirage", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "") + String(6)
+            defaults.setInteger(6, forKey: NSUserDefaultsKeys.NombreFace)
         }
         // Lancer au demmarage
-        var donneelancerAuDemarrage = MesDonnesLancerAuDemarrage()
-        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] + "lancerAuDemarrage"
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneelancerAuDemarrage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesLancerAuDemarrage
-            if (donneelancerAuDemarrage.lancerAuDemarrage) {
-                choisirTap(self)
-            }
-            else {
-                labelNombre.text = ""
-            }
+        let lancerAuDemmarageDonnee = defaults.boolForKey(NSUserDefaultsKeys.LancerAuDemmarage)
+        if (lancerAuDemmarageDonnee) {
+            choisirTap(self)
         }
         else {
-            donneelancerAuDemarrage.lancerAuDemarrage = false
-            NSKeyedArchiver.archiveRootObject(donneelancerAuDemarrage, toFile: path)
+            labelNombre.text = ""
         }
         // Secouer
         var donneeSecouer = MesDonnesSecouer()
-        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] + "secouer"
+        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let path = dir[0] + "secouer"
         if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
             donneeSecouer = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesSecouer
             if (donneeSecouer.secouer) {
@@ -76,22 +66,18 @@ class ViewController: UIViewController {
             NSKeyedArchiver.archiveRootObject(donneeSecouer, toFile: path)
         }
         // Couleur De
-        var donneeCouleurDe = MesDonnesCouleurDe()
-        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] + "couleurDe"
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeCouleurDe = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesCouleurDe
-            AppValues.couleurDe = donneeCouleurDe.couleurDe
-            labelNombre.borderColor = AppValues.couleurDe
-            labelNombre.textColor = AppValues.couleurDe
-            labelFace.textColor = AppValues.couleurDe
-            btChoisir.borderColor = AppValues.couleurDe
-            btChoisir.setTitleColor(AppValues.couleurDe, forState: UIControlState.Normal)
+        let couleurDe = defaults.colorForKey(NSUserDefaultsKeys.CouleurDe)
+        if (couleurDe != nil) {
+            AppValues.couleurDe = couleurDe!
+            labelNombre.borderColor = couleurDe!
+            labelNombre.textColor = couleurDe
+            labelFace.textColor = couleurDe
+            btChoisir.borderColor = couleurDe!
+            btChoisir.setTitleColor(couleurDe, forState: UIControlState.Normal)
         }
         else {
             AppValues.couleurDe = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
-            donneeCouleurDe.couleurDe = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
-            NSKeyedArchiver.archiveRootObject(donneeCouleurDe, toFile: path)
+            defaults.setColor(UIColor(red:0, green:0.64, blue:0.98, alpha:1), forKey: NSUserDefaultsKeys.CouleurDe)
         }
     }
     override func viewDidLoad() {

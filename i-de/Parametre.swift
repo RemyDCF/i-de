@@ -16,6 +16,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     @IBOutlet weak var animations: UISwitch!
     @IBOutlet weak var boutonParametreSecouer: RYButton!
     let listeLabel: Array<String> = []
+    let defaults = NSUserDefaults.standardUserDefaults()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Personnalisation des boutons
@@ -28,18 +29,9 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
         if (AppValues.animationsAutorisés == true) {
             animations.setOn(true, animated: true)
         }
-        var donneelancerAuDemarrage = MesDonnesLancerAuDemarrage()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        let path = dir[0] + "lancerAuDemarrage"
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneelancerAuDemarrage = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesLancerAuDemarrage
-            if (donneelancerAuDemarrage.lancerAuDemarrage) {
-                lancerAuDemarrage.setOn(true, animated: true)
-            }
-        }
-        else {
-            donneelancerAuDemarrage.lancerAuDemarrage = false
-            NSKeyedArchiver.archiveRootObject(donneelancerAuDemarrage, toFile: path)
+        let lancerAuDemmarageDonnee = defaults.boolForKey(NSUserDefaultsKeys.LancerAuDemmarage)
+        if (lancerAuDemmarageDonnee) {
+            lancerAuDemarrage.setOn(true, animated: true)
         }
     }
     
@@ -68,11 +60,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     
     @IBAction func lancerDemarrageChange(sender: AnyObject) {
         // Le switch de lancer au demarrage est changé
-        let donnee = MesDonnesLancerAuDemarrage()
-        donnee.lancerAuDemarrage = lancerAuDemarrage.on
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        let path = dir[0] + "lancerAuDemarrage"
-        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+        defaults.setBool(lancerAuDemarrage.on, forKey: NSUserDefaultsKeys.LancerAuDemmarage)
     }
     
     @IBAction func animationsChange(sender: AnyObject) {
@@ -87,20 +75,20 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     
     @IBAction func choixNombreFaceChange(sender: AnyObject) {
         // Le nombre de face est changé
-        let donnee = MesDonnesNombreFace()
-        if (segmentChoixNombreFace.selectedSegmentIndex == 0) {
-            donnee.nombreFace = 6
+        switch segmentChoixNombreFace.selectedSegmentIndex {
+        case 1:
+            defaults.setInteger(8, forKey: NSUserDefaultsKeys.NombreFace)
+            AppValues.nombreFace = 8
+            break
+        case 2:
+            defaults.setInteger(10, forKey: NSUserDefaultsKeys.NombreFace)
+            AppValues.nombreFace = 10
+            break
+        default:
+            defaults.setInteger(6, forKey: NSUserDefaultsKeys.NombreFace)
+            AppValues.nombreFace = 6
+            break
         }
-        if (segmentChoixNombreFace.selectedSegmentIndex == 1) {
-            donnee.nombreFace = 8
-        }
-        if (segmentChoixNombreFace.selectedSegmentIndex == 2) {
-            donnee.nombreFace = 10
-        }
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        let path = dir[0] + "nombreFace"
-        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
-        AppValues.nombreFace = donnee.nombreFace
         mettreAJourLabelFaceNumber()
     }
     
@@ -111,7 +99,6 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     
     func afficherAlerteChoixNombrePersonnalise() {
         // On change le nombre de faces personnalisé
-        let donnee = MesDonnesNombreFace()
             let alerte = UIAlertController(title: NSLocalizedString("choixPerso", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("nombreFace", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             alerte.addTextFieldWithConfigurationHandler({(textField: UITextField) in
                 textField.placeholder = NSLocalizedString("nombre", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "")
@@ -125,10 +112,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
                 let textField = textFields[0]
                 let nombre:Int! = Int(textField.text!)
                 if (nombre != nil && nombre >= 2 && nombre <= 200) {
-                    donnee.nombreFace = nombre!
-                    var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-                    let path = dir[0] + "nombreFace"
-                    NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+                    self.defaults.setInteger(nombre!, forKey: NSUserDefaultsKeys.NombreFace)
                     AppValues.nombreFace = nombre!
                 }
                 else {
@@ -146,40 +130,26 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     
     func mettreAJourLabelFaceNumber() {
         // Cette fonction met à jour le nombre de face
-        var donnee = MesDonnesNombreFace()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        let path = dir[0] + "nombreFace"
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesNombreFace
-            labelNombreFace.text = String(donnee.nombreFace)
-        }
-        else {
-            labelNombreFace.text = String(6)
-        }
+        let nombreFace = defaults.integerForKey(NSUserDefaultsKeys.NombreFace)
+        labelNombreFace.text = String(nombreFace)
     }
     
     func mettreAJourFaceDe() {
         // Cette fonction met à jour le UISegmentedControl du choix des faces du dé
-        var donnee = MesDonnesNombreFace()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        let path = dir[0] + "nombreFace"
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donnee = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesNombreFace
-            if (donnee.nombreFace == 6) {
-                self.segmentChoixNombreFace.selectedSegmentIndex = 0
-            }
-            else if (donnee.nombreFace == 8) {
-                self.segmentChoixNombreFace.selectedSegmentIndex = 1
-            }
-            else if (donnee.nombreFace == 10) {
-                self.segmentChoixNombreFace.selectedSegmentIndex = 2
-            }
-            else {
-                self.segmentChoixNombreFace.selectedSegmentIndex = -1
-            }
-        }
-        else {
+        let nombreFace = defaults.integerForKey(NSUserDefaultsKeys.NombreFace)
+        switch nombreFace {
+        case 6:
             self.segmentChoixNombreFace.selectedSegmentIndex = 0
+            break
+        case 8:
+            self.segmentChoixNombreFace.selectedSegmentIndex = 1
+            break
+        case 6:
+            self.segmentChoixNombreFace.selectedSegmentIndex = 2
+            break
+        default:
+            self.segmentChoixNombreFace.selectedSegmentIndex = -1
+            break
         }
         mettreAJourLabelFaceNumber()
     }

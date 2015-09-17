@@ -13,6 +13,8 @@
 		3678FF2C19BC4F2C0097389D /* Parametre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3678FF2B19BC4F2C0097389D /* Parametre.swift */; };
 		39082F621BAB1523009C7D51 /* i-de WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AD781A581AEA6E13008AF250 /* i-de WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		39082F651BAB1523009C7D51 /* i-de WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AD781A621AEA6E14008AF250 /* i-de WatchKit App.app */; };
+		39082F691BAB1832009C7D51 /* NSUserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39082F681BAB1832009C7D51 /* NSUserDefaultsKeys.swift */; };
+		39082F6B1BAB1DEC009C7D51 /* NSUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39082F6A1BAB1DEC009C7D51 /* NSUserDefaultsExtension.swift */; };
 		AD01A5041A93CA330025CECD /* CouleurDeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD01A5031A93CA330025CECD /* CouleurDeController.swift */; };
 		AD02BAF61A10F4BE003FB741 /* MesDonnes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */; };
 		AD19E5341AA3512700523DBB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD19E5361AA3512700523DBB /* Localizable.strings */; };
@@ -101,6 +103,8 @@
 		3678FF1C19BC4E790097389D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3678FF1D19BC4E790097389D /* i_deTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = i_deTests.swift; sourceTree = "<group>"; };
 		3678FF2B19BC4F2C0097389D /* Parametre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametre.swift; sourceTree = "<group>"; };
+		39082F681BAB1832009C7D51 /* NSUserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsKeys.swift; sourceTree = "<group>"; };
+		39082F6A1BAB1DEC009C7D51 /* NSUserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefaultsExtension.swift; path = ../NSUserDefaultsExtension.swift; sourceTree = "<group>"; };
 		43B5684A18F796832518199C /* Pods-i-de.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-i-de.debug.xcconfig"; path = "Pods/Target Support Files/Pods-i-de/Pods-i-de.debug.xcconfig"; sourceTree = "<group>"; };
 		AD01A5031A93CA330025CECD /* CouleurDeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouleurDeController.swift; sourceTree = "<group>"; };
 		AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesDonnes.swift; sourceTree = "<group>"; };
@@ -281,10 +285,12 @@
 		AD0128D719FD28330034537B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				39082F6A1BAB1DEC009C7D51 /* NSUserDefaultsExtension.swift */,
 				3678FF0A19BC4E780097389D /* AppDelegate.swift */,
 				ADEED77619FCEAE1004FC171 /* ViewController.swift */,
 				ADB9C0B01A583D86007624D4 /* AppValues.swift */,
 				3678FF2B19BC4F2C0097389D /* Parametre.swift */,
+				39082F681BAB1832009C7D51 /* NSUserDefaultsKeys.swift */,
 				AD6C8F7519FE869C004711EE /* ParametreSecouer.swift */,
 				AD02BAF51A10F4BE003FB741 /* MesDonnes.swift */,
 				AD9443FA1A51A110005C8D23 /* TabController.swift */,
@@ -569,7 +575,9 @@
 			files = (
 				ADB66B9F1A9229DE00AB1E4A /* RYButton.swift in Sources */,
 				AD01A5041A93CA330025CECD /* CouleurDeController.swift in Sources */,
+				39082F6B1BAB1DEC009C7D51 /* NSUserDefaultsExtension.swift in Sources */,
 				AD9443FB1A51A110005C8D23 /* TabController.swift in Sources */,
+				39082F691BAB1832009C7D51 /* NSUserDefaultsKeys.swift in Sources */,
 				ADEED77719FCEAE1004FC171 /* ViewController.swift in Sources */,
 				ADB66BA01A9229DE00AB1E4A /* RYLabel.swift in Sources */,
 				3678FF0B19BC4E780097389D /* AppDelegate.swift in Sources */,

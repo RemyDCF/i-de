@@ -8,40 +8,6 @@
 
 import UIKit
 
-class MesDonnesNombreFace : NSObject {
-    var nombreFace: Int = 6
-    
-    override init() {
-        super.init()
-    }
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeInteger(self.nombreFace, forKey: "nombreFace")
-    }
-    
-    init(coder aDecoder: NSCoder) {
-        super.init()
-        self.nombreFace = aDecoder.decodeIntegerForKey("nombreFace")
-    }
-}
-
-class MesDonnesLancerAuDemarrage : NSObject {
-    var lancerAuDemarrage: Bool = true
-    
-    override init() {
-        super.init()
-    }
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeBool(self.lancerAuDemarrage, forKey: "lancerAuDemarrage")
-    }
-    
-    init(coder aDecoder: NSCoder) {
-        super.init()
-        self.lancerAuDemarrage = aDecoder.decodeBoolForKey("lancerAuDemarrage")
-    }
-}
-
 class MesDonnesAnimations : NSObject {
     var animations: Bool = true
     
@@ -109,22 +75,5 @@ class MesDonnesSecouerAnimations : NSObject {
     init(coder aDecoder: NSCoder) {
         super.init()
         self.secouerAnimations = aDecoder.decodeBoolForKey("secouerAnimations")
-    }
-}
-
-class MesDonnesCouleurDe : NSObject {
-    var couleurDe: UIColor = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
-    
-    override init() {
-        super.init()
-    }
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(couleurDe, forKey: "couleurDe")
-    }
-    
-    init(coder aDecoder: NSCoder) {
-        super.init()
-        couleurDe = aDecoder.decodeObjectForKey("couleurDe") as! UIColor
     }
 }

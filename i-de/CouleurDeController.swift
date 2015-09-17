@@ -13,7 +13,7 @@ class CouleurDeController: UIViewController {
     @IBOutlet weak var sliderR: UISlider!
     @IBOutlet weak var sliderG: UISlider!
     @IBOutlet weak var sliderB: UISlider!
-    
+    let defaults = NSUserDefaults.standardUserDefaults()
     override func viewDidLoad() {
         super.viewDidLoad()
         let couleurDe = AppValues.couleurDe as UIColor
@@ -48,11 +48,7 @@ class CouleurDeController: UIViewController {
     }
     
     func enregistrerCouleur(couleur: UIColor) {
-        let donnee = MesDonnesCouleurDe()
-        donnee.couleurDe = couleur
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        let path = dir[0] + "couleurDe"
-        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+        defaults.setColor(couleur, forKey: NSUserDefaultsKeys.CouleurDe)
         AppValues.couleurDe = couleur
         vueCouleur.backgroundColor = couleur
     }
