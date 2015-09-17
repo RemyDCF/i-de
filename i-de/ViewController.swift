@@ -79,43 +79,22 @@ class ViewController: UIViewController {
             AppValues.couleurDe = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
             defaults.setColor(UIColor(red:0, green:0.64, blue:0.98, alpha:1), forKey: NSUserDefaultsKeys.CouleurDe)
         }
+        // Secouer Animations
+        let secouerAnimations = defaults.boolForKey(NSUserDefaultsKeys.SecouerAnimations)
+        if (!secouerAnimations) {
+            AppValues.animationsSecouerAutorisés = false
+        }
+        // Animations
+        let animations = defaults.boolForKey(NSUserDefaultsKeys.Animations)
+        if (!animations) {
+            AppValues.animationsAutorisés = false
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Mouvenent animation
         if (UIDevice().userInterfaceIdiom == .Pad) {
             AppValues.valeurMouvement *= 2
-        }
-        
-        // Secouer Animations
-        var donneeSecouerAnimations = MesDonnesSecouerAnimations()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var path = dir[0] + "secouerAnimations"
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeSecouerAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesSecouerAnimations
-            if (!donneeSecouerAnimations.secouerAnimations) {
-                AppValues.animationsSecouerAutorisés = false
-            }
-        }
-        else {
-            AppValues.animationsSecouerAutorisés = false
-            donneeSecouerAnimations.secouerAnimations = false
-            NSKeyedArchiver.archiveRootObject(donneeSecouerAnimations, toFile: path)
-        }
-        
-        // Animations
-        var donneeAnimations = MesDonnesAnimations()
-        dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        path = dir[0] + "animations"
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesAnimations
-            if (!donneeAnimations.animations) {
-                AppValues.animationsAutorisés = false
-            }
-        }
-        else {
-            donneeAnimations.animations = true
-            NSKeyedArchiver.archiveRootObject(donneeAnimations, toFile: path)
         }
     }
     

@@ -12,4 +12,6 @@ struct NSUserDefaultsKeys {
     static let LancerAuDemmarage: String! = "lancerAuDemmarage"
     static let NombreFace: String! = "nombreFace"
     static let CouleurDe: String! = "couleurDe"
+    static let SecouerAnimations: String! = "secouerAnimations"
+    static let Animations: String! = "animations"
 }

@@ -10,31 +10,18 @@ import UIKit
 
 class ParametreSecouer: UITableViewController {
     @IBOutlet weak var switchAnimations: UISwitch!
+    let defaults = NSUserDefaults.standardUserDefaults()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Animations
-        var donneeSecouerAnimations = MesDonnesSecouerAnimations()
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        let path = dir[0] + "secouerAnimations"
-        if (NSFileManager.defaultManager().fileExistsAtPath(path)) {
-            donneeSecouerAnimations = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! MesDonnesSecouerAnimations
-            if (!donneeSecouerAnimations.secouerAnimations) {
-                switchAnimations.setOn(false, animated: true)
-            }
-        }
-        else {
+        let secouerAnimations = defaults.boolForKey(NSUserDefaultsKeys.SecouerAnimations)
+        if (!secouerAnimations) {
             switchAnimations.setOn(false, animated: true)
-            donneeSecouerAnimations.secouerAnimations = false
-            NSKeyedArchiver.archiveRootObject(donneeSecouerAnimations, toFile: path)
         }
     }
     
     @IBAction func switchAnimationsChange(sender: AnyObject!) {
-        let donnee = MesDonnesSecouerAnimations()
-        donnee.secouerAnimations = switchAnimations.on
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        let path = dir[0] + "secouerAnimations"
-        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+        defaults.setBool(switchAnimations.on, forKey: NSUserDefaultsKeys.SecouerAnimations)
         AppValues.animationsSecouerAutorisés = switchAnimations.on
     }
 }

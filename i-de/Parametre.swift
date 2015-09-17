@@ -65,11 +65,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
     
     @IBAction func animationsChange(sender: AnyObject) {
         // Le switch des animations est changé
-        let donnee = MesDonnesAnimations()
-        donnee.animations = animations.on
-        var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        let path = dir[0] + "animations"
-        NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
+        defaults.setBool(animations.on, forKey: NSUserDefaultsKeys.Animations)
         AppValues.animationsAutorisés = animations.on
     }
     
