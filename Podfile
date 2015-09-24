@@ -8,10 +8,6 @@ target 'i-de' do
  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 end
 
-target 'i-deTests' do
-
-end
-
 target 'i-de WatchKit Extension' do
 
 end

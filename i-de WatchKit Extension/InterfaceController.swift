@@ -8,15 +8,31 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
-
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var chiffre: WKInterfaceLabel!
+    @IBOutlet var labelTirage: WKInterfaceLabel!
+    var session : WCSession!
     var nombreFace:Int! = 6
+    let defaults = NSUserDefaults.standardUserDefaults()
+    override init() {
+        super.init()
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
+    }
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         tirage(self)
         // Configure interface objects here.
+        if defaults.integerForKey("nombreFace") == 0 {
+            defaults.setInteger(6, forKey: "nombreFace")
+            nombreFace = 6
+        }
+        labelTirage.setText(NSLocalizedString("labelTirage", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "") + String(defaults.integerForKey("nombreFace")))
     }
 
     override func willActivate() {
@@ -29,7 +45,13 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     @IBAction func tirage(sender: AnyObject!) {
-        let nombreTiré = Int((arc4random() % 6) + 1)
+        let nombreTiré = Int((arc4random() % UInt32(nombreFace)) + 1)
         self.chiffre.setText(String(nombreTiré))
+    }
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        let nombreFace = applicationContext["nombreFace"] as? Int
+        self.nombreFace = nombreFace
+        defaults.setInteger(nombreFace!, forKey: "nombreFace")
+        self.labelTirage.setText(NSLocalizedString("labelTirage", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "") + String(nombreFace!))
     }
 }

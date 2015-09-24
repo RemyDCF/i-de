@@ -18,11 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("TdFV16bEowpzqRtvfExdftJAHWjStIfrf6fpO4i4",
             clientKey: "eNRNFT3RkMtd2i68rf423ovrnc9wtrqzyuuO2rn5")
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
-        PFPurchase.addObserverForProduct("iDeInAppPurchase589GH5GKJERHGIEURYTGUI5EHTGIUERYT", block: { (transaction: SKPaymentTransaction!) -> Void in
-            let userDefaults = NSUserDefaults.standardUserDefaults()
-            userDefaults.setBool(false, forKey: "pub")
-            userDefaults.synchronize()
-        })
         return true
     }
     func applicationWillResignActive(application: UIApplication) {

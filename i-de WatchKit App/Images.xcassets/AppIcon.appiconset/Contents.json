@@ -3,62 +3,62 @@
     {
       "size" : "24x24",
       "idiom" : "watch",
+      "filename" : "icone Watch Store-7.png",
       "scale" : "2x",
-      "filename" : "icone - copie.png",
       "role" : "notificationCenter",
       "subtype" : "38mm"
     },
     {
       "size" : "27.5x27.5",
       "idiom" : "watch",
+      "filename" : "icone Watch Store-6.png",
       "scale" : "2x",
-      "filename" : "icone - copie-1.png",
       "role" : "notificationCenter",
       "subtype" : "42mm"
     },
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "icone - copie-2.png",
+      "filename" : "icone Watch Store-5.png",
       "role" : "companionSettings",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "icone - copie-3.png",
+      "filename" : "icone Watch Store-4.png",
       "role" : "companionSettings",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "watch",
+      "filename" : "icone Watch Store-3.png",
       "scale" : "2x",
-      "filename" : "icone - copie-4.png",
       "role" : "appLauncher",
       "subtype" : "38mm"
     },
     {
       "size" : "44x44",
       "idiom" : "watch",
+      "filename" : "icone Watch Store-2.png",
       "scale" : "2x",
-      "filename" : "icone - copie-5.png",
       "role" : "longLook",
       "subtype" : "42mm"
     },
     {
       "size" : "86x86",
       "idiom" : "watch",
+      "filename" : "icone Watch Store-1.png",
       "scale" : "2x",
-      "filename" : "icone - copie-6.png",
       "role" : "quickLook",
       "subtype" : "38mm"
     },
     {
       "size" : "98x98",
       "idiom" : "watch",
+      "filename" : "icone Watch Store.png",
       "scale" : "2x",
-      "filename" : "icone - copie-7.png",
       "role" : "quickLook",
       "subtype" : "42mm"
     }

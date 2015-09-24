@@ -16,3 +16,4 @@
 "erreurAchat" = "The transaction has not been completed, the purchases are not actived on this device. Thank you to activate the in-app purchases restrictions";
 "achatReussi" = "Completed !";
 "relancerApp" = "Restart the application to stop displaying ads.";
+"options" = "Settings";

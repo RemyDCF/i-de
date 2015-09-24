@@ -16,3 +16,4 @@
 "erreurAchat" = "La transaction n'a pas été effectuée, les achats intégrés sont impossible sur cet appareil. Merci d'activer les achats intégrés dans les restrictions";
 "achatReussi" = "Terminé !";
 "relancerApp" = "Relancer l'application pour ne plus afficher les pubs.";
+"options" = "Options";

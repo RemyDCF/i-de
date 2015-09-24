@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  i-de
+
+  Created by Alice on 22/09/2015.
+  Copyright © 2015 DCF. All rights reserved.
+*/
+
+"labelTirage" = "Number between 1 and ";

@@ -5,16 +5,13 @@
 /* Class = "IBUITabBarItem"; title = "Settings"; ObjectID = "2Zi-8x-izf"; */
 "2Zi-8x-izf.title" = "Settings";
 
-/* Class = "IBUIButton"; normalTitle = "Remove Ads"; ObjectID = "FRE-e2-8dJ"; */
-"FRE-e2-8dJ.normalTitle" = "Remove Ads";
-
 /* Class = "IBUILabel"; text = "Red :"; ObjectID = "G7f-3O-OG6"; */
 "G7f-3O-OG6.text" = "Red :";
 
 /* Class = "IBUITabBarItem"; title = "Dice"; ObjectID = "IoH-t5-32v"; */
 "IoH-t5-32v.title" = "Dice";
 
-/* Class = "IBUILabel"; text = "6"; ObjectID = "JL4-B3-wje"; */
+/* Class = "UILabel"; text = "6"; ObjectID = "JL4-B3-wje"; */
 "JL4-B3-wje.text" = "6";
 
 /* Class = "IBUIButton"; normalTitle = "Choose a custom number"; ObjectID = "JRz-xZ-kBB"; */
@@ -23,71 +20,89 @@
 /* Class = "IBUITableViewSection"; headerTitle = "Number of sides"; ObjectID = "LKC-G7-ylm"; */
 "LKC-G7-ylm.headerTitle" = "Number of sides";
 
-/* Class = "IBUIButton"; normalTitle = "Delete Ads"; ObjectID = "OOP-Ck-6fr"; */
-"OOP-Ck-6fr.normalTitle" = "Delete Ads";
+/* Class = "UILabel"; text = "Vélocité"; ObjectID = "M0E-rb-XMc"; */
+"M0E-rb-XMc.text" = "Velocity";
 
-/* Class = "IBUITableViewController"; title = "Shake"; ObjectID = "OTf-00-B5v"; */
+/* Class = "UITableViewController"; title = "Secouer"; ObjectID = "OTf-00-B5v"; */
 "OTf-00-B5v.title" = "Shake";
 
 /* Class = "IBUILabel"; text = "Drawing of a number between 1 and 6"; ObjectID = "QD6-s7-DVY"; */
 "QD6-s7-DVY.text" = "Drawing of a number between 1 and 6";
 
+/* Class = "UILabel"; text = "Suivez moi sur twitter"; ObjectID = "Trn-41-c8V"; */
+"Trn-41-c8V.text" = "Follow me on twitter";
+
 /* Class = "IBUITableViewSection"; headerTitle = "Personalization"; ObjectID = "YOu-vt-WJ5"; */
 "YOu-vt-WJ5.headerTitle" = "Personalization";
 
-/* Class = "IBUILabel"; text = "Green :"; ObjectID = "Zrs-zV-nTP"; */
+/* Class = "UILabel"; text = "Vert :"; ObjectID = "Zrs-zV-nTP"; */
 "Zrs-zV-nTP.text" = "Green :";
+
+/* Class = "UILabel"; text = "Durée"; ObjectID = "aL8-4s-Kw4"; */
+"aL8-4s-Kw4.text" = "Duration";
 
 /* Class = "IBUIButton"; normalTitle = "Return to the default color"; ObjectID = "bwX-kk-7Qe"; */
 "bwX-kk-7Qe.normalTitle" = "Return to the default color";
 
-/* Class = "IBUILabel"; text = "Animations"; ObjectID = "cQr-8v-bbn"; */
+/* Class = "UILabel"; text = "Animations"; ObjectID = "cQr-8v-bbn"; */
 "cQr-8v-bbn.text" = "Animations";
 
-/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[0] = "6 sides"; ObjectID = "evC-yp-0qt"; */
+/* Class = "UILabel"; text = "Rotation"; ObjectID = "eVI-ia-1nk"; */
+"eVI-ia-1nk.text" = "Rotate";
+
+/* Class = "UISegmentedControl"; evC-yp-0qt.segmentTitles[0] = "6 faces"; ObjectID = "evC-yp-0qt"; */
 "evC-yp-0qt.segmentTitles[0]" = "6 sides";
 
-/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[1] = "8 sides"; ObjectID = "evC-yp-0qt"; */
+/* Class = "UISegmentedControl"; evC-yp-0qt.segmentTitles[1] = "8 faces"; ObjectID = "evC-yp-0qt"; */
 "evC-yp-0qt.segmentTitles[1]" = "8 sides";
 
-/* Class = "IBUISegmentedControl"; evC-yp-0qt.segmentTitles[2] = "10 sides"; ObjectID = "evC-yp-0qt"; */
+/* Class = "UISegmentedControl"; evC-yp-0qt.segmentTitles[2] = "10 faces"; ObjectID = "evC-yp-0qt"; */
 "evC-yp-0qt.segmentTitles[2]" = "10 sides";
 
-/* Class = "IBUINavigationItem"; title = "Settings"; ObjectID = "f5c-b2-OU2"; */
+/* Class = "UINavigationItem"; title = "Paramètres"; ObjectID = "f5c-b2-OU2"; */
 "f5c-b2-OU2.title" = "Settings";
 
-/* Class = "IBUIButton"; normalTitle = "Restore purchase"; ObjectID = "hTc-Li-ycw"; */
-"hTc-Li-ycw.normalTitle" = "Restore purchase";
+/* Class = "UITableViewSection"; headerTitle = "Twitter"; ObjectID = "g0M-Em-28x"; */
+"g0M-Em-28x.headerTitle" = "Twitter";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "hcq-R5-dlj"; */
+"hcq-R5-dlj.text" = "Title";
 
 /* Class = "IBUILabel"; text = "Automatically dice draw at startup"; ObjectID = "jzs-eG-K1b"; */
 "jzs-eG-K1b.text" = "Automatically dice draw at startup";
 
-/* Class = "IBUITableViewSection"; headerTitle = "Ads"; ObjectID = "kDW-aU-1Ka"; */
-"kDW-aU-1Ka.headerTitle" = "Ads";
-
-/* Class = "IBUITableViewSection"; headerTitle = "Settings"; ObjectID = "kc2-vs-yLc"; */
+/* Class = "UITableViewSection"; headerTitle = "Paramètres"; ObjectID = "kc2-vs-yLc"; */
 "kc2-vs-yLc.headerTitle" = "Settings";
 
-/* Class = "IBUIViewController"; title = "Delete Ad"; ObjectID = "oVN-GM-0y4"; */
-"oVN-GM-0y4.title" = "Delete Ad";
+/* Class = "UILabel"; text = "Animations"; ObjectID = "o6P-4n-alT"; */
+"o6P-4n-alT.text" = "Animations";
 
 /* Class = "IBUILabel"; text = "Number of sides is "; ObjectID = "pK4-T8-9ES"; */
 "pK4-T8-9ES.text" = "Number of sides is ";
 
-/* Class = "IBUILabel"; text = "Blue :"; ObjectID = "qOi-8a-5PN"; */
+/* Class = "UILabel"; text = "Bleu :"; ObjectID = "qOi-8a-5PN"; */
 "qOi-8a-5PN.text" = "Blue :";
 
-/* Class = "IBUILabel"; text = "Color of the dice"; ObjectID = "qaN-Jl-R6j"; */
+/* Class = "UILabel"; text = "Couleur du dé"; ObjectID = "qaN-Jl-R6j"; */
 "qaN-Jl-R6j.text" = "Color of the dice";
 
-/* Class = "IBUIButton"; normalTitle = "Choose"; ObjectID = "tuK-Yj-9va"; */
+/* Class = "UILabel"; text = "Amortissement"; ObjectID = "qtm-hM-YAl"; */
+"qtm-hM-YAl.text" = "Damping";
+
+/* Class = "UILabel"; text = "Force"; ObjectID = "tKh-Gb-ltM"; */
+"tKh-Gb-ltM.text" = "Force";
+
+/* Class = "UIButton"; normalTitle = "Choose"; ObjectID = "tuK-Yj-9va"; */
 "tuK-Yj-9va.normalTitle" = "Choose";
 
-/* Class = "IBUILabel"; text = "Animations"; ObjectID = "w3a-Vn-bb5"; */
+/* Class = "UILabel"; text = "Animations"; ObjectID = "w3a-Vn-bb5"; */
 "w3a-Vn-bb5.text" = "Animations";
 
 /* Class = "IBUIViewController"; title = "Color of the dice"; ObjectID = "x9Q-er-76h"; */
 "x9Q-er-76h.title" = "Color of the dice";
 
-/* Class = "IBUITableViewSection"; headerTitle = "General"; ObjectID = "yhT-h9-p0x"; */
+/* Class = "UITableViewSection"; headerTitle = "General"; ObjectID = "yhT-h9-p0x"; */
 "yhT-h9-p0x.headerTitle" = "General";
+
+/* Class = "UILabel"; text = "Delai"; ObjectID = "yoB-qI-gf0"; */
+"yoB-qI-gf0.text" = "Delay";

@@ -25,5 +25,19 @@ extension NSUserDefaults {
         }
         setObject(colorData, forKey: key)
     }
+    func stringForKeySwift(key: String) -> String? {
+        var string: String?
+        if let stringData = dataForKey(key) {
+            string = NSKeyedUnarchiver.unarchiveObjectWithData(stringData) as? String
+        }
+        return string
+    }
     
+    func setStringSwift(string: String?, forKey key: String) {
+        var stringData: NSData?
+        if let string = string {
+            stringData = NSKeyedArchiver.archivedDataWithRootObject(string)
+        }
+        setObject(stringData, forKey: key)
+    }
 }

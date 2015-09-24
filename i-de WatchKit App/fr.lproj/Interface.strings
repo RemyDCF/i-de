@@ -1,0 +1,6 @@
+
+/* Class = "WKInterfaceLabel"; text = "Tirage 1 à 6"; ObjectID = "5qW-0F-3VZ"; */
+"5qW-0F-3VZ.text" = "Nombre entre 1 à 6";
+
+/* Class = "WKInterfaceButton"; title = "Choisir"; ObjectID = "t4L-w2-hLA"; */
+"t4L-w2-hLA.title" = "Choisir";

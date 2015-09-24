@@ -7,20 +7,26 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class Parametres: UITableViewController, UIAlertViewDelegate {
+class Parametres: UITableViewController, UIAlertViewDelegate, WCSessionDelegate {
     @IBOutlet weak var secouerDe: UISwitch!
     @IBOutlet weak var segmentChoixNombreFace: UISegmentedControl!
     @IBOutlet weak var labelNombreFace: UILabel!
     @IBOutlet weak var lancerAuDemarrage: UISwitch!
     @IBOutlet weak var animations: UISwitch!
-    @IBOutlet weak var boutonParametreSecouer: RYButton!
     let listeLabel: Array<String> = []
     let defaults = NSUserDefaults.standardUserDefaults()
+    var session : WCSession!
     override func viewDidLoad() {
         super.viewDidLoad()
+        // WatchConnectivity
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
         // Personnalisation des boutons
-        boutonParametreSecouer.setImage(UIImage(named: "parametresDisabled"), forState: UIControlState.Disabled)
         // Mise en place des données existantes
         if (!AppValues.secouer) {
             secouerDe.setOn(false, animated: true)
@@ -47,14 +53,6 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
         let path = dir[0] + "secouer"
         NSKeyedArchiver.archiveRootObject(donnee, toFile: path)
         AppValues.secouer = secouerDe.on
-        if (secouerDe.on == false) {
-            boutonParametreSecouer.enabled = false
-            boutonParametreSecouer.borderColor = UIColor(red:0.79, green:0.79, blue:0.79, alpha:1)
-        }
-        else {
-            boutonParametreSecouer.enabled = true
-            boutonParametreSecouer.borderColor = UIColor(red:0, green:0.64, blue:0.98, alpha:1)
-        }
     }
     
     
@@ -75,17 +73,30 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
         case 1:
             defaults.setInteger(8, forKey: NSUserDefaultsKeys.NombreFace)
             AppValues.nombreFace = 8
+            setNombreFaceWatchConnectivity(8)
             break
         case 2:
             defaults.setInteger(10, forKey: NSUserDefaultsKeys.NombreFace)
             AppValues.nombreFace = 10
+            setNombreFaceWatchConnectivity(10)
             break
         default:
             defaults.setInteger(6, forKey: NSUserDefaultsKeys.NombreFace)
             AppValues.nombreFace = 6
+            setNombreFaceWatchConnectivity(6)
             break
         }
         mettreAJourLabelFaceNumber()
+    }
+    
+    func setNombreFaceWatchConnectivity(nombreFace: Int) {
+        let applicationDict = ["nombreFace":nombreFace]
+        do {
+            try session.updateApplicationContext(applicationDict)
+            print("ok")
+        } catch {
+            print("error")
+        }
     }
     
     @IBAction func choixNombreFaceChangeAutre(sender: AnyObject) {
@@ -109,6 +120,7 @@ class Parametres: UITableViewController, UIAlertViewDelegate {
                 let nombre:Int! = Int(textField.text!)
                 if (nombre != nil && nombre >= 2 && nombre <= 200) {
                     self.defaults.setInteger(nombre!, forKey: NSUserDefaultsKeys.NombreFace)
+                    self.setNombreFaceWatchConnectivity(nombre!)
                     AppValues.nombreFace = nombre!
                 }
                 else {
