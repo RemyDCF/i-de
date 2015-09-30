@@ -90,12 +90,14 @@ class Parametres: UITableViewController, UIAlertViewDelegate, WCSessionDelegate 
     }
     
     func setNombreFaceWatchConnectivity(nombreFace: Int) {
-        let applicationDict = ["nombreFace":nombreFace]
-        do {
-            try session.updateApplicationContext(applicationDict)
-            print("ok")
-        } catch {
-            print("error")
+        if (WCSession.isSupported()) {
+            let applicationDict = ["nombreFace":nombreFace]
+            do {
+                try session.updateApplicationContext(applicationDict)
+                print("ok")
+            } catch {
+                print("error")
+            }
         }
     }
     
@@ -106,34 +108,34 @@ class Parametres: UITableViewController, UIAlertViewDelegate, WCSessionDelegate 
     
     func afficherAlerteChoixNombrePersonnalise() {
         // On change le nombre de faces personnalisé
-            let alerte = UIAlertController(title: NSLocalizedString("choixPerso", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("nombreFace", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
-            alerte.addTextFieldWithConfigurationHandler({(textField: UITextField) in
-                textField.placeholder = NSLocalizedString("nombre", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "")
-                textField.keyboardType = UIKeyboardType.NumberPad
-            })
-            alerte.addAction(UIAlertAction(title: NSLocalizedString("annuler", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction) in
-                self.mettreAJourFaceDe()
-            }))
-            alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction) in
-                let textFields = alerte.textFields as [UITextField]!
-                let textField = textFields[0]
-                let nombre:Int! = Int(textField.text!)
-                if (nombre != nil && nombre >= 2 && nombre <= 200) {
-                    self.defaults.setInteger(nombre!, forKey: NSUserDefaultsKeys.NombreFace)
-                    self.setNombreFaceWatchConnectivity(nombre!)
-                    AppValues.nombreFace = nombre!
-                }
-                else {
-                    let alerteErreurNombre = UIAlertController(title: NSLocalizedString("erreur", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("saisieIncorrecte", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
-                    alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction) in
-                        self.afficherAlerteChoixNombrePersonnalise()
-                    }))
-                    self.presentViewController(alerteErreurNombre, animated: true, completion: nil)
-                }
-                self.mettreAJourFaceDe()
-                self.mettreAJourLabelFaceNumber()
-            }))
-            presentViewController(alerte, animated: true, completion: nil)
+        let alerte = UIAlertController(title: NSLocalizedString("choixPerso", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("nombreFace", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+        alerte.addTextFieldWithConfigurationHandler({(textField: UITextField) in
+            textField.placeholder = NSLocalizedString("nombre", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "")
+            textField.keyboardType = UIKeyboardType.NumberPad
+        })
+        alerte.addAction(UIAlertAction(title: NSLocalizedString("annuler", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), style: UIAlertActionStyle.Destructive, handler: { (alertAction:UIAlertAction) in
+            self.mettreAJourFaceDe()
+        }))
+        alerte.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction) in
+            let textFields = alerte.textFields as [UITextField]!
+            let textField = textFields[0]
+            let nombre:Int! = Int(textField.text!)
+            if (nombre != nil && nombre >= 2 && nombre <= 200) {
+                self.defaults.setInteger(nombre!, forKey: NSUserDefaultsKeys.NombreFace)
+                self.setNombreFaceWatchConnectivity(nombre!)
+                AppValues.nombreFace = nombre!
+            }
+            else {
+                let alerteErreurNombre = UIAlertController(title: NSLocalizedString("erreur", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), message: NSLocalizedString("saisieIncorrecte", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+                alerteErreurNombre.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction:UIAlertAction) in
+                    self.afficherAlerteChoixNombrePersonnalise()
+                }))
+                self.presentViewController(alerteErreurNombre, animated: true, completion: nil)
+            }
+            self.mettreAJourFaceDe()
+            self.mettreAJourLabelFaceNumber()
+        }))
+        presentViewController(alerte, animated: true, completion: nil)
     }
     
     func mettreAJourLabelFaceNumber() {

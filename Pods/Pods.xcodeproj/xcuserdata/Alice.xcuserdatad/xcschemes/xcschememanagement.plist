@@ -9,33 +9,33 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>6</integer>
 		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>7</integer>
 		</dict>
 		<key>Pods-i-de.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>8</integer>
 		</dict>
 		<key>Spring.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>9</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1B411C54CD267985F57BAABC955F431E</key>
+		<key>08F82547C266AA2E3DA17AB2ABAEB026</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -45,12 +45,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>827A33F857C71C5028B71903E0E53777</key>
+		<key>8260179EB32D3333BE79EB03AE75AAFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2A7A1F468C15FDAC09E9FB61C484CE7</key>
+		<key>99E73ABDDB18EC4B9CA1A3626435EB40</key>
 		<dict>
 			<key>primary</key>
 			<true/>

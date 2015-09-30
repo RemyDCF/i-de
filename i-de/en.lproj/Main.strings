@@ -62,6 +62,9 @@
 /* Class = "UINavigationItem"; title = "Paramètres"; ObjectID = "f5c-b2-OU2"; */
 "f5c-b2-OU2.title" = "Settings";
 
+/* Class = "UINavigationItem"; title = "Paramètres"; ObjectID = "HFV-ig-crA"; */
+"HFV-ig-crA.title" = "Animations Settings";
+
 /* Class = "UITableViewSection"; headerTitle = "Twitter"; ObjectID = "g0M-Em-28x"; */
 "g0M-Em-28x.headerTitle" = "Twitter";
 

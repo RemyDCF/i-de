@@ -43,14 +43,6 @@ class ViewController: UIViewController {
             labelFace.text = NSLocalizedString("phraseTirage", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: "") + String(6)
             defaults.setInteger(6, forKey: NSUserDefaultsKeys.NombreFace)
         }
-        // Lancer au demmarage
-        let lancerAuDemmarageDonnee = defaults.boolForKey(NSUserDefaultsKeys.LancerAuDemmarage)
-        if (lancerAuDemmarageDonnee) {
-            choisir()
-        }
-        else {
-            labelNombre.text = ""
-        }
         // Secouer
         var donneeSecouer = MesDonnesSecouer()
         var dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
@@ -92,8 +84,17 @@ class ViewController: UIViewController {
         }
         // Type Animations
         let typeAnimations = defaults.stringForKeySwift(NSUserDefaultsKeys.TypeAnimations)
+        print(typeAnimations)
         if ((typeAnimations) != nil) {
             self.typeAnimations = typeAnimations!
+        }
+        // Lancer au demmarage
+        let lancerAuDemmarageDonnee = defaults.boolForKey(NSUserDefaultsKeys.LancerAuDemmarage)
+        if (lancerAuDemmarageDonnee) {
+            choisir()
+        }
+        else {
+            labelNombre.text = ""
         }
     }
     override func viewDidLoad() {

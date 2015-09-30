@@ -19,7 +19,6 @@ class AnimationsTableViewController: UITableViewController {
         .Swing,
         .FlipX,
         .FlipY,
-        .Fall,
         .SqueezeLeft,
         .SqueezeRight,
         .SqueezeDown,
