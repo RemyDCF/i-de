@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+import Material
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        Parse.setApplicationId("TdFV16bEowpzqRtvfExdftJAHWjStIfrf6fpO4i4",
-            clientKey: "eNRNFT3RkMtd2i68rf423ovrnc9wtrqzyuuO2rn5")
-        PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
         return true
     }
     func applicationWillResignActive(application: UIApplication) {

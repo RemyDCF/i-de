@@ -4,8 +4,8 @@
 use_frameworks!
 
 target 'i-de' do
- pod 'Parse'
- pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
+ pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+ pod 'Material', :git => 'https://github.com/CosmicMind/Material.git'
 end
 
 target 'i-de WatchKit Extension' do

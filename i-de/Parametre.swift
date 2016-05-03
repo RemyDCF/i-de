@@ -8,6 +8,7 @@
 
 import UIKit
 import WatchConnectivity
+import SafariServices
 
 class Parametres: UITableViewController, UIAlertViewDelegate, WCSessionDelegate {
     @IBOutlet weak var secouerDe: UISwitch!
@@ -164,6 +165,8 @@ class Parametres: UITableViewController, UIAlertViewDelegate, WCSessionDelegate 
         mettreAJourLabelFaceNumber()
     }
     @IBAction func ouvrirTwitter(sender: AnyObject!) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/i_de_app")!)
+        let safariViewController = SFSafariViewController(URL: NSURL(string: "https://twitter.com/asmartcode")!, entersReaderIfAvailable: true)
+        self.presentViewController(safariViewController, animated: true, completion: nil)
+        //UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/i_de_app")!)
     }
 }

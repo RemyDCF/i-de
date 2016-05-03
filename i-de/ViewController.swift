@@ -8,6 +8,8 @@
 
 import UIKit
 import QuartzCore
+import Spring
+import Material
 
 enum SensSwipe {
     case Haut
@@ -24,9 +26,9 @@ enum SenderChoisir {
 }
 
 class ViewController: UIViewController {
-    @IBOutlet weak var labelNombre: RYSpringLabel!
+    @IBOutlet weak var labelNombre: SpringLabel!
     @IBOutlet weak var labelFace: UILabel!
-    @IBOutlet weak var btChoisir: RYButton!
+    @IBOutlet weak var btChoisir: UIButton!
     let defaults = NSUserDefaults.standardUserDefaults()
     var animationEnCours = false
     var typeAnimations = "shake"
@@ -62,10 +64,10 @@ class ViewController: UIViewController {
         let couleurDe = defaults.colorForKey(NSUserDefaultsKeys.CouleurDe)
         if (couleurDe != nil) {
             AppValues.couleurDe = couleurDe!
-            labelNombre.borderColor = couleurDe!
+            labelNombre.layer.borderColor = couleurDe!.CGColor
             labelNombre.textColor = couleurDe
             labelFace.textColor = couleurDe
-            btChoisir.borderColor = couleurDe!
+            btChoisir.layer.borderColor = couleurDe!.CGColor
             btChoisir.setTitleColor(couleurDe, forState: UIControlState.Normal)
         }
         else {

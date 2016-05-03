@@ -4,53 +4,85 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Bolts.xcscheme</key>
+		<key>Material-io.cosmicmind.material.fonts.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>11</integer>
 		</dict>
-		<key>Parse.xcscheme</key>
+		<key>Material-io.cosmicmind.material.icons.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+		<key>Material.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>Pods-i-de WatchKit App.xcscheme</key>
+		<dict>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>Pods-i-de.xcscheme</key>
+		<key>Pods-i-de WatchKit Extension.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
+		<key>Pods-i-de.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Spring.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>08F82547C266AA2E3DA17AB2ABAEB026</key>
+		<key>1AC051CAB6C4AE2983C0D6C2BF0FF39E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7111E8675BE83A1E3C3646A1971F1AF2</key>
+		<key>3DFADFC9EFD8911B48953AD1B74AB64D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8260179EB32D3333BE79EB03AE75AAFB</key>
+		<key>547BD120538EA91C0E3456E52E423878</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>99E73ABDDB18EC4B9CA1A3626435EB40</key>
+		<key>67C6E5813DB818409E3E2249992039D7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>73FA47927548EFE7E0739EFB558211C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85CDB899143013D74628361C6C837823</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE801E9EB0982EDF887EAF35CB453108</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B43D0E4D37A04F329BD73A604A7C2B2F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F3B4ADE78A713D898647639E774C40FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

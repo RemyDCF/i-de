@@ -54,7 +54,7 @@ class AnimationsTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("options", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action: "showOptions")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("options", tableName: "", bundle: NSBundle.mainBundle(), value: "", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(AnimationsTableViewController.showOptions))
     }
 
     override func didReceiveMemoryWarning() {
